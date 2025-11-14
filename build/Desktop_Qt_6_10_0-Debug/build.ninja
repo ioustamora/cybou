@@ -265,62 +265,54 @@ build test_encryption: CXX_EXECUTABLE_LINKER__test_encryption_Debug CMakeFiles/t
   TARGET_PDB = test_encryption.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target test_mnemonic
+# Object build statements for EXECUTABLE target test_signatures
 
 
 #############################################
-# Order-only phony target for test_mnemonic
+# Order-only phony target for test_signatures
 
-build cmake_object_order_depends_target_test_mnemonic: phony || test_mnemonic_autogen test_mnemonic_autogen/mocs_compilation.cpp test_mnemonic_autogen/timestamp test_mnemonic_autogen_timestamp_deps
+build cmake_object_order_depends_target_test_signatures: phony || test_signatures_autogen test_signatures_autogen/mocs_compilation.cpp test_signatures_autogen/timestamp test_signatures_autogen_timestamp_deps
 
-build CMakeFiles/test_mnemonic.dir/test_mnemonic_autogen/mocs_compilation.cpp.o: CXX_COMPILER__test_mnemonic_unscanned_Debug /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_mnemonic_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_test_mnemonic
+build CMakeFiles/test_signatures.dir/test_signatures_autogen/mocs_compilation.cpp.o: CXX_COMPILER__test_signatures_unscanned_Debug /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_signatures_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_test_signatures
   DEFINES = -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/test_mnemonic.dir/test_mnemonic_autogen/mocs_compilation.cpp.o.d
+  DEP_FILE = CMakeFiles/test_signatures.dir/test_signatures_autogen/mocs_compilation.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_mnemonic_autogen/include -I/media/user/FILES/cybou/src -isystem /home/user/Qt/6.10.0/gcc_64/include/QtCore -isystem /home/user/Qt/6.10.0/gcc_64/include -isystem /home/user/Qt/6.10.0/gcc_64/mkspecs/linux-g++
-  OBJECT_DIR = CMakeFiles/test_mnemonic.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_mnemonic.dir/test_mnemonic_autogen
+  INCLUDES = -I/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_signatures_autogen/include -I/media/user/FILES/cybou/src -isystem /home/user/Qt/6.10.0/gcc_64/include/QtCore -isystem /home/user/Qt/6.10.0/gcc_64/include -isystem /home/user/Qt/6.10.0/gcc_64/mkspecs/linux-g++
+  OBJECT_DIR = CMakeFiles/test_signatures.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_signatures.dir/test_signatures_autogen
 
-build CMakeFiles/test_mnemonic.dir/test_mnemonic.cpp.o: CXX_COMPILER__test_mnemonic_unscanned_Debug /media/user/FILES/cybou/test_mnemonic.cpp || cmake_object_order_depends_target_test_mnemonic
+build CMakeFiles/test_signatures.dir/test_signatures.cpp.o: CXX_COMPILER__test_signatures_unscanned_Debug /media/user/FILES/cybou/test_signatures.cpp || cmake_object_order_depends_target_test_signatures
   DEFINES = -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/test_mnemonic.dir/test_mnemonic.cpp.o.d
+  DEP_FILE = CMakeFiles/test_signatures.dir/test_signatures.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_mnemonic_autogen/include -I/media/user/FILES/cybou/src -isystem /home/user/Qt/6.10.0/gcc_64/include/QtCore -isystem /home/user/Qt/6.10.0/gcc_64/include -isystem /home/user/Qt/6.10.0/gcc_64/mkspecs/linux-g++
-  OBJECT_DIR = CMakeFiles/test_mnemonic.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_mnemonic.dir
+  INCLUDES = -I/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_signatures_autogen/include -I/media/user/FILES/cybou/src -isystem /home/user/Qt/6.10.0/gcc_64/include/QtCore -isystem /home/user/Qt/6.10.0/gcc_64/include -isystem /home/user/Qt/6.10.0/gcc_64/mkspecs/linux-g++
+  OBJECT_DIR = CMakeFiles/test_signatures.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_signatures.dir
 
-build CMakeFiles/test_mnemonic.dir/src/crypto/MnemonicEngine.cpp.o: CXX_COMPILER__test_mnemonic_unscanned_Debug /media/user/FILES/cybou/src/crypto/MnemonicEngine.cpp || cmake_object_order_depends_target_test_mnemonic
+build CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.o: CXX_COMPILER__test_signatures_unscanned_Debug /media/user/FILES/cybou/src/crypto/PostQuantumCrypto.cpp || cmake_object_order_depends_target_test_signatures
   DEFINES = -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/test_mnemonic.dir/src/crypto/MnemonicEngine.cpp.o.d
+  DEP_FILE = CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_mnemonic_autogen/include -I/media/user/FILES/cybou/src -isystem /home/user/Qt/6.10.0/gcc_64/include/QtCore -isystem /home/user/Qt/6.10.0/gcc_64/include -isystem /home/user/Qt/6.10.0/gcc_64/mkspecs/linux-g++
-  OBJECT_DIR = CMakeFiles/test_mnemonic.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_mnemonic.dir/src/crypto
-
-build CMakeFiles/test_mnemonic.dir/src/crypto/PostQuantumCrypto.cpp.o: CXX_COMPILER__test_mnemonic_unscanned_Debug /media/user/FILES/cybou/src/crypto/PostQuantumCrypto.cpp || cmake_object_order_depends_target_test_mnemonic
-  DEFINES = -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/test_mnemonic.dir/src/crypto/PostQuantumCrypto.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_mnemonic_autogen/include -I/media/user/FILES/cybou/src -isystem /home/user/Qt/6.10.0/gcc_64/include/QtCore -isystem /home/user/Qt/6.10.0/gcc_64/include -isystem /home/user/Qt/6.10.0/gcc_64/mkspecs/linux-g++
-  OBJECT_DIR = CMakeFiles/test_mnemonic.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_mnemonic.dir/src/crypto
+  INCLUDES = -I/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_signatures_autogen/include -I/media/user/FILES/cybou/src -isystem /home/user/Qt/6.10.0/gcc_64/include/QtCore -isystem /home/user/Qt/6.10.0/gcc_64/include -isystem /home/user/Qt/6.10.0/gcc_64/mkspecs/linux-g++
+  OBJECT_DIR = CMakeFiles/test_signatures.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_signatures.dir/src/crypto
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_mnemonic
+# Link build statements for EXECUTABLE target test_signatures
 
 
 #############################################
-# Link the executable test_mnemonic
+# Link the executable test_signatures
 
-build test_mnemonic: CXX_EXECUTABLE_LINKER__test_mnemonic_Debug CMakeFiles/test_mnemonic.dir/test_mnemonic_autogen/mocs_compilation.cpp.o CMakeFiles/test_mnemonic.dir/test_mnemonic.cpp.o CMakeFiles/test_mnemonic.dir/src/crypto/MnemonicEngine.cpp.o CMakeFiles/test_mnemonic.dir/src/crypto/PostQuantumCrypto.cpp.o | /home/user/Qt/6.10.0/gcc_64/lib/libQt6Core.so.6.10.0 /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/local/lib/liboqs.so || test_mnemonic_autogen test_mnemonic_autogen_timestamp_deps
+build test_signatures: CXX_EXECUTABLE_LINKER__test_signatures_Debug CMakeFiles/test_signatures.dir/test_signatures_autogen/mocs_compilation.cpp.o CMakeFiles/test_signatures.dir/test_signatures.cpp.o CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.o | /home/user/Qt/6.10.0/gcc_64/lib/libQt6Core.so.6.10.0 /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/local/lib/liboqs.so || test_signatures_autogen test_signatures_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/home/user/Qt/6.10.0/gcc_64/lib:/usr/local/lib  /home/user/Qt/6.10.0/gcc_64/lib/libQt6Core.so.6.10.0  /usr/lib/x86_64-linux-gnu/libcrypto.so  /usr/local/lib/liboqs.so
-  OBJECT_DIR = CMakeFiles/test_mnemonic.dir
+  OBJECT_DIR = CMakeFiles/test_signatures.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = test_mnemonic
-  TARGET_PDB = test_mnemonic.dbg
+  TARGET_FILE = test_signatures
+  TARGET_PDB = test_signatures.dbg
 
 
 #############################################
@@ -438,15 +430,15 @@ build test_encryption_autogen: phony CMakeFiles/test_encryption_autogen test_enc
 
 
 #############################################
-# Utility command for test_mnemonic_autogen_timestamp_deps
+# Utility command for test_signatures_autogen_timestamp_deps
 
-build test_mnemonic_autogen_timestamp_deps: phony
+build test_signatures_autogen_timestamp_deps: phony
 
 
 #############################################
-# Utility command for test_mnemonic_autogen
+# Utility command for test_signatures_autogen
 
-build test_mnemonic_autogen: phony CMakeFiles/test_mnemonic_autogen test_mnemonic_autogen/timestamp test_mnemonic_autogen/mocs_compilation.cpp test_mnemonic_autogen_timestamp_deps
+build test_signatures_autogen: phony CMakeFiles/test_signatures_autogen test_signatures_autogen/timestamp test_signatures_autogen/mocs_compilation.cpp test_signatures_autogen_timestamp_deps
 
 
 #############################################
@@ -601,12 +593,12 @@ build test_encryption_autogen/timestamp test_encryption_autogen/mocs_compilation
 
 
 #############################################
-# Custom command for test_mnemonic_autogen/timestamp
+# Custom command for test_signatures_autogen/timestamp
 
-build test_mnemonic_autogen/timestamp test_mnemonic_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}test_mnemonic_autogen/timestamp ${cmake_ninja_workdir}test_mnemonic_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /home/user/Qt/6.10.0/gcc_64/libexec/moc || test_mnemonic_autogen_timestamp_deps
-  COMMAND = cd /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug && /home/user/Qt/Tools/CMake/bin/cmake -E cmake_autogen /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/test_mnemonic_autogen.dir/AutogenInfo.json Debug && /home/user/Qt/Tools/CMake/bin/cmake -E touch /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_mnemonic_autogen/timestamp && /home/user/Qt/Tools/CMake/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_mnemonic_autogen/deps /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/d/0737356f06b01b0069bb7a5414ea117a9ddf404a7c14504c8c895271c83364dd.d
-  DESC = Automatic MOC and UIC for target test_mnemonic
-  depfile = CMakeFiles/d/0737356f06b01b0069bb7a5414ea117a9ddf404a7c14504c8c895271c83364dd.d
+build test_signatures_autogen/timestamp test_signatures_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}test_signatures_autogen/timestamp ${cmake_ninja_workdir}test_signatures_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /home/user/Qt/6.10.0/gcc_64/libexec/moc || test_signatures_autogen_timestamp_deps
+  COMMAND = cd /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug && /home/user/Qt/Tools/CMake/bin/cmake -E cmake_autogen /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/test_signatures_autogen.dir/AutogenInfo.json Debug && /home/user/Qt/Tools/CMake/bin/cmake -E touch /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_signatures_autogen/timestamp && /home/user/Qt/Tools/CMake/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/test_signatures_autogen/deps /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/d/349d56bce62a3edd5255bf127f043e835a7d2948d77b1956cecba7a7bd2cdace.d
+  DESC = Automatic MOC and UIC for target test_signatures
+  depfile = CMakeFiles/d/349d56bce62a3edd5255bf127f043e835a7d2948d77b1956cecba7a7bd2cdace.d
   deps = gcc
   restat = 1
 
@@ -685,9 +677,9 @@ build CMakeFiles/test_encryption_autogen | ${cmake_ninja_workdir}CMakeFiles/test
 
 
 #############################################
-# Phony custom command for CMakeFiles/test_mnemonic_autogen
+# Phony custom command for CMakeFiles/test_signatures_autogen
 
-build CMakeFiles/test_mnemonic_autogen | ${cmake_ninja_workdir}CMakeFiles/test_mnemonic_autogen: phony test_mnemonic_autogen/timestamp || test_mnemonic_autogen_timestamp_deps
+build CMakeFiles/test_signatures_autogen | ${cmake_ninja_workdir}CMakeFiles/test_signatures_autogen: phony test_signatures_autogen/timestamp || test_signatures_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
@@ -700,7 +692,7 @@ build CMakeFiles/test_mnemonic_autogen | ${cmake_ninja_workdir}CMakeFiles/test_m
 #############################################
 # Folder: /media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug
 
-build all: phony cybou test_encryption test_mnemonic
+build all: phony cybou test_encryption test_signatures
 
 # =============================================================================
 # Built-in targets

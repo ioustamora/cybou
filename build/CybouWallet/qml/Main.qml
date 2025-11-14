@@ -118,6 +118,65 @@ ApplicationWindow {
         }
     }
 
+    FileDialog {
+        id: savePrivateKeyDialog
+        title: "Save private key to file (ENCRYPTED)"
+        fileMode: FileDialog.SaveFile
+        nameFilters: ["cyboukey files (*.cyboukey)", "Text files (*.txt)", "All files (*)"]
+        defaultSuffix: "cyboukey"
+        onAccepted: {
+            var filePath = savePrivateKeyDialog.selectedFile.toString().replace("file://", "")
+            // Export and save the private key
+            var privateKey = PostQuantumCrypto.exportPrivateKey()
+            if (privateKey !== "") {
+                if (PostQuantumCrypto.saveEncryptedTextToFile(privateKey, filePath)) {
+                    keyStatus.text = qsTr("💾 Private key saved to: ") + filePath
+                    keyStatus.color = "green"
+                } else {
+                    keyStatus.text = qsTr("❌ Failed to save private key!")
+                    keyStatus.color = "red"
+                }
+            } else {
+                keyStatus.text = qsTr("❌ No private key available!")
+                keyStatus.color = "red"
+            }
+        }
+    }
+
+    FileDialog {
+        id: loadKeyPairDialog
+        title: "Load key pair from file"
+        fileMode: FileDialog.OpenFile
+        nameFilters: ["cyboukey files (*.cyboukey)", "Text files (*.txt)", "All files (*)"]
+        onAccepted: {
+            var filePath = loadKeyPairDialog.selectedFile.toString().replace("file://", "")
+            var content = PostQuantumCrypto.loadEncryptedTextFromFile(filePath)
+            if (content !== "") {
+                // Try to parse the content as private key + public key
+                var lines = content.split('\n')
+                if (lines.length >= 2) {
+                    var privateKey = lines[0].trim()
+                    var publicKey = lines[1].trim()
+                    
+                    if (PostQuantumCrypto.importKeyPair(privateKey, publicKey)) {
+                        publicKeyDisplay.text = PostQuantumCrypto.publicKey
+                        keyStatus.text = qsTr("✅ Key pair imported from: ") + filePath
+                        keyStatus.color = "green"
+                    } else {
+                        keyStatus.text = qsTr("❌ Failed to import key pair!")
+                        keyStatus.color = "red"
+                    }
+                } else {
+                    keyStatus.text = qsTr("❌ Invalid key file format!")
+                    keyStatus.color = "red"
+                }
+            } else {
+                keyStatus.text = qsTr("❌ Failed to load key file!")
+                keyStatus.color = "red"
+            }
+        }
+    }
+
     SplashDialog {
         id: splashDialog
         modal: true
@@ -735,7 +794,7 @@ ApplicationWindow {
                     spacing: 8
 
                     Label {
-                        text: qsTr("� Current Key Status:")
+                        text: qsTr("🔐 Current Key Status:")
                         font.bold: true
                         font.pixelSize: 14
                     }
@@ -752,6 +811,12 @@ ApplicationWindow {
                         font.pixelSize: 11
                         color: "#666666"
                     }
+
+                    Label {
+                        text: qsTr("Security: Level 5 NIST Post-Quantum Standard")
+                        font.pixelSize: 11
+                        color: "#666666"
+                    }
                 }
             }
 
@@ -761,7 +826,7 @@ ApplicationWindow {
                 width: parent.width
 
                 Label {
-                    text: qsTr("🔓 Public Key:")
+                    text: qsTr("🔓 Public Key (Safe to Share):")
                     font.bold: true
                 }
 
@@ -774,6 +839,12 @@ ApplicationWindow {
                     wrapMode: TextArea.Wrap
                     selectByMouse: true
                     text: PostQuantumCrypto.hasKeys ? PostQuantumCrypto.publicKey : ""
+                    background: Rectangle {
+                        color: "#e8f5e8"  // Light green for public keys
+                        border.color: "#4caf50"
+                        border.width: 1
+                        radius: 4
+                    }
                 }
 
                 Row {
@@ -808,34 +879,49 @@ ApplicationWindow {
                 Button {
                     text: qsTr("🔄 Regenerate Keys")
                     onClicked: {
-                        PostQuantumCrypto.generateKeys()
-                        publicKeyDisplay.text = PostQuantumCrypto.publicKey
-                        keyStatus.text = "✅ New PQ key pair generated successfully!"
-                        keyStatus.color = "green"
+                        if (PostQuantumCrypto.generateKeyPair()) {
+                            publicKeyDisplay.text = PostQuantumCrypto.publicKey
+                            keyStatus.text = qsTr("✅ New PQ key pair generated successfully!")
+                            keyStatus.color = "green"
+                        } else {
+                            keyStatus.text = qsTr("❌ Failed to generate key pair!")
+                            keyStatus.color = "red"
+                        }
                     }
                 }
 
                 Button {
-                    text: qsTr("🔍 Show Public Key")
+                    text: qsTr("💾 Export Private Key")
+                    enabled: PostQuantumCrypto.hasKeys
                     onClicked: {
-                        if (PostQuantumCrypto.hasKeys) {
-                            publicKeyDisplay.text = PostQuantumCrypto.publicKey
-                            keyStatus.text = "🔓 Public key displayed above"
-                            keyStatus.color = "blue"
-                        } else {
-                            keyStatus.text = "❌ No keys available"
-                            keyStatus.color = "red"
-                        }
+                        savePrivateKeyDialog.open()
+                    }
+                }
+
+                Button {
+                    text: qsTr("📂 Import Key Pair")
+                    onClicked: {
+                        loadKeyPairDialog.open()
                     }
                 }
             }
 
             Label {
+                text: qsTr("⚠️ Security Warning: Private keys contain your secret cryptographic material. Store them securely and never share them!")
+                wrapMode: Text.WordWrap
+                width: parent.width
+                color: "#ff9800"
+                font.pixelSize: 11
+                font.bold: true
+            }
+
+            Label {
                 id: keyStatus
-                text: qsTr("PQ keys are automatically generated from your BIP-39 mnemonic.")
+                text: qsTr("PQ keys are automatically generated from your BIP-39 mnemonic for maximum security.")
                 wrapMode: Text.WordWrap
                 width: parent.width
                 color: "#666666"
+                font.pixelSize: 12
             }
         }
     }

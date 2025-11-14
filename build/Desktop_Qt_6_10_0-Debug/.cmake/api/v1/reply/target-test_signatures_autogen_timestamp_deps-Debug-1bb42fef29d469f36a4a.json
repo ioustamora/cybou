@@ -18,9 +18,9 @@
 	{
 		"name" : "QtInternalTargets"
 	},
-	"id" : "test_mnemonic_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+	"id" : "test_signatures_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
-	"name" : "test_mnemonic_autogen_timestamp_deps",
+	"name" : "test_signatures_autogen_timestamp_deps",
 	"paths" : 
 	{
 		"build" : ".",

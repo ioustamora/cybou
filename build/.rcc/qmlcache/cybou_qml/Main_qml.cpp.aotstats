@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 42,
+                            "durationMicroseconds": 49,
                             "functionName": "onCompleted",
                             "line": 17,
                             "message": "Cannot retrieve a non-object type by ID: splashDialog"
@@ -16,7 +16,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 83,
+                            "durationMicroseconds": 81,
                             "functionName": "fileMode",
                             "line": 22,
                             "message": ""
@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 37,
+                            "durationMicroseconds": 39,
                             "functionName": "onAccepted",
                             "line": 23,
                             "message": "Cannot retrieve a non-object type by ID: filePath"
@@ -40,7 +40,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 75,
+                            "durationMicroseconds": 78,
                             "functionName": "nameFilters",
                             "line": 32,
                             "message": ""
@@ -48,7 +48,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 169,
+                            "durationMicroseconds": 172,
                             "functionName": "onAccepted",
                             "line": 34,
                             "message": "Cannot access value for name PostQuantumCrypto"
@@ -64,7 +64,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 69,
+                            "durationMicroseconds": 70,
                             "functionName": "nameFilters",
                             "line": 50,
                             "message": ""
@@ -72,7 +72,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 158,
+                            "durationMicroseconds": 214,
                             "functionName": "onAccepted",
                             "line": 51,
                             "message": "Cannot access value for name PostQuantumCrypto"
@@ -80,7 +80,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 44,
+                            "durationMicroseconds": 46,
                             "functionName": "fileMode",
                             "line": 68,
                             "message": ""
@@ -88,7 +88,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 85,
+                            "durationMicroseconds": 89,
                             "functionName": "nameFilters",
                             "line": 69,
                             "message": ""
@@ -96,7 +96,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 167,
+                            "durationMicroseconds": 159,
                             "functionName": "onAccepted",
                             "line": 71,
                             "message": "Cannot access value for name PostQuantumCrypto"
@@ -104,7 +104,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 64,
+                            "durationMicroseconds": 50,
                             "functionName": "fileMode",
                             "line": 87,
                             "message": ""
@@ -112,7 +112,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 87,
+                            "durationMicroseconds": 98,
                             "functionName": "nameFilters",
                             "line": 88,
                             "message": ""
@@ -120,7 +120,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 167,
+                            "durationMicroseconds": 178,
                             "functionName": "onAccepted",
                             "line": 90,
                             "message": "Cannot access value for name PostQuantumCrypto"
@@ -128,7 +128,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 54,
+                            "durationMicroseconds": 50,
                             "functionName": "fileMode",
                             "line": 105,
                             "message": ""
@@ -136,7 +136,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 101,
+                            "durationMicroseconds": 168,
                             "functionName": "nameFilters",
                             "line": 106,
                             "message": ""
@@ -144,17 +144,65 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 183,
+                            "durationMicroseconds": 182,
                             "functionName": "onAccepted",
                             "line": 107,
                             "message": "Cannot access value for name PostQuantumCrypto"
                         },
                         {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 50,
+                            "functionName": "fileMode",
+                            "line": 124,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 97,
+                            "functionName": "nameFilters",
+                            "line": 125,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 323,
+                            "functionName": "onAccepted",
+                            "line": 127,
+                            "message": "Cannot access value for name PostQuantumCrypto"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 112,
+                            "functionName": "fileMode",
+                            "line": 149,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 97,
+                            "functionName": "nameFilters",
+                            "line": 150,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 511,
+                            "functionName": "onAccepted",
+                            "line": 151,
+                            "message": "Cannot access value for name PostQuantumCrypto"
+                        },
+                        {
                             "codegenResult": 2,
                             "column": 30,
-                            "durationMicroseconds": 49,
+                            "durationMicroseconds": 30,
                             "functionName": "onMnemonicValidated",
-                            "line": 124,
+                            "line": 183,
                             "message": "Cannot find name mnemonicAccepted"
                         },
                         {
@@ -162,7 +210,7 @@
                             "column": 30,
                             "durationMicroseconds": 29,
                             "functionName": "onMnemonicValidated",
-                            "line": 124,
+                            "line": 183,
                             "message": ""
                         },
                         {
@@ -170,7 +218,7 @@
                             "column": 37,
                             "durationMicroseconds": 0,
                             "functionName": "verticalCenter",
-                            "line": 133,
+                            "line": 192,
                             "message": "Could not find property \"verticalCenter\"."
                         },
                         {
@@ -178,15 +226,15 @@
                             "column": 28,
                             "durationMicroseconds": 13,
                             "functionName": "right",
-                            "line": 139,
+                            "line": 198,
                             "message": "Cannot access value for name parent"
                         },
                         {
                             "codegenResult": 2,
                             "column": 37,
-                            "durationMicroseconds": 8,
+                            "durationMicroseconds": 14,
                             "functionName": "verticalCenter",
-                            "line": 141,
+                            "line": 200,
                             "message": "Cannot access value for name parent"
                         },
                         {
@@ -194,7 +242,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 145,
+                            "line": 204,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -202,7 +250,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 146,
+                            "line": 205,
                             "message": "Could not find property \"color\"."
                         },
                         {
@@ -210,7 +258,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 152,
+                            "line": 211,
                             "message": "Could not find property \"visible\"."
                         },
                         {
@@ -218,116 +266,12 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 153,
+                            "line": 212,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 16,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 161,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 18,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 162,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 16,
-                            "durationMicroseconds": 58,
-                            "functionName": "width",
-                            "line": 179,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 17,
-                            "durationMicroseconds": 113,
-                            "functionName": "height",
-                            "line": 180,
-                            "message": "Cannot retrieve a non-object type by ID: tabBar"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 16,
-                            "functionName": "currentIndex",
-                            "line": 181,
-                            "message": "Cannot retrieve a non-object type by ID: tabBar"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 18,
-                            "durationMicroseconds": 13,
-                            "functionName": "visible",
-                            "line": 182,
-                            "message": "Cannot access value for name mnemonicAccepted"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 89,
-                            "functionName": "width",
-                            "line": 187,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 31,
-                            "durationMicroseconds": 85,
-                            "functionName": "alignment",
-                            "line": 188,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 195,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 196,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 202,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 203,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 56,
-                            "functionName": "width",
-                            "line": 211,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "width",
                             "line": 220,
@@ -335,186 +279,58 @@
                         },
                         {
                             "codegenResult": 2,
-                            "column": 31,
+                            "column": 18,
                             "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 223,
-                            "message": "Could not find property \"wrapMode\"."
+                            "functionName": "visible",
+                            "line": 221,
+                            "message": "Could not find property \"visible\"."
                         },
                         {
                             "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 113,
-                            "functionName": "right",
-                            "line": 234,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
+                            "column": 16,
+                            "durationMicroseconds": 59,
+                            "functionName": "width",
                             "line": 238,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 246,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 64,
-                            "functionName": "horizontalCenter",
-                            "line": 255,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 259,
-                            "message": "Could not find signal \"clicked\"."
+                            "column": 17,
+                            "durationMicroseconds": 116,
+                            "functionName": "height",
+                            "line": 239,
+                            "message": "Cannot retrieve a non-object type by ID: tabBar"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 280,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 56,
-                            "functionName": "width",
-                            "line": 303,
-                            "message": ""
+                            "column": 23,
+                            "durationMicroseconds": 16,
+                            "functionName": "currentIndex",
+                            "line": 240,
+                            "message": "Cannot retrieve a non-object type by ID: tabBar"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 312,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 316,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 77,
-                            "functionName": "color",
-                            "line": 319,
-                            "message": "Cannot access value for name outputText"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 66,
-                            "functionName": "color",
-                            "line": 322,
-                            "message": "Cannot access value for name outputText"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 66,
-                            "functionName": "right",
-                            "line": 332,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 336,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 337,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 347,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 348,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 355,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 362,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 374,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 375,
-                            "message": "Could not find property \"width\"."
+                            "column": 18,
+                            "durationMicroseconds": 13,
+                            "functionName": "visible",
+                            "line": 241,
+                            "message": "Cannot access value for name mnemonicAccepted"
                         },
                         {
                             "codegenResult": 0,
                             "column": 20,
-                            "durationMicroseconds": 90,
+                            "durationMicroseconds": 86,
                             "functionName": "width",
-                            "line": 383,
+                            "line": 246,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 84,
+                            "durationMicroseconds": 89,
                             "functionName": "alignment",
-                            "line": 384,
+                            "line": 247,
                             "message": ""
                         },
                         {
@@ -522,7 +338,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 391,
+                            "line": 254,
                             "message": "Could not find property \"horizontalAlignment\"."
                         },
                         {
@@ -530,7 +346,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 392,
+                            "line": 255,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -538,7 +354,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 398,
+                            "line": 261,
                             "message": "Could not find property \"horizontalAlignment\"."
                         },
                         {
@@ -546,7 +362,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 399,
+                            "line": 262,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -554,7 +370,7 @@
                             "column": 24,
                             "durationMicroseconds": 55,
                             "functionName": "width",
-                            "line": 406,
+                            "line": 270,
                             "message": ""
                         },
                         {
@@ -562,119 +378,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 410,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 418,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 69,
-                            "functionName": "horizontalCenter",
-                            "line": 426,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 430,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 455,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 499,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 500,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 87,
-                            "functionName": "width",
-                            "line": 508,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 31,
-                            "durationMicroseconds": 85,
-                            "functionName": "alignment",
-                            "line": 509,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 516,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 517,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 523,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 524,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 59,
-                            "functionName": "width",
-                            "line": 532,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 541,
+                            "line": 279,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -682,15 +386,15 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 544,
+                            "line": 282,
                             "message": "Could not find property \"wrapMode\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 69,
+                            "durationMicroseconds": 65,
                             "functionName": "right",
-                            "line": 555,
+                            "line": 293,
                             "message": ""
                         },
                         {
@@ -698,7 +402,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 559,
+                            "line": 297,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -706,15 +410,15 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 567,
+                            "line": 305,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 43,
-                            "durationMicroseconds": 64,
+                            "durationMicroseconds": 68,
                             "functionName": "horizontalCenter",
-                            "line": 576,
+                            "line": 314,
                             "message": ""
                         },
                         {
@@ -722,7 +426,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 580,
+                            "line": 318,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -730,15 +434,15 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 600,
+                            "line": 339,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 57,
+                            "durationMicroseconds": 53,
                             "functionName": "width",
-                            "line": 627,
+                            "line": 362,
                             "message": ""
                         },
                         {
@@ -746,7 +450,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 636,
+                            "line": 371,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -754,31 +458,31 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 640,
+                            "line": 375,
                             "message": "Could not find property \"wrapMode\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 36,
+                            "durationMicroseconds": 76,
                             "functionName": "color",
-                            "line": 643,
-                            "message": "Cannot access value for name signatureOutput"
+                            "line": 378,
+                            "message": "Cannot access value for name outputText"
                         },
                         {
                             "codegenResult": 2,
                             "column": 39,
-                            "durationMicroseconds": 30,
+                            "durationMicroseconds": 67,
                             "functionName": "color",
-                            "line": 644,
-                            "message": "Cannot access value for name signatureOutput"
+                            "line": 381,
+                            "message": "Cannot access value for name outputText"
                         },
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 67,
+                            "durationMicroseconds": 69,
                             "functionName": "right",
-                            "line": 652,
+                            "line": 391,
                             "message": ""
                         },
                         {
@@ -786,7 +490,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 656,
+                            "line": 395,
                             "message": "Could not find property \"enabled\"."
                         },
                         {
@@ -794,7 +498,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 657,
+                            "line": 396,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -802,7 +506,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 667,
+                            "line": 406,
                             "message": "Could not find property \"enabled\"."
                         },
                         {
@@ -810,7 +514,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 668,
+                            "line": 407,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -818,7 +522,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 675,
+                            "line": 414,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -826,7 +530,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 682,
+                            "line": 421,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -834,7 +538,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 693,
+                            "line": 433,
                             "message": "Could not find property \"wrapMode\"."
                         },
                         {
@@ -842,15 +546,15 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 694,
+                            "line": 434,
                             "message": "Could not find property \"width\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 20,
-                            "durationMicroseconds": 92,
+                            "durationMicroseconds": 88,
                             "functionName": "width",
-                            "line": 703,
+                            "line": 442,
                             "message": ""
                         },
                         {
@@ -858,7 +562,7 @@
                             "column": 31,
                             "durationMicroseconds": 85,
                             "functionName": "alignment",
-                            "line": 704,
+                            "line": 443,
                             "message": ""
                         },
                         {
@@ -866,7 +570,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 711,
+                            "line": 450,
                             "message": "Could not find property \"horizontalAlignment\"."
                         },
                         {
@@ -874,7 +578,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 712,
+                            "line": 451,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -882,7 +586,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 718,
+                            "line": 457,
                             "message": "Could not find property \"horizontalAlignment\"."
                         },
                         {
@@ -890,7 +594,119 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 719,
+                            "line": 458,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 55,
+                            "functionName": "width",
+                            "line": 465,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 469,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 477,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 67,
+                            "functionName": "horizontalCenter",
+                            "line": 485,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 489,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 514,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 558,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 559,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 20,
+                            "durationMicroseconds": 89,
+                            "functionName": "width",
+                            "line": 567,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 91,
+                            "functionName": "alignment",
+                            "line": 568,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 575,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 576,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 582,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 583,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -898,31 +714,7 @@
                             "column": 24,
                             "durationMicroseconds": 54,
                             "functionName": "width",
-                            "line": 725,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 37,
-                            "functionName": "fill",
-                            "line": 733,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 744,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 50,
-                            "functionName": "width",
-                            "line": 761,
+                            "line": 591,
                             "message": ""
                         },
                         {
@@ -930,7 +722,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 770,
+                            "line": 600,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -938,63 +730,39 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 774,
+                            "line": 603,
                             "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 776,
-                            "message": "Could not find property \"text\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 70,
+                            "durationMicroseconds": 65,
                             "functionName": "right",
-                            "line": 781,
+                            "line": 614,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 785,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 786,
+                            "line": 618,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 796,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 797,
+                            "line": 626,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 43,
-                            "durationMicroseconds": 65,
+                            "durationMicroseconds": 71,
                             "functionName": "horizontalCenter",
-                            "line": 806,
+                            "line": 635,
                             "message": ""
                         },
                         {
@@ -1002,7 +770,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 810,
+                            "line": 639,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -1010,7 +778,103 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 820,
+                            "line": 659,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 54,
+                            "functionName": "width",
+                            "line": 686,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 695,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 699,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 36,
+                            "functionName": "color",
+                            "line": 702,
+                            "message": "Cannot access value for name signatureOutput"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 30,
+                            "functionName": "color",
+                            "line": 703,
+                            "message": "Cannot access value for name signatureOutput"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 68,
+                            "functionName": "right",
+                            "line": 711,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 715,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 716,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 726,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 727,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 734,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 741,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -1018,7 +882,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 836,
+                            "line": 752,
                             "message": "Could not find property \"wrapMode\"."
                         },
                         {
@@ -1026,23 +890,239 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 837,
+                            "line": 753,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 20,
+                            "durationMicroseconds": 94,
+                            "functionName": "width",
+                            "line": 762,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 86,
+                            "functionName": "alignment",
+                            "line": 763,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 770,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 771,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 777,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 778,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 55,
+                            "functionName": "width",
+                            "line": 784,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 37,
+                            "functionName": "fill",
+                            "line": 792,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 803,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 56,
+                            "functionName": "width",
+                            "line": 826,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 835,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 839,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 841,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 71,
+                            "functionName": "right",
+                            "line": 852,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 856,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 857,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 867,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 868,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 67,
+                            "functionName": "horizontalCenter",
+                            "line": 877,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 881,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 895,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 896,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 903,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 911,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 912,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 921,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 922,
                             "message": "Could not find property \"width\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 18,
-                            "durationMicroseconds": 21,
+                            "durationMicroseconds": 25,
                             "functionName": "visible",
-                            "line": 847,
+                            "line": 933,
                             "message": "Cannot access value for name mnemonicAccepted"
                         },
                         {
                             "codegenResult": 0,
                             "column": 27,
-                            "durationMicroseconds": 44,
+                            "durationMicroseconds": 46,
                             "functionName": "centerIn",
-                            "line": 845,
+                            "line": 931,
                             "message": ""
                         },
                         {
@@ -1050,7 +1130,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 853,
+                            "line": 939,
                             "message": "Could not find property \"horizontalAlignment\"."
                         },
                         {
@@ -1058,7 +1138,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 854,
+                            "line": 940,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -1066,7 +1146,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 859,
+                            "line": 945,
                             "message": "Could not find property \"wrapMode\"."
                         },
                         {
@@ -1074,7 +1154,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 860,
+                            "line": 946,
                             "message": "Could not find property \"horizontalAlignment\"."
                         },
                         {
@@ -1082,7 +1162,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 861,
+                            "line": 947,
                             "message": "Could not find property \"width\"."
                         }
                     ],

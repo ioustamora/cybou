@@ -208,8 +208,32 @@ bool isValid = crypto.verifySignature("Hello World", signature, crypto.publicKey
 
 // Key management
 QString publicKey = crypto.publicKey(); // Combined Kyber + ML-DSA-65 key
+QString privateKey = crypto.exportPrivateKey(); // Export private key for backup
+bool imported = crypto.importKeyPair(privateKeyHex, publicKeyHex); // Import key pair
 bool saved = crypto.saveEncryptedTextToFile(publicKey, "/path/to/key.cyboukey");
 ```
+
+## Key Management Features
+
+cybou provides comprehensive post-quantum key management:
+
+### Key Export/Import
+- **Public Key Export**: Safely share your public key for others to encrypt files or verify signatures
+- **Private Key Export**: Backup your private key securely (encrypted storage recommended)
+- **Key Pair Import**: Restore keys from backup or import externally generated keys
+
+### Key File Format
+Keys are stored in `.cyboukey` files with the following format:
+```
+<private_key_hex>
+<public_key_hex>
+```
+
+### Security Best Practices
+- **Public keys**: Safe to share openly for encryption and signature verification
+- **Private keys**: Never share - contains your secret cryptographic material
+- **Storage**: Use encrypted backups and secure storage for private keys
+- **Backup**: Regularly backup your key pairs to prevent data loss
 
 ## Testing
 
@@ -223,6 +247,9 @@ make
 
 # Run mnemonic validation tests
 ./test_mnemonic    # Tests BIP-39 word list and validation
+
+# Run signature tests
+./test_signatures  # Tests digital signature creation and verification
 ```
 
 ## Improvements Roadmap
@@ -230,9 +257,8 @@ make
 ### 🔄 **High Priority**
 - **Progress Indicators**: Add progress bars for large file encryption/decryption operations
 - **Batch Processing**: Support encrypting/decrypting multiple files simultaneously
-- **Key Import/Export**: Allow importing external keys and exporting private keys securely
-- **Digital Signatures UI**: Complete the signature creation/verification interface
 - **Error Recovery**: Better error handling and recovery for corrupted files
+- **UI Enhancements**: Dark mode, keyboard shortcuts, drag-and-drop support
 
 ### 🚀 **Medium Priority**
 - **Performance Optimization**: 

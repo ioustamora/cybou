@@ -244,8 +244,8 @@ bool PostQuantumCrypto::verifySignature(const QString &message, const QString &s
         }
 
         // Extract Dilithium public key from combined key
-        const uint8_t *dilithiumPubKey = reinterpret_cast<const uint8_t*>(
-            publicKeyData.constData() + OQS_KEM_kyber_1024_length_public_key);
+        QByteArray dilithiumPubKeyData = publicKeyData.mid(OQS_KEM_kyber_1024_length_public_key, OQS_SIG_ml_dsa_65_length_public_key);
+        const uint8_t *dilithiumPubKey = reinterpret_cast<const uint8_t*>(dilithiumPubKeyData.constData());
 
         bool valid = dilithiumVerify(messageData, signatureData, dilithiumPubKey, OQS_SIG_ml_dsa_65_length_public_key);
         emit operationCompleted("verifySignature", valid, valid ? "Dilithium signature verified" : "Signature verification failed");
@@ -435,29 +435,59 @@ QString PostQuantumCrypto::loadEncryptedTextFromFile(const QString &filePath)
 bool PostQuantumCrypto::encryptFile(const QString &inputFilePath, const QString &outputFilePath)
 {
     try {
-        // Read input file as binary
+        // Open input file
         QFile inputFile(inputFilePath);
         if (!inputFile.open(QIODevice::ReadOnly)) {
             emit operationCompleted("encryptFile", false, QString("Cannot open input file: %1").arg(inputFilePath));
             return false;
         }
 
-        QByteArray fileData = inputFile.readAll();
-        inputFile.close();
+        // Get file size for progress calculation
+        qint64 fileSize = inputFile.size();
+        qint64 bytesProcessed = 0;
 
-        // Encrypt the binary data directly
-        QByteArray encryptedData = encryptBinary(fileData);
-
-        // Write encrypted data as binary
+        // Open output file
         QFile outputFile(outputFilePath);
         if (!outputFile.open(QIODevice::WriteOnly)) {
+            inputFile.close();
             emit operationCompleted("encryptFile", false, QString("Cannot open output file: %1").arg(outputFilePath));
             return false;
         }
 
-        outputFile.write(encryptedData);
+        emit operationProgress("encryptFile", 0, "Initializing encryption...");
+
+        // Process file in chunks to avoid loading large files into memory
+        const qint64 chunkSize = 1024 * 1024; // 1MB chunks
+        QByteArray buffer;
+
+        while (!inputFile.atEnd()) {
+            buffer = inputFile.read(chunkSize);
+            if (buffer.isEmpty()) {
+                break;
+            }
+
+            // Encrypt the chunk
+            QByteArray encryptedChunk = encryptBinary(buffer);
+            if (encryptedChunk.isEmpty()) {
+                inputFile.close();
+                outputFile.close();
+                emit operationCompleted("encryptFile", false, "Encryption failed during processing");
+                return false;
+            }
+
+            // Write encrypted chunk
+            outputFile.write(encryptedChunk);
+
+            // Update progress
+            bytesProcessed += buffer.size();
+            int progress = fileSize > 0 ? (bytesProcessed * 100) / fileSize : 0;
+            emit operationProgress("encryptFile", progress, QString("Encrypting... %1%").arg(progress));
+        }
+
+        inputFile.close();
         outputFile.close();
 
+        emit operationProgress("encryptFile", 100, "Encryption completed");
         emit operationCompleted("encryptFile", true, QString("File encrypted: %1 -> %2").arg(inputFilePath, outputFilePath));
         return true;
     } catch (const std::exception &e) {
@@ -470,15 +500,27 @@ bool PostQuantumCrypto::encryptFile(const QString &inputFilePath, const QString 
 bool PostQuantumCrypto::decryptFile(const QString &inputFilePath, const QString &outputFilePath)
 {
     try {
-        // Read encrypted file as binary
+        // Open input file
         QFile inputFile(inputFilePath);
         if (!inputFile.open(QIODevice::ReadOnly)) {
             emit operationCompleted("decryptFile", false, QString("Cannot open input file: %1").arg(inputFilePath));
             return false;
         }
 
+        // Get file size for progress calculation
+        qint64 fileSize = inputFile.size();
+        qint64 bytesProcessed = 0;
+
+        emit operationProgress("decryptFile", 0, "Initializing decryption...");
+
+        // Read the entire encrypted file (we need the IV from the beginning)
         QByteArray encryptedData = inputFile.readAll();
         inputFile.close();
+
+        if (encryptedData.size() < 16) {
+            emit operationCompleted("decryptFile", false, "Invalid encrypted file format");
+            return false;
+        }
 
         // Decrypt the binary data
         QByteArray decryptedData = decryptBinary(encryptedData);
@@ -487,16 +529,32 @@ bool PostQuantumCrypto::decryptFile(const QString &inputFilePath, const QString 
             return false;
         }
 
-        // Write decrypted data as binary
+        // Open output file
         QFile outputFile(outputFilePath);
         if (!outputFile.open(QIODevice::WriteOnly)) {
             emit operationCompleted("decryptFile", false, QString("Cannot open output file: %1").arg(outputFilePath));
             return false;
         }
 
-        outputFile.write(decryptedData);
+        // Write decrypted data in chunks to show progress
+        const qint64 chunkSize = 1024 * 1024; // 1MB chunks
+        qint64 bytesWritten = 0;
+
+        while (bytesWritten < decryptedData.size()) {
+            qint64 remaining = decryptedData.size() - bytesWritten;
+            qint64 writeSize = qMin(chunkSize, remaining);
+
+            QByteArray chunk = decryptedData.mid(bytesWritten, writeSize);
+            outputFile.write(chunk);
+
+            bytesWritten += writeSize;
+            int progress = decryptedData.size() > 0 ? (bytesWritten * 100) / decryptedData.size() : 0;
+            emit operationProgress("decryptFile", progress, QString("Decrypting... %1%").arg(progress));
+        }
+
         outputFile.close();
 
+        emit operationProgress("decryptFile", 100, "Decryption completed");
         emit operationCompleted("decryptFile", true, QString("File decrypted: %1 -> %2").arg(inputFilePath, outputFilePath));
         return true;
     } catch (const std::exception &e) {

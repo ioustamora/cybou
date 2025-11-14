@@ -275,6 +275,14 @@ signals:
      */
     void operationCompleted(const QString &operation, bool success, const QString &result);
 
+    /**
+     * @brief Emitted during file operations to report progress
+     * @param operation Name of the operation (encryptFile/decryptFile)
+     * @param progress Progress percentage (0-100)
+     * @param status Current status message
+     */
+    void operationProgress(const QString &operation, int progress, const QString &status);
+
 private:
     // Kyber-1024 key pair for key encapsulation
     uint8_t *m_kyberPublicKey = nullptr;  ///< Kyber public key

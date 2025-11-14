@@ -548,24 +548,12 @@ CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.o: /media/user/F
   /usr/local/include/oqs/sig_uov.h
 
 CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/test_signatures.cpp \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QByteArray \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/QCoreApplication \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QCryptographicHash \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/QDebug \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QFile \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QMap \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QObject \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QString \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QTextStream \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QVariant \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/QVariantMap \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/q17memory.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20functional.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20iterator.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20memory.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20type_traits.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20utility.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/q23utility.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qalloc.h \
@@ -597,15 +585,12 @@ CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/te
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication_platform.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcryptographichash.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdeadlinetimer.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qeventloop.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qexceptionhandling.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/qfile.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/qfiledevice.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qflags.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qforeach.h \
@@ -616,7 +601,6 @@ CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/te
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qglobalstatic.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qhash.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qhashfunctions.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/qiodevice.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qiterable.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qiterator.h \
@@ -647,7 +631,6 @@ CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/te
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qshareddata_impl.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/qspan.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstdlibdetection.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstring.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringalgorithms.h \
@@ -686,13 +669,10 @@ CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/te
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtypeinfo.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtypes.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qutf8stringview.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/qvariant.h \
-  /home/user/Qt/6.10.0/gcc_64/include/QtCore/qvariantmap.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qvarlengtharray.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qversiontagging.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qxptype_traits.h \
   /home/user/Qt/6.10.0/gcc_64/include/QtCore/qyieldcpu.h \
-  /media/user/FILES/cybou/src/crypto/PostQuantumCrypto.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -733,10 +713,6 @@ CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/te
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
-  /usr/include/c++/14/bits/fs_dir.h \
-  /usr/include/c++/14/bits/fs_fwd.h \
-  /usr/include/c++/14/bits/fs_ops.h \
-  /usr/include/c++/14/bits/fs_path.h \
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
@@ -824,7 +800,6 @@ CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/te
   /usr/include/c++/14/bits/utility.h \
   /usr/include/c++/14/bits/vector.tcc \
   /usr/include/c++/14/bits/version.h \
-  /usr/include/c++/14/cassert \
   /usr/include/c++/14/cctype \
   /usr/include/c++/14/cerrno \
   /usr/include/c++/14/charconv \
@@ -832,7 +807,6 @@ CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/te
   /usr/include/c++/14/climits \
   /usr/include/c++/14/clocale \
   /usr/include/c++/14/cmath \
-  /usr/include/c++/14/codecvt \
   /usr/include/c++/14/compare \
   /usr/include/c++/14/concepts \
   /usr/include/c++/14/cstddef \
@@ -853,7 +827,6 @@ CMakeFiles/test_signatures.dir/test_signatures.cpp.o: /media/user/FILES/cybou/te
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
-  /usr/include/c++/14/filesystem \
   /usr/include/c++/14/format \
   /usr/include/c++/14/functional \
   /usr/include/c++/14/initializer_list \

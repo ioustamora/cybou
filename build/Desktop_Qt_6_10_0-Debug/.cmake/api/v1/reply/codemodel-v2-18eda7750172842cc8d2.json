@@ -203,7 +203,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "test_encryption::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_encryption-Debug-2c07748f2e3b402f57ae.json",
+					"jsonFile" : "target-test_encryption-Debug-0c241512a8471aff8b6c.json",
 					"name" : "test_encryption",
 					"projectIndex" : 0
 				},
@@ -223,23 +223,23 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "test_mnemonic::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_mnemonic-Debug-e3e01a8e9356ae26058a.json",
-					"name" : "test_mnemonic",
+					"id" : "test_signatures::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatures-Debug-b440b25fa4f179f5232f.json",
+					"name" : "test_signatures",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "test_mnemonic_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_mnemonic_autogen-Debug-d42f5ca7d27cc031e081.json",
-					"name" : "test_mnemonic_autogen",
+					"id" : "test_signatures_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatures_autogen-Debug-adcd35df78272b73f374.json",
+					"name" : "test_signatures_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "test_mnemonic_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_mnemonic_autogen_timestamp_deps-Debug-0a27e4ea6f0310493be7.json",
-					"name" : "test_mnemonic_autogen_timestamp_deps",
+					"id" : "test_signatures_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatures_autogen_timestamp_deps-Debug-1bb42fef29d469f36a4a.json",
+					"name" : "test_signatures_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
 			]
