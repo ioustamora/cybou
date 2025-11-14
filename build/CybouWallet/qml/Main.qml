@@ -81,6 +81,43 @@ ApplicationWindow {
         }
     }
 
+    FileDialog {
+        id: saveSignatureDialog
+        title: "Save signature to file"
+        fileMode: FileDialog.SaveFile
+        nameFilters: ["cybousig files (*.cybousig)", "Text files (*.txt)", "All files (*)"]
+        defaultSuffix: "cybousig"
+        onAccepted: {
+            var filePath = saveSignatureDialog.selectedFile.toString().replace("file://", "")
+            if (PostQuantumCrypto.saveEncryptedTextToFile(signatureOutput.text, filePath)) {
+                signatureStatus.text = qsTr("💾 Signature saved to: ") + filePath
+                signatureStatus.color = "green"
+            } else {
+                signatureStatus.text = qsTr("❌ Failed to save signature!")
+                signatureStatus.color = "red"
+            }
+        }
+    }
+
+    FileDialog {
+        id: loadSignatureDialog
+        title: "Load signature from file"
+        fileMode: FileDialog.OpenFile
+        nameFilters: ["cybousig files (*.cybousig)", "Text files (*.txt)", "All files (*)"]
+        onAccepted: {
+            var filePath = loadSignatureDialog.selectedFile.toString().replace("file://", "")
+            var content = PostQuantumCrypto.loadEncryptedTextFromFile(filePath)
+            if (content !== "") {
+                signatureOutput.text = content
+                signatureStatus.text = qsTr("📂 Signature loaded from: ") + filePath
+                signatureStatus.color = "blue"
+            } else {
+                signatureStatus.text = qsTr("❌ Failed to load signature!")
+                signatureStatus.color = "red"
+            }
+        }
+    }
+
     SplashDialog {
         id: splashDialog
         modal: true
@@ -129,6 +166,9 @@ ApplicationWindow {
         }
         TabButton {
             text: qsTr("📁 File Encryption")
+        }
+        TabButton {
+            text: qsTr("✍️ Digital Signatures")
         }
         TabButton {
             text: qsTr("🔑 Key Management")
@@ -459,6 +499,201 @@ ApplicationWindow {
                 wrapMode: Text.WordWrap
                 width: parent.width
                 color: "#666666"
+            }
+        }
+
+        // Digital Signatures Tab
+        Column {
+            spacing: 20
+            width: parent.width * 0.9
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            Layout.topMargin: 20
+
+            Label {
+                text: qsTr("✍️ Digital Signatures")
+                font.pixelSize: 20
+                font.bold: true
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
+            }
+
+            Label {
+                text: qsTr("🔏 'Sign your messages with quantum-resistant cryptography - authenticity guaranteed!'")
+                font.pixelSize: 12
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
+                color: "#666666"
+                font.italic: true
+            }
+
+            // Message Input Section
+            Column {
+                spacing: 8
+                width: parent.width
+
+                Label {
+                    text: qsTr("📝 Message to Sign:")
+                    font.bold: true
+                }
+
+                TextArea {
+                    id: signMessageText
+                    width: parent.width
+                    height: 100
+                    placeholderText: qsTr("Enter message to sign with ML-DSA-65...")
+                    wrapMode: TextArea.Wrap
+                    background: Rectangle {
+                        color: "#fff3cd"  // Light yellow background for signing
+                        border.color: "#ffc107"
+                        border.width: 1
+                        radius: 4
+                    }
+                }
+
+                Row {
+                    spacing: 10
+                    anchors.right: parent.right
+
+                    Button {
+                        text: qsTr("📋 Paste")
+                        onClicked: {
+                            signMessageText.text = ""
+                            signMessageText.paste()
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("🗑️ Clear")
+                        onClicked: {
+                            signMessageText.text = ""
+                        }
+                    }
+                }
+            }
+
+            Row {
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Button {
+                    text: qsTr("✍️ Sign Message")
+                    onClicked: {
+                        if (signMessageText.text.trim() !== "") {
+                            var signature = PostQuantumCrypto.signMessage(signMessageText.text)
+                            if (signature !== "") {
+                                signatureOutput.text = signature
+                                signatureStatus.text = qsTr("✅ Message signed successfully with ML-DSA-65!")
+                                signatureStatus.color = "green"
+                            } else {
+                                signatureStatus.text = qsTr("❌ Signing failed!")
+                                signatureStatus.color = "red"
+                            }
+                        } else {
+                            signatureStatus.text = qsTr("⚠️ Please enter a message to sign")
+                            signatureStatus.color = "orange"
+                        }
+                    }
+                }
+
+                Button {
+                    text: qsTr("🔍 Verify Signature")
+                    onClicked: {
+                        if (signMessageText.text.trim() !== "" && signatureOutput.text.trim() !== "") {
+                            var publicKey = PostQuantumCrypto.publicKey
+                            if (publicKey !== "") {
+                                var isValid = PostQuantumCrypto.verifySignature(signMessageText.text, signatureOutput.text, publicKey)
+                                if (isValid) {
+                                    signatureStatus.text = qsTr("✅ Signature verified successfully!")
+                                    signatureStatus.color = "green"
+                                } else {
+                                    signatureStatus.text = qsTr("❌ Signature verification failed!")
+                                    signatureStatus.color = "red"
+                                }
+                            } else {
+                                signatureStatus.text = qsTr("❌ No public key available for verification")
+                                signatureStatus.color = "red"
+                            }
+                        } else {
+                            signatureStatus.text = qsTr("⚠️ Please enter both message and signature")
+                            signatureStatus.color = "orange"
+                        }
+                    }
+                }
+            }
+
+            // Signature Output Section
+            Column {
+                spacing: 8
+                width: parent.width
+
+                Label {
+                    text: qsTr("🔏 Signature (ML-DSA-65):")
+                    font.bold: true
+                }
+
+                TextArea {
+                    id: signatureOutput
+                    width: parent.width
+                    height: 80
+                    placeholderText: qsTr("Signature will appear here...")
+                    readOnly: true
+                    wrapMode: TextArea.Wrap
+                    selectByMouse: true
+                    background: Rectangle {
+                        color: signatureOutput.text === "" ? "#f8f9fa" : "#e8f5e8"  // Light green when signature present
+                        border.color: signatureOutput.text === "" ? "#dee2e6" : "#4caf50"
+                        border.width: 1
+                        radius: 4
+                    }
+                }
+
+                Row {
+                    spacing: 10
+                    anchors.right: parent.right
+
+                    Button {
+                        text: qsTr("📋 Copy Signature")
+                        enabled: signatureOutput.text !== ""
+                        onClicked: {
+                            signatureOutput.selectAll()
+                            signatureOutput.copy()
+                            signatureStatus.text = qsTr("📋 Signature copied to clipboard!")
+                            signatureStatus.color = "blue"
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("💾 Save Signature")
+                        enabled: signatureOutput.text !== ""
+                        onClicked: {
+                            saveSignatureDialog.open()
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("📂 Load Signature")
+                        onClicked: {
+                            loadSignatureDialog.open()
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("🗑️ Clear")
+                        onClicked: {
+                            signatureOutput.text = ""
+                            signatureStatus.text = ""
+                        }
+                    }
+                }
+            }
+
+            Label {
+                id: signatureStatus
+                text: qsTr("ML-DSA-65 signatures provide quantum-resistant authenticity for your messages.")
+                wrapMode: Text.WordWrap
+                width: parent.width
+                color: "#666666"
+                font.pixelSize: 12
             }
         }
 

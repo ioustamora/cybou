@@ -318,17 +318,17 @@ test_encryption/fast:
 .PHONY : test_encryption/fast
 
 #=============================================================================
-# Target rules for targets named test_mnemonic
+# Target rules for targets named test_signatures
 
 # Build rule for target.
-test_mnemonic: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_mnemonic
-.PHONY : test_mnemonic
+test_signatures: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_signatures
+.PHONY : test_signatures
 
 # fast build rule for target.
-test_mnemonic/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/build
-.PHONY : test_mnemonic/fast
+test_signatures/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/build
+.PHONY : test_signatures/fast
 
 #=============================================================================
 # Target rules for targets named generate_qmlls_build_ini_file
@@ -435,30 +435,30 @@ test_encryption_autogen/fast:
 .PHONY : test_encryption_autogen/fast
 
 #=============================================================================
-# Target rules for targets named test_mnemonic_autogen_timestamp_deps
+# Target rules for targets named test_signatures_autogen_timestamp_deps
 
 # Build rule for target.
-test_mnemonic_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_mnemonic_autogen_timestamp_deps
-.PHONY : test_mnemonic_autogen_timestamp_deps
+test_signatures_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_signatures_autogen_timestamp_deps
+.PHONY : test_signatures_autogen_timestamp_deps
 
 # fast build rule for target.
-test_mnemonic_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic_autogen_timestamp_deps.dir/build.make CMakeFiles/test_mnemonic_autogen_timestamp_deps.dir/build
-.PHONY : test_mnemonic_autogen_timestamp_deps/fast
+test_signatures_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures_autogen_timestamp_deps.dir/build.make CMakeFiles/test_signatures_autogen_timestamp_deps.dir/build
+.PHONY : test_signatures_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named test_mnemonic_autogen
+# Target rules for targets named test_signatures_autogen
 
 # Build rule for target.
-test_mnemonic_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_mnemonic_autogen
-.PHONY : test_mnemonic_autogen
+test_signatures_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_signatures_autogen
+.PHONY : test_signatures_autogen
 
 # fast build rule for target.
-test_mnemonic_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic_autogen.dir/build.make CMakeFiles/test_mnemonic_autogen.dir/build
-.PHONY : test_mnemonic_autogen/fast
+test_signatures_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures_autogen.dir/build.make CMakeFiles/test_signatures_autogen.dir/build
+.PHONY : test_signatures_autogen/fast
 
 build/.qt/rcc/qrc_cybou_raw_qml_0.o: build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o
 .PHONY : build/.qt/rcc/qrc_cybou_raw_qml_0.o
@@ -635,7 +635,6 @@ src/crypto/MnemonicEngine.o: src/crypto/MnemonicEngine.cpp.o
 src/crypto/MnemonicEngine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_encryption.dir/build.make CMakeFiles/test_encryption.dir/src/crypto/MnemonicEngine.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/src/crypto/MnemonicEngine.cpp.o
 .PHONY : src/crypto/MnemonicEngine.cpp.o
 
 src/crypto/MnemonicEngine.i: src/crypto/MnemonicEngine.cpp.i
@@ -645,7 +644,6 @@ src/crypto/MnemonicEngine.i: src/crypto/MnemonicEngine.cpp.i
 src/crypto/MnemonicEngine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_encryption.dir/build.make CMakeFiles/test_encryption.dir/src/crypto/MnemonicEngine.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/src/crypto/MnemonicEngine.cpp.i
 .PHONY : src/crypto/MnemonicEngine.cpp.i
 
 src/crypto/MnemonicEngine.s: src/crypto/MnemonicEngine.cpp.s
@@ -655,7 +653,6 @@ src/crypto/MnemonicEngine.s: src/crypto/MnemonicEngine.cpp.s
 src/crypto/MnemonicEngine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_encryption.dir/build.make CMakeFiles/test_encryption.dir/src/crypto/MnemonicEngine.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/src/crypto/MnemonicEngine.cpp.s
 .PHONY : src/crypto/MnemonicEngine.cpp.s
 
 src/crypto/PostQuantumCrypto.o: src/crypto/PostQuantumCrypto.cpp.o
@@ -665,7 +662,7 @@ src/crypto/PostQuantumCrypto.o: src/crypto/PostQuantumCrypto.cpp.o
 src/crypto/PostQuantumCrypto.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_encryption.dir/build.make CMakeFiles/test_encryption.dir/src/crypto/PostQuantumCrypto.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/src/crypto/PostQuantumCrypto.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.o
 .PHONY : src/crypto/PostQuantumCrypto.cpp.o
 
 src/crypto/PostQuantumCrypto.i: src/crypto/PostQuantumCrypto.cpp.i
@@ -675,7 +672,7 @@ src/crypto/PostQuantumCrypto.i: src/crypto/PostQuantumCrypto.cpp.i
 src/crypto/PostQuantumCrypto.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_encryption.dir/build.make CMakeFiles/test_encryption.dir/src/crypto/PostQuantumCrypto.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/src/crypto/PostQuantumCrypto.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.i
 .PHONY : src/crypto/PostQuantumCrypto.cpp.i
 
 src/crypto/PostQuantumCrypto.s: src/crypto/PostQuantumCrypto.cpp.s
@@ -685,7 +682,7 @@ src/crypto/PostQuantumCrypto.s: src/crypto/PostQuantumCrypto.cpp.s
 src/crypto/PostQuantumCrypto.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_encryption.dir/build.make CMakeFiles/test_encryption.dir/src/crypto/PostQuantumCrypto.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/src/crypto/PostQuantumCrypto.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.s
 .PHONY : src/crypto/PostQuantumCrypto.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -760,53 +757,53 @@ test_encryption_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_encryption.dir/build.make CMakeFiles/test_encryption.dir/test_encryption_autogen/mocs_compilation.cpp.s
 .PHONY : test_encryption_autogen/mocs_compilation.cpp.s
 
-test_mnemonic.o: test_mnemonic.cpp.o
-.PHONY : test_mnemonic.o
+test_signatures.o: test_signatures.cpp.o
+.PHONY : test_signatures.o
 
 # target to build an object file
-test_mnemonic.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/test_mnemonic.cpp.o
-.PHONY : test_mnemonic.cpp.o
+test_signatures.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/test_signatures.cpp.o
+.PHONY : test_signatures.cpp.o
 
-test_mnemonic.i: test_mnemonic.cpp.i
-.PHONY : test_mnemonic.i
+test_signatures.i: test_signatures.cpp.i
+.PHONY : test_signatures.i
 
 # target to preprocess a source file
-test_mnemonic.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/test_mnemonic.cpp.i
-.PHONY : test_mnemonic.cpp.i
+test_signatures.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/test_signatures.cpp.i
+.PHONY : test_signatures.cpp.i
 
-test_mnemonic.s: test_mnemonic.cpp.s
-.PHONY : test_mnemonic.s
+test_signatures.s: test_signatures.cpp.s
+.PHONY : test_signatures.s
 
 # target to generate assembly for a file
-test_mnemonic.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/test_mnemonic.cpp.s
-.PHONY : test_mnemonic.cpp.s
+test_signatures.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/test_signatures.cpp.s
+.PHONY : test_signatures.cpp.s
 
-test_mnemonic_autogen/mocs_compilation.o: test_mnemonic_autogen/mocs_compilation.cpp.o
-.PHONY : test_mnemonic_autogen/mocs_compilation.o
+test_signatures_autogen/mocs_compilation.o: test_signatures_autogen/mocs_compilation.cpp.o
+.PHONY : test_signatures_autogen/mocs_compilation.o
 
 # target to build an object file
-test_mnemonic_autogen/mocs_compilation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/test_mnemonic_autogen/mocs_compilation.cpp.o
-.PHONY : test_mnemonic_autogen/mocs_compilation.cpp.o
+test_signatures_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/test_signatures_autogen/mocs_compilation.cpp.o
+.PHONY : test_signatures_autogen/mocs_compilation.cpp.o
 
-test_mnemonic_autogen/mocs_compilation.i: test_mnemonic_autogen/mocs_compilation.cpp.i
-.PHONY : test_mnemonic_autogen/mocs_compilation.i
+test_signatures_autogen/mocs_compilation.i: test_signatures_autogen/mocs_compilation.cpp.i
+.PHONY : test_signatures_autogen/mocs_compilation.i
 
 # target to preprocess a source file
-test_mnemonic_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/test_mnemonic_autogen/mocs_compilation.cpp.i
-.PHONY : test_mnemonic_autogen/mocs_compilation.cpp.i
+test_signatures_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/test_signatures_autogen/mocs_compilation.cpp.i
+.PHONY : test_signatures_autogen/mocs_compilation.cpp.i
 
-test_mnemonic_autogen/mocs_compilation.s: test_mnemonic_autogen/mocs_compilation.cpp.s
-.PHONY : test_mnemonic_autogen/mocs_compilation.s
+test_signatures_autogen/mocs_compilation.s: test_signatures_autogen/mocs_compilation.cpp.s
+.PHONY : test_signatures_autogen/mocs_compilation.s
 
 # target to generate assembly for a file
-test_mnemonic_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mnemonic.dir/build.make CMakeFiles/test_mnemonic.dir/test_mnemonic_autogen/mocs_compilation.cpp.s
-.PHONY : test_mnemonic_autogen/mocs_compilation.cpp.s
+test_signatures_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_signatures.dir/build.make CMakeFiles/test_signatures.dir/test_signatures_autogen/mocs_compilation.cpp.s
+.PHONY : test_signatures_autogen/mocs_compilation.cpp.s
 
 # Help Target
 help:
@@ -838,11 +835,11 @@ help:
 	@echo "... module_cybou_aotstats_target"
 	@echo "... test_encryption_autogen"
 	@echo "... test_encryption_autogen_timestamp_deps"
-	@echo "... test_mnemonic_autogen"
-	@echo "... test_mnemonic_autogen_timestamp_deps"
+	@echo "... test_signatures_autogen"
+	@echo "... test_signatures_autogen_timestamp_deps"
 	@echo "... cybou"
 	@echo "... test_encryption"
-	@echo "... test_mnemonic"
+	@echo "... test_signatures"
 	@echo "... build/.qt/rcc/qrc_cybou_raw_qml_0.o"
 	@echo "... build/.qt/rcc/qrc_cybou_raw_qml_0.i"
 	@echo "... build/.qt/rcc/qrc_cybou_raw_qml_0.s"
@@ -879,12 +876,12 @@ help:
 	@echo "... test_encryption_autogen/mocs_compilation.o"
 	@echo "... test_encryption_autogen/mocs_compilation.i"
 	@echo "... test_encryption_autogen/mocs_compilation.s"
-	@echo "... test_mnemonic.o"
-	@echo "... test_mnemonic.i"
-	@echo "... test_mnemonic.s"
-	@echo "... test_mnemonic_autogen/mocs_compilation.o"
-	@echo "... test_mnemonic_autogen/mocs_compilation.i"
-	@echo "... test_mnemonic_autogen/mocs_compilation.s"
+	@echo "... test_signatures.o"
+	@echo "... test_signatures.i"
+	@echo "... test_signatures.s"
+	@echo "... test_signatures_autogen/mocs_compilation.o"
+	@echo "... test_signatures_autogen/mocs_compilation.i"
+	@echo "... test_signatures_autogen/mocs_compilation.s"
 .PHONY : help
 
 

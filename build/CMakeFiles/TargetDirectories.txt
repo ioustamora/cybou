@@ -10,7 +10,7 @@
 /media/user/FILES/cybou/build/CMakeFiles/cybou_copy_qml.dir
 /media/user/FILES/cybou/build/CMakeFiles/cybou_copy_res.dir
 /media/user/FILES/cybou/build/CMakeFiles/test_encryption.dir
-/media/user/FILES/cybou/build/CMakeFiles/test_mnemonic.dir
+/media/user/FILES/cybou/build/CMakeFiles/test_signatures.dir
 /media/user/FILES/cybou/build/CMakeFiles/generate_qmlls_build_ini_file.dir
 /media/user/FILES/cybou/build/CMakeFiles/module_cybou_aotstats_target.dir
 /media/user/FILES/cybou/build/CMakeFiles/all_aotstats.dir
@@ -25,5 +25,5 @@
 /media/user/FILES/cybou/build/CMakeFiles/cybou_autogen.dir
 /media/user/FILES/cybou/build/CMakeFiles/test_encryption_autogen_timestamp_deps.dir
 /media/user/FILES/cybou/build/CMakeFiles/test_encryption_autogen.dir
-/media/user/FILES/cybou/build/CMakeFiles/test_mnemonic_autogen_timestamp_deps.dir
-/media/user/FILES/cybou/build/CMakeFiles/test_mnemonic_autogen.dir
+/media/user/FILES/cybou/build/CMakeFiles/test_signatures_autogen_timestamp_deps.dir
+/media/user/FILES/cybou/build/CMakeFiles/test_signatures_autogen.dir

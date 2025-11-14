@@ -85,11 +85,11 @@ target_link_libraries(test_encryption
 )
 target_include_directories(test_encryption PRIVATE src)
 
-add_executable(test_mnemonic test_mnemonic.cpp src/crypto/MnemonicEngine.cpp src/crypto/PostQuantumCrypto.cpp)
-target_link_libraries(test_mnemonic
+add_executable(test_signatures test_signatures.cpp src/crypto/PostQuantumCrypto.cpp)
+target_link_libraries(test_signatures
     PRIVATE
         Qt6::Core
         PkgConfig::OQS
         OpenSSL::Crypto
 )
-target_include_directories(test_mnemonic PRIVATE src)
+target_include_directories(test_signatures PRIVATE src)

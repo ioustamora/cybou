@@ -6,13 +6,14 @@ A comprehensive file and text encryption tool with post-quantum cryptographic se
 
 - **BIP-39 Mnemonic Generation**: Generate cryptographically secure 12-24 word mnemonics using the complete standard word list
 - **Post-Quantum Encryption**: Kyber-1024 key encapsulation mechanism for quantum-resistant encryption
-- **Digital Signatures**: ML-DSA-65 signatures for authenticating encrypted content
+- **Digital Signatures**: ML-DSA-65 signatures for authenticating encrypted content and verifying message integrity
 - **File/Folder Encryption**: Encrypt individual files or entire directory trees with `.cybou` extension
 - **Text Encryption**: Secure text encryption/decryption with visual operation indicators
 - **Key Derivation**: Hierarchical key derivation from mnemonics for different cryptographic operations
 - **Qt 6 QML Interface**: Modern, responsive GUI with file browsers and copy/paste functionality
 - **Public Key Management**: Display, copy, and save public keys in `.cyboukey` format
-- **Visual Feedback**: Color-coded text fields (green for encryption, red for decryption)
+- **Signature Management**: Create, verify, and save digital signatures in `.cybousig` format
+- **Visual Feedback**: Color-coded text fields for operation feedback (encryption green, decryption red, signing yellow)
 - **Cross-platform**: Built with CMake for Linux, Windows, and macOS
 
 ## Cryptographic Security
@@ -39,7 +40,6 @@ A comprehensive file and text encryption tool with post-quantum cryptographic se
 - Proper file format handling (.cybou encrypted files, .cyboukey public keys)
 
 🚧 **In Development:**
-- Digital signature creation and verification UI
 - Key import/export functionality
 - Batch processing for multiple files
 - Progress indicators for large file operations
@@ -139,7 +139,8 @@ cd build
 4. **Text Decryption**: Enter encrypted text, click decrypt (red output field indicates success)
 5. **File Encryption**: Select file/folder, encrypt to `.cybou` format
 6. **File Decryption**: Select `.cybou` file, decrypt to original format
-7. **Key Management**: View, copy, or save public keys in `.cyboukey` format
+7. **Digital Signatures**: Sign messages with ML-DSA-65, verify signatures for authenticity
+8. **Key Management**: View, copy, or save public keys in `.cyboukey` format
 
 ### File Encryption:
 - Drag and drop files/folders onto the application or use file browser
@@ -152,6 +153,12 @@ cd build
 - Output field changes color: green for encryption results, red for decryption results
 - Copy/paste/clear buttons for easy text management
 - Base64 encoded output for safe text transmission
+
+### Digital Signatures:
+- Sign text messages with ML-DSA-65 quantum-resistant signatures
+- Verify signatures to ensure message authenticity and integrity
+- Save/load signatures in `.cybousig` format
+- Yellow background for signature input fields
 
 ## Architecture
 
@@ -175,7 +182,7 @@ cd build
 
 - **Encrypted Files**: `.cybou` extension with Base64-encoded binary data
 - **Key Files**: `.cyboukey` for shared encryption public keys
-- **Signature Files**: `.cybousig` for ML-DSA-65 signatures (planned)
+- **Signature Files**: `.cybousig` for ML-DSA-65 signatures
 - **Archive Format**: Custom format supporting folder encryption with metadata
 
 ## API Usage
@@ -194,6 +201,10 @@ QString decrypted = crypto.decryptText(encrypted);
 // File operations
 bool success = crypto.encryptFile("/path/to/input.txt", "/path/to/output.cybou");
 bool success = crypto.decryptFile("/path/to/input.cybou", "/path/to/output.txt");
+
+// Digital signatures
+QString signature = crypto.signMessage("Hello World");
+bool isValid = crypto.verifySignature("Hello World", signature, crypto.publicKey());
 
 // Key management
 QString publicKey = crypto.publicKey(); // Combined Kyber + ML-DSA-65 key
@@ -269,9 +280,9 @@ make
 - **Decryption**: Reverse process with same deterministic key derivation
 
 ### UI Architecture
-- **Main.qml**: Tabbed interface (Text/File/Key management) with operation tracking
+- **Main.qml**: Tabbed interface (Text/File/Signatures/Key management) with operation tracking
 - **SplashDialog.qml**: Mnemonic setup with copy/paste/clear functionality
-- **Color Coding**: Visual feedback system (blue input, green encrypt, red decrypt, gray neutral)
+- **Color Coding**: Visual feedback system (blue input, green encrypt, red decrypt, yellow signing)
 
 ## Contributing
 

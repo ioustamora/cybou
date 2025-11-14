@@ -63,11 +63,18 @@ public:
     /**
      * @brief Validates a mnemonic phrase against BIP-39 rules
      *
-     * Checks that all words are in the BIP-39 word list and the word count is valid.
-     * Note: Full checksum validation is TODO - currently only validates vocabulary and count.
+     * Performs complete BIP-39 validation including:
+     * - Checks that the word count is valid (12, 15, 18, 21, or 24)
+     * - Verifies all words are present in the BIP-39 word list
+     * - Validates the checksum to ensure the mnemonic was generated correctly
+     *
+     * The checksum validation reverses the generation process:
+     * 1. Convert words to indices and then to 11-bit binary chunks
+     * 2. Extract entropy and checksum from the concatenated bits
+     * 3. Verify checksum matches SHA-256 hash of entropy
      *
      * @param mnemonic The mnemonic phrase to validate
-     * @return bool True if the mnemonic is valid
+     * @return bool True if the mnemonic passes complete BIP-39 validation
      */
     Q_INVOKABLE bool validateMnemonic(const QString &mnemonic) const;
 

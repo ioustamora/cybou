@@ -36,7 +36,7 @@
                         ],
                         "index": 4,
                         "isConst": true,
-                        "lineNumber": 72,
+                        "lineNumber": 79,
                         "name": "validateMnemonic",
                         "returnType": "bool"
                     },
@@ -49,7 +49,7 @@
                             }
                         ],
                         "index": 5,
-                        "lineNumber": 83,
+                        "lineNumber": 90,
                         "name": "setMnemonic",
                         "returnType": "bool"
                     },
@@ -62,7 +62,7 @@
                             }
                         ],
                         "index": 6,
-                        "lineNumber": 95,
+                        "lineNumber": 102,
                         "name": "deriveKeyFromMnemonic",
                         "returnType": "void"
                     },
@@ -70,7 +70,7 @@
                         "access": "public",
                         "index": 7,
                         "isCloned": true,
-                        "lineNumber": 95,
+                        "lineNumber": 102,
                         "name": "deriveKeyFromMnemonic",
                         "returnType": "void"
                     }
@@ -128,14 +128,14 @@
                     {
                         "access": "public",
                         "index": 0,
-                        "lineNumber": 136,
+                        "lineNumber": 143,
                         "name": "mnemonicChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 1,
-                        "lineNumber": 141,
+                        "lineNumber": 148,
                         "name": "keyDerived",
                         "returnType": "void"
                     }

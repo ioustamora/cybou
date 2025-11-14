@@ -162,15 +162,18 @@ QString MnemonicEngine::generateMnemonic(int words)
 /**
  * @brief Validates a mnemonic phrase against BIP-39 rules
  *
- * Performs basic validation of a mnemonic phrase:
+ * Performs complete BIP-39 validation including:
  * - Checks that the word count is valid (12, 15, 18, 21, or 24)
  * - Verifies all words are present in the BIP-39 word list
+ * - Validates the checksum to ensure the mnemonic was generated correctly
  *
- * Note: Full checksum validation is not yet implemented (TODO).
- * Currently only validates vocabulary and word count.
+ * The checksum validation reverses the generation process:
+ * 1. Convert words to indices and then to 11-bit binary chunks
+ * 2. Extract entropy and checksum from the concatenated bits
+ * 3. Verify checksum matches SHA-256 hash of entropy
  *
  * @param mnemonic The mnemonic phrase to validate
- * @return bool True if the mnemonic passes basic validation
+ * @return bool True if the mnemonic passes complete BIP-39 validation
  */
 bool MnemonicEngine::validateMnemonic(const QString &mnemonic) const
 {
@@ -186,17 +189,94 @@ bool MnemonicEngine::validateMnemonic(const QString &mnemonic) const
         return false; // Invalid word count
     }
 
-    // Verify all words exist in the BIP-39 word list
+    // Verify all words exist in the BIP-39 word list and get their indices
+    QVector<int> indices;
+    indices.reserve(wordCount);
     for (const QString &word : parts) {
-        if (!s_wordList.contains(word)) {
-            return false;
+        int index = s_wordList.indexOf(word);
+        if (index == -1) {
+            return false; // Word not in list
+        }
+        indices.append(index);
+    }
+
+    // BIP-39 checksum validation
+    // Each word represents 11 bits, total bits = wordCount * 11
+    const int totalBits = wordCount * 11;
+
+    // Calculate entropy and checksum bit lengths
+    static const QMap<int, QPair<int, int>> bitConfigMap = {
+        {12, {128, 4}},  // 128 bits entropy + 4 bits checksum
+        {15, {160, 5}},  // 160 bits entropy + 5 bits checksum
+        {18, {192, 6}},  // 192 bits entropy + 6 bits checksum
+        {21, {224, 7}},  // 224 bits entropy + 7 bits checksum
+        {24, {256, 8}}   // 256 bits entropy + 8 bits checksum
+    };
+
+    const auto [entropyBits, checksumBits] = bitConfigMap.value(wordCount);
+
+    // Convert word indices to binary string (11 bits per word, MSB first)
+    QString binaryString;
+    binaryString.reserve(totalBits);
+    for (int index : indices) {
+        // Convert index to 11-bit binary string (MSB first)
+        QString bits(11, '0');
+        for (int bit = 0; bit < 11; ++bit) {
+            if (index & (1 << (10 - bit))) {  // MSB first
+                bits[bit] = '1';
+            }
+        }
+        binaryString += bits;
+    }
+
+    // Verify we have the expected number of bits
+    if (binaryString.length() != totalBits) {
+        return false;
+    }
+
+    // Extract entropy (first entropyBits bits)
+    QString entropyBinary = binaryString.left(entropyBits);
+
+    // Extract checksum (next checksumBits bits)
+    QString checksumBinary = binaryString.mid(entropyBits, checksumBits);
+
+    // Convert entropy binary to bytes
+    const int entropyBytes = (entropyBits + 7) / 8; // Round up
+    QByteArray entropy(entropyBytes, 0);
+
+    for (int byteIndex = 0; byteIndex < entropyBytes; ++byteIndex) {
+        quint8 byte = 0;
+        for (int bit = 0; bit < 8; ++bit) {
+            int bitIndex = byteIndex * 8 + bit;
+            if (bitIndex < entropyBits && entropyBinary[bitIndex] == '1') {
+                byte |= (1 << (7 - bit)); // MSB first in byte
+            }
+        }
+        entropy[byteIndex] = byte;
+    }
+
+    // Handle partial last byte (mask unused bits)
+    if (entropyBits % 8 != 0) {
+        const int usedBitsInLastByte = entropyBits % 8;
+        entropy[entropyBytes - 1] &= (0xFF << (8 - usedBitsInLastByte));
+    }
+
+    // Calculate expected checksum: SHA-256 of entropy, take first checksumBits bits
+    QByteArray hash = QCryptographicHash::hash(entropy, QCryptographicHash::Sha256);
+    const quint8 checksumByte = hash[0];
+
+    // Extract expected checksum bits (MSB first)
+    QString expectedChecksumBinary;
+    for (int bit = 0; bit < checksumBits; ++bit) {
+        if (checksumByte & (1 << (7 - bit))) {  // MSB first
+            expectedChecksumBinary += '1';
+        } else {
+            expectedChecksumBinary += '0';
         }
     }
 
-    // TODO: Implement full BIP-39 checksum validation
-    // This would involve reversing the generation process to verify
-    // that the checksum matches the entropy
-    return true;
+    // Compare checksums
+    return checksumBinary == expectedChecksumBinary;
 }
 
 /**
