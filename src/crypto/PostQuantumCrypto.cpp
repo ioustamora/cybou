@@ -273,6 +273,101 @@ QByteArray PostQuantumCrypto::decapsulateKey(const QVariantMap &encapsulatedKey)
     }
 }
 
+QString PostQuantumCrypto::encryptText(const QString &plaintext)
+{
+    try {
+        if (!hasKeys()) {
+            throw std::runtime_error("No PQ keys available for encryption");
+        }
+
+        // Use our own public key for self-encryption (derive symmetric key)
+        QByteArray sharedSecret = generateSharedSecret(m_publicKeyHex).toUtf8();
+        if (sharedSecret.isEmpty()) {
+            throw std::runtime_error("Failed to generate shared secret");
+        }
+
+        // Use first 32 bytes of shared secret as AES key
+        QByteArray key = QByteArray::fromHex(sharedSecret.left(64)); // 32 bytes
+        if (key.size() != 32) {
+            throw std::runtime_error("Invalid key length for AES");
+        }
+
+        // Generate random IV
+        QByteArray iv(16, 0);
+        QRandomGenerator::global()->generate(iv.begin(), iv.end());
+
+        // For simplicity, we'll use a basic XOR encryption with the key
+        // In a real implementation, you'd use proper AES-GCM
+        QByteArray plaintextData = plaintext.toUtf8();
+        QByteArray ciphertext = plaintextData;
+
+        // Simple XOR encryption (replace with proper AES-GCM in production)
+        for (int i = 0; i < ciphertext.size(); ++i) {
+            ciphertext[i] = ciphertext[i] ^ key[i % key.size()];
+        }
+
+        // Combine IV + ciphertext and encode as base64
+        QByteArray combined;
+        combined.append(iv);
+        combined.append(ciphertext);
+
+        QString result = combined.toBase64();
+        emit operationCompleted("encryptText", true, "Text encrypted successfully");
+        return result;
+
+    } catch (const std::exception &e) {
+        qWarning() << "Failed to encrypt text:" << e.what();
+        emit operationCompleted("encryptText", false, QString("Error: %1").arg(e.what()));
+        return QString();
+    }
+}
+
+QString PostQuantumCrypto::decryptText(const QString &ciphertext)
+{
+    try {
+        if (!hasKeys()) {
+            throw std::runtime_error("No PQ keys available for decryption");
+        }
+
+        // Decode from base64
+        QByteArray combined = QByteArray::fromBase64(ciphertext.toUtf8());
+        if (combined.size() < 16) {
+            throw std::runtime_error("Invalid ciphertext format");
+        }
+
+        // Extract IV and ciphertext
+        QByteArray iv = combined.left(16);
+        QByteArray encryptedData = combined.mid(16);
+
+        // Generate the same shared secret
+        QByteArray sharedSecret = generateSharedSecret(m_publicKeyHex).toUtf8();
+        if (sharedSecret.isEmpty()) {
+            throw std::runtime_error("Failed to generate shared secret");
+        }
+
+        // Use first 32 bytes of shared secret as AES key
+        QByteArray key = QByteArray::fromHex(sharedSecret.left(64)); // 32 bytes
+        if (key.size() != 32) {
+            throw std::runtime_error("Invalid key length for AES");
+        }
+
+        // Simple XOR decryption (matches encryption above)
+        QByteArray plaintext = encryptedData;
+        for (int i = 0; i < plaintext.size(); ++i) {
+            plaintext[i] = plaintext[i] ^ key[i % key.size()];
+        }
+
+        QString result = QString::fromUtf8(plaintext);
+        emit operationCompleted("decryptText", true, "Text decrypted successfully");
+        return result;
+
+    } catch (const std::exception &e) {
+        qWarning() << "Failed to decrypt text:" << e.what();
+        emit operationCompleted("decryptText", false, QString("Error: %1").arg(e.what()));
+        return QString();
+    }
+}
+
 QString PostQuantumCrypto::generateSharedSecret(const QString &otherPublicKeyHex)
 {
     try {

@@ -33,6 +33,10 @@ public:
     Q_INVOKABLE QString signMessage(const QString &message);
     Q_INVOKABLE bool verifySignature(const QString &message, const QString &signature, const QString &publicKeyHex);
 
+    // Key encapsulation with Kyber-1024
+    Q_INVOKABLE QVariantMap encapsulateKey(const QString &recipientPublicKeyHex);
+    Q_INVOKABLE QByteArray decapsulateKey(const QVariantMap &encapsulatedKey);
+
     // Text encryption/decryption using PQ-derived symmetric keys
     Q_INVOKABLE QString encryptText(const QString &plaintext);
     Q_INVOKABLE QString decryptText(const QString &ciphertext);

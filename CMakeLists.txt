@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(qpq-encryptor LANGUAGES CXX)
+project(cybou LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,27 +16,27 @@ find_package(OpenSSL REQUIRED)
 
 qt_standard_project_setup()
 
-qt_add_executable(qpq-encryptor
+qt_add_executable(cybou
     src/main.cpp
     src/crypto/MnemonicEngine.cpp
     src/crypto/PostQuantumCrypto.cpp
     resources.qrc
 )
 
-qt_add_qml_module(qpq-encryptor
-    URI QPQWallet
+qt_add_qml_module(cybou
+    URI CybouWallet
     VERSION 1.0
     QML_FILES
         qml/Main.qml
         qml/SplashDialog.qml
 )
 
-set_target_properties(qpq-encryptor PROPERTIES
+set_target_properties(cybou PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(qpq-encryptor
+target_link_libraries(cybou
     PRIVATE
         Qt6::Core
         Qt6::Gui
@@ -47,7 +47,7 @@ target_link_libraries(qpq-encryptor
         OpenSSL::Crypto
 )
 
-install(TARGETS qpq-encryptor
+install(TARGETS cybou
     BUNDLE DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )

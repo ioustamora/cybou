@@ -239,11 +239,35 @@
                         "access": "public",
                         "arguments": [
                             {
-                                "name": "otherPublicKeyHex",
+                                "name": "plaintext",
                                 "type": "QString"
                             }
                         ],
                         "index": 10,
+                        "name": "encryptText",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "ciphertext",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 11,
+                        "name": "decryptText",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "otherPublicKeyHex",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 12,
                         "name": "generateSharedSecret",
                         "returnType": "QString"
                     }
