@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import QtQuick.Dialogs 1.3
+import QtQuick.Dialogs
 import CybouWallet 1.0
 
 ApplicationWindow {
@@ -18,10 +18,9 @@ ApplicationWindow {
     FileDialog {
         id: fileDialog
         title: "Select file or folder to encrypt/decrypt"
-        selectFolder: false
-        selectMultiple: false
+        fileMode: FileDialog.OpenFile
         onAccepted: {
-            filePath.text = fileDialog.fileUrl.toString().replace("file://", "")
+            filePath.text = fileDialog.selectedFile.toString().replace("file://", "")
         }
     }
 
