@@ -1,9 +1,0 @@
-module QPQWallet
-linktarget qpostquantumwalletplugin
-optional plugin qpostquantumwalletplugin
-classname QPQWalletPlugin
-typeinfo qpostquantumwallet.qmltypes
-prefer :/QPQWallet/
-Main 1.0 qml/Main.qml
-SplashDialog 1.0 qml/SplashDialog.qml
-

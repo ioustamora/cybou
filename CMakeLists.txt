@@ -7,8 +7,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 6.5 COMPONENTS Core Gui Qml Quick QuickControls2 REQUIRED)
 
 # Find liboqs for post-quantum cryptography
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(OQS REQUIRED IMPORTED_TARGET liboqs)
+# find_package(PkgConfig REQUIRED)
+# pkg_check_modules(OQS REQUIRED IMPORTED_TARGET liboqs)
+set(OQS_LIBRARIES /home/user/liboqs/build/lib/liboqs.so)
 
 # Find OpenSSL
 find_package(OpenSSL REQUIRED)
@@ -42,7 +43,7 @@ target_link_libraries(qpq-encryptor
         Qt6::Qml
         Qt6::Quick
         Qt6::QuickControls2
-        PkgConfig::OQS
+        ${OQS_LIBRARIES}
         OpenSSL::Crypto
 )
 

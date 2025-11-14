@@ -323,6 +323,7 @@ qpq-encryptor: CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qpq-encryptor_raw_
 qpq-encryptor: CMakeFiles/qpq-encryptor.dir/build.make
 qpq-encryptor: CMakeFiles/qpq-encryptor.dir/compiler_depend.ts
 qpq-encryptor: /usr/lib/x86_64-linux-gnu/libQt6QuickControls2.so.6.8.2
+qpq-encryptor: /home/user/liboqs/build/lib/liboqs.so
 qpq-encryptor: /usr/lib/x86_64-linux-gnu/libcrypto.so
 qpq-encryptor: /usr/lib/x86_64-linux-gnu/libQt6Quick.so.6.8.2
 qpq-encryptor: /usr/lib/x86_64-linux-gnu/libQt6QmlMeta.so.6.8.2
@@ -335,7 +336,6 @@ qpq-encryptor: /usr/lib/x86_64-linux-gnu/libQt6QmlModels.so.6.8.2
 qpq-encryptor: /usr/lib/x86_64-linux-gnu/libQt6Qml.so.6.8.2
 qpq-encryptor: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.8.2
 qpq-encryptor: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.8.2
-qpq-encryptor: /usr/local/lib/liboqs.a
 qpq-encryptor: CMakeFiles/qpq-encryptor.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable qpq-encryptor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qpq-encryptor.dir/link.txt --verbose=$(VERBOSE)

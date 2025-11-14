@@ -377,22 +377,10 @@ XKB_INCLUDE_DIR:PATH=XKB_INCLUDE_DIR-NOTFOUND
 XKB_LIBRARY:FILEPATH=XKB_LIBRARY-NOTFOUND
 
 //Path to a library.
-pkgcfg_lib_OQS_oqs:FILEPATH=/usr/local/lib/liboqs.a
-
-//Path to a library.
 pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypto.so
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib/x86_64-linux-gnu/libssl.so
-
-//Value Computed by CMake
-qpostquantumwallet_BINARY_DIR:STATIC=/home/user/dev/qtest/build
-
-//Value Computed by CMake
-qpostquantumwallet_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-qpostquantumwallet_SOURCE_DIR:STATIC=/home/user/dev/qtest
 
 //Value Computed by CMake
 qpq-encryptor_BINARY_DIR:STATIC=/home/user/dev/qtest/build
@@ -575,8 +563,6 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libOpenGL.so][/usr/lib/x86_64-linux-gnu/libGLX.so][/usr/include][c ][v()]
 //Details about finding OpenSSL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcrypto.so][/usr/include][c ][v3.5.1()]
-//Details about finding PkgConfig
-FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.1()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding WrapAtomic
@@ -619,41 +605,6 @@ OPENSSL_CRYPTO_LIBRARY-ADVANCED:INTERNAL=1
 OPENSSL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENSSL_SSL_LIBRARY
 OPENSSL_SSL_LIBRARY-ADVANCED:INTERNAL=1
-OQS_CFLAGS:INTERNAL=-I/usr/local/include;-I/usr/include
-OQS_CFLAGS_I:INTERNAL=
-OQS_CFLAGS_OTHER:INTERNAL=
-OQS_FOUND:INTERNAL=1
-OQS_INCLUDEDIR:INTERNAL=/usr/local/include
-OQS_INCLUDE_DIRS:INTERNAL=/usr/local/include;/usr/include
-OQS_LDFLAGS:INTERNAL=-L/usr/local/lib;-loqs
-OQS_LDFLAGS_OTHER:INTERNAL=
-OQS_LIBDIR:INTERNAL=/usr/local/lib
-OQS_LIBRARIES:INTERNAL=oqs
-OQS_LIBRARY_DIRS:INTERNAL=/usr/local/lib
-OQS_LIBS:INTERNAL=
-OQS_LIBS_L:INTERNAL=
-OQS_LIBS_OTHER:INTERNAL=
-OQS_LIBS_PATHS:INTERNAL=
-OQS_MODULE_NAME:INTERNAL=liboqs
-OQS_PREFIX:INTERNAL=/usr/local
-OQS_STATIC_CFLAGS:INTERNAL=-I/usr/local/include;-I/usr/include
-OQS_STATIC_CFLAGS_I:INTERNAL=
-OQS_STATIC_CFLAGS_OTHER:INTERNAL=
-OQS_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include;/usr/include
-OQS_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib;-loqs;-L/usr/lib/x86_64-linux-gnu;-lssl;-L/usr/lib/x86_64-linux-gnu;-lz;-lzstd;-ldl;-pthread;-lcrypto;-lz;-lzstd;-ldl;-pthread
-OQS_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-pthread
-OQS_STATIC_LIBDIR:INTERNAL=
-OQS_STATIC_LIBRARIES:INTERNAL=oqs;ssl;z;zstd;dl;crypto;z;zstd;dl
-OQS_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu
-OQS_STATIC_LIBS:INTERNAL=
-OQS_STATIC_LIBS_L:INTERNAL=
-OQS_STATIC_LIBS_OTHER:INTERNAL=
-OQS_STATIC_LIBS_PATHS:INTERNAL=
-OQS_VERSION:INTERNAL=0.15.0-rc2
-OQS_liboqs_INCLUDEDIR:INTERNAL=
-OQS_liboqs_LIBDIR:INTERNAL=
-OQS_liboqs_PREFIX:INTERNAL=
-OQS_liboqs_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_ARGN
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
@@ -1483,14 +1434,10 @@ _OPENSSL_openssl_INCLUDEDIR:INTERNAL=
 _OPENSSL_openssl_LIBDIR:INTERNAL=
 _OPENSSL_openssl_PREFIX:INTERNAL=
 _OPENSSL_openssl_VERSION:INTERNAL=
-__pkg_config_arguments_OQS:INTERNAL=REQUIRED;IMPORTED_TARGET;liboqs
 __pkg_config_arguments__OPENSSL:INTERNAL=QUIET;openssl
-__pkg_config_checked_OQS:INTERNAL=1
 __pkg_config_checked_PKG_XKB:INTERNAL=1
 __pkg_config_checked__OPENSSL:INTERNAL=1
 __qt_qml_macros_module_base_dir:INTERNAL=/usr/lib/x86_64-linux-gnu/cmake/Qt6Qml
-//ADVANCED property for variable: pkgcfg_lib_OQS_oqs
-pkgcfg_lib_OQS_oqs-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib__OPENSSL_crypto
 pkgcfg_lib__OPENSSL_crypto-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib__OPENSSL_ssl

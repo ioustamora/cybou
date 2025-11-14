@@ -1,2 +1,0 @@
-/home/user/dev/qtest/build/qpostquantumwallet_autogen/include/../MZW7AAAGJO/moc_MnemonicEngine.cpp.json
-/home/user/dev/qtest/build/qpostquantumwallet_autogen/include/../MZW7AAAGJO/moc_PostQuantumCrypto.cpp.json

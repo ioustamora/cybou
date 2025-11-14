@@ -1,18 +1,20 @@
-qpostquantumwallet: \
+qpq-encryptor: \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o \
-  CMakeFiles/qpostquantumwallet.dir/qpostquantumwallet_autogen/mocs_compilation.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/src/main.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/src/crypto/MnemonicEngine.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/src/crypto/PostQuantumCrypto.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/qpostquantumwallet_qmltyperegistrations.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/build/.qt/rcc/qrc_qmake_QPQWallet.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/build/.rcc/qmlcache/qpostquantumwallet_qmlcache_loader.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/build/.rcc/qmlcache/qpostquantumwallet_qml/Main_qml.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/build/.rcc/qmlcache/qpostquantumwallet_qml/SplashDialog_qml.cpp.o \
-  CMakeFiles/qpostquantumwallet.dir/build/.qt/rcc/qrc_qpostquantumwallet_raw_qml_0.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/qpq-encryptor_autogen/mocs_compilation.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/src/main.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/src/crypto/MnemonicEngine.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/src/crypto/PostQuantumCrypto.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/qpq-encryptor_qmltyperegistrations.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qmake_QPQWallet.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.o \
+  CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.o \
   /usr/lib/x86_64-linux-gnu/libQt6QuickControls2.so.6.8.2 \
+  /home/user/liboqs/build/lib/liboqs.so \
+  /usr/lib/x86_64-linux-gnu/libcrypto.so \
   /usr/lib/x86_64-linux-gnu/libQt6Quick.so.6.8.2 \
   /usr/lib/x86_64-linux-gnu/libQt6QmlMeta.so.6.8.2 \
   /usr/lib/x86_64-linux-gnu/libQt6QmlWorkerScript.so.6.8.2 \
@@ -50,6 +52,8 @@ qpostquantumwallet: \
   /usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a \
   /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o \
+  /usr/lib/x86_64-linux-gnu/libcrypto.so \
+  /lib64/ld-linux-x86-64.so.2 \
   /lib/x86_64-linux-gnu/libEGL.so.1 \
   /lib/x86_64-linux-gnu/libfontconfig.so.1 \
   /lib/x86_64-linux-gnu/libX11.so.6 \
@@ -65,7 +69,6 @@ qpostquantumwallet: \
   /lib/x86_64-linux-gnu/libz.so.1 \
   /lib/x86_64-linux-gnu/libm.so.6 \
   /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.8.2 \
-  /lib64/ld-linux-x86-64.so.2 \
   /lib/x86_64-linux-gnu/libicui18n.so.76 \
   /lib/x86_64-linux-gnu/libicuuc.so.76 \
   /lib/x86_64-linux-gnu/libdouble-conversion.so.3 \
@@ -124,7 +127,6 @@ qpostquantumwallet: \
   /lib/x86_64-linux-gnu/libunistring.so.5 \
   /lib/x86_64-linux-gnu/libhogweed.so.6 \
   /lib/x86_64-linux-gnu/libgmp.so.10 \
-  /lib/x86_64-linux-gnu/libcrypto.so.3 \
   /lib/x86_64-linux-gnu/libp11-kit.so.0 \
   /lib/x86_64-linux-gnu/libtasn1.so.6 \
   /lib/x86_64-linux-gnu/libsasl2.so.2 \
@@ -137,27 +139,31 @@ qpostquantumwallet: \
 
 /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o:
 
-CMakeFiles/qpostquantumwallet.dir/qpostquantumwallet_autogen/mocs_compilation.cpp.o:
+CMakeFiles/qpq-encryptor.dir/qpq-encryptor_autogen/mocs_compilation.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/src/main.cpp.o:
+CMakeFiles/qpq-encryptor.dir/src/main.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/src/crypto/MnemonicEngine.cpp.o:
+CMakeFiles/qpq-encryptor.dir/src/crypto/MnemonicEngine.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/src/crypto/PostQuantumCrypto.cpp.o:
+CMakeFiles/qpq-encryptor.dir/src/crypto/PostQuantumCrypto.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/qpostquantumwallet_qmltyperegistrations.cpp.o:
+CMakeFiles/qpq-encryptor.dir/qpq-encryptor_qmltyperegistrations.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/build/.qt/rcc/qrc_qmake_QPQWallet.cpp.o:
+CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qmake_QPQWallet.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/build/.rcc/qmlcache/qpostquantumwallet_qmlcache_loader.cpp.o:
+CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/build/.rcc/qmlcache/qpostquantumwallet_qml/Main_qml.cpp.o:
+CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/build/.rcc/qmlcache/qpostquantumwallet_qml/SplashDialog_qml.cpp.o:
+CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.o:
 
-CMakeFiles/qpostquantumwallet.dir/build/.qt/rcc/qrc_qpostquantumwallet_raw_qml_0.cpp.o:
+CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libQt6QuickControls2.so.6.8.2:
+
+/home/user/liboqs/build/lib/liboqs.so:
+
+/usr/lib/x86_64-linux-gnu/libcrypto.so:
 
 /usr/lib/x86_64-linux-gnu/libQt6Quick.so.6.8.2:
 
@@ -233,6 +239,10 @@ CMakeFiles/qpostquantumwallet.dir/build/.qt/rcc/qrc_qpostquantumwallet_raw_qml_0
 
 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o:
 
+/usr/lib/x86_64-linux-gnu/libcrypto.so:
+
+/lib64/ld-linux-x86-64.so.2:
+
 /lib/x86_64-linux-gnu/libEGL.so.1:
 
 /lib/x86_64-linux-gnu/libfontconfig.so.1:
@@ -262,8 +272,6 @@ CMakeFiles/qpostquantumwallet.dir/build/.qt/rcc/qrc_qpostquantumwallet_raw_qml_0
 /lib/x86_64-linux-gnu/libm.so.6:
 
 /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.8.2:
-
-/lib64/ld-linux-x86-64.so.2:
 
 /lib/x86_64-linux-gnu/libicui18n.so.76:
 
@@ -380,8 +388,6 @@ CMakeFiles/qpostquantumwallet.dir/build/.qt/rcc/qrc_qpostquantumwallet_raw_qml_0
 /lib/x86_64-linux-gnu/libhogweed.so.6:
 
 /lib/x86_64-linux-gnu/libgmp.so.10:
-
-/lib/x86_64-linux-gnu/libcrypto.so.3:
 
 /lib/x86_64-linux-gnu/libp11-kit.so.0:
 

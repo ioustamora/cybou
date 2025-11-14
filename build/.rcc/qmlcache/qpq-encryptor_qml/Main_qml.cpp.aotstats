@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot retrieve a non-object type by ID: splashDialog",
                         "functionName": "onCompleted",
                         "line": 14
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 30,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot find name mnemonicAccepted",
                         "functionName": "onMnemonicValidated",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 134,
+                        "durationMicroseconds": 135,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 34
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 37,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 114,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 36
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 18,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name mnemonicAccepted",
                         "functionName": "visible",
                         "line": 57
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 134,
+                        "durationMicroseconds": 153,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 58
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 55
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 69
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 98
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 106
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 129
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 50,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 137
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 18,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name mnemonicAccepted",
                         "functionName": "visible",
                         "line": 175
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 173

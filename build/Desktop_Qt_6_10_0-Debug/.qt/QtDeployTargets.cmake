@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_qpostquantumwallet_FILE /home/user/dev/qtest/build/Desktop_Qt_6_10_0-Debug/qpostquantumwallet)
-set(__QT_DEPLOY_TARGET_qpostquantumwallet_TYPE EXECUTABLE)

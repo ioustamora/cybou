@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/QPQWallet">/home/user/dev/qtest/build</file>
-
-  </qresource>
-</RCC>
