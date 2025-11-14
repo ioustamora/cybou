@@ -61,6 +61,25 @@ ApplicationWindow {
         }
     }
 
+    FileDialog {
+        id: savePublicKeyDialog
+        title: "Save public key to file"
+        fileMode: FileDialog.SaveFile
+        nameFilters: ["cyboukey files (*.cyboukey)", "Text files (*.txt)", "All files (*)"]
+        defaultSuffix: "cyboukey"
+        onAccepted: {
+            var filePath = savePublicKeyDialog.selectedFile.toString().replace("file://", "")
+            // Save the public key to file
+            if (PostQuantumCrypto.saveEncryptedTextToFile(publicKeyDisplay.text, filePath)) {
+                keyStatus.text = qsTr("💾 Public key saved to: ") + filePath
+                keyStatus.color = "green"
+            } else {
+                keyStatus.text = qsTr("❌ Failed to save public key!")
+                keyStatus.color = "red"
+            }
+        }
+    }
+
     SplashDialog {
         id: splashDialog
         modal: true
@@ -484,6 +503,52 @@ ApplicationWindow {
                 }
             }
 
+            // Public Key Display Section
+            Column {
+                spacing: 8
+                width: parent.width
+
+                Label {
+                    text: qsTr("🔓 Public Key:")
+                    font.bold: true
+                }
+
+                TextArea {
+                    id: publicKeyDisplay
+                    width: parent.width
+                    height: 80
+                    placeholderText: qsTr("Public key will appear here...")
+                    readOnly: true
+                    wrapMode: TextArea.Wrap
+                    selectByMouse: true
+                    text: PostQuantumCrypto.hasKeys ? PostQuantumCrypto.publicKey : ""
+                }
+
+                Row {
+                    spacing: 10
+                    anchors.right: parent.right
+
+                    Button {
+                        text: qsTr("📋 Copy Public Key")
+                        enabled: publicKeyDisplay.text !== ""
+                        onClicked: {
+                            publicKeyDisplay.selectAll()
+                            publicKeyDisplay.copy()
+                            keyStatus.text = qsTr("📋 Public key copied to clipboard!")
+                            keyStatus.color = "blue"
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("💾 Save Public Key")
+                        enabled: publicKeyDisplay.text !== ""
+                        onClicked: {
+                            savePublicKeyDialog.open()
+                        }
+                    }
+                }
+            }
+
             Row {
                 spacing: 10
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -492,15 +557,22 @@ ApplicationWindow {
                     text: qsTr("🔄 Regenerate Keys")
                     onClicked: {
                         PostQuantumCrypto.generateKeys()
-                        keyStatus.text = "New PQ key pair generated successfully!"
+                        publicKeyDisplay.text = PostQuantumCrypto.publicKey
+                        keyStatus.text = "✅ New PQ key pair generated successfully!"
+                        keyStatus.color = "green"
                     }
                 }
 
                 Button {
-                    text: qsTr("� Export Public Key")
+                    text: qsTr("🔍 Show Public Key")
                     onClicked: {
                         if (PostQuantumCrypto.hasKeys) {
-                            keyStatus.text = "Public key: " + PostQuantumCrypto.publicKey.substring(0, 64) + "..."
+                            publicKeyDisplay.text = PostQuantumCrypto.publicKey
+                            keyStatus.text = "🔓 Public key displayed above"
+                            keyStatus.color = "blue"
+                        } else {
+                            keyStatus.text = "❌ No keys available"
+                            keyStatus.color = "red"
                         }
                     }
                 }
