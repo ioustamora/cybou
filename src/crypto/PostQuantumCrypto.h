@@ -4,6 +4,9 @@
 #include <QString>
 #include <QByteArray>
 #include <QVariantMap>
+#include <QFile>
+#include <QTextStream>
+#include <QCryptographicHash>
 
 extern "C" {
 #include <oqs/oqs.h>
@@ -41,6 +44,14 @@ public:
     Q_INVOKABLE QString encryptText(const QString &plaintext);
     Q_INVOKABLE QString decryptText(const QString &ciphertext);
 
+    // File operations for encrypted text
+    Q_INVOKABLE bool saveEncryptedTextToFile(const QString &content, const QString &filePath);
+    Q_INVOKABLE QString loadEncryptedTextFromFile(const QString &filePath);
+
+    // File encryption/decryption operations
+    Q_INVOKABLE bool encryptFile(const QString &inputFilePath, const QString &outputFilePath);
+    Q_INVOKABLE bool decryptFile(const QString &inputFilePath, const QString &outputFilePath);
+
     // Utility functions
     Q_INVOKABLE QString generateSharedSecret(const QString &otherPublicKeyHex);
 
@@ -71,4 +82,5 @@ private:
     QByteArray kyberDecapsulate(const QByteArray &ciphertext, const uint8_t *secretKey, size_t secretKeyLen);
     QByteArray dilithiumSign(const QByteArray &message, const uint8_t *secretKey, size_t secretKeyLen);
     bool dilithiumVerify(const QByteArray &message, const QByteArray &signature, const uint8_t *publicKey, size_t publicKeyLen);
+    QByteArray generateDeterministicKey();
 };

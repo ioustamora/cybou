@@ -143,7 +143,7 @@
         "classes": [
             {
                 "className": "PostQuantumCrypto",
-                "lineNumber": 15,
+                "lineNumber": 17,
                 "methods": [
                     {
                         "access": "public",
@@ -263,11 +263,71 @@
                         "access": "public",
                         "arguments": [
                             {
-                                "name": "otherPublicKeyHex",
+                                "name": "content",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "filePath",
                                 "type": "QString"
                             }
                         ],
                         "index": 12,
+                        "name": "saveEncryptedTextToFile",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filePath",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 13,
+                        "name": "loadEncryptedTextFromFile",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "inputFilePath",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "outputFilePath",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 14,
+                        "name": "encryptFile",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "inputFilePath",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "outputFilePath",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 15,
+                        "name": "decryptFile",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "otherPublicKeyHex",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 16,
                         "name": "generateSharedSecret",
                         "returnType": "QString"
                     }

@@ -149,6 +149,7 @@
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
+  /usr/include/c++/14/filesystem \
   /usr/include/c++/14/format \
   /usr/include/c++/14/functional \
   /usr/include/c++/14/initializer_list \
@@ -309,9 +310,11 @@
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QByteArray \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTextStream \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariantMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
@@ -347,6 +350,8 @@
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qexceptionhandling.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfloat16.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -357,6 +362,7 @@
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobalstatic.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qhashfunctions.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevicebase.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterable.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \

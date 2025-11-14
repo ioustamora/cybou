@@ -280,30 +280,24 @@ QString PostQuantumCrypto::encryptText(const QString &plaintext)
             throw std::runtime_error("No PQ keys available for encryption");
         }
 
-        // Use our own public key for self-encryption (derive symmetric key)
-        QByteArray sharedSecret = generateSharedSecret(m_publicKeyHex).toUtf8();
-        if (sharedSecret.isEmpty()) {
-            throw std::runtime_error("Failed to generate shared secret");
-        }
-
-        // Use first 32 bytes of shared secret as AES key
-        QByteArray key = QByteArray::fromHex(sharedSecret.left(64)); // 32 bytes
-        if (key.size() != 32) {
-            throw std::runtime_error("Invalid key length for AES");
+        // Generate a deterministic symmetric key from our PQ keys
+        QByteArray symmetricKey = generateDeterministicKey();
+        if (symmetricKey.size() != 32) {
+            throw std::runtime_error("Failed to generate symmetric key");
         }
 
         // Generate random IV
         QByteArray iv(16, 0);
         QRandomGenerator::global()->generate(iv.begin(), iv.end());
 
-        // For simplicity, we'll use a basic XOR encryption with the key
-        // In a real implementation, you'd use proper AES-GCM
+        // Convert plaintext to bytes
         QByteArray plaintextData = plaintext.toUtf8();
-        QByteArray ciphertext = plaintextData;
 
-        // Simple XOR encryption (replace with proper AES-GCM in production)
+        // Simple XOR encryption with deterministic key (for demo purposes)
+        // In production, use proper AES-GCM
+        QByteArray ciphertext = plaintextData;
         for (int i = 0; i < ciphertext.size(); ++i) {
-            ciphertext[i] = ciphertext[i] ^ key[i % key.size()];
+            ciphertext[i] = ciphertext[i] ^ symmetricKey[i % symmetricKey.size()];
         }
 
         // Combine IV + ciphertext and encode as base64
@@ -339,22 +333,16 @@ QString PostQuantumCrypto::decryptText(const QString &ciphertext)
         QByteArray iv = combined.left(16);
         QByteArray encryptedData = combined.mid(16);
 
-        // Generate the same shared secret
-        QByteArray sharedSecret = generateSharedSecret(m_publicKeyHex).toUtf8();
-        if (sharedSecret.isEmpty()) {
-            throw std::runtime_error("Failed to generate shared secret");
+        // Generate the SAME deterministic symmetric key
+        QByteArray symmetricKey = generateDeterministicKey();
+        if (symmetricKey.size() != 32) {
+            throw std::runtime_error("Failed to generate symmetric key");
         }
 
-        // Use first 32 bytes of shared secret as AES key
-        QByteArray key = QByteArray::fromHex(sharedSecret.left(64)); // 32 bytes
-        if (key.size() != 32) {
-            throw std::runtime_error("Invalid key length for AES");
-        }
-
-        // Simple XOR decryption (matches encryption above)
+        // XOR decryption (matches encryption above)
         QByteArray plaintext = encryptedData;
         for (int i = 0; i < plaintext.size(); ++i) {
-            plaintext[i] = plaintext[i] ^ key[i % key.size()];
+            plaintext[i] = plaintext[i] ^ symmetricKey[i % symmetricKey.size()];
         }
 
         QString result = QString::fromUtf8(plaintext);
@@ -366,6 +354,151 @@ QString PostQuantumCrypto::decryptText(const QString &ciphertext)
         emit operationCompleted("decryptText", false, QString("Error: %1").arg(e.what()));
         return QString();
     }
+}
+
+bool PostQuantumCrypto::saveEncryptedTextToFile(const QString &content, const QString &filePath)
+{
+    try {
+        QFile file(filePath);
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            emit operationCompleted("saveEncryptedTextToFile", false, QString("Cannot open file for writing: %1").arg(filePath));
+            return false;
+        }
+
+        QTextStream out(&file);
+        out << content;
+        file.close();
+
+        emit operationCompleted("saveEncryptedTextToFile", true, QString("Encrypted text saved to: %1").arg(filePath));
+        return true;
+    } catch (const std::exception &e) {
+        qWarning() << "Failed to save encrypted text:" << e.what();
+        emit operationCompleted("saveEncryptedTextToFile", false, QString("Error: %1").arg(e.what()));
+        return false;
+    }
+}
+
+QString PostQuantumCrypto::loadEncryptedTextFromFile(const QString &filePath)
+{
+    try {
+        QFile file(filePath);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            emit operationCompleted("loadEncryptedTextFromFile", false, QString("Cannot open file for reading: %1").arg(filePath));
+            return QString();
+        }
+
+        QTextStream in(&file);
+        QString content = in.readAll();
+        file.close();
+
+        emit operationCompleted("loadEncryptedTextFromFile", true, QString("Encrypted text loaded from: %1").arg(filePath));
+        return content;
+    } catch (const std::exception &e) {
+        qWarning() << "Failed to load encrypted text:" << e.what();
+        emit operationCompleted("loadEncryptedTextFromFile", false, QString("Error: %1").arg(e.what()));
+        return QString();
+    }
+}
+
+bool PostQuantumCrypto::encryptFile(const QString &inputFilePath, const QString &outputFilePath)
+{
+    try {
+        // Read input file
+        QFile inputFile(inputFilePath);
+        if (!inputFile.open(QIODevice::ReadOnly)) {
+            emit operationCompleted("encryptFile", false, QString("Cannot open input file: %1").arg(inputFilePath));
+            return false;
+        }
+
+        QByteArray fileData = inputFile.readAll();
+        inputFile.close();
+
+        // Encrypt the file data
+        QString encryptedData = encryptText(QString::fromUtf8(fileData));
+
+        // Write encrypted data to output file
+        QFile outputFile(outputFilePath);
+        if (!outputFile.open(QIODevice::WriteOnly)) {
+            emit operationCompleted("encryptFile", false, QString("Cannot open output file: %1").arg(outputFilePath));
+            return false;
+        }
+
+        QTextStream out(&outputFile);
+        out << encryptedData;
+        outputFile.close();
+
+        emit operationCompleted("encryptFile", true, QString("File encrypted: %1 -> %2").arg(inputFilePath, outputFilePath));
+        return true;
+    } catch (const std::exception &e) {
+        qWarning() << "Failed to encrypt file:" << e.what();
+        emit operationCompleted("encryptFile", false, QString("Error: %1").arg(e.what()));
+        return false;
+    }
+}
+
+bool PostQuantumCrypto::decryptFile(const QString &inputFilePath, const QString &outputFilePath)
+{
+    try {
+        // Read encrypted file
+        QFile inputFile(inputFilePath);
+        if (!inputFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            emit operationCompleted("decryptFile", false, QString("Cannot open input file: %1").arg(inputFilePath));
+            return false;
+        }
+
+        QTextStream in(&inputFile);
+        QString encryptedData = in.readAll();
+        inputFile.close();
+
+        // Decrypt the data
+        QString decryptedData = decryptText(encryptedData);
+        if (decryptedData.isEmpty()) {
+            emit operationCompleted("decryptFile", false, "Decryption failed - invalid file or key");
+            return false;
+        }
+
+        // Write decrypted data to output file
+        QFile outputFile(outputFilePath);
+        if (!outputFile.open(QIODevice::WriteOnly)) {
+            emit operationCompleted("decryptFile", false, QString("Cannot open output file: %1").arg(outputFilePath));
+            return false;
+        }
+
+        outputFile.write(decryptedData.toUtf8());
+        outputFile.close();
+
+        emit operationCompleted("decryptFile", true, QString("File decrypted: %1 -> %2").arg(inputFilePath, outputFilePath));
+        return true;
+    } catch (const std::exception &e) {
+        qWarning() << "Failed to decrypt file:" << e.what();
+        emit operationCompleted("decryptFile", false, QString("Error: %1").arg(e.what()));
+        return false;
+    }
+}
+
+    return result;
+}
+
+QByteArray PostQuantumCrypto::generateDeterministicKey()
+{
+    // Create a deterministic key from our PQ keys using SHA-256
+    // This ensures the same key is generated for encryption/decryption
+    QByteArray keyMaterial;
+
+    // Combine Kyber and Dilithium keys
+    if (m_kyberSecretKey) {
+        keyMaterial.append(reinterpret_cast<char*>(m_kyberSecretKey), OQS_KEM_kyber_1024_length_secret_key);
+    }
+    if (m_dilithiumSecretKey) {
+        keyMaterial.append(reinterpret_cast<char*>(m_dilithiumSecretKey), OQS_SIG_ml_dsa_65_length_secret_key);
+    }
+
+    // Add a fixed salt for key derivation
+    keyMaterial.append("cybou_pq_key_derivation_salt_2024");
+
+    // Hash to get a 32-byte key
+    QByteArray hash = QCryptographicHash::hash(keyMaterial, QCryptographicHash::Sha256);
+    return hash;
 }
 
 QString PostQuantumCrypto::generateSharedSecret(const QString &otherPublicKeyHex)

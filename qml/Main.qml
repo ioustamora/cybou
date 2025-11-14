@@ -24,6 +24,43 @@ ApplicationWindow {
         }
     }
 
+    FileDialog {
+        id: saveTextDialog
+        title: "Save encrypted text as .cybou file"
+        fileMode: FileDialog.SaveFile
+        nameFilters: ["cybou files (*.cybou)", "All files (*)"]
+        defaultSuffix: "cybou"
+        onAccepted: {
+            var filePath = saveTextDialog.selectedFile.toString().replace("file://", "")
+            if (PostQuantumCrypto.saveEncryptedTextToFile(outputText.text, filePath)) {
+                textStatus.text = qsTr("💾 Text saved to: ") + filePath
+                textStatus.color = "green"
+            } else {
+                textStatus.text = qsTr("❌ Failed to save file!")
+                textStatus.color = "red"
+            }
+        }
+    }
+
+    FileDialog {
+        id: loadTextDialog
+        title: "Load .cybou file to decrypt"
+        fileMode: FileDialog.OpenFile
+        nameFilters: ["cybou files (*.cybou)", "All files (*)"]
+        onAccepted: {
+            var filePath = loadTextDialog.selectedFile.toString().replace("file://", "")
+            var content = PostQuantumCrypto.loadEncryptedTextFromFile(filePath)
+            if (content !== "") {
+                inputText.text = content
+                textStatus.text = qsTr("📂 File loaded: ") + filePath
+                textStatus.color = "blue"
+            } else {
+                textStatus.text = qsTr("❌ Failed to load file!")
+                textStatus.color = "red"
+            }
+        }
+    }
+
     SplashDialog {
         id: splashDialog
         modal: true
@@ -109,12 +146,43 @@ ApplicationWindow {
                 font.italic: true
             }
 
-            TextArea {
-                id: inputText
+            // Input Section
+            Column {
+                spacing: 8
                 width: parent.width
-                height: 120
-                placeholderText: qsTr("Enter text to encrypt... (Your secrets are quantum-safe here! 🔐)")
-                wrapMode: TextArea.Wrap
+
+                Label {
+                    text: qsTr("📝 Input Text:")
+                    font.bold: true
+                }
+
+                TextArea {
+                    id: inputText
+                    width: parent.width
+                    height: 100
+                    placeholderText: qsTr("Enter text to encrypt... (Your secrets are quantum-safe here! 🔐)")
+                    wrapMode: TextArea.Wrap
+                }
+
+                Row {
+                    spacing: 10
+                    anchors.right: parent.right
+
+                    Button {
+                        text: qsTr("📋 Paste")
+                        onClicked: {
+                            inputText.text = ""
+                            inputText.paste()
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("🗑️ Clear")
+                        onClicked: {
+                            inputText.text = ""
+                        }
+                    }
+                }
             }
 
             Row {
@@ -125,28 +193,109 @@ ApplicationWindow {
                     text: qsTr("🔐 Encrypt Text")
                     onClicked: {
                         if (inputText.text.trim() !== "") {
-                            outputText.text = PostQuantumCrypto.encryptText(inputText.text)
+                            var result = PostQuantumCrypto.encryptText(inputText.text)
+                            if (result !== "") {
+                                outputText.text = result
+                                textStatus.text = qsTr("✅ Text encrypted successfully!")
+                                textStatus.color = "green"
+                            } else {
+                                textStatus.text = qsTr("❌ Encryption failed!")
+                                textStatus.color = "red"
+                            }
+                        } else {
+                            textStatus.text = qsTr("⚠️ Please enter text to encrypt")
+                            textStatus.color = "orange"
                         }
                     }
                 }
 
                 Button {
-                    text: qsTr("� Decrypt Text")
+                    text: qsTr("🔓 Decrypt Text")
                     onClicked: {
                         if (inputText.text.trim() !== "") {
-                            outputText.text = PostQuantumCrypto.decryptText(inputText.text)
+                            var result = PostQuantumCrypto.decryptText(inputText.text)
+                            if (result !== "") {
+                                outputText.text = result
+                                textStatus.text = qsTr("✅ Text decrypted successfully!")
+                                textStatus.color = "green"
+                            } else {
+                                textStatus.text = qsTr("❌ Decryption failed!")
+                                textStatus.color = "red"
+                            }
+                        } else {
+                            textStatus.text = qsTr("⚠️ Please enter text to decrypt")
+                            textStatus.color = "orange"
                         }
                     }
                 }
             }
 
-            TextArea {
-                id: outputText
+            // Output Section
+            Column {
+                spacing: 8
                 width: parent.width
-                height: 120
-                placeholderText: qsTr("Encrypted/decrypted result will appear here...")
-                readOnly: true
-                wrapMode: TextArea.Wrap
+
+                Label {
+                    text: qsTr("📄 Output Text:")
+                    font.bold: true
+                }
+
+                TextArea {
+                    id: outputText
+                    width: parent.width
+                    height: 100
+                    placeholderText: qsTr("Encrypted/decrypted result will appear here...")
+                    readOnly: true
+                    wrapMode: TextArea.Wrap
+                    selectByMouse: true
+                }
+
+                Row {
+                    spacing: 10
+                    anchors.right: parent.right
+
+                    Button {
+                        text: qsTr("📋 Copy")
+                        enabled: outputText.text !== ""
+                        onClicked: {
+                            outputText.selectAll()
+                            outputText.copy()
+                            textStatus.text = qsTr("📋 Copied to clipboard!")
+                            textStatus.color = "blue"
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("💾 Save as .cybou")
+                        enabled: outputText.text !== ""
+                        onClicked: {
+                            saveTextDialog.open()
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("📂 Load .cybou")
+                        onClicked: {
+                            loadTextDialog.open()
+                        }
+                    }
+
+                    Button {
+                        text: qsTr("🗑️ Clear")
+                        onClicked: {
+                            outputText.text = ""
+                            textStatus.text = ""
+                        }
+                    }
+                }
+            }
+
+            Label {
+                id: textStatus
+                text: ""
+                wrapMode: Text.WordWrap
+                width: parent.width
+                font.pixelSize: 12
             }
         }
 
@@ -203,9 +352,23 @@ ApplicationWindow {
                     text: qsTr("🔐 Encrypt File/Folder")
                     onClicked: {
                         if (filePath.text.trim() !== "") {
-                            fileStatus.text = "Encrypting: " + filePath.text
-                            // TODO: Implement file encryption
-                            fileStatus.text = "Encryption completed successfully!"
+                            // Generate output path with .cybou extension
+                            var inputPath = filePath.text
+                            var outputPath = inputPath + ".cybou"
+
+                            fileStatus.text = "Encrypting: " + inputPath + " -> " + outputPath
+                            fileStatus.color = "blue"
+
+                            if (PostQuantumCrypto.encryptFile(inputPath, outputPath)) {
+                                fileStatus.text = "✅ Encryption completed: " + outputPath
+                                fileStatus.color = "green"
+                            } else {
+                                fileStatus.text = "❌ Encryption failed!"
+                                fileStatus.color = "red"
+                            }
+                        } else {
+                            fileStatus.text = "⚠️ Please select a file first"
+                            fileStatus.color = "orange"
                         }
                     }
                 }
@@ -214,9 +377,40 @@ ApplicationWindow {
                     text: qsTr("� Decrypt File/Folder")
                     onClicked: {
                         if (filePath.text.trim() !== "") {
-                            fileStatus.text = "Decrypting: " + filePath.text
-                            // TODO: Implement file decryption
-                            fileStatus.text = "Decryption completed successfully!"
+                            var inputPath = filePath.text
+
+                            // Check if it's a .cybou file
+                            if (!inputPath.endsWith(".cybou")) {
+                                fileStatus.text = "⚠️ Selected file is not a .cybou encrypted file"
+                                fileStatus.color = "orange"
+                                return
+                            }
+
+                            // Generate output path by removing .cybou and adding _decrypted
+                            var baseName = inputPath.substring(0, inputPath.length - 6) // Remove .cybou
+                            var outputPath = baseName + "_decrypted"
+
+                            // If the original file had an extension, restore it
+                            var lastDot = baseName.lastIndexOf(".")
+                            if (lastDot !== -1) {
+                                var namePart = baseName.substring(0, lastDot)
+                                var extPart = baseName.substring(lastDot)
+                                outputPath = namePart + "_decrypted" + extPart
+                            }
+
+                            fileStatus.text = "Decrypting: " + inputPath + " -> " + outputPath
+                            fileStatus.color = "blue"
+
+                            if (PostQuantumCrypto.decryptFile(inputPath, outputPath)) {
+                                fileStatus.text = "✅ Decryption completed: " + outputPath
+                                fileStatus.color = "green"
+                            } else {
+                                fileStatus.text = "❌ Decryption failed!"
+                                fileStatus.color = "red"
+                            }
+                        } else {
+                            fileStatus.text = "⚠️ Please select a .cybou file first"
+                            fileStatus.color = "orange"
                         }
                     }
                 }
