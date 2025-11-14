@@ -198,9 +198,41 @@ crypto.generateKeyPair();
 QString encrypted = crypto.encryptText("Hello World");
 QString decrypted = crypto.decryptText(encrypted);
 
-// File operations
-bool success = crypto.encryptFile("/path/to/input.txt", "/path/to/output.cybou");
+// File operations with progress reporting
+bool success = crypto.encryptFile("/path/to/large_input.txt", "/path/to/output.cybou");
+// Progress signals emitted: operationProgress("encryptFile", progress, status)
+
 bool success = crypto.decryptFile("/path/to/input.cybou", "/path/to/output.txt");
+// Progress signals emitted: operationProgress("decryptFile", progress, status)
+```
+
+## Progress Indicators
+
+cybou provides real-time progress feedback for file operations:
+
+### Progress Reporting
+- **Visual Progress Bars**: Real-time progress bars during encryption/decryption
+- **Status Updates**: Detailed status messages showing current operation phase
+- **Non-blocking UI**: Operations run without freezing the interface
+- **Chunked Processing**: Large files processed in 1MB chunks to prevent memory issues
+
+### Progress Signals
+```cpp
+// Connect to progress signals in QML
+Connections {
+    target: PostQuantumCrypto
+    function onOperationProgress(operation, progress, status) {
+        // operation: "encryptFile" or "decryptFile"
+        // progress: 0-100 percentage
+        // status: descriptive status message
+    }
+}
+```
+
+### Performance Features
+- **Memory Efficient**: Files processed in chunks rather than loading entirely into memory
+- **Responsive UI**: Progress updates keep the interface responsive during long operations
+- **Cancellation Support**: UI buttons disabled during operations to prevent conflicts
 
 // Digital signatures
 QString signature = crypto.signMessage("Hello World");
