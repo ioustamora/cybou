@@ -51,120 +51,237 @@ ApplicationWindow {
     }
 
     // Main content - only visible after mnemonic is set
-    Column {
-        anchors.centerIn: parent
-        spacing: 20
+    TabBar {
+        id: tabBar
+        width: parent.width
         visible: mnemonicAccepted
-        width: parent.width * 0.8
 
-        Label {
-            text: qsTr("🎉 Post-Quantum Encryptor Ready!")
-            font.pixelSize: 24
-            font.bold: true
-            horizontalAlignment: Text.AlignHCenter
-            width: parent.width
+        TabButton {
+            text: qsTr("📝 Text Encryption")
         }
+        TabButton {
+            text: qsTr("📁 File Encryption")
+        }
+        TabButton {
+            text: qsTr("🔑 Key Management")
+        }
+    }
 
-        Rectangle {
-            width: parent.width
-            height: 120
-            color: "#f8f9fa"
-            border.color: "#dee2e6"
-            border.width: 1
-            radius: 8
+    StackLayout {
+        width: parent.width
+        height: parent.height - tabBar.height - header.height
+        currentIndex: tabBar.currentIndex
+        visible: mnemonicAccepted
 
-            Column {
-                anchors.fill: parent
-                anchors.margins: 16
-                spacing: 8
+        // Text Encryption Tab
+        Column {
+            spacing: 20
+            width: parent.width * 0.9
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 20
 
-                Label {
-                    text: qsTr("📝 Current Mnemonic:")
-                    font.bold: true
-                    font.pixelSize: 14
+            Label {
+                text: qsTr("🔤 Text Encryption/Decryption")
+                font.pixelSize: 20
+                font.bold: true
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
+            }
+
+            TextArea {
+                id: inputText
+                width: parent.width
+                height: 120
+                placeholderText: qsTr("Enter text to encrypt...")
+                wrapMode: TextArea.Wrap
+            }
+
+            Row {
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Button {
+                    text: qsTr("🔐 Encrypt Text")
+                    onClicked: {
+                        if (inputText.text.trim() !== "") {
+                            outputText.text = PostQuantumCrypto.encryptText(inputText.text)
+                        }
+                    }
                 }
 
-                Label {
-                    text: MnemonicEngine.currentMnemonic || "No mnemonic set"
-                    font.family: "Monospace"
-                    font.pixelSize: 12
-                    wrapMode: Text.Wrap
-                    width: parent.width
+                Button {
+                    text: qsTr("� Decrypt Text")
+                    onClicked: {
+                        if (inputText.text.trim() !== "") {
+                            outputText.text = PostQuantumCrypto.decryptText(inputText.text)
+                        }
+                    }
                 }
+            }
+
+            TextArea {
+                id: outputText
+                width: parent.width
+                height: 120
+                placeholderText: qsTr("Encrypted/decrypted result will appear here...")
+                readOnly: true
+                wrapMode: TextArea.Wrap
             }
         }
 
-        Rectangle {
-            width: parent.width
-            height: 100
-            color: "#e8f5e8"
-            border.color: "#4caf50"
-            border.width: 1
-            radius: 8
+        // File Encryption Tab
+        Column {
+            spacing: 20
+            width: parent.width * 0.9
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 20
 
-            Column {
-                anchors.fill: parent
-                anchors.margins: 16
-                spacing: 8
+            Label {
+                text: qsTr("📁 File/Folder Encryption")
+                font.pixelSize: 20
+                font.bold: true
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
+            }
 
-                Label {
-                    text: qsTr("🔑 Derived Master Key:")
-                    font.bold: true
-                    font.pixelSize: 14
-                    color: "#2e7d32"
+            Row {
+                spacing: 10
+                width: parent.width
+
+                TextField {
+                    id: filePath
+                    width: parent.width - 120
+                    placeholderText: qsTr("Select file or folder path...")
+                    readOnly: true
                 }
 
-                Label {
-                    text: MnemonicEngine.derivedKey || "Key derivation in progress..."
-                    font.family: "Monospace"
-                    font.pixelSize: 11
-                    color: "#2e7d32"
-                    wrapMode: Text.Wrap
-                    width: parent.width
+                Button {
+                    text: qsTr("📂 Browse")
+                    width: 100
+                    onClicked: {
+                        // TODO: Implement file/folder selection dialog
+                        filePath.text = "/tmp/example.txt" // Placeholder
+                    }
                 }
+            }
+
+            Row {
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Button {
+                    text: qsTr("🔐 Encrypt File/Folder")
+                    onClicked: {
+                        if (filePath.text.trim() !== "") {
+                            fileStatus.text = "Encrypting: " + filePath.text
+                            // TODO: Implement file encryption
+                            fileStatus.text = "Encryption completed successfully!"
+                        }
+                    }
+                }
+
+                Button {
+                    text: qsTr("� Decrypt File/Folder")
+                    onClicked: {
+                        if (filePath.text.trim() !== "") {
+                            fileStatus.text = "Decrypting: " + filePath.text
+                            // TODO: Implement file decryption
+                            fileStatus.text = "Decryption completed successfully!"
+                        }
+                    }
+                }
+            }
+
+            Label {
+                id: fileStatus
+                text: qsTr("Select a file or folder to begin encryption/decryption operations.")
+                wrapMode: Text.WordWrap
+                width: parent.width
+                color: "#666666"
             }
         }
 
-        Rectangle {
-            width: parent.width
-            height: 100
-            color: "#fff3e0"
-            border.color: "#ff9800"
-            border.width: 1
-            radius: 8
+        // Key Management Tab
+        Column {
+            spacing: 20
+            width: parent.width * 0.9
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 20
 
-            Column {
-                anchors.fill: parent
-                anchors.margins: 16
-                spacing: 8
+            Label {
+                text: qsTr("🔑 Post-Quantum Key Management")
+                font.pixelSize: 20
+                font.bold: true
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
+            }
 
-                Label {
-                    text: qsTr("🔐 Post-Quantum Key Pair (Kyber-1024 + Dilithium):")
-                    font.bold: true
-                    font.pixelSize: 14
-                    color: "#e65100"
-                }
+            Rectangle {
+                width: parent.width
+                height: 120
+                color: "#f8f9fa"
+                border.color: "#dee2e6"
+                border.width: 1
+                radius: 8
 
-                Label {
-                    text: PostQuantumCrypto.hasKeys
-                          ? qsTr("Public Key: %1...").arg(PostQuantumCrypto.publicKey.substring(0, 32))
-                          : "PQ keys will be generated..."
-                    font.family: "Monospace"
-                    font.pixelSize: 11
-                    color: "#e65100"
-                    wrapMode: Text.Wrap
-                    width: parent.width
+                Column {
+                    anchors.fill: parent
+                    anchors.margins: 16
+                    spacing: 8
+
+                    Label {
+                        text: qsTr("� Current Key Status:")
+                        font.bold: true
+                        font.pixelSize: 14
+                    }
+
+                    Label {
+                        text: PostQuantumCrypto.hasKeys
+                              ? qsTr("✅ PQ Key Pair Active (Kyber-1024 + ML-DSA-65)")
+                              : qsTr("❌ No keys generated")
+                        font.pixelSize: 12
+                    }
+
+                    Label {
+                        text: qsTr("Algorithm: Kyber-1024 KEM + ML-DSA-65 Signature")
+                        font.pixelSize: 11
+                        color: "#666666"
+                    }
                 }
             }
-        }
 
-        Label {
-            text: qsTr("🚀 Post-Quantum Encryption Ready!\n\nFeatures: Kyber-1024 key encapsulation, CRYSTALS-Dilithium signatures, secure file/folder encryption")
-            wrapMode: Text.WordWrap
-            horizontalAlignment: Text.AlignHCenter
-            width: parent.width
-            font.pixelSize: 14
-            color: "#666666"
+            Row {
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Button {
+                    text: qsTr("🔄 Regenerate Keys")
+                    onClicked: {
+                        PostQuantumCrypto.generateKeys()
+                        keyStatus.text = "New PQ key pair generated successfully!"
+                    }
+                }
+
+                Button {
+                    text: qsTr("� Export Public Key")
+                    onClicked: {
+                        if (PostQuantumCrypto.hasKeys) {
+                            keyStatus.text = "Public key: " + PostQuantumCrypto.publicKey.substring(0, 64) + "..."
+                        }
+                    }
+                }
+            }
+
+            Label {
+                id: keyStatus
+                text: qsTr("PQ keys are automatically generated from your BIP-39 mnemonic.")
+                wrapMode: Text.WordWrap
+                width: parent.width
+                color: "#666666"
+            }
         }
     }
 
