@@ -54,6 +54,46 @@ Dialog {
             }
         }
 
+        // Copy/Paste buttons for mnemonic
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: 12
+
+            Button {
+                text: qsTr("📋 Copy Mnemonic")
+                Layout.preferredWidth: 120
+                enabled: mnemonicField.text.trim().length > 0
+                onClicked: {
+                    mnemonicField.selectAll()
+                    mnemonicField.copy()
+                    statusLabel.text = qsTr("📋 Mnemonic copied to clipboard!")
+                    statusLabel.color = "blue"
+                }
+            }
+
+            Button {
+                text: qsTr("📄 Paste Mnemonic")
+                Layout.preferredWidth: 120
+                onClicked: {
+                    mnemonicField.text = ""
+                    mnemonicField.paste()
+                    statusLabel.text = qsTr("📄 Mnemonic pasted from clipboard")
+                    statusLabel.color = "blue"
+                }
+            }
+
+            Item { Layout.fillWidth: true }
+
+            Button {
+                text: qsTr("🗑️ Clear")
+                Layout.preferredWidth: 80
+                onClicked: {
+                    mnemonicField.text = ""
+                    statusLabel.text = ""
+                }
+            }
+        }
+
         // Status and validation feedback
         Label {
             id: statusLabel
