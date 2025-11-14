@@ -52,6 +52,10 @@ public:
     Q_INVOKABLE bool encryptFile(const QString &inputFilePath, const QString &outputFilePath);
     Q_INVOKABLE bool decryptFile(const QString &inputFilePath, const QString &outputFilePath);
 
+    // Binary data encryption/decryption (for proper file handling)
+    Q_INVOKABLE QByteArray encryptBinary(const QByteArray &plaintext);
+    Q_INVOKABLE QByteArray decryptBinary(const QByteArray &ciphertext);
+
     // Utility functions
     Q_INVOKABLE QString generateSharedSecret(const QString &otherPublicKeyHex);
 

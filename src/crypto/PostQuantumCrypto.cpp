@@ -403,7 +403,7 @@ QString PostQuantumCrypto::loadEncryptedTextFromFile(const QString &filePath)
 bool PostQuantumCrypto::encryptFile(const QString &inputFilePath, const QString &outputFilePath)
 {
     try {
-        // Read input file
+        // Read input file as binary
         QFile inputFile(inputFilePath);
         if (!inputFile.open(QIODevice::ReadOnly)) {
             emit operationCompleted("encryptFile", false, QString("Cannot open input file: %1").arg(inputFilePath));
@@ -413,18 +413,17 @@ bool PostQuantumCrypto::encryptFile(const QString &inputFilePath, const QString 
         QByteArray fileData = inputFile.readAll();
         inputFile.close();
 
-        // Encrypt the file data
-        QString encryptedData = encryptText(QString::fromUtf8(fileData));
+        // Encrypt the binary data directly
+        QByteArray encryptedData = encryptBinary(fileData);
 
-        // Write encrypted data to output file
+        // Write encrypted data as binary
         QFile outputFile(outputFilePath);
         if (!outputFile.open(QIODevice::WriteOnly)) {
             emit operationCompleted("encryptFile", false, QString("Cannot open output file: %1").arg(outputFilePath));
             return false;
         }
 
-        QTextStream out(&outputFile);
-        out << encryptedData;
+        outputFile.write(encryptedData);
         outputFile.close();
 
         emit operationCompleted("encryptFile", true, QString("File encrypted: %1 -> %2").arg(inputFilePath, outputFilePath));
@@ -439,32 +438,31 @@ bool PostQuantumCrypto::encryptFile(const QString &inputFilePath, const QString 
 bool PostQuantumCrypto::decryptFile(const QString &inputFilePath, const QString &outputFilePath)
 {
     try {
-        // Read encrypted file
+        // Read encrypted file as binary
         QFile inputFile(inputFilePath);
-        if (!inputFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        if (!inputFile.open(QIODevice::ReadOnly)) {
             emit operationCompleted("decryptFile", false, QString("Cannot open input file: %1").arg(inputFilePath));
             return false;
         }
 
-        QTextStream in(&inputFile);
-        QString encryptedData = in.readAll();
+        QByteArray encryptedData = inputFile.readAll();
         inputFile.close();
 
-        // Decrypt the data
-        QString decryptedData = decryptText(encryptedData);
+        // Decrypt the binary data
+        QByteArray decryptedData = decryptBinary(encryptedData);
         if (decryptedData.isEmpty()) {
             emit operationCompleted("decryptFile", false, "Decryption failed - invalid file or key");
             return false;
         }
 
-        // Write decrypted data to output file
+        // Write decrypted data as binary
         QFile outputFile(outputFilePath);
         if (!outputFile.open(QIODevice::WriteOnly)) {
             emit operationCompleted("decryptFile", false, QString("Cannot open output file: %1").arg(outputFilePath));
             return false;
         }
 
-        outputFile.write(decryptedData.toUtf8());
+        outputFile.write(decryptedData);
         outputFile.close();
 
         emit operationCompleted("decryptFile", true, QString("File decrypted: %1 -> %2").arg(inputFilePath, outputFilePath));
@@ -473,6 +471,75 @@ bool PostQuantumCrypto::decryptFile(const QString &inputFilePath, const QString 
         qWarning() << "Failed to decrypt file:" << e.what();
         emit operationCompleted("decryptFile", false, QString("Error: %1").arg(e.what()));
         return false;
+    }
+}
+
+QByteArray PostQuantumCrypto::encryptBinary(const QByteArray &plaintext)
+{
+    try {
+        if (!hasKeys()) {
+            return QByteArray();
+        }
+
+        // Generate a deterministic symmetric key
+        QByteArray symmetricKey = generateDeterministicKey();
+        if (symmetricKey.size() != 32) {
+            return QByteArray();
+        }
+
+        // Generate random IV
+        QByteArray iv(16, 0);
+        QRandomGenerator::global()->generate(iv.begin(), iv.end());
+
+        // XOR encryption with deterministic key
+        QByteArray ciphertext = plaintext;
+        for (int i = 0; i < ciphertext.size(); ++i) {
+            ciphertext[i] = ciphertext[i] ^ symmetricKey[i % symmetricKey.size()];
+        }
+
+        // Combine IV + ciphertext
+        QByteArray combined;
+        combined.append(iv);
+        combined.append(ciphertext);
+
+        return combined;
+    } catch (const std::exception &e) {
+        qWarning() << "Failed to encrypt binary data:" << e.what();
+        return QByteArray();
+    }
+}
+
+QByteArray PostQuantumCrypto::decryptBinary(const QByteArray &ciphertext)
+{
+    try {
+        if (!hasKeys()) {
+            return QByteArray();
+        }
+
+        if (ciphertext.size() < 16) {
+            return QByteArray();
+        }
+
+        // Extract IV and ciphertext
+        QByteArray iv = ciphertext.left(16);
+        QByteArray encryptedData = ciphertext.mid(16);
+
+        // Generate the SAME deterministic symmetric key
+        QByteArray symmetricKey = generateDeterministicKey();
+        if (symmetricKey.size() != 32) {
+            return QByteArray();
+        }
+
+        // XOR decryption
+        QByteArray plaintext = encryptedData;
+        for (int i = 0; i < plaintext.size(); ++i) {
+            plaintext[i] = plaintext[i] ^ symmetricKey[i % symmetricKey.size()];
+        }
+
+        return plaintext;
+    } catch (const std::exception &e) {
+        qWarning() << "Failed to decrypt binary data:" << e.what();
+        return QByteArray();
     }
 }
 

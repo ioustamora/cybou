@@ -71,6 +71,8 @@ static constexpr auto qt_meta_stringdata_ZN17PostQuantumCryptoE = QtMocHelpers::
     "inputFilePath",
     "outputFilePath",
     "decryptFile",
+    "encryptBinary",
+    "decryptBinary",
     "generateSharedSecret",
     "otherPublicKeyHex",
     "hasKeys",
@@ -87,33 +89,35 @@ Q_CONSTINIT static const uint qt_meta_data_ZN17PostQuantumCryptoE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
-       3,  175, // properties
+      19,   14, // methods
+       3,  193, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  116,    2, 0x06,    4 /* Public */,
-       3,    3,  117,    2, 0x06,    5 /* Public */,
+       1,    0,  128,    2, 0x06,    4 /* Public */,
+       3,    3,  129,    2, 0x06,    5 /* Public */,
 
  // methods: name, argc, parameters, tag, flags, initial metatype offsets
-       7,    0,  124,    2, 0x02,    9 /* Public */,
-       8,    2,  125,    2, 0x02,   10 /* Public */,
-      11,    0,  130,    2, 0x102,   13 /* Public | MethodIsConst  */,
-      12,    0,  131,    2, 0x102,   14 /* Public | MethodIsConst  */,
-      13,    1,  132,    2, 0x02,   15 /* Public */,
-      15,    3,  135,    2, 0x02,   17 /* Public */,
-      17,    1,  142,    2, 0x02,   21 /* Public */,
-      20,    1,  145,    2, 0x02,   23 /* Public */,
-      22,    1,  148,    2, 0x02,   25 /* Public */,
-      24,    1,  151,    2, 0x02,   27 /* Public */,
-      26,    2,  154,    2, 0x02,   29 /* Public */,
-      29,    1,  159,    2, 0x02,   32 /* Public */,
-      30,    2,  162,    2, 0x02,   34 /* Public */,
-      33,    2,  167,    2, 0x02,   37 /* Public */,
-      34,    1,  172,    2, 0x02,   40 /* Public */,
+       7,    0,  136,    2, 0x02,    9 /* Public */,
+       8,    2,  137,    2, 0x02,   10 /* Public */,
+      11,    0,  142,    2, 0x102,   13 /* Public | MethodIsConst  */,
+      12,    0,  143,    2, 0x102,   14 /* Public | MethodIsConst  */,
+      13,    1,  144,    2, 0x02,   15 /* Public */,
+      15,    3,  147,    2, 0x02,   17 /* Public */,
+      17,    1,  154,    2, 0x02,   21 /* Public */,
+      20,    1,  157,    2, 0x02,   23 /* Public */,
+      22,    1,  160,    2, 0x02,   25 /* Public */,
+      24,    1,  163,    2, 0x02,   27 /* Public */,
+      26,    2,  166,    2, 0x02,   29 /* Public */,
+      29,    1,  171,    2, 0x02,   32 /* Public */,
+      30,    2,  174,    2, 0x02,   34 /* Public */,
+      33,    2,  179,    2, 0x02,   37 /* Public */,
+      34,    1,  184,    2, 0x02,   40 /* Public */,
+      35,    1,  187,    2, 0x02,   42 /* Public */,
+      36,    1,  190,    2, 0x02,   44 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -134,12 +138,14 @@ Q_CONSTINIT static const uint qt_meta_data_ZN17PostQuantumCryptoE[] = {
     QMetaType::QString, QMetaType::QString,   28,
     QMetaType::Bool, QMetaType::QString, QMetaType::QString,   31,   32,
     QMetaType::Bool, QMetaType::QString, QMetaType::QString,   31,   32,
-    QMetaType::QString, QMetaType::QString,   35,
+    QMetaType::QByteArray, QMetaType::QByteArray,   23,
+    QMetaType::QByteArray, QMetaType::QByteArray,   25,
+    QMetaType::QString, QMetaType::QString,   37,
 
  // properties: name, type, flags, notifyId, revision
-      36, QMetaType::Bool, 0x00015001, uint(0), 0,
-      37, QMetaType::QString, 0x00015001, uint(0), 0,
-      38, QMetaType::QString, 0x00015401, uint(-1), 0,
+      38, QMetaType::Bool, 0x00015001, uint(0), 0,
+      39, QMetaType::QString, 0x00015001, uint(0), 0,
+      40, QMetaType::QString, 0x00015401, uint(-1), 0,
 
        0        // eod
 };
@@ -211,6 +217,12 @@ Q_CONSTINIT const QMetaObject PostQuantumCrypto::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'encryptBinary'
+        QtPrivate::TypeAndForceComplete<QByteArray, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QByteArray &, std::false_type>,
+        // method 'decryptBinary'
+        QtPrivate::TypeAndForceComplete<QByteArray, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QByteArray &, std::false_type>,
         // method 'generateSharedSecret'
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
@@ -253,7 +265,11 @@ void PostQuantumCrypto::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 15: { bool _r = _t->decryptFile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 16: { QString _r = _t->generateSharedSecret((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 16: { QByteArray _r = _t->encryptBinary((*reinterpret_cast< std::add_pointer_t<QByteArray>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< QByteArray*>(_a[0]) = std::move(_r); }  break;
+        case 17: { QByteArray _r = _t->decryptBinary((*reinterpret_cast< std::add_pointer_t<QByteArray>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< QByteArray*>(_a[0]) = std::move(_r); }  break;
+        case 18: { QString _r = _t->generateSharedSecret((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -305,14 +321,14 @@ int PostQuantumCrypto::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 19;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 17)
+        if (_id < 19)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 17;
+        _id -= 19;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

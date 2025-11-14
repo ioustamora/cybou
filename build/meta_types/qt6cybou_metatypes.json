@@ -323,11 +323,35 @@
                         "access": "public",
                         "arguments": [
                             {
+                                "name": "plaintext",
+                                "type": "QByteArray"
+                            }
+                        ],
+                        "index": 16,
+                        "name": "encryptBinary",
+                        "returnType": "QByteArray"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "ciphertext",
+                                "type": "QByteArray"
+                            }
+                        ],
+                        "index": 17,
+                        "name": "decryptBinary",
+                        "returnType": "QByteArray"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
                                 "name": "otherPublicKeyHex",
                                 "type": "QString"
                             }
                         ],
-                        "index": 16,
+                        "index": 18,
                         "name": "generateSharedSecret",
                         "returnType": "QString"
                     }
