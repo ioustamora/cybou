@@ -1,0 +1,6 @@
+module QPQWallet
+typeinfo qpq-encryptor.qmltypes
+prefer :/QPQWallet/
+Main 1.0 qml/Main.qml
+SplashDialog 1.0 qml/SplashDialog.qml
+

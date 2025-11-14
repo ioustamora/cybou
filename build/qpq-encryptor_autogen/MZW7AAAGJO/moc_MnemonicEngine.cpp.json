@@ -1,0 +1,140 @@
+{
+    "classes": [
+        {
+            "className": "MnemonicEngine",
+            "lineNumber": 16,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "words",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "generateMnemonic",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "isCloned": true,
+                    "name": "generateMnemonic",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "mnemonic",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "validateMnemonic",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "mnemonic",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "setMnemonic",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "passphrase",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "deriveKeyFromMnemonic",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "isCloned": true,
+                    "name": "deriveKeyFromMnemonic",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "hasMnemonic",
+                    "notify": "mnemonicChanged",
+                    "read": "hasMnemonic",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "currentMnemonic",
+                    "notify": "mnemonicChanged",
+                    "read": "currentMnemonic",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "derivedKey",
+                    "notify": "keyDerived",
+                    "read": "derivedKey",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "MnemonicEngine",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "mnemonicChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "keyDerived",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "MnemonicEngine.h",
+    "outputRevision": 68
+}

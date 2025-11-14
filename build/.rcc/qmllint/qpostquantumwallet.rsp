@@ -1,0 +1,11 @@
+--bare
+-I
+/home/user/dev/qtest/build
+-I
+/usr/lib/x86_64-linux-gnu/qt6/qml
+--resource
+/home/user/dev/qtest/build/.qt/rcc/qmake_QPQWallet.qrc
+--resource
+/home/user/dev/qtest/build/.qt/rcc/qpostquantumwallet_raw_qml_0.qrc
+/home/user/dev/qtest/qml/Main.qml
+/home/user/dev/qtest/qml/SplashDialog.qml
