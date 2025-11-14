@@ -476,9 +476,6 @@ bool PostQuantumCrypto::decryptFile(const QString &inputFilePath, const QString 
     }
 }
 
-    return result;
-}
-
 QByteArray PostQuantumCrypto::generateDeterministicKey()
 {
     // Create a deterministic key from our PQ keys using SHA-256

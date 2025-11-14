@@ -2,7 +2,7 @@
     "classes": [
         {
             "className": "PostQuantumCrypto",
-            "lineNumber": 17,
+            "lineNumber": 18,
             "methods": [
                 {
                     "access": "public",

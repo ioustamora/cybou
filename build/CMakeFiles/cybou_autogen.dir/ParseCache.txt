@@ -556,6 +556,7 @@
  mdp:/usr/include/c++/14/bits/utility.h
  mdp:/usr/include/c++/14/bits/vector.tcc
  mdp:/usr/include/c++/14/bits/version.h
+ mdp:/usr/include/c++/14/cassert
  mdp:/usr/include/c++/14/cctype
  mdp:/usr/include/c++/14/cerrno
  mdp:/usr/include/c++/14/charconv
@@ -744,6 +745,7 @@
  mdp:/usr/include/x86_64-linux-gnu/gnu/stubs-64.h
  mdp:/usr/include/x86_64-linux-gnu/gnu/stubs.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QByteArray
+ mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QFile
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QMap
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QObject
@@ -752,6 +754,7 @@
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QVariantMap
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h
+ mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/q20iterator.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/q20memory.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/q20type_traits.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/q23utility.h
@@ -780,6 +783,7 @@
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerinfo.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h
+ mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qdarwinhelpers.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h
@@ -826,6 +830,7 @@
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h
+ mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qspan.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qstringalgorithms.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/qstringbuilder.h

@@ -1547,6 +1547,10 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_co
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
+  /usr/include/c++/14/bits/fs_dir.h \
+  /usr/include/c++/14/bits/fs_fwd.h \
+  /usr/include/c++/14/bits/fs_ops.h \
+  /usr/include/c++/14/bits/fs_path.h \
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
@@ -1631,6 +1635,7 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_co
   /usr/include/c++/14/bits/utility.h \
   /usr/include/c++/14/bits/vector.tcc \
   /usr/include/c++/14/bits/version.h \
+  /usr/include/c++/14/cassert \
   /usr/include/c++/14/cctype \
   /usr/include/c++/14/cerrno \
   /usr/include/c++/14/charconv \
@@ -1638,6 +1643,7 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_co
   /usr/include/c++/14/climits \
   /usr/include/c++/14/clocale \
   /usr/include/c++/14/cmath \
+  /usr/include/c++/14/codecvt \
   /usr/include/c++/14/compare \
   /usr/include/c++/14/concepts \
   /usr/include/c++/14/cstddef \
@@ -1658,6 +1664,7 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_co
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
+  /usr/include/c++/14/filesystem \
   /usr/include/c++/14/format \
   /usr/include/c++/14/functional \
   /usr/include/c++/14/initializer_list \
@@ -1838,14 +1845,18 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_co
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QByteArray \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTextStream \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariantMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/q20iterator.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q20memory.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q20type_traits.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q23utility.h \
@@ -1874,10 +1885,13 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_co
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerinfo.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qexceptionhandling.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfloat16.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -1888,6 +1902,7 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_co
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobalstatic.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qhashfunctions.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevicebase.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterable.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \
@@ -1917,6 +1932,7 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_co
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qspan.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringbuilder.h \
@@ -3061,6 +3077,10 @@ CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: /home/user/dev/qtest/sr
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
+  /usr/include/c++/14/bits/fs_dir.h \
+  /usr/include/c++/14/bits/fs_fwd.h \
+  /usr/include/c++/14/bits/fs_ops.h \
+  /usr/include/c++/14/bits/fs_path.h \
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
@@ -3155,6 +3175,7 @@ CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: /home/user/dev/qtest/sr
   /usr/include/c++/14/climits \
   /usr/include/c++/14/clocale \
   /usr/include/c++/14/cmath \
+  /usr/include/c++/14/codecvt \
   /usr/include/c++/14/compare \
   /usr/include/c++/14/concepts \
   /usr/include/c++/14/cstddef \
@@ -3175,6 +3196,7 @@ CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: /home/user/dev/qtest/sr
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
+  /usr/include/c++/14/filesystem \
   /usr/include/c++/14/format \
   /usr/include/c++/14/functional \
   /usr/include/c++/14/initializer_list \
@@ -3359,12 +3381,14 @@ CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: /home/user/dev/qtest/sr
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QByteArray \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QJsonDocument \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QJsonObject \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QRandomGenerator \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTextStream \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariantMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
@@ -3407,6 +3431,8 @@ CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: /home/user/dev/qtest/sr
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qendian.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qexceptionhandling.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfloat16.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -3417,6 +3443,7 @@ CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: /home/user/dev/qtest/sr
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobalstatic.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qhashfunctions.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevicebase.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterable.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \
@@ -3584,6 +3611,10 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
+  /usr/include/c++/14/bits/fs_dir.h \
+  /usr/include/c++/14/bits/fs_fwd.h \
+  /usr/include/c++/14/bits/fs_ops.h \
+  /usr/include/c++/14/bits/fs_path.h \
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
@@ -3676,6 +3707,7 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
   /usr/include/c++/14/climits \
   /usr/include/c++/14/clocale \
   /usr/include/c++/14/cmath \
+  /usr/include/c++/14/codecvt \
   /usr/include/c++/14/compare \
   /usr/include/c++/14/concepts \
   /usr/include/c++/14/cstddef \
@@ -3696,6 +3728,7 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
+  /usr/include/c++/14/filesystem \
   /usr/include/c++/14/format \
   /usr/include/c++/14/functional \
   /usr/include/c++/14/initializer_list \
@@ -3876,10 +3909,13 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QByteArray \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTextStream \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariantMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
@@ -3917,6 +3953,7 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
@@ -3925,6 +3962,8 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qeventloop.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qexceptionhandling.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfloat16.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -3935,6 +3974,7 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobalstatic.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qhashfunctions.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevicebase.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterable.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \
@@ -4423,13 +4463,9 @@ CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o:
 
 /home/user/dev/qtest/src/crypto/PostQuantumCrypto.cpp:
 
-/usr/include/x86_64-linux-gnu/qt6/QtCore/QTextStream:
-
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QRandomGenerator:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash:
 
 /usr/include/x86_64-linux-gnu/c++/14/bits/opt_random.h:
 
@@ -4454,6 +4490,14 @@ CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o:
 /usr/local/include/oqs/sha3x4_ops.h:
 
 /usr/local/include/oqs/sha2_ops.h:
+
+/usr/local/include/oqs/oqsconfig.h:
+
+/usr/local/include/oqs/oqs.h:
+
+/usr/local/include/oqs/kem_ntruprime.h:
+
+/usr/local/include/oqs/kem_ntru.h:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
@@ -4909,8 +4953,6 @@ CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic.h:
 
-/usr/local/include/oqs/kem_ntru.h:
-
 /usr/include/c++/14/numeric:
 
 /usr/include/c++/14/bits/string_view.tcc:
@@ -4926,8 +4968,6 @@ CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o:
 /usr/local/include/oqs/sig_falcon.h:
 
 /usr/include/c++/14/bits/stl_tree.h:
-
-/usr/local/include/oqs/kem_ntruprime.h:
 
 /usr/include/stdint.h:
 
@@ -4986,8 +5026,6 @@ CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o:
 .qt/rcc/qrc_cybou_raw_qml_0.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qtversion.h:
-
-/usr/local/include/oqs/oqsconfig.h:
 
 CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o:
 
@@ -5308,12 +5346,6 @@ CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o:
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonobject.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/QFile:
-
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qspan.h:
 
@@ -5671,6 +5703,16 @@ cybou_autogen/MZW7AAAGJO/moc_MnemonicEngine.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QByteArray:
 
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonobject.h:
+
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QFile:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QTextStream:
+
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariantmap.h:
 
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o:
@@ -5680,5 +5722,3 @@ CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o:
 /usr/local/include/oqs/kem_classic_mceliece.h:
 
 /usr/local/include/oqs/kem_kyber.h:
-
-/usr/local/include/oqs/oqs.h:
