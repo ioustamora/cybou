@@ -16,6 +16,16 @@ ApplicationWindow {
 
     Component.onCompleted: splashDialog.open()
 
+    Connections {
+        target: PostQuantumCrypto
+        function onOperationProgress(operation, progress, status) {
+            if (operation === "encryptFile" || operation === "decryptFile") {
+                fileProgressBar.value = progress
+                progressStatus.text = status
+            }
+        }
+    }
+
     FileDialog {
         id: fileDialog
         title: "Select file or folder to encrypt/decrypt"
@@ -480,14 +490,65 @@ ApplicationWindow {
                 }
             }
 
+            // Progress Bar for file operations
+            Column {
+                spacing: 8
+                width: parent.width
+                visible: fileProgressBar.visible
+
+                Label {
+                    text: qsTr("⏳ Operation Progress:")
+                    font.bold: true
+                }
+
+                ProgressBar {
+                    id: fileProgressBar
+                    width: parent.width
+                    from: 0
+                    to: 100
+                    value: 0
+                    visible: false
+
+                    background: Rectangle {
+                        color: "#e9ecef"
+                        border.color: "#dee2e6"
+                        border.width: 1
+                        radius: 4
+                    }
+
+                    contentItem: Item {
+                        Rectangle {
+                            width: fileProgressBar.visualPosition * parent.width
+                            height: parent.height
+                            color: fileProgressBar.value < 100 ? "#007bff" : "#28a745"  // Blue during operation, green when complete
+                            radius: 4
+                        }
+                    }
+                }
+
+                Label {
+                    id: progressStatus
+                    text: ""
+                    font.pixelSize: 12
+                    color: "#666666"
+                }
+            }
+
             Row {
                 spacing: 10
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 Button {
+                    id: encryptButton
                     text: qsTr("🔐 Encrypt File/Folder")
+                    enabled: !fileProgressBar.visible
                     onClicked: {
                         if (filePath.text.trim() !== "") {
+                            fileProgressBar.visible = true
+                            fileProgressBar.value = 0
+                            progressStatus.text = "Starting encryption..."
+                            fileStatus.text = "Preparing encryption..."
+
                             // Generate output path with .cybou extension
                             var inputPath = filePath.text
                             var outputPath = inputPath + ".cybou"
@@ -495,13 +556,17 @@ ApplicationWindow {
                             fileStatus.text = "Encrypting: " + inputPath + " -> " + outputPath
                             fileStatus.color = "blue"
 
-                            if (PostQuantumCrypto.encryptFile(inputPath, outputPath)) {
+                            var success = PostQuantumCrypto.encryptFile(inputPath, outputPath)
+                            if (success) {
                                 fileStatus.text = "✅ Encryption completed: " + outputPath
                                 fileStatus.color = "green"
                             } else {
                                 fileStatus.text = "❌ Encryption failed!"
                                 fileStatus.color = "red"
                             }
+
+                            fileProgressBar.visible = false
+                            progressStatus.text = ""
                         } else {
                             fileStatus.text = "⚠️ Please select a file first"
                             fileStatus.color = "orange"
@@ -510,13 +575,22 @@ ApplicationWindow {
                 }
 
                 Button {
-                    text: qsTr("� Decrypt File/Folder")
+                    id: decryptButton
+                    text: qsTr("🔓 Decrypt File/Folder")
+                    enabled: !fileProgressBar.visible
                     onClicked: {
                         if (filePath.text.trim() !== "") {
+                            fileProgressBar.visible = true
+                            fileProgressBar.value = 0
+                            progressStatus.text = "Starting decryption..."
+                            fileStatus.text = "Preparing decryption..."
+
                             var inputPath = filePath.text
 
                             // Check if it's a .cybou file
                             if (!inputPath.endsWith(".cybou")) {
+                                fileProgressBar.visible = false
+                                progressStatus.text = ""
                                 fileStatus.text = "⚠️ Selected file is not a .cybou encrypted file"
                                 fileStatus.color = "orange"
                                 return
@@ -537,13 +611,17 @@ ApplicationWindow {
                             fileStatus.text = "Decrypting: " + inputPath + " -> " + outputPath
                             fileStatus.color = "blue"
 
-                            if (PostQuantumCrypto.decryptFile(inputPath, outputPath)) {
+                            var success = PostQuantumCrypto.decryptFile(inputPath, outputPath)
+                            if (success) {
                                 fileStatus.text = "✅ Decryption completed: " + outputPath
                                 fileStatus.color = "green"
                             } else {
                                 fileStatus.text = "❌ Decryption failed!"
                                 fileStatus.color = "red"
                             }
+
+                            fileProgressBar.visible = false
+                            progressStatus.text = ""
                         } else {
                             fileStatus.text = "⚠️ Please select a .cybou file first"
                             fileStatus.color = "orange"

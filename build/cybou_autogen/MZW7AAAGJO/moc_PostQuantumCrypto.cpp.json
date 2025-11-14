@@ -6,7 +6,7 @@
             "methods": [
                 {
                     "access": "public",
-                    "index": 2,
+                    "index": 3,
                     "lineNumber": 74,
                     "name": "generateKeyPair",
                     "returnType": "bool"
@@ -23,14 +23,14 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 3,
+                    "index": 4,
                     "lineNumber": 86,
                     "name": "importKeyPair",
                     "returnType": "bool"
                 },
                 {
                     "access": "public",
-                    "index": 4,
+                    "index": 5,
                     "isConst": true,
                     "lineNumber": 92,
                     "name": "exportPrivateKey",
@@ -38,7 +38,7 @@
                 },
                 {
                     "access": "public",
-                    "index": 5,
+                    "index": 6,
                     "isConst": true,
                     "lineNumber": 98,
                     "name": "exportPublicKey",
@@ -52,7 +52,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 6,
+                    "index": 7,
                     "lineNumber": 109,
                     "name": "signMessage",
                     "returnType": "QString"
@@ -73,7 +73,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 7,
+                    "index": 8,
                     "lineNumber": 121,
                     "name": "verifySignature",
                     "returnType": "bool"
@@ -86,7 +86,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 8,
+                    "index": 9,
                     "lineNumber": 133,
                     "name": "encapsulateKey",
                     "returnType": "QVariantMap"
@@ -99,7 +99,7 @@
                             "type": "QVariantMap"
                         }
                     ],
-                    "index": 9,
+                    "index": 10,
                     "lineNumber": 144,
                     "name": "decapsulateKey",
                     "returnType": "QByteArray"
@@ -112,7 +112,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 10,
+                    "index": 11,
                     "lineNumber": 155,
                     "name": "encryptText",
                     "returnType": "QString"
@@ -125,7 +125,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 11,
+                    "index": 12,
                     "lineNumber": 166,
                     "name": "decryptText",
                     "returnType": "QString"
@@ -142,7 +142,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 12,
+                    "index": 13,
                     "lineNumber": 177,
                     "name": "saveEncryptedTextToFile",
                     "returnType": "bool"
@@ -155,7 +155,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 13,
+                    "index": 14,
                     "lineNumber": 187,
                     "name": "loadEncryptedTextFromFile",
                     "returnType": "QString"
@@ -172,7 +172,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 14,
+                    "index": 15,
                     "lineNumber": 199,
                     "name": "encryptFile",
                     "returnType": "bool"
@@ -189,7 +189,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 15,
+                    "index": 16,
                     "lineNumber": 211,
                     "name": "decryptFile",
                     "returnType": "bool"
@@ -202,7 +202,7 @@
                             "type": "QByteArray"
                         }
                     ],
-                    "index": 16,
+                    "index": 17,
                     "lineNumber": 222,
                     "name": "encryptBinary",
                     "returnType": "QByteArray"
@@ -215,7 +215,7 @@
                             "type": "QByteArray"
                         }
                     ],
-                    "index": 17,
+                    "index": 18,
                     "lineNumber": 233,
                     "name": "decryptBinary",
                     "returnType": "QByteArray"
@@ -228,7 +228,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 18,
+                    "index": 19,
                     "lineNumber": 244,
                     "name": "generateSharedSecret",
                     "returnType": "QString"
@@ -309,6 +309,27 @@
                     "index": 1,
                     "lineNumber": 276,
                     "name": "operationCompleted",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "operation",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "progress",
+                            "type": "int"
+                        },
+                        {
+                            "name": "status",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 284,
+                    "name": "operationProgress",
                     "returnType": "void"
                 }
             ],
