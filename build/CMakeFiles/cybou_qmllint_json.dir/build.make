@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for cybou_qmllint_json.
 
@@ -66,11 +66,11 @@ include CMakeFiles/cybou_qmllint_json.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/cybou_qmllint_json.dir/progress.make
 
-CMakeFiles/cybou_qmllint_json: /usr/lib/qt6/bin/qmllint
-CMakeFiles/cybou_qmllint_json: /home/user/dev/qtest/qml/Main.qml
-CMakeFiles/cybou_qmllint_json: /home/user/dev/qtest/qml/SplashDialog.qml
+CMakeFiles/cybou_qmllint_json: /home/user/Qt/6.10.0/gcc_64/bin/qmllint
+CMakeFiles/cybou_qmllint_json: /media/user/FILES/cybou/qml/Main.qml
+CMakeFiles/cybou_qmllint_json: /media/user/FILES/cybou/qml/SplashDialog.qml
 CMakeFiles/cybou_qmllint_json: .rcc/qmllint/cybou_json.rsp
-	cd /home/user/dev/qtest && /usr/lib/qt6/bin/qmllint @/home/user/dev/qtest/build/.rcc/qmllint/cybou_json.rsp
+	cd /media/user/FILES/cybou && /home/user/Qt/6.10.0/gcc_64/bin/qmllint @/media/user/FILES/cybou/build/.rcc/qmllint/cybou_json.rsp
 
 CMakeFiles/cybou_qmllint_json.dir/codegen:
 .PHONY : CMakeFiles/cybou_qmllint_json.dir/codegen
@@ -88,6 +88,6 @@ CMakeFiles/cybou_qmllint_json.dir/clean:
 .PHONY : CMakeFiles/cybou_qmllint_json.dir/clean
 
 CMakeFiles/cybou_qmllint_json.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/cybou_qmllint_json.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/cybou_qmllint_json.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cybou_qmllint_json.dir/depend
 

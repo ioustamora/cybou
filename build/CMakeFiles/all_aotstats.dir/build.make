@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for all_aotstats.
 
@@ -67,12 +67,12 @@ include CMakeFiles/all_aotstats.dir/compiler_depend.make
 include CMakeFiles/all_aotstats.dir/progress.make
 
 CMakeFiles/all_aotstats: .rcc/qmlcache/all_aotstats.txt
-	/usr/bin/cmake -E cat /home/user/dev/qtest/build/.rcc/qmlcache/all_aotstats.txt
+	/usr/bin/cmake -E cat /media/user/FILES/cybou/build/.rcc/qmlcache/all_aotstats.txt
 
 .rcc/qmlcache/all_aotstats.aotstats: .rcc/qmlcache/module_cybou.aotstats
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/all_aotstats.aotstats, .rcc/qmlcache/all_aotstats.txt"
-	/usr/lib/qt6/libexec/qmlaotstats aggregate /home/user/dev/qtest/build/.rcc/qmlcache/all_aotstats.aotstatslist /home/user/dev/qtest/build/.rcc/qmlcache/all_aotstats.aotstats
-	/usr/lib/qt6/libexec/qmlaotstats format /home/user/dev/qtest/build/.rcc/qmlcache/all_aotstats.aotstats /home/user/dev/qtest/build/.rcc/qmlcache/all_aotstats.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/all_aotstats.aotstats, .rcc/qmlcache/all_aotstats.txt"
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmlaotstats aggregate /media/user/FILES/cybou/build/.rcc/qmlcache/all_aotstats.aotstatslist /media/user/FILES/cybou/build/.rcc/qmlcache/all_aotstats.aotstats
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmlaotstats format /media/user/FILES/cybou/build/.rcc/qmlcache/all_aotstats.aotstats /media/user/FILES/cybou/build/.rcc/qmlcache/all_aotstats.txt
 
 .rcc/qmlcache/all_aotstats.txt: .rcc/qmlcache/all_aotstats.aotstats
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/all_aotstats.txt
@@ -95,6 +95,6 @@ CMakeFiles/all_aotstats.dir/clean:
 .PHONY : CMakeFiles/all_aotstats.dir/clean
 
 CMakeFiles/all_aotstats.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/all_aotstats.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/all_aotstats.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/all_aotstats.dir/depend
 

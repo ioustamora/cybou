@@ -1,6 +1,0 @@
---resource
-/home/user/dev/qtest/build/.qt/rcc/qmake_QPQWallet.qrc
---resource
-/home/user/dev/qtest/build/.qt/rcc/qpq-encryptor_raw_qml_0.qrc
-/QPQWallet/qml/Main.qml
-/QPQWallet/qml/SplashDialog.qml

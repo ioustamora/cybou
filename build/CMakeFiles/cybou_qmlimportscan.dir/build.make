@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for cybou_qmlimportscan.
 
@@ -68,13 +68,13 @@ include CMakeFiles/cybou_qmlimportscan.dir/progress.make
 
 CMakeFiles/cybou_qmlimportscan: .qt/qml_imports/cybou_build.cmake
 
-.qt/qml_imports/cybou_build.cmake: /usr/lib/qt6/libexec/qmlimportscanner
+.qt/qml_imports/cybou_build.cmake: /home/user/Qt/6.10.0/gcc_64/libexec/qmlimportscanner
 .qt/qml_imports/cybou_build.cmake: .qt/rcc/qmake_CybouWallet.qrc
 .qt/qml_imports/cybou_build.cmake: .qt/rcc/cybou_raw_qml_0.qrc
-.qt/qml_imports/cybou_build.cmake: /home/user/dev/qtest/qml/Main.qml
-.qt/qml_imports/cybou_build.cmake: /home/user/dev/qtest/qml/SplashDialog.qml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running qmlimportscanner for cybou"
-	cd /home/user/dev/qtest && /usr/lib/qt6/libexec/qmlimportscanner @/home/user/dev/qtest/build/.qt/qml_imports/cybou_build.rsp
+.qt/qml_imports/cybou_build.cmake: /media/user/FILES/cybou/qml/Main.qml
+.qt/qml_imports/cybou_build.cmake: /media/user/FILES/cybou/qml/SplashDialog.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running qmlimportscanner for cybou"
+	cd /media/user/FILES/cybou && /home/user/Qt/6.10.0/gcc_64/libexec/qmlimportscanner @/media/user/FILES/cybou/build/.qt/qml_imports/cybou_build.rsp
 
 CMakeFiles/cybou_qmlimportscan.dir/codegen:
 .PHONY : CMakeFiles/cybou_qmlimportscan.dir/codegen
@@ -93,6 +93,6 @@ CMakeFiles/cybou_qmlimportscan.dir/clean:
 .PHONY : CMakeFiles/cybou_qmlimportscan.dir/clean
 
 CMakeFiles/cybou_qmlimportscan.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/cybou_qmlimportscan.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/cybou_qmlimportscan.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cybou_qmlimportscan.dir/depend
 

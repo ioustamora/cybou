@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for cybou_qmllint.
 
@@ -66,11 +66,11 @@ include CMakeFiles/cybou_qmllint.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/cybou_qmllint.dir/progress.make
 
-CMakeFiles/cybou_qmllint: /usr/lib/qt6/bin/qmllint
-CMakeFiles/cybou_qmllint: /home/user/dev/qtest/qml/Main.qml
-CMakeFiles/cybou_qmllint: /home/user/dev/qtest/qml/SplashDialog.qml
+CMakeFiles/cybou_qmllint: /home/user/Qt/6.10.0/gcc_64/bin/qmllint
+CMakeFiles/cybou_qmllint: /media/user/FILES/cybou/qml/Main.qml
+CMakeFiles/cybou_qmllint: /media/user/FILES/cybou/qml/SplashDialog.qml
 CMakeFiles/cybou_qmllint: .rcc/qmllint/cybou.rsp
-	cd /home/user/dev/qtest && /usr/lib/qt6/bin/qmllint @/home/user/dev/qtest/build/.rcc/qmllint/cybou.rsp
+	cd /media/user/FILES/cybou && /home/user/Qt/6.10.0/gcc_64/bin/qmllint @/media/user/FILES/cybou/build/.rcc/qmllint/cybou.rsp
 
 CMakeFiles/cybou_qmllint.dir/codegen:
 .PHONY : CMakeFiles/cybou_qmllint.dir/codegen
@@ -88,6 +88,6 @@ CMakeFiles/cybou_qmllint.dir/clean:
 .PHONY : CMakeFiles/cybou_qmllint.dir/clean
 
 CMakeFiles/cybou_qmllint.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/cybou_qmllint.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/cybou_qmllint.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cybou_qmllint.dir/depend
 

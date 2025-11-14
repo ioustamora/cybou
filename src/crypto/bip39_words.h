@@ -1,3 +1,18 @@
+/**
+ * @file bip39_words.h
+ * @brief BIP-39 word list for mnemonic phrase generation
+ *
+ * This file contains the complete BIP-39 word list consisting of 2048 words
+ * used for generating human-readable mnemonic phrases. The words are ordered
+ * exactly as specified in the BIP-39 standard.
+ *
+ * Each word represents 11 bits of entropy when used in mnemonic generation,
+ * allowing for efficient encoding of binary data into memorable phrases.
+ *
+ * Word list source: BIP-39 specification
+ * Total words: 2048 (2^11)
+ */
+
 const char* BIP39_WORDS[] = {
 "abandon",
 "ability",

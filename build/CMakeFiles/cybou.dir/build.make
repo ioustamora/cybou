@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cybou.dir/depend.make
@@ -69,86 +69,86 @@ include CMakeFiles/cybou.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/cybou.dir/flags.make
 
-meta_types/qt6cybou_metatypes.json.gen: /usr/lib/qt6/libexec/moc
+meta_types/qt6cybou_metatypes.json.gen: /home/user/Qt/6.10.0/gcc_64/libexec/moc
 meta_types/qt6cybou_metatypes.json.gen: meta_types/cybou_json_file_list.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running moc --collect-json for target cybou"
-	/usr/lib/qt6/libexec/moc -o /home/user/dev/qtest/build/meta_types/qt6cybou_metatypes.json.gen --collect-json @/home/user/dev/qtest/build/meta_types/cybou_json_file_list.txt
-	/usr/bin/cmake -E copy_if_different /home/user/dev/qtest/build/meta_types/qt6cybou_metatypes.json.gen /home/user/dev/qtest/build/meta_types/qt6cybou_metatypes.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running moc --collect-json for target cybou"
+	/home/user/Qt/6.10.0/gcc_64/libexec/moc -o /media/user/FILES/cybou/build/meta_types/qt6cybou_metatypes.json.gen --collect-json @/media/user/FILES/cybou/build/meta_types/cybou_json_file_list.txt
+	/usr/bin/cmake -E copy_if_different /media/user/FILES/cybou/build/meta_types/qt6cybou_metatypes.json.gen /media/user/FILES/cybou/build/meta_types/qt6cybou_metatypes.json
 
 cybou_qmltyperegistrations.cpp: qmltypes/cybou_foreign_types.txt
 cybou_qmltyperegistrations.cpp: meta_types/qt6cybou_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/qt6/libexec/qmltyperegistrar
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6core_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6qml_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6network_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6gui_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6quick_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6qmlmeta_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6qmlmodels_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6qmlworkerscript_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6opengl_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6quickcontrols2_none_metatypes.json
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic QML type registration for target cybou"
-	/usr/lib/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/user/dev/qtest/build/CybouWallet/cybou.qmltypes --import-name=CybouWallet --major-version=1 --minor-version=0 @/home/user/dev/qtest/build/qmltypes/cybou_foreign_types.txt -o /home/user/dev/qtest/build/cybou_qmltyperegistrations.cpp /home/user/dev/qtest/build/meta_types/qt6cybou_metatypes.json
-	/usr/bin/cmake -E make_directory /home/user/dev/qtest/build/.qt/qmltypes
-	/usr/bin/cmake -E touch /home/user/dev/qtest/build/.qt/qmltypes/cybou.qmltypes
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/qmltyperegistrar
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6core_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6qml_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6network_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6gui_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6quick_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6qmlmeta_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6qmlmodels_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6qmlworkerscript_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6opengl_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6quickcontrols2_metatypes.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic QML type registration for target cybou"
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmltyperegistrar --generate-qmltypes=/media/user/FILES/cybou/build/CybouWallet/cybou.qmltypes --import-name=CybouWallet --major-version=1 --minor-version=0 @/media/user/FILES/cybou/build/qmltypes/cybou_foreign_types.txt -o /media/user/FILES/cybou/build/cybou_qmltyperegistrations.cpp /media/user/FILES/cybou/build/meta_types/qt6cybou_metatypes.json
+	/usr/bin/cmake -E make_directory /media/user/FILES/cybou/build/.qt/qmltypes
+	/usr/bin/cmake -E touch /media/user/FILES/cybou/build/.qt/qmltypes/cybou.qmltypes
 
 CybouWallet/cybou.qmltypes: cybou_qmltyperegistrations.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate CybouWallet/cybou.qmltypes
 
 .qt/rcc/qrc_qmake_CybouWallet.cpp: CybouWallet/qmldir
 .qt/rcc/qrc_qmake_CybouWallet.cpp: .qt/rcc/qmake_CybouWallet.qrc
-.qt/rcc/qrc_qmake_CybouWallet.cpp: /usr/lib/qt6/libexec/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running rcc for resource qmake_CybouWallet"
-	/usr/lib/qt6/libexec/rcc --output /home/user/dev/qtest/build/.qt/rcc/qrc_qmake_CybouWallet.cpp --name qmake_CybouWallet /home/user/dev/qtest/build/.qt/rcc/qmake_CybouWallet.qrc
+.qt/rcc/qrc_qmake_CybouWallet.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running rcc for resource qmake_CybouWallet"
+	/home/user/Qt/6.10.0/gcc_64/libexec/rcc --output /media/user/FILES/cybou/build/.qt/rcc/qrc_qmake_CybouWallet.cpp --name qmake_CybouWallet /media/user/FILES/cybou/build/.qt/rcc/qmake_CybouWallet.qrc
 
-.rcc/qmlcache/cybou_qmlcache_loader.cpp: /usr/lib/qt6/libexec/qmlcachegen
+.rcc/qmlcache/cybou_qmlcache_loader.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen
 .rcc/qmlcache/cybou_qmlcache_loader.cpp: .rcc/qmlcache/cybou_qml_loader_file_list.rsp
 .rcc/qmlcache/cybou_qmlcache_loader.cpp: .qt/rcc/qmake_CybouWallet.qrc
 .rcc/qmlcache/cybou_qmlcache_loader.cpp: .qt/rcc/cybou_raw_qml_0.qrc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating .rcc/qmlcache/cybou_qmlcache_loader.cpp"
-	/usr/lib/qt6/libexec/qmlcachegen --resource-name qmlcache_cybou -o /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp @/home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml_loader_file_list.rsp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating .rcc/qmlcache/cybou_qmlcache_loader.cpp"
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen --resource-name qmlcache_cybou -o /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp @/media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml_loader_file_list.rsp
 
-.rcc/qmlcache/cybou_qml/Main_qml.cpp: /usr/lib/qt6/libexec/qmlcachegen
-.rcc/qmlcache/cybou_qml/Main_qml.cpp: /home/user/dev/qtest/qml/Main.qml
+.rcc/qmlcache/cybou_qml/Main_qml.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen
+.rcc/qmlcache/cybou_qml/Main_qml.cpp: /media/user/FILES/cybou/qml/Main.qml
 .rcc/qmlcache/cybou_qml/Main_qml.cpp: .qt/rcc/qmake_CybouWallet.qrc
 .rcc/qmlcache/cybou_qml/Main_qml.cpp: .qt/rcc/cybou_raw_qml_0.qrc
 .rcc/qmlcache/cybou_qml/Main_qml.cpp: CybouWallet/cybou.qmltypes
 .rcc/qmlcache/cybou_qml/Main_qml.cpp: CybouWallet/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating .rcc/qmlcache/cybou_qml/Main_qml.cpp, .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats"
-	/usr/bin/cmake -E make_directory /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml
-	/usr/lib/qt6/libexec/qmlcachegen --bare --resource-path /CybouWallet/qml/Main.qml -I /home/user/dev/qtest/build -I /usr/lib/x86_64-linux-gnu/qt6/qml -i /home/user/dev/qtest/build/CybouWallet/qmldir --resource /home/user/dev/qtest/build/.qt/rcc/qmake_CybouWallet.qrc --resource /home/user/dev/qtest/build/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats "--module-id=CybouWallet(cybou)" -o /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp /home/user/dev/qtest/qml/Main.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating .rcc/qmlcache/cybou_qml/Main_qml.cpp, .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen --bare --resource-path /CybouWallet/qml/Main.qml -I /media/user/FILES/cybou/build -I /home/user/Qt/6.10.0/gcc_64/qml -i /media/user/FILES/cybou/build/CybouWallet/qmldir --resource /media/user/FILES/cybou/build/.qt/rcc/qmake_CybouWallet.qrc --resource /media/user/FILES/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats "--module-id=CybouWallet(cybou)" -o /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp /media/user/FILES/cybou/qml/Main.qml
 
 .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats: .rcc/qmlcache/cybou_qml/Main_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats
 
-.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: /usr/lib/qt6/libexec/qmlcachegen
-.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: /home/user/dev/qtest/qml/SplashDialog.qml
+.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen
+.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: /media/user/FILES/cybou/qml/SplashDialog.qml
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: .qt/rcc/qmake_CybouWallet.qrc
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: .qt/rcc/cybou_raw_qml_0.qrc
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: CybouWallet/cybou.qmltypes
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: CybouWallet/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp, .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats"
-	/usr/bin/cmake -E make_directory /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml
-	/usr/lib/qt6/libexec/qmlcachegen --bare --resource-path /CybouWallet/qml/SplashDialog.qml -I /home/user/dev/qtest/build -I /usr/lib/x86_64-linux-gnu/qt6/qml -i /home/user/dev/qtest/build/CybouWallet/qmldir --resource /home/user/dev/qtest/build/.qt/rcc/qmake_CybouWallet.qrc --resource /home/user/dev/qtest/build/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats "--module-id=CybouWallet(cybou)" -o /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp /home/user/dev/qtest/qml/SplashDialog.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp, .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen --bare --resource-path /CybouWallet/qml/SplashDialog.qml -I /media/user/FILES/cybou/build -I /home/user/Qt/6.10.0/gcc_64/qml -i /media/user/FILES/cybou/build/CybouWallet/qmldir --resource /media/user/FILES/cybou/build/.qt/rcc/qmake_CybouWallet.qrc --resource /media/user/FILES/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats "--module-id=CybouWallet(cybou)" -o /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp /media/user/FILES/cybou/qml/SplashDialog.qml
 
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats: .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats
 
-.qt/rcc/qrc_cybou_raw_qml_0.cpp: /home/user/dev/qtest/qml/Main.qml
-.qt/rcc/qrc_cybou_raw_qml_0.cpp: /home/user/dev/qtest/qml/SplashDialog.qml
+.qt/rcc/qrc_cybou_raw_qml_0.cpp: /media/user/FILES/cybou/qml/Main.qml
+.qt/rcc/qrc_cybou_raw_qml_0.cpp: /media/user/FILES/cybou/qml/SplashDialog.qml
 .qt/rcc/qrc_cybou_raw_qml_0.cpp: .qt/rcc/cybou_raw_qml_0.qrc
-.qt/rcc/qrc_cybou_raw_qml_0.cpp: /usr/lib/qt6/libexec/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Running rcc for resource cybou_raw_qml_0"
-	/usr/lib/qt6/libexec/rcc --output /home/user/dev/qtest/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp --name cybou_raw_qml_0 /home/user/dev/qtest/build/.qt/rcc/cybou_raw_qml_0.qrc
+.qt/rcc/qrc_cybou_raw_qml_0.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Running rcc for resource cybou_raw_qml_0"
+	/home/user/Qt/6.10.0/gcc_64/libexec/rcc --output /media/user/FILES/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp --name cybou_raw_qml_0 /media/user/FILES/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc
 
-meta_types/cybou_json_file_list.txt: /usr/lib/qt6/libexec/cmake_automoc_parser
+meta_types/cybou_json_file_list.txt: /home/user/Qt/6.10.0/gcc_64/libexec/cmake_automoc_parser
 meta_types/cybou_json_file_list.txt: cybou_autogen/timestamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Running AUTOMOC file extraction for target cybou"
-	/usr/lib/qt6/libexec/cmake_automoc_parser --cmake-autogen-cache-file /home/user/dev/qtest/build/CMakeFiles/cybou_autogen.dir/ParseCache.txt --cmake-autogen-info-file /home/user/dev/qtest/build/CMakeFiles/cybou_autogen.dir/AutogenInfo.json --output-file-path /home/user/dev/qtest/build/meta_types/cybou_json_file_list.txt --timestamp-file-path /home/user/dev/qtest/build/meta_types/cybou_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /home/user/dev/qtest/build/cybou_autogen/include
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Running AUTOMOC file extraction for target cybou"
+	/home/user/Qt/6.10.0/gcc_64/libexec/cmake_automoc_parser --cmake-autogen-cache-file /media/user/FILES/cybou/build/CMakeFiles/cybou_autogen.dir/ParseCache.txt --cmake-autogen-info-file /media/user/FILES/cybou/build/CMakeFiles/cybou_autogen.dir/AutogenInfo.json --output-file-path /media/user/FILES/cybou/build/meta_types/cybou_json_file_list.txt --timestamp-file-path /media/user/FILES/cybou/build/meta_types/cybou_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /media/user/FILES/cybou/build/cybou_autogen/include
 
 meta_types/qt6cybou_metatypes.json: meta_types/qt6cybou_metatypes.json.gen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating meta_types/qt6cybou_metatypes.json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating meta_types/qt6cybou_metatypes.json"
 	/usr/bin/cmake -E true
 
 CMakeFiles/cybou.dir/codegen:
@@ -157,142 +157,142 @@ CMakeFiles/cybou.dir/codegen:
 CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: CMakeFiles/cybou.dir/flags.make
 CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: cybou_autogen/mocs_compilation.cpp
 CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o -MF CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o -c /home/user/dev/qtest/build/cybou_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o -MF CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o -c /media/user/FILES/cybou/build/cybou_autogen/mocs_compilation.cpp
 
 CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/build/cybou_autogen/mocs_compilation.cpp > CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/build/cybou_autogen/mocs_compilation.cpp > CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/build/cybou_autogen/mocs_compilation.cpp -o CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/build/cybou_autogen/mocs_compilation.cpp -o CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/cybou.dir/src/main.cpp.o: CMakeFiles/cybou.dir/flags.make
-CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp
+CMakeFiles/cybou.dir/src/main.cpp.o: /media/user/FILES/cybou/src/main.cpp
 CMakeFiles/cybou.dir/src/main.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/cybou.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/src/main.cpp.o -MF CMakeFiles/cybou.dir/src/main.cpp.o.d -o CMakeFiles/cybou.dir/src/main.cpp.o -c /home/user/dev/qtest/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/cybou.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/src/main.cpp.o -MF CMakeFiles/cybou.dir/src/main.cpp.o.d -o CMakeFiles/cybou.dir/src/main.cpp.o -c /media/user/FILES/cybou/src/main.cpp
 
 CMakeFiles/cybou.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/src/main.cpp > CMakeFiles/cybou.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/src/main.cpp > CMakeFiles/cybou.dir/src/main.cpp.i
 
 CMakeFiles/cybou.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/src/main.cpp -o CMakeFiles/cybou.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/src/main.cpp -o CMakeFiles/cybou.dir/src/main.cpp.s
 
 CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o: CMakeFiles/cybou.dir/flags.make
-CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o: /home/user/dev/qtest/src/crypto/MnemonicEngine.cpp
+CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o: /media/user/FILES/cybou/src/crypto/MnemonicEngine.cpp
 CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o -MF CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o.d -o CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o -c /home/user/dev/qtest/src/crypto/MnemonicEngine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o -MF CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o.d -o CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o -c /media/user/FILES/cybou/src/crypto/MnemonicEngine.cpp
 
 CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/src/crypto/MnemonicEngine.cpp > CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/src/crypto/MnemonicEngine.cpp > CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.i
 
 CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/src/crypto/MnemonicEngine.cpp -o CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/src/crypto/MnemonicEngine.cpp -o CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.s
 
 CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: CMakeFiles/cybou.dir/flags.make
-CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: /home/user/dev/qtest/src/crypto/PostQuantumCrypto.cpp
+CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: /media/user/FILES/cybou/src/crypto/PostQuantumCrypto.cpp
 CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o -MF CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o.d -o CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o -c /home/user/dev/qtest/src/crypto/PostQuantumCrypto.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o -MF CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o.d -o CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o -c /media/user/FILES/cybou/src/crypto/PostQuantumCrypto.cpp
 
 CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/src/crypto/PostQuantumCrypto.cpp > CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/src/crypto/PostQuantumCrypto.cpp > CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.i
 
 CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/src/crypto/PostQuantumCrypto.cpp -o CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/src/crypto/PostQuantumCrypto.cpp -o CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.s
 
 CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o: CMakeFiles/cybou.dir/flags.make
 CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o: cybou_qmltyperegistrations.cpp
 CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o -MF CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o.d -o CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o -c /home/user/dev/qtest/build/cybou_qmltyperegistrations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o -MF CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o.d -o CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o -c /media/user/FILES/cybou/build/cybou_qmltyperegistrations.cpp
 
 CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/build/cybou_qmltyperegistrations.cpp > CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/build/cybou_qmltyperegistrations.cpp > CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.i
 
 CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/build/cybou_qmltyperegistrations.cpp -o CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/build/cybou_qmltyperegistrations.cpp -o CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.s
 
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o: CMakeFiles/cybou.dir/flags.make
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o: .qt/rcc/qrc_qmake_CybouWallet.cpp
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o -MF CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o.d -o CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o -c /home/user/dev/qtest/build/.qt/rcc/qrc_qmake_CybouWallet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o -MF CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o.d -o CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o -c /media/user/FILES/cybou/build/.qt/rcc/qrc_qmake_CybouWallet.cpp
 
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/build/.qt/rcc/qrc_qmake_CybouWallet.cpp > CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/build/.qt/rcc/qrc_qmake_CybouWallet.cpp > CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.i
 
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/build/.qt/rcc/qrc_qmake_CybouWallet.cpp -o CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/build/.qt/rcc/qrc_qmake_CybouWallet.cpp -o CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.s
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o: CMakeFiles/cybou.dir/flags.make
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o: .rcc/qmlcache/cybou_qmlcache_loader.cpp
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o -MF CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o.d -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o -c /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o -MF CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o.d -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o -c /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp > CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp > CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.i
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.s
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o: CMakeFiles/cybou.dir/flags.make
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o: .rcc/qmlcache/cybou_qml/Main_qml.cpp
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o -MF CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o.d -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o -c /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o -MF CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o.d -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o -c /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp > CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp > CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.i
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.s
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o: CMakeFiles/cybou.dir/flags.make
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o: .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o -MF CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o.d -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o -c /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o -MF CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o.d -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o -c /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp > CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp > CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.i
 
 CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp -o CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.s
 
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o: CMakeFiles/cybou.dir/flags.make
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o: .qt/rcc/qrc_cybou_raw_qml_0.cpp
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o: CMakeFiles/cybou.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o -MF CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o.d -o CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o -c /home/user/dev/qtest/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o -MF CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o.d -o CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o -c /media/user/FILES/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp
 
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/dev/qtest/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp > CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/user/FILES/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp > CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.i
 
 CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/dev/qtest/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp -o CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/user/FILES/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp -o CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.s
 
 # Object files for target cybou
 cybou_OBJECTS = \
@@ -322,22 +322,22 @@ cybou: CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o
 cybou: CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o
 cybou: CMakeFiles/cybou.dir/build.make
 cybou: CMakeFiles/cybou.dir/compiler_depend.ts
-cybou: /usr/lib/x86_64-linux-gnu/libQt6QuickControls2.so.6.8.2
-cybou: /home/user/liboqs/build/lib/liboqs.so
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6QuickControls2.so.6.10.0
 cybou: /usr/lib/x86_64-linux-gnu/libcrypto.so
-cybou: /usr/lib/x86_64-linux-gnu/libQt6Quick.so.6.8.2
-cybou: /usr/lib/x86_64-linux-gnu/libQt6QmlMeta.so.6.8.2
-cybou: /usr/lib/x86_64-linux-gnu/libQt6QmlWorkerScript.so.6.8.2
-cybou: /usr/lib/x86_64-linux-gnu/libQt6OpenGL.so.6.8.2
-cybou: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.8.2
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6Quick.so.6.10.0
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6QmlMeta.so.6.10.0
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6QmlWorkerScript.so.6.10.0
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6OpenGL.so.6.10.0
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6Gui.so.6.10.0
 cybou: /usr/lib/x86_64-linux-gnu/libGLX.so
 cybou: /usr/lib/x86_64-linux-gnu/libOpenGL.so
-cybou: /usr/lib/x86_64-linux-gnu/libQt6QmlModels.so.6.8.2
-cybou: /usr/lib/x86_64-linux-gnu/libQt6Qml.so.6.8.2
-cybou: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.8.2
-cybou: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.8.2
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6QmlModels.so.6.10.0
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6Qml.so.6.10.0
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6Network.so.6.10.0
+cybou: /home/user/Qt/6.10.0/gcc_64/lib/libQt6Core.so.6.10.0
+cybou: /usr/local/lib/liboqs.so
 cybou: CMakeFiles/cybou.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable cybou"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable cybou"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cybou.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -360,6 +360,6 @@ CMakeFiles/cybou.dir/depend: cybou_qmltyperegistrations.cpp
 CMakeFiles/cybou.dir/depend: meta_types/cybou_json_file_list.txt
 CMakeFiles/cybou.dir/depend: meta_types/qt6cybou_metatypes.json
 CMakeFiles/cybou.dir/depend: meta_types/qt6cybou_metatypes.json.gen
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/cybou.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/cybou.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cybou.dir/depend
 

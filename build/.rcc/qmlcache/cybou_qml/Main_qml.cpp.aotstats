@@ -1,836 +1,815 @@
-[
-    {
-        "moduleFiles": [
-            {
-                "entries": [
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 133,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: splashDialog",
-                        "functionName": "onCompleted",
-                        "line": 17
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 19,
-                        "durationMicroseconds": 107,
-                        "errorMessage": "",
-                        "functionName": "fileMode",
-                        "line": 22
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 21,
-                        "durationMicroseconds": 27,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: filePath",
-                        "functionName": "onAccepted",
-                        "line": 23
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 19,
-                        "durationMicroseconds": 73,
-                        "errorMessage": "",
-                        "functionName": "fileMode",
-                        "line": 31
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 22,
-                        "durationMicroseconds": 141,
-                        "errorMessage": "",
-                        "functionName": "nameFilters",
-                        "line": 32
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 21,
-                        "durationMicroseconds": 184,
-                        "errorMessage": "Cannot access value for name PostQuantumCrypto",
-                        "functionName": "onAccepted",
-                        "line": 34
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 19,
-                        "durationMicroseconds": 77,
-                        "errorMessage": "",
-                        "functionName": "fileMode",
-                        "line": 49
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 22,
-                        "durationMicroseconds": 160,
-                        "errorMessage": "",
-                        "functionName": "nameFilters",
-                        "line": 50
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 21,
-                        "durationMicroseconds": 175,
-                        "errorMessage": "Cannot access value for name PostQuantumCrypto",
-                        "functionName": "onAccepted",
-                        "line": 51
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 19,
-                        "durationMicroseconds": 75,
-                        "errorMessage": "",
-                        "functionName": "fileMode",
-                        "line": 68
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 22,
-                        "durationMicroseconds": 173,
-                        "errorMessage": "",
-                        "functionName": "nameFilters",
-                        "line": 69
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 21,
-                        "durationMicroseconds": 172,
-                        "errorMessage": "Cannot access value for name PostQuantumCrypto",
-                        "functionName": "onAccepted",
-                        "line": 71
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 30,
-                        "durationMicroseconds": 22,
-                        "errorMessage": "Cannot find name mnemonicAccepted",
-                        "functionName": "onMnemonicValidated",
-                        "line": 87
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 30,
-                        "durationMicroseconds": 51,
-                        "errorMessage": "",
-                        "functionName": "onMnemonicValidated",
-                        "line": 87
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 37,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on verticalCenter.",
-                        "functionName": "verticalCenter",
-                        "line": 96
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 183,
-                        "errorMessage": "",
-                        "functionName": "right",
-                        "line": 102
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 37,
-                        "durationMicroseconds": 109,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 104
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 23,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on text.",
-                        "functionName": "text",
-                        "line": 108
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on color.",
-                        "functionName": "color",
-                        "line": 109
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 26,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on visible.",
-                        "functionName": "visible",
-                        "line": 115
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 116
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 16,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 124
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 18,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on visible.",
-                        "functionName": "visible",
-                        "line": 125
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 16,
-                        "durationMicroseconds": 90,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 139
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 17,
-                        "durationMicroseconds": 37,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: tabBar",
-                        "functionName": "height",
-                        "line": 140
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 23,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: tabBar",
-                        "functionName": "currentIndex",
-                        "line": 141
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 18,
-                        "durationMicroseconds": 20,
-                        "errorMessage": "Cannot access value for name mnemonicAccepted",
-                        "functionName": "visible",
-                        "line": 142
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 20,
-                        "durationMicroseconds": 148,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 147
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 39,
-                        "durationMicroseconds": 113,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 148
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 26,
-                        "durationMicroseconds": 180,
-                        "errorMessage": "",
-                        "functionName": "top",
-                        "line": 149
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 38,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
-                        "functionName": "horizontalAlignment",
-                        "line": 156
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 157
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 38,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
-                        "functionName": "horizontalAlignment",
-                        "line": 163
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 164
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 91,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 172
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 181
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 31,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 184
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 36,
-                        "durationMicroseconds": 117,
-                        "errorMessage": "",
-                        "functionName": "right",
-                        "line": 195
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 199
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 207
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 125,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 216
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 220
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 241
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 103,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 264
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 273
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 31,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 277
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 34,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: outputText",
-                        "functionName": "color",
-                        "line": 280
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 39,
-                        "durationMicroseconds": 29,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: outputText",
-                        "functionName": "color",
-                        "line": 283
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 36,
-                        "durationMicroseconds": 124,
-                        "errorMessage": "",
-                        "functionName": "right",
-                        "line": 293
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 34,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on enabled.",
-                        "functionName": "enabled",
-                        "line": 297
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 298
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 34,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on enabled.",
-                        "functionName": "enabled",
-                        "line": 308
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 309
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 316
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 323
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 27,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 335
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 336
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 20,
-                        "durationMicroseconds": 142,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 344
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 39,
-                        "durationMicroseconds": 122,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 345
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 26,
-                        "durationMicroseconds": 136,
-                        "errorMessage": "",
-                        "functionName": "top",
-                        "line": 346
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 38,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
-                        "functionName": "horizontalAlignment",
-                        "line": 353
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 354
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 38,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
-                        "functionName": "horizontalAlignment",
-                        "line": 360
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 361
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 91,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 368
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 372
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 380
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 124,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 388
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 392
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 417
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 27,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 461
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 462
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 20,
-                        "durationMicroseconds": 151,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 470
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 39,
-                        "durationMicroseconds": 115,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 471
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 26,
-                        "durationMicroseconds": 112,
-                        "errorMessage": "",
-                        "functionName": "top",
-                        "line": 472
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 38,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
-                        "functionName": "horizontalAlignment",
-                        "line": 479
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 480
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 38,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
-                        "functionName": "horizontalAlignment",
-                        "line": 486
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 487
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 89,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 493
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 501
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 31,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on text.",
-                        "functionName": "text",
-                        "line": 512
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 103,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 529
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 538
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 31,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 542
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 27,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on text.",
-                        "functionName": "text",
-                        "line": 544
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 36,
-                        "durationMicroseconds": 123,
-                        "errorMessage": "",
-                        "functionName": "right",
-                        "line": 549
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 34,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on enabled.",
-                        "functionName": "enabled",
-                        "line": 553
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 554
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 34,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on enabled.",
-                        "functionName": "enabled",
-                        "line": 564
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 565
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 129,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 574
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 578
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 588
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 27,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 604
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 605
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 18,
-                        "durationMicroseconds": 23,
-                        "errorMessage": "Cannot access value for name mnemonicAccepted",
-                        "functionName": "visible",
-                        "line": 615
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 27,
-                        "durationMicroseconds": 62,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 613
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 34,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
-                        "functionName": "horizontalAlignment",
-                        "line": 621
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 20,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 622
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 23,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 627
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 34,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on horizontalAlignment.",
-                        "functionName": "horizontalAlignment",
-                        "line": 628
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 20,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on width.",
-                        "functionName": "width",
-                        "line": 629
-                    }
-                ],
-                "filepath": "/home/user/dev/qtest/qml/Main.qml"
-            }
-        ],
-        "moduleId": "CybouWallet(cybou)"
-    }
-]
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 50,
+                            "functionName": "onCompleted",
+                            "line": 17,
+                            "message": "Cannot retrieve a non-object type by ID: splashDialog"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 80,
+                            "functionName": "fileMode",
+                            "line": 22,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 38,
+                            "functionName": "onAccepted",
+                            "line": 23,
+                            "message": "Cannot retrieve a non-object type by ID: filePath"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 51,
+                            "functionName": "fileMode",
+                            "line": 31,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 77,
+                            "functionName": "nameFilters",
+                            "line": 32,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 170,
+                            "functionName": "onAccepted",
+                            "line": 34,
+                            "message": "Cannot access value for name PostQuantumCrypto"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 45,
+                            "functionName": "fileMode",
+                            "line": 49,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 71,
+                            "functionName": "nameFilters",
+                            "line": 50,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 154,
+                            "functionName": "onAccepted",
+                            "line": 51,
+                            "message": "Cannot access value for name PostQuantumCrypto"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 45,
+                            "functionName": "fileMode",
+                            "line": 68,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 88,
+                            "functionName": "nameFilters",
+                            "line": 69,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 156,
+                            "functionName": "onAccepted",
+                            "line": 71,
+                            "message": "Cannot access value for name PostQuantumCrypto"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 33,
+                            "functionName": "onMnemonicValidated",
+                            "line": 87,
+                            "message": "Cannot find name mnemonicAccepted"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 29,
+                            "functionName": "onMnemonicValidated",
+                            "line": 87,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 37,
+                            "durationMicroseconds": 0,
+                            "functionName": "verticalCenter",
+                            "line": 96,
+                            "message": "Could not find property \"verticalCenter\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 14,
+                            "functionName": "right",
+                            "line": 102,
+                            "message": "Cannot access value for name parent"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 37,
+                            "durationMicroseconds": 8,
+                            "functionName": "verticalCenter",
+                            "line": 104,
+                            "message": "Cannot access value for name parent"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 108,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 109,
+                            "message": "Could not find property \"color\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 115,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 116,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 16,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 124,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 18,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 125,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 16,
+                            "durationMicroseconds": 52,
+                            "functionName": "width",
+                            "line": 139,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 17,
+                            "durationMicroseconds": 105,
+                            "functionName": "height",
+                            "line": 140,
+                            "message": "Cannot retrieve a non-object type by ID: tabBar"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 15,
+                            "functionName": "currentIndex",
+                            "line": 141,
+                            "message": "Cannot retrieve a non-object type by ID: tabBar"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 18,
+                            "durationMicroseconds": 12,
+                            "functionName": "visible",
+                            "line": 142,
+                            "message": "Cannot access value for name mnemonicAccepted"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 20,
+                            "durationMicroseconds": 82,
+                            "functionName": "width",
+                            "line": 147,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 77,
+                            "functionName": "alignment",
+                            "line": 148,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 155,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 156,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 162,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 163,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 47,
+                            "functionName": "width",
+                            "line": 171,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 180,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 183,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 57,
+                            "functionName": "right",
+                            "line": 194,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 198,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 206,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 63,
+                            "functionName": "horizontalCenter",
+                            "line": 215,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 219,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 240,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 50,
+                            "functionName": "width",
+                            "line": 263,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 272,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 276,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 70,
+                            "functionName": "color",
+                            "line": 279,
+                            "message": "Cannot access value for name outputText"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 60,
+                            "functionName": "color",
+                            "line": 282,
+                            "message": "Cannot access value for name outputText"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 60,
+                            "functionName": "right",
+                            "line": 292,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 296,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 297,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 307,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 308,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 315,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 322,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 334,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 335,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 20,
+                            "durationMicroseconds": 82,
+                            "functionName": "width",
+                            "line": 343,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 112,
+                            "functionName": "alignment",
+                            "line": 344,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 351,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 352,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 358,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 359,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 56,
+                            "functionName": "width",
+                            "line": 366,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 370,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 378,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 73,
+                            "functionName": "horizontalCenter",
+                            "line": 386,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 390,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 415,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 459,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 460,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 20,
+                            "durationMicroseconds": 92,
+                            "functionName": "width",
+                            "line": 468,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 86,
+                            "functionName": "alignment",
+                            "line": 469,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 476,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 477,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 483,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 484,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 55,
+                            "functionName": "width",
+                            "line": 490,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 39,
+                            "functionName": "fill",
+                            "line": 498,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 509,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 55,
+                            "functionName": "width",
+                            "line": 526,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 535,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 539,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 541,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 66,
+                            "functionName": "right",
+                            "line": 546,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 550,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 551,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 561,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 562,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 72,
+                            "functionName": "horizontalCenter",
+                            "line": 571,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 575,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 585,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 601,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 602,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 18,
+                            "durationMicroseconds": 20,
+                            "functionName": "visible",
+                            "line": 612,
+                            "message": "Cannot access value for name mnemonicAccepted"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 42,
+                            "functionName": "centerIn",
+                            "line": 610,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 618,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 619,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 624,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 625,
+                            "message": "Could not find property \"horizontalAlignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 626,
+                            "message": "Could not find property \"width\"."
+                        }
+                    ],
+                    "filePath": "/media/user/FILES/cybou/qml/Main.qml"
+                }
+            ],
+            "moduleId": "CybouWallet(cybou)"
+        }
+    ]
+}

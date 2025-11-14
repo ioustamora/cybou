@@ -3,7 +3,7 @@
         "classes": [
             {
                 "className": "MnemonicEngine",
-                "lineNumber": 16,
+                "lineNumber": 34,
                 "methods": [
                     {
                         "access": "public",
@@ -14,6 +14,7 @@
                             }
                         ],
                         "index": 2,
+                        "lineNumber": 61,
                         "name": "generateMnemonic",
                         "returnType": "QString"
                     },
@@ -21,6 +22,7 @@
                         "access": "public",
                         "index": 3,
                         "isCloned": true,
+                        "lineNumber": 61,
                         "name": "generateMnemonic",
                         "returnType": "QString"
                     },
@@ -33,6 +35,8 @@
                             }
                         ],
                         "index": 4,
+                        "isConst": true,
+                        "lineNumber": 72,
                         "name": "validateMnemonic",
                         "returnType": "bool"
                     },
@@ -45,6 +49,7 @@
                             }
                         ],
                         "index": 5,
+                        "lineNumber": 83,
                         "name": "setMnemonic",
                         "returnType": "bool"
                     },
@@ -57,6 +62,7 @@
                             }
                         ],
                         "index": 6,
+                        "lineNumber": 95,
                         "name": "deriveKeyFromMnemonic",
                         "returnType": "void"
                     },
@@ -64,6 +70,7 @@
                         "access": "public",
                         "index": 7,
                         "isCloned": true,
+                        "lineNumber": 95,
                         "name": "deriveKeyFromMnemonic",
                         "returnType": "void"
                     }
@@ -75,6 +82,7 @@
                         "designable": true,
                         "final": false,
                         "index": 0,
+                        "lineNumber": 37,
                         "name": "hasMnemonic",
                         "notify": "mnemonicChanged",
                         "read": "hasMnemonic",
@@ -89,6 +97,7 @@
                         "designable": true,
                         "final": false,
                         "index": 1,
+                        "lineNumber": 38,
                         "name": "currentMnemonic",
                         "notify": "mnemonicChanged",
                         "read": "currentMnemonic",
@@ -103,6 +112,7 @@
                         "designable": true,
                         "final": false,
                         "index": 2,
+                        "lineNumber": 39,
                         "name": "derivedKey",
                         "notify": "keyDerived",
                         "read": "derivedKey",
@@ -118,12 +128,14 @@
                     {
                         "access": "public",
                         "index": 0,
+                        "lineNumber": 136,
                         "name": "mnemonicChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 1,
+                        "lineNumber": 141,
                         "name": "keyDerived",
                         "returnType": "void"
                     }
@@ -137,17 +149,18 @@
             }
         ],
         "inputFile": "MnemonicEngine.h",
-        "outputRevision": 68
+        "outputRevision": 69
     },
     {
         "classes": [
             {
                 "className": "PostQuantumCrypto",
-                "lineNumber": 18,
+                "lineNumber": 46,
                 "methods": [
                     {
                         "access": "public",
                         "index": 2,
+                        "lineNumber": 74,
                         "name": "generateKeyPair",
                         "returnType": "bool"
                     },
@@ -164,18 +177,23 @@
                             }
                         ],
                         "index": 3,
+                        "lineNumber": 86,
                         "name": "importKeyPair",
                         "returnType": "bool"
                     },
                     {
                         "access": "public",
                         "index": 4,
+                        "isConst": true,
+                        "lineNumber": 92,
                         "name": "exportPrivateKey",
                         "returnType": "QString"
                     },
                     {
                         "access": "public",
                         "index": 5,
+                        "isConst": true,
+                        "lineNumber": 98,
                         "name": "exportPublicKey",
                         "returnType": "QString"
                     },
@@ -188,6 +206,7 @@
                             }
                         ],
                         "index": 6,
+                        "lineNumber": 109,
                         "name": "signMessage",
                         "returnType": "QString"
                     },
@@ -208,6 +227,7 @@
                             }
                         ],
                         "index": 7,
+                        "lineNumber": 121,
                         "name": "verifySignature",
                         "returnType": "bool"
                     },
@@ -220,6 +240,7 @@
                             }
                         ],
                         "index": 8,
+                        "lineNumber": 133,
                         "name": "encapsulateKey",
                         "returnType": "QVariantMap"
                     },
@@ -232,6 +253,7 @@
                             }
                         ],
                         "index": 9,
+                        "lineNumber": 144,
                         "name": "decapsulateKey",
                         "returnType": "QByteArray"
                     },
@@ -244,6 +266,7 @@
                             }
                         ],
                         "index": 10,
+                        "lineNumber": 155,
                         "name": "encryptText",
                         "returnType": "QString"
                     },
@@ -256,6 +279,7 @@
                             }
                         ],
                         "index": 11,
+                        "lineNumber": 166,
                         "name": "decryptText",
                         "returnType": "QString"
                     },
@@ -272,6 +296,7 @@
                             }
                         ],
                         "index": 12,
+                        "lineNumber": 177,
                         "name": "saveEncryptedTextToFile",
                         "returnType": "bool"
                     },
@@ -284,6 +309,7 @@
                             }
                         ],
                         "index": 13,
+                        "lineNumber": 187,
                         "name": "loadEncryptedTextFromFile",
                         "returnType": "QString"
                     },
@@ -300,6 +326,7 @@
                             }
                         ],
                         "index": 14,
+                        "lineNumber": 199,
                         "name": "encryptFile",
                         "returnType": "bool"
                     },
@@ -316,6 +343,7 @@
                             }
                         ],
                         "index": 15,
+                        "lineNumber": 211,
                         "name": "decryptFile",
                         "returnType": "bool"
                     },
@@ -328,6 +356,7 @@
                             }
                         ],
                         "index": 16,
+                        "lineNumber": 222,
                         "name": "encryptBinary",
                         "returnType": "QByteArray"
                     },
@@ -340,6 +369,7 @@
                             }
                         ],
                         "index": 17,
+                        "lineNumber": 233,
                         "name": "decryptBinary",
                         "returnType": "QByteArray"
                     },
@@ -352,6 +382,7 @@
                             }
                         ],
                         "index": 18,
+                        "lineNumber": 244,
                         "name": "generateSharedSecret",
                         "returnType": "QString"
                     }
@@ -363,6 +394,7 @@
                         "designable": true,
                         "final": false,
                         "index": 0,
+                        "lineNumber": 49,
                         "name": "hasKeys",
                         "notify": "keysChanged",
                         "read": "hasKeys",
@@ -377,6 +409,7 @@
                         "designable": true,
                         "final": false,
                         "index": 1,
+                        "lineNumber": 50,
                         "name": "publicKey",
                         "notify": "keysChanged",
                         "read": "publicKey",
@@ -391,6 +424,7 @@
                         "designable": true,
                         "final": false,
                         "index": 2,
+                        "lineNumber": 51,
                         "name": "keyAlgorithm",
                         "read": "keyAlgorithm",
                         "required": false,
@@ -405,6 +439,7 @@
                     {
                         "access": "public",
                         "index": 0,
+                        "lineNumber": 268,
                         "name": "keysChanged",
                         "returnType": "void"
                     },
@@ -425,6 +460,7 @@
                             }
                         ],
                         "index": 1,
+                        "lineNumber": 276,
                         "name": "operationCompleted",
                         "returnType": "void"
                     }
@@ -438,6 +474,6 @@
             }
         ],
         "inputFile": "PostQuantumCrypto.h",
-        "outputRevision": 68
+        "outputRevision": 69
     }
 ]

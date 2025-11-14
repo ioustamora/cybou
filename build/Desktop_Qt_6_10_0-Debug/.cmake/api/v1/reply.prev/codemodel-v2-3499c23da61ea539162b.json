@@ -1,0 +1,259 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f68c9c3d439fde3f3e9b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "cybou",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-204165cc2db655679945.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-7b36319bbb3235c8867a.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-7493c4531024e5582bb7.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-2c23deca3ae59fd08c88.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-a8cb47dd86832eaddb92.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou-Debug-330902860a13a5c9ecc9.json",
+					"name" : "cybou",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_autogen-Debug-c1a32f1e29fc9853c5e5.json",
+					"name" : "cybou_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_autogen_timestamp_deps-Debug-dc02518705e75845b635.json",
+					"name" : "cybou_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_copy_qml-Debug-d64b62c22353870cb939.json",
+					"name" : "cybou_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_copy_res-Debug-fbc9e05478af78f49c61.json",
+					"name" : "cybou_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmlimportscan-Debug-8e266b4cd3725b577e78.json",
+					"name" : "cybou_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmllint-Debug-120a863a89c43a5e3d7a.json",
+					"name" : "cybou_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmllint_json-Debug-02d8c0f078920868c88d.json",
+					"name" : "cybou_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmllint_module-Debug-7284a359269f4e141f88.json",
+					"name" : "cybou_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmltyperegistration-Debug-a3212e98a2b02b9bc9cc.json",
+					"name" : "cybou_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_qmlls_build_ini_file-Debug-c67eb8c9a2d7813fef23.json",
+					"name" : "generate_qmlls_build_ini_file",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_cybou_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_cybou_aotstats_target-Debug-ac25d16f0fa1b3faa198.json",
+					"name" : "module_cybou_aotstats_target",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryption::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryption-Debug-2c07748f2e3b402f57ae.json",
+					"name" : "test_encryption",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryption_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryption_autogen-Debug-2e0449add163ad3be72e.json",
+					"name" : "test_encryption_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryption_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryption_autogen_timestamp_deps-Debug-37e674e1b70da7885a0c.json",
+					"name" : "test_encryption_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_mnemonic::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_mnemonic-Debug-e3e01a8e9356ae26058a.json",
+					"name" : "test_mnemonic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_mnemonic_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_mnemonic_autogen-Debug-d42f5ca7d27cc031e081.json",
+					"name" : "test_mnemonic_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_mnemonic_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_mnemonic_autogen_timestamp_deps-Debug-0a27e4ea6f0310493be7.json",
+					"name" : "test_mnemonic_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug",
+		"source" : "/media/user/FILES/cybou"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

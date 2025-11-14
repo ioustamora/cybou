@@ -145,9 +145,8 @@ ApplicationWindow {
         Column {
             spacing: 20
             width: parent.width * 0.9
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: 20
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            Layout.topMargin: 20
 
             Label {
                 text: qsTr("🔤 Text Encryption/Decryption")
@@ -342,9 +341,8 @@ ApplicationWindow {
         Column {
             spacing: 20
             width: parent.width * 0.9
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: 20
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            Layout.topMargin: 20
 
             Label {
                 text: qsTr("📁 File/Folder Encryption")
@@ -468,9 +466,8 @@ ApplicationWindow {
         Column {
             spacing: 20
             width: parent.width * 0.9
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: 20
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            Layout.topMargin: 20
 
             Label {
                 text: qsTr("🔑 Post-Quantum Key Management")

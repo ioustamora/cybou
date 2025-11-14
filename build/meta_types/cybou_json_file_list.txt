@@ -1,2 +1,2 @@
-/home/user/dev/qtest/build/cybou_autogen/include/../MZW7AAAGJO/moc_MnemonicEngine.cpp.json
-/home/user/dev/qtest/build/cybou_autogen/include/../MZW7AAAGJO/moc_PostQuantumCrypto.cpp.json
+/media/user/FILES/cybou/build/cybou_autogen/include/../MZW7AAAGJO/moc_MnemonicEngine.cpp.json
+/media/user/FILES/cybou/build/cybou_autogen/include/../MZW7AAAGJO/moc_PostQuantumCrypto.cpp.json

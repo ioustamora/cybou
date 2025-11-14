@@ -1,2 +1,6 @@
-set(__QT_DEPLOY_TARGET_cybou_FILE /home/user/dev/qtest/build/cybou)
+set(__QT_DEPLOY_TARGET_cybou_FILE /media/user/FILES/cybou/build/cybou)
 set(__QT_DEPLOY_TARGET_cybou_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_test_encryption_FILE /media/user/FILES/cybou/build/test_encryption)
+set(__QT_DEPLOY_TARGET_test_encryption_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_test_mnemonic_FILE /media/user/FILES/cybou/build/test_mnemonic)
+set(__QT_DEPLOY_TARGET_test_mnemonic_TYPE EXECUTABLE)

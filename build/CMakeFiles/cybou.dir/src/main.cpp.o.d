@@ -1,9 +1,9 @@
-CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
+CMakeFiles/cybou.dir/src/main.cpp.o: /media/user/FILES/cybou/src/main.cpp \
  /usr/include/stdc-predef.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QGuiApplication \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/QGuiApplication \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qguiapplication.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qtguiglobal.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qglobal.h \
  /usr/include/c++/14/type_traits \
  /usr/include/x86_64-linux-gnu/c++/14/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/os_defines.h \
@@ -35,38 +35,94 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/assert.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtversionchecks.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtconfiginclude.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtcoreglobal.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtversionchecks.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtconfiginclude.h \
  /usr/include/c++/14/version \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qconfig.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcore-config.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtconfigmacros.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtdeprecationdefinitions.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcoreexports.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompilerdetection.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qprocessordetection.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsystemdetection.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtdeprecationmarkers.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtclasshelpermacros.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtpreprocessorsupport.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qassert.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtnoop.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtypes.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtversion.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtypeinfo.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerfwd.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qconfig.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtcore-config.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtconfigmacros.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtdeprecationdefinitions.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcompilerdetection.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qprocessordetection.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qsystemdetection.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtcoreexports.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtdeprecationmarkers.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtclasshelpermacros.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qassert.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtnoop.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtypes.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtversion.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtypeinfo.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcontainerfwd.h \
  /usr/include/c++/14/limits \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsysinfo.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qlogging.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompare_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasicatomic.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic_cxx11.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qgenericatomic.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qyieldcpu.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qsysinfo.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qlogging.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qflags.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcompare_impl.h \
+ /usr/include/c++/14/algorithm /usr/include/c++/14/bits/stl_algobase.h \
+ /usr/include/c++/14/bits/functexcept.h \
+ /usr/include/c++/14/bits/exception_defines.h \
+ /usr/include/c++/14/bits/stl_iterator_base_types.h \
+ /usr/include/c++/14/bits/iterator_concepts.h \
+ /usr/include/c++/14/bits/ptr_traits.h \
+ /usr/include/c++/14/bits/ranges_cmp.h \
+ /usr/include/c++/14/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/14/bits/concept_check.h \
+ /usr/include/c++/14/debug/assertions.h \
+ /usr/include/c++/14/bits/stl_iterator.h /usr/include/c++/14/new \
+ /usr/include/c++/14/bits/exception.h \
+ /usr/include/c++/14/bits/stl_construct.h \
+ /usr/include/c++/14/debug/debug.h \
+ /usr/include/c++/14/bits/predefined_ops.h /usr/include/c++/14/bit \
+ /usr/include/c++/14/bits/stl_algo.h \
+ /usr/include/c++/14/bits/algorithmfwd.h \
+ /usr/include/c++/14/bits/stl_heap.h \
+ /usr/include/c++/14/bits/uniform_int_dist.h \
+ /usr/include/c++/14/bits/stl_tempbuf.h /usr/include/c++/14/cstdlib \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endianness.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/c++/14/bits/std_abs.h \
+ /usr/include/c++/14/bits/ranges_algo.h \
+ /usr/include/c++/14/bits/ranges_algobase.h \
+ /usr/include/c++/14/bits/ranges_base.h \
+ /usr/include/c++/14/bits/max_size_type.h /usr/include/c++/14/numbers \
+ /usr/include/c++/14/bits/invoke.h /usr/include/c++/14/bits/ranges_util.h \
+ /usr/include/c++/14/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/14/pstl/execution_defs.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qatomic.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qbasicatomic.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qgenericatomic.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qyieldcpu.h \
  /usr/include/c++/14/atomic /usr/include/c++/14/bits/atomic_base.h \
- /usr/include/c++/14/new /usr/include/c++/14/bits/exception.h \
  /usr/include/c++/14/bits/atomic_lockfree_defines.h \
  /usr/include/c++/14/bits/atomic_wait.h \
  /usr/include/c++/14/bits/functional_hash.h \
@@ -74,10 +130,6 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/x86_64-linux-gnu/c++/14/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/linux/sched/types.h /usr/include/linux/types.h \
  /usr/lib/linux/uapi/x86/asm/types.h /usr/include/asm-generic/types.h \
@@ -91,22 +143,9 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
- /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
- /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
- /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
- /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/c++/14/cerrno /usr/include/errno.h \
@@ -134,43 +173,27 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/lib/linux/uapi/x86/asm/unistd.h \
  /usr/lib/linux/uapi/x86/asm/unistd_64.h \
  /usr/include/x86_64-linux-gnu/bits/syscall.h \
- /usr/include/c++/14/bits/functexcept.h \
- /usr/include/c++/14/bits/exception_defines.h \
  /usr/include/c++/14/bits/std_mutex.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qconstructormacros.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qdarwinhelpers.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qexceptionhandling.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qttypetraits.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qconstructormacros.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdarwinhelpers.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qexceptionhandling.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qforeach.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qttypetraits.h \
  /usr/include/c++/14/optional /usr/include/c++/14/exception \
  /usr/include/c++/14/bits/exception_ptr.h \
  /usr/include/c++/14/bits/cxxabi_init_exception.h \
  /usr/include/c++/14/typeinfo /usr/include/c++/14/bits/nested_exception.h \
  /usr/include/c++/14/bits/enable_special_members.h \
- /usr/include/c++/14/bits/stl_construct.h \
- /usr/include/c++/14/bits/stl_iterator_base_types.h \
- /usr/include/c++/14/bits/iterator_concepts.h \
- /usr/include/c++/14/bits/ptr_traits.h \
- /usr/include/c++/14/bits/ranges_cmp.h \
- /usr/include/c++/14/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/14/bits/concept_check.h \
- /usr/include/c++/14/debug/assertions.h /usr/include/c++/14/bits/invoke.h \
  /usr/include/c++/14/tuple /usr/include/c++/14/bits/uses_allocator.h \
- /usr/include/c++/14/bits/ranges_util.h \
- /usr/include/c++/14/bits/ranges_base.h \
- /usr/include/c++/14/bits/stl_iterator.h \
- /usr/include/c++/14/bits/max_size_type.h /usr/include/c++/14/numbers \
  /usr/include/c++/14/variant /usr/include/c++/14/bits/parse_numbers.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qfunctionpointer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobalstatic.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmalloc.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qminmax.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qnumeric.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qfunctionpointer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qglobalstatic.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qmalloc.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qminmax.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qnumeric.h \
  /usr/include/c++/14/cmath /usr/include/c++/14/bits/requires_hosted.h \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
@@ -179,21 +202,7 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/14/bits/std_abs.h /usr/include/stdlib.h \
- /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/endian.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
- /usr/include/x86_64-linux-gnu/sys/select.h \
- /usr/include/x86_64-linux-gnu/bits/select.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/c++/14/bits/specfun.h \
- /usr/include/c++/14/bits/stl_algobase.h \
- /usr/include/c++/14/debug/debug.h \
- /usr/include/c++/14/bits/predefined_ops.h /usr/include/c++/14/bit \
- /usr/include/c++/14/tr1/gamma.tcc \
+ /usr/include/c++/14/bits/specfun.h /usr/include/c++/14/tr1/gamma.tcc \
  /usr/include/c++/14/tr1/special_function_util.h \
  /usr/include/c++/14/tr1/bessel_function.tcc \
  /usr/include/c++/14/tr1/beta_function.tcc \
@@ -205,20 +214,21 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/c++/14/tr1/poly_hermite.tcc \
  /usr/include/c++/14/tr1/poly_laguerre.tcc \
  /usr/include/c++/14/tr1/riemann_zeta.tcc \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qoverload.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qswap.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtenvironmentvariables.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtresource.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qttranslation.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtgui-config.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qchar.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompare.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcomparehelpers.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q20type_traits.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20type_traits.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qoverload.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qswap.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtenvironmentvariables.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtresource.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qttranslation.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qversiontagging.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qtgui-config.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qtguiexports.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstring.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qchar.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcompare.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstdlibdetection.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcomparehelpers.h \
  /usr/include/c++/14/functional /usr/include/c++/14/bits/stl_function.h \
  /usr/include/c++/14/backward/binders.h \
  /usr/include/c++/14/bits/refwrap.h \
@@ -243,18 +253,18 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/c++/14/bits/stl_vector.h \
  /usr/include/c++/14/bits/stl_bvector.h \
  /usr/include/c++/14/bits/vector.tcc /usr/include/c++/14/array \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qrefcount.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qpair.h /usr/include/string.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringview.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qbytearray.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qrefcount.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qnamespace.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtmetamacros.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qarraydata.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qpair.h /usr/include/string.h \
  /usr/include/strings.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydatapointer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydataops.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qxptype_traits.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qarraydatapointer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qarraydataops.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qxptype_traits.h \
  /usr/include/c++/14/cstring /usr/include/c++/14/iterator \
  /usr/include/c++/14/bits/stream_iterator.h /usr/include/c++/14/iosfwd \
  /usr/include/c++/14/bits/stringfwd.h /usr/include/c++/14/bits/postypes.h \
@@ -280,9 +290,8 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/c++/14/bits/cxxabi_forced.h \
  /usr/include/c++/14/bits/basic_string.h /usr/include/c++/14/string_view \
  /usr/include/c++/14/bits/string_view.tcc \
- /usr/include/c++/14/ext/string_conversions.h /usr/include/c++/14/cstdlib \
- /usr/include/c++/14/cstdio /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/c++/14/ext/string_conversions.h /usr/include/c++/14/cstdio \
+ /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
@@ -293,7 +302,7 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/c++/14/system_error \
  /usr/include/x86_64-linux-gnu/c++/14/bits/error_constants.h \
  /usr/include/c++/14/stdexcept /usr/include/c++/14/bits/streambuf.tcc \
- /usr/include/c++/14/memory /usr/include/c++/14/bits/stl_tempbuf.h \
+ /usr/include/c++/14/memory \
  /usr/include/c++/14/bits/stl_raw_storage_iter.h \
  /usr/include/c++/14/bits/align.h /usr/include/c++/14/bits/unique_ptr.h \
  /usr/include/c++/14/ostream /usr/include/c++/14/ios \
@@ -312,187 +321,189 @@ CMakeFiles/cybou.dir/src/main.cpp.o: /home/user/dev/qtest/src/main.cpp \
  /usr/include/c++/14/bits/shared_ptr_atomic.h \
  /usr/include/c++/14/backward/auto_ptr.h \
  /usr/include/c++/14/bits/ranges_uninitialized.h \
- /usr/include/c++/14/bits/ranges_algobase.h \
  /usr/include/c++/14/pstl/glue_memory_defs.h \
- /usr/include/c++/14/pstl/execution_defs.h /usr/include/c++/14/algorithm \
- /usr/include/c++/14/bits/stl_algo.h \
- /usr/include/c++/14/bits/algorithmfwd.h \
- /usr/include/c++/14/bits/stl_heap.h \
- /usr/include/c++/14/bits/uniform_int_dist.h \
- /usr/include/c++/14/bits/ranges_algo.h \
- /usr/include/c++/14/pstl/glue_algorithm_defs.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q20memory.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringfwd.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20functional.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20memory.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/q17memory.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qbytearrayview.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringfwd.h \
  /usr/include/c++/14/stdlib.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringliteral.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringalgorithms.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qlatin1stringview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qutf8stringview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringtokenizer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringbuilder.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringconverter.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringconverter_base.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qfunctionaltools_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
- /usr/include/c++/14/chrono /usr/include/c++/14/bits/chrono.h \
- /usr/include/c++/14/ratio /usr/include/c++/14/ctime \
- /usr/include/c++/14/sstream /usr/include/c++/14/istream \
- /usr/include/c++/14/bits/istream.tcc \
- /usr/include/c++/14/bits/sstream.tcc \
- /usr/include/c++/14/bits/chrono_io.h /usr/include/c++/14/iomanip \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringliteral.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringalgorithms.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qlatin1stringview.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qanystringview.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qutf8stringview.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringtokenizer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringbuilder.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringconverter.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringconverter_base.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qbasictimer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qlist.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qhashfunctions.h \
+ /usr/include/c++/14/numeric /usr/include/c++/14/bits/stl_numeric.h \
+ /usr/include/c++/14/pstl/glue_numeric_defs.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qiterator.h \
+ /usr/include/c++/14/ranges /usr/include/c++/14/span \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qbytearraylist.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringlist.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringmatcher.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qscopedpointer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qmath.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtformat_impl.h \
+ /usr/include/c++/14/format /usr/include/c++/14/charconv \
  /usr/include/c++/14/locale \
- /usr/include/c++/14/bits/locale_facets_nonio.h \
+ /usr/include/c++/14/bits/locale_facets_nonio.h /usr/include/c++/14/ctime \
  /usr/include/x86_64-linux-gnu/c++/14/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/14/bits/codecvt.h \
  /usr/include/c++/14/bits/locale_facets_nonio.tcc \
  /usr/include/c++/14/bits/locale_conv.h \
- /usr/include/c++/14/bits/quoted_string.h /usr/include/c++/14/format \
- /usr/include/c++/14/charconv /usr/include/c++/14/span \
  /usr/include/c++/14/bits/unicode.h \
  /usr/include/c++/14/bits/unicode-data.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopedpointer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevicebase.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qfloat16.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qhashfunctions.h \
- /usr/include/c++/14/numeric /usr/include/c++/14/bits/stl_numeric.h \
- /usr/include/c++/14/pstl/glue_numeric_defs.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmath.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterable.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetacontainer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerinfo.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtaggedpointer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopeguard.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qiterable.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qmetacontainer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcontainerinfo.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtaggedpointer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qscopeguard.h \
  /usr/include/c++/14/list /usr/include/c++/14/bits/stl_list.h \
  /usr/include/c++/14/bits/list.tcc /usr/include/c++/14/map \
  /usr/include/c++/14/bits/stl_tree.h /usr/include/c++/14/bits/stl_map.h \
  /usr/include/c++/14/bits/stl_multimap.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qeventloop.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearraylist.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringlist.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringmatcher.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qbindingstorage.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qset.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputmethod.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q23utility.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qpoint.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qsize.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmargins.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/QQmlApplicationEngine \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlapplicationengine.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlengine.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qjsengine.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimezone.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcalendar.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qjsvalue.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qtqmlglobal.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qtqml-config.h \
- /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkglobal.h \
- /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetwork-config.h \
- /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkexports.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qtqmlexports.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qjsmanagedvalue.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qjsprimitivevalue.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qjsnumbercoercion.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmldebug.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqml.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlprivate.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmllist.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlparserstatus.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlpropertyvaluesource.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetaobject.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qversionnumber.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qspan.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qobject_impl.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h \
+ /usr/include/c++/14/chrono /usr/include/c++/14/bits/chrono.h \
+ /usr/include/c++/14/ratio /usr/include/c++/14/sstream \
+ /usr/include/c++/14/istream /usr/include/c++/14/bits/istream.tcc \
+ /usr/include/c++/14/bits/sstream.tcc \
+ /usr/include/c++/14/bits/chrono_io.h /usr/include/c++/14/iomanip \
+ /usr/include/c++/14/bits/quoted_string.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qeventloop.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdeadlinetimer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qnativeinterface.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication_platform.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qwindowdefs.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qinputmethod.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qlocale.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qvariant.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtextstream.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcontiguouscache.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qshareddata.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+ /usr/include/c++/14/set /usr/include/c++/14/bits/stl_set.h \
+ /usr/include/c++/14/bits/stl_multiset.h \
+ /usr/include/c++/14/unordered_set \
+ /usr/include/c++/14/bits/unordered_set.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qmap.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qshareddata_impl.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qset.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qhash.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qvarlengtharray.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qalloc.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/q23utility.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20utility.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qpoint.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcheckedint_impl.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qsize.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qmargins.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qguiapplication_platform.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qguiapplication.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/QQmlApplicationEngine \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlapplicationengine.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlengine.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qurl.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qjsengine.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtimezone.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qdatetime.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcalendar.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qjsvalue.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qtqmlglobal.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qtqml-config.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtNetwork/qtnetworkexports.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qtqmlexports.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qjsmanagedvalue.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qjsprimitivevalue.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qjsnumbercoercion.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmldebug.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqml.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlprivate.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmllist.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlparserstatus.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlpropertyvaluesource.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qpointer.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qversionnumber.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qspan.h \
  /usr/include/c++/14/cassert \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/q20iterator.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtyperevision.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlregistration.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQmlIntegration/qqmlintegration.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlerror.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlabstracturlinterceptor.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/QQmlContext \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlcontext.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QIcon \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qicon.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixmap.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintdevice.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qrect.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qrgb.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qrgba64.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qimage.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixelformat.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qpolygon.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qregion.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qline.h \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/QQmlEngine \
- /usr/include/x86_64-linux-gnu/qt6/QtQml/qqmlengine.h \
- /home/user/dev/qtest/src/crypto/MnemonicEngine.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringlist.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qvector.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QByteArray \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
- /home/user/dev/qtest/src/crypto/PostQuantumCrypto.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariantMap \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariantmap.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QFile \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/q20iterator.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtyperevision.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlregistration.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQmlIntegration/qqmlintegration.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlerror.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlabstracturlinterceptor.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/QQmlContext \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlcontext.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/QIcon \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qicon.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qpixmap.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qpaintdevice.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qrect.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qcolor.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qrgb.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qrgba64.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qimage.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qpixelformat.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qtransform.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qpolygon.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtGui/qregion.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qline.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/QQmlEngine \
+ /home/user/Qt/6.10.0/gcc_64/include/QtQml/qqmlengine.h \
+ /media/user/FILES/cybou/src/crypto/MnemonicEngine.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QObject \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QString \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstring.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QStringList \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qstringlist.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QVector \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qvector.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QByteArray \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qbytearray.h \
+ /media/user/FILES/cybou/src/crypto/PostQuantumCrypto.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QVariantMap \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qvariantmap.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QMap \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qmap.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QVariant \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qvariant.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QString \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QFile \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qfile.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qfiledevice.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qiodevice.h \
  /usr/include/c++/14/filesystem /usr/include/c++/14/bits/fs_fwd.h \
  /usr/include/c++/14/bits/fs_path.h /usr/include/c++/14/codecvt \
  /usr/include/c++/14/bits/fs_dir.h /usr/include/c++/14/bits/fs_ops.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QTextStream \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QTextStream \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qtextstream.h \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/QCryptographicHash \
+ /home/user/Qt/6.10.0/gcc_64/include/QtCore/qcryptographichash.h \
  /usr/local/include/oqs/oqs.h /usr/local/include/oqs/oqsconfig.h \
  /usr/local/include/oqs/common.h /usr/local/include/oqs/rand.h \
  /usr/local/include/oqs/kem.h /usr/local/include/oqs/kem_bike.h \

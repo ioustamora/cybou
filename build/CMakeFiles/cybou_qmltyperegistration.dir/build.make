@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for cybou_qmltyperegistration.
 
@@ -71,45 +71,45 @@ CMakeFiles/cybou_qmltyperegistration: CybouWallet/cybou.qmltypes
 
 cybou_qmltyperegistrations.cpp: qmltypes/cybou_foreign_types.txt
 cybou_qmltyperegistrations.cpp: meta_types/qt6cybou_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/qt6/libexec/qmltyperegistrar
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6core_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6qml_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6network_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6gui_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6quick_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6qmlmeta_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6qmlmodels_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6qmlworkerscript_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6opengl_none_metatypes.json
-cybou_qmltyperegistrations.cpp: /usr/lib/x86_64-linux-gnu/qt6/metatypes/qt6quickcontrols2_none_metatypes.json
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic QML type registration for target cybou"
-	/usr/lib/qt6/libexec/qmltyperegistrar --generate-qmltypes=/home/user/dev/qtest/build/CybouWallet/cybou.qmltypes --import-name=CybouWallet --major-version=1 --minor-version=0 @/home/user/dev/qtest/build/qmltypes/cybou_foreign_types.txt -o /home/user/dev/qtest/build/cybou_qmltyperegistrations.cpp /home/user/dev/qtest/build/meta_types/qt6cybou_metatypes.json
-	/usr/bin/cmake -E make_directory /home/user/dev/qtest/build/.qt/qmltypes
-	/usr/bin/cmake -E touch /home/user/dev/qtest/build/.qt/qmltypes/cybou.qmltypes
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/qmltyperegistrar
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6core_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6qml_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6network_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6gui_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6quick_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6qmlmeta_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6qmlmodels_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6qmlworkerscript_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6opengl_metatypes.json
+cybou_qmltyperegistrations.cpp: /home/user/Qt/6.10.0/gcc_64/metatypes/qt6quickcontrols2_metatypes.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic QML type registration for target cybou"
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmltyperegistrar --generate-qmltypes=/media/user/FILES/cybou/build/CybouWallet/cybou.qmltypes --import-name=CybouWallet --major-version=1 --minor-version=0 @/media/user/FILES/cybou/build/qmltypes/cybou_foreign_types.txt -o /media/user/FILES/cybou/build/cybou_qmltyperegistrations.cpp /media/user/FILES/cybou/build/meta_types/qt6cybou_metatypes.json
+	/usr/bin/cmake -E make_directory /media/user/FILES/cybou/build/.qt/qmltypes
+	/usr/bin/cmake -E touch /media/user/FILES/cybou/build/.qt/qmltypes/cybou.qmltypes
 
 CybouWallet/cybou.qmltypes: cybou_qmltyperegistrations.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate CybouWallet/cybou.qmltypes
 
 meta_types/qt6cybou_metatypes.json: meta_types/qt6cybou_metatypes.json.gen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating meta_types/qt6cybou_metatypes.json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating meta_types/qt6cybou_metatypes.json"
 	/usr/bin/cmake -E true
 
-meta_types/qt6cybou_metatypes.json.gen: /usr/lib/qt6/libexec/moc
+meta_types/qt6cybou_metatypes.json.gen: /home/user/Qt/6.10.0/gcc_64/libexec/moc
 meta_types/qt6cybou_metatypes.json.gen: meta_types/cybou_json_file_list.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running moc --collect-json for target cybou"
-	/usr/lib/qt6/libexec/moc -o /home/user/dev/qtest/build/meta_types/qt6cybou_metatypes.json.gen --collect-json @/home/user/dev/qtest/build/meta_types/cybou_json_file_list.txt
-	/usr/bin/cmake -E copy_if_different /home/user/dev/qtest/build/meta_types/qt6cybou_metatypes.json.gen /home/user/dev/qtest/build/meta_types/qt6cybou_metatypes.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running moc --collect-json for target cybou"
+	/home/user/Qt/6.10.0/gcc_64/libexec/moc -o /media/user/FILES/cybou/build/meta_types/qt6cybou_metatypes.json.gen --collect-json @/media/user/FILES/cybou/build/meta_types/cybou_json_file_list.txt
+	/usr/bin/cmake -E copy_if_different /media/user/FILES/cybou/build/meta_types/qt6cybou_metatypes.json.gen /media/user/FILES/cybou/build/meta_types/qt6cybou_metatypes.json
 
-meta_types/cybou_json_file_list.txt: /usr/lib/qt6/libexec/cmake_automoc_parser
+meta_types/cybou_json_file_list.txt: /home/user/Qt/6.10.0/gcc_64/libexec/cmake_automoc_parser
 meta_types/cybou_json_file_list.txt: cybou_autogen/timestamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Running AUTOMOC file extraction for target cybou"
-	/usr/lib/qt6/libexec/cmake_automoc_parser --cmake-autogen-cache-file /home/user/dev/qtest/build/CMakeFiles/cybou_autogen.dir/ParseCache.txt --cmake-autogen-info-file /home/user/dev/qtest/build/CMakeFiles/cybou_autogen.dir/AutogenInfo.json --output-file-path /home/user/dev/qtest/build/meta_types/cybou_json_file_list.txt --timestamp-file-path /home/user/dev/qtest/build/meta_types/cybou_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /home/user/dev/qtest/build/cybou_autogen/include
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Running AUTOMOC file extraction for target cybou"
+	/home/user/Qt/6.10.0/gcc_64/libexec/cmake_automoc_parser --cmake-autogen-cache-file /media/user/FILES/cybou/build/CMakeFiles/cybou_autogen.dir/ParseCache.txt --cmake-autogen-info-file /media/user/FILES/cybou/build/CMakeFiles/cybou_autogen.dir/AutogenInfo.json --output-file-path /media/user/FILES/cybou/build/meta_types/cybou_json_file_list.txt --timestamp-file-path /media/user/FILES/cybou/build/meta_types/cybou_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /media/user/FILES/cybou/build/cybou_autogen/include
 
-cybou_autogen/timestamp: /usr/lib/qt6/libexec/moc
+cybou_autogen/timestamp: /home/user/Qt/6.10.0/gcc_64/libexec/moc
 cybou_autogen/timestamp: CMakeFiles/cybou_qmltyperegistration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Automatic MOC and UIC for target cybou"
-	/usr/bin/cmake -E cmake_autogen /home/user/dev/qtest/build/CMakeFiles/cybou_autogen.dir/AutogenInfo.json ""
-	/usr/bin/cmake -E touch /home/user/dev/qtest/build/cybou_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Automatic MOC and UIC for target cybou"
+	/usr/bin/cmake -E cmake_autogen /media/user/FILES/cybou/build/CMakeFiles/cybou_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /media/user/FILES/cybou/build/cybou_autogen/timestamp
 
 CMakeFiles/cybou_qmltyperegistration.dir/codegen:
 .PHONY : CMakeFiles/cybou_qmltyperegistration.dir/codegen
@@ -133,6 +133,6 @@ CMakeFiles/cybou_qmltyperegistration.dir/clean:
 .PHONY : CMakeFiles/cybou_qmltyperegistration.dir/clean
 
 CMakeFiles/cybou_qmltyperegistration.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/cybou_qmltyperegistration.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/cybou_qmltyperegistration.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cybou_qmltyperegistration.dir/depend
 

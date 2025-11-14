@@ -1,204 +1,207 @@
-[
-    {
-        "moduleFiles": [
-            {
-                "entries": [
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 22,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on standardButtons.",
-                        "functionName": "standardButtons",
-                        "line": 9
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 18,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on closePolicy.",
-                        "functionName": "closePolicy",
-                        "line": 11
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 8,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on x.",
-                        "functionName": "x",
-                        "line": 20
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 8,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on y.",
-                        "functionName": "y",
-                        "line": 21
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 5,
-                        "durationMicroseconds": 42,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: mnemonicField",
-                        "functionName": "isValidMnemonic",
-                        "line": 192
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 15,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onOpened.",
-                        "functionName": "onOpened",
-                        "line": 199
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 23,
-                        "durationMicroseconds": 87,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 24
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 23,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 31
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 27,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 49
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 31,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on fill.",
-                        "functionName": "fill",
-                        "line": 46
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 26,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on enabled.",
-                        "functionName": "enabled",
-                        "line": 65
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 66
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 77
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 90
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 23,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 102
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 22,
-                        "durationMicroseconds": 60,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: mnemonicField",
-                        "functionName": "visible",
-                        "line": 115
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 31,
-                        "durationMicroseconds": 58,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 118
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 27,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on text.",
-                        "functionName": "text",
-                        "line": 130
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 31,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 136
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 148
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 157
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 26,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on enabled.",
-                        "functionName": "enabled",
-                        "line": 168
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 170
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 23,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on wrapMode.",
-                        "functionName": "wrapMode",
-                        "line": 186
-                    }
-                ],
-                "filepath": "/home/user/dev/qtest/qml/SplashDialog.qml"
-            }
-        ],
-        "moduleId": "CybouWallet(cybou)"
-    }
-]
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "standardButtons",
+                            "line": 9,
+                            "message": "Could not find property \"standardButtons\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 18,
+                            "durationMicroseconds": 0,
+                            "functionName": "closePolicy",
+                            "line": 11,
+                            "message": "Could not find property \"closePolicy\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 8,
+                            "durationMicroseconds": 0,
+                            "functionName": "x",
+                            "line": 20,
+                            "message": "Could not find property \"x\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 8,
+                            "durationMicroseconds": 0,
+                            "functionName": "y",
+                            "line": 21,
+                            "message": "Could not find property \"y\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 107,
+                            "functionName": "isValidMnemonic",
+                            "line": 192,
+                            "message": "Cannot retrieve a non-object type by ID: mnemonicField"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 15,
+                            "durationMicroseconds": 0,
+                            "functionName": "onOpened",
+                            "line": 199,
+                            "message": "Could not find signal \"opened\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 23,
+                            "durationMicroseconds": 80,
+                            "functionName": "fill",
+                            "line": 24,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 31,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 49,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 46,
+                            "message": "Could not find property \"fill\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 65,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 66,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 77,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 90,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 102,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 176,
+                            "functionName": "visible",
+                            "line": 115,
+                            "message": "Cannot retrieve a non-object type by ID: mnemonicField"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 47,
+                            "functionName": "fill",
+                            "line": 118,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 130,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 136,
+                            "message": "Could not find property \"wrapMode\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 148,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 157,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 168,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 170,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 186,
+                            "message": "Could not find property \"wrapMode\"."
+                        }
+                    ],
+                    "filePath": "/media/user/FILES/cybou/qml/SplashDialog.qml"
+                }
+            ],
+            "moduleId": "CybouWallet(cybou)"
+        }
+    ]
+}

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for cybou_autogen.
 
@@ -68,11 +68,11 @@ include CMakeFiles/cybou_autogen.dir/progress.make
 
 CMakeFiles/cybou_autogen: cybou_autogen/timestamp
 
-cybou_autogen/timestamp: /usr/lib/qt6/libexec/moc
+cybou_autogen/timestamp: /home/user/Qt/6.10.0/gcc_64/libexec/moc
 cybou_autogen/timestamp: CMakeFiles/cybou_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target cybou"
-	/usr/bin/cmake -E cmake_autogen /home/user/dev/qtest/build/CMakeFiles/cybou_autogen.dir/AutogenInfo.json ""
-	/usr/bin/cmake -E touch /home/user/dev/qtest/build/cybou_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target cybou"
+	/usr/bin/cmake -E cmake_autogen /media/user/FILES/cybou/build/CMakeFiles/cybou_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /media/user/FILES/cybou/build/cybou_autogen/timestamp
 
 CMakeFiles/cybou_autogen.dir/codegen:
 .PHONY : CMakeFiles/cybou_autogen.dir/codegen
@@ -91,6 +91,6 @@ CMakeFiles/cybou_autogen.dir/clean:
 .PHONY : CMakeFiles/cybou_autogen.dir/clean
 
 CMakeFiles/cybou_autogen.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/cybou_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/cybou_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cybou_autogen.dir/depend
 

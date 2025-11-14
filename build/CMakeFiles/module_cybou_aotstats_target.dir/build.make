@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for module_cybou_aotstats_target.
 
@@ -71,31 +71,31 @@ CMakeFiles/module_cybou_aotstats_target: .rcc/qmlcache/module_cybou.aotstats
 .rcc/qmlcache/module_cybou.aotstats: .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats
 .rcc/qmlcache/module_cybou.aotstats: .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats
 .rcc/qmlcache/module_cybou.aotstats: .rcc/qmlcache/module_cybou.aotstatslist
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/module_cybou.aotstats"
-	/usr/lib/qt6/libexec/qmlaotstats aggregate /home/user/dev/qtest/build/.rcc/qmlcache/module_cybou.aotstatslist /home/user/dev/qtest/build/.rcc/qmlcache/module_cybou.aotstats
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/module_cybou.aotstats"
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmlaotstats aggregate /media/user/FILES/cybou/build/.rcc/qmlcache/module_cybou.aotstatslist /media/user/FILES/cybou/build/.rcc/qmlcache/module_cybou.aotstats
 
-.rcc/qmlcache/cybou_qml/Main_qml.cpp: /usr/lib/qt6/libexec/qmlcachegen
-.rcc/qmlcache/cybou_qml/Main_qml.cpp: /home/user/dev/qtest/qml/Main.qml
+.rcc/qmlcache/cybou_qml/Main_qml.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen
+.rcc/qmlcache/cybou_qml/Main_qml.cpp: /media/user/FILES/cybou/qml/Main.qml
 .rcc/qmlcache/cybou_qml/Main_qml.cpp: .qt/rcc/qmake_CybouWallet.qrc
 .rcc/qmlcache/cybou_qml/Main_qml.cpp: .qt/rcc/cybou_raw_qml_0.qrc
 .rcc/qmlcache/cybou_qml/Main_qml.cpp: CybouWallet/cybou.qmltypes
 .rcc/qmlcache/cybou_qml/Main_qml.cpp: CybouWallet/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating .rcc/qmlcache/cybou_qml/Main_qml.cpp, .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats"
-	/usr/bin/cmake -E make_directory /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml
-	/usr/lib/qt6/libexec/qmlcachegen --bare --resource-path /CybouWallet/qml/Main.qml -I /home/user/dev/qtest/build -I /usr/lib/x86_64-linux-gnu/qt6/qml -i /home/user/dev/qtest/build/CybouWallet/qmldir --resource /home/user/dev/qtest/build/.qt/rcc/qmake_CybouWallet.qrc --resource /home/user/dev/qtest/build/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats "--module-id=CybouWallet(cybou)" -o /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp /home/user/dev/qtest/qml/Main.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating .rcc/qmlcache/cybou_qml/Main_qml.cpp, .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen --bare --resource-path /CybouWallet/qml/Main.qml -I /media/user/FILES/cybou/build -I /home/user/Qt/6.10.0/gcc_64/qml -i /media/user/FILES/cybou/build/CybouWallet/qmldir --resource /media/user/FILES/cybou/build/.qt/rcc/qmake_CybouWallet.qrc --resource /media/user/FILES/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats "--module-id=CybouWallet(cybou)" -o /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp /media/user/FILES/cybou/qml/Main.qml
 
 .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats: .rcc/qmlcache/cybou_qml/Main_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats
 
-.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: /usr/lib/qt6/libexec/qmlcachegen
-.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: /home/user/dev/qtest/qml/SplashDialog.qml
+.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: /home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen
+.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: /media/user/FILES/cybou/qml/SplashDialog.qml
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: .qt/rcc/qmake_CybouWallet.qrc
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: .qt/rcc/cybou_raw_qml_0.qrc
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: CybouWallet/cybou.qmltypes
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp: CybouWallet/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp, .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats"
-	/usr/bin/cmake -E make_directory /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml
-	/usr/lib/qt6/libexec/qmlcachegen --bare --resource-path /CybouWallet/qml/SplashDialog.qml -I /home/user/dev/qtest/build -I /usr/lib/x86_64-linux-gnu/qt6/qml -i /home/user/dev/qtest/build/CybouWallet/qmldir --resource /home/user/dev/qtest/build/.qt/rcc/qmake_CybouWallet.qrc --resource /home/user/dev/qtest/build/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats "--module-id=CybouWallet(cybou)" -o /home/user/dev/qtest/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp /home/user/dev/qtest/qml/SplashDialog.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp, .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml
+	/home/user/Qt/6.10.0/gcc_64/libexec/qmlcachegen --bare --resource-path /CybouWallet/qml/SplashDialog.qml -I /media/user/FILES/cybou/build -I /home/user/Qt/6.10.0/gcc_64/qml -i /media/user/FILES/cybou/build/CybouWallet/qmldir --resource /media/user/FILES/cybou/build/.qt/rcc/qmake_CybouWallet.qrc --resource /media/user/FILES/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats "--module-id=CybouWallet(cybou)" -o /media/user/FILES/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp /media/user/FILES/cybou/qml/SplashDialog.qml
 
 .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats: .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats
@@ -121,6 +121,6 @@ CMakeFiles/module_cybou_aotstats_target.dir/clean:
 .PHONY : CMakeFiles/module_cybou_aotstats_target.dir/clean
 
 CMakeFiles/module_cybou_aotstats_target.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/module_cybou_aotstats_target.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/module_cybou_aotstats_target.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/module_cybou_aotstats_target.dir/depend
 

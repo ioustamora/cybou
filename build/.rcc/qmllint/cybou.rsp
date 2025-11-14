@@ -1,11 +1,11 @@
 --bare
 -I
-/home/user/dev/qtest/build
+/media/user/FILES/cybou/build
 -I
-/usr/lib/x86_64-linux-gnu/qt6/qml
+/home/user/Qt/6.10.0/gcc_64/qml
 --resource
-/home/user/dev/qtest/build/.qt/rcc/qmake_CybouWallet.qrc
+/media/user/FILES/cybou/build/.qt/rcc/qmake_CybouWallet.qrc
 --resource
-/home/user/dev/qtest/build/.qt/rcc/cybou_raw_qml_0.qrc
-/home/user/dev/qtest/qml/Main.qml
-/home/user/dev/qtest/qml/SplashDialog.qml
+/media/user/FILES/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc
+/media/user/FILES/cybou/qml/Main.qml
+/media/user/FILES/cybou/qml/SplashDialog.qml

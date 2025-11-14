@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for cybou_copy_qml.
 
@@ -68,11 +68,11 @@ include CMakeFiles/cybou_copy_qml.dir/progress.make
 
 CMakeFiles/cybou_copy_qml: .qt/cybou_qml.txt
 
-.qt/cybou_qml.txt: /usr/lib/x86_64-linux-gnu/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
-.qt/cybou_qml.txt: /home/user/dev/qtest/qml/Main.qml
-.qt/cybou_qml.txt: /home/user/dev/qtest/qml/SplashDialog.qml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying cybou qml sources into build dir"
-	/usr/bin/cmake -DFILES_INFO_PATH=/home/user/dev/qtest/build/.qt/cybou_qml.cmake -P /usr/lib/x86_64-linux-gnu/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
+.qt/cybou_qml.txt: /home/user/Qt/6.10.0/gcc_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
+.qt/cybou_qml.txt: /media/user/FILES/cybou/qml/Main.qml
+.qt/cybou_qml.txt: /media/user/FILES/cybou/qml/SplashDialog.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying cybou qml sources into build dir"
+	/usr/bin/cmake -DFILES_INFO_PATH=/media/user/FILES/cybou/build/.qt/cybou_qml.cmake -P /home/user/Qt/6.10.0/gcc_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
 
 CMakeFiles/cybou_copy_qml.dir/codegen:
 .PHONY : CMakeFiles/cybou_copy_qml.dir/codegen
@@ -91,6 +91,6 @@ CMakeFiles/cybou_copy_qml.dir/clean:
 .PHONY : CMakeFiles/cybou_copy_qml.dir/clean
 
 CMakeFiles/cybou_copy_qml.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/cybou_copy_qml.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/cybou_copy_qml.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cybou_copy_qml.dir/depend
 

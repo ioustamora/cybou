@@ -1,3 +1,18 @@
+/**
+ * @file PostQuantumCrypto.cpp
+ * @brief Implementation of post-quantum cryptographic operations
+ *
+ * This file implements quantum-resistant cryptography using the Open Quantum Safe (OQS) library.
+ * It provides a Qt-friendly interface to NIST-standard post-quantum algorithms including
+ * Kyber-1024 for key encapsulation and ML-DSA-65 for digital signatures.
+ *
+ * Key implementation details:
+ * - Secure memory management using OQS secure free functions
+ * - Error handling with proper cleanup on failures
+ * - Deterministic key derivation for symmetric encryption consistency
+ * - Binary-safe file encryption/decryption
+ */
+
 #include "PostQuantumCrypto.h"
 
 #include <QRandomGenerator>
@@ -58,12 +73,28 @@ void PostQuantumCrypto::cleanupKeys()
     m_publicKeyHex.clear();
 }
 
+/**
+ * @brief Generates a new Kyber-1024 + ML-DSA-65 key pair
+ *
+ * Creates quantum-resistant key pairs using cryptographically secure
+ * random number generation. The keys are stored internally and used
+ * for all subsequent cryptographic operations.
+ *
+ * Key generation process:
+ * 1. Allocate secure memory for Kyber keys using OQS functions
+ * 2. Generate Kyber-1024 key pair for key encapsulation
+ * 3. Allocate secure memory for Dilithium keys
+ * 4. Generate ML-DSA-65 key pair for digital signatures
+ * 5. Combine public keys into a single hex string for export/display
+ *
+ * @return bool True if key generation succeeded
+ */
 bool PostQuantumCrypto::generateKeyPair()
 {
     cleanupKeys();
 
     try {
-        // Allocate memory for Kyber keys
+        // Allocate memory for Kyber keys using OQS secure allocator
         m_kyberPublicKey = static_cast<uint8_t*>(OQS_MEM_malloc(OQS_KEM_kyber_1024_length_public_key));
         m_kyberSecretKey = static_cast<uint8_t*>(OQS_MEM_malloc(OQS_KEM_kyber_1024_length_secret_key));
 
@@ -71,7 +102,7 @@ bool PostQuantumCrypto::generateKeyPair()
             throw std::runtime_error("Failed to allocate memory for Kyber keys");
         }
 
-        // Generate Kyber key pair
+        // Generate Kyber key pair using NIST-standard algorithm
         OQS_STATUS status = OQS_KEM_kyber_1024_keypair(m_kyberPublicKey, m_kyberSecretKey);
         if (status != OQS_SUCCESS) {
             throw std::runtime_error("Failed to generate Kyber key pair");
@@ -85,13 +116,14 @@ bool PostQuantumCrypto::generateKeyPair()
             throw std::runtime_error("Failed to allocate memory for Dilithium keys");
         }
 
-        // Generate Dilithium key pair
+        // Generate Dilithium key pair for digital signatures
         status = OQS_SIG_ml_dsa_65_keypair(m_dilithiumPublicKey, m_dilithiumSecretKey);
         if (status != OQS_SUCCESS) {
             throw std::runtime_error("Failed to generate Dilithium key pair");
         }
 
-        // Create combined public key hex for display
+        // Create combined public key hex for display/export
+        // Format: Kyber public key + Dilithium public key
         QByteArray combinedPubKey;
         combinedPubKey.append(reinterpret_cast<char*>(m_kyberPublicKey), OQS_KEM_kyber_1024_length_public_key);
         combinedPubKey.append(reinterpret_cast<char*>(m_dilithiumPublicKey), OQS_SIG_ml_dsa_65_length_public_key);
@@ -543,13 +575,31 @@ QByteArray PostQuantumCrypto::decryptBinary(const QByteArray &ciphertext)
     }
 }
 
+/**
+ * @brief Generates a deterministic symmetric key from PQ keys
+ *
+ * Creates a consistent 32-byte key for symmetric encryption/decryption
+ * by hashing the combination of Kyber and Dilithium private keys.
+ *
+ * This ensures that:
+ * - The same key is generated for encryption and decryption
+ * - Keys are derived from quantum-resistant private keys
+ * - No additional key management is required
+ *
+ * Process:
+ * 1. Combine Kyber and Dilithium secret keys
+ * 2. Add a fixed salt for domain separation
+ * 3. Hash with SHA-256 to produce 32-byte key
+ *
+ * @return QByteArray 32-byte deterministic symmetric key
+ */
 QByteArray PostQuantumCrypto::generateDeterministicKey()
 {
     // Create a deterministic key from our PQ keys using SHA-256
     // This ensures the same key is generated for encryption/decryption
     QByteArray keyMaterial;
 
-    // Combine Kyber and Dilithium keys
+    // Combine Kyber and Dilithium keys for maximum entropy
     if (m_kyberSecretKey) {
         keyMaterial.append(reinterpret_cast<char*>(m_kyberSecretKey), OQS_KEM_kyber_1024_length_secret_key);
     }
@@ -557,10 +607,11 @@ QByteArray PostQuantumCrypto::generateDeterministicKey()
         keyMaterial.append(reinterpret_cast<char*>(m_dilithiumSecretKey), OQS_SIG_ml_dsa_65_length_secret_key);
     }
 
-    // Add a fixed salt for key derivation
+    // Add a fixed salt for key derivation to prevent attacks
+    // This separates the key derivation domain from other uses
     keyMaterial.append("cybou_pq_key_derivation_salt_2024");
 
-    // Hash to get a 32-byte key
+    // Hash to get a 32-byte (256-bit) key suitable for symmetric encryption
     QByteArray hash = QCryptographicHash::hash(keyMaterial, QCryptographicHash::Sha256);
     return hash;
 }

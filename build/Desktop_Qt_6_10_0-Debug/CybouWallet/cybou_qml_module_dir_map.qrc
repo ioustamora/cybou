@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/CybouWallet">/media/user/FILES/cybou/build/Desktop_Qt_6_10_0-Debug/CybouWallet</file>
+
+  </qresource>
+</RCC>

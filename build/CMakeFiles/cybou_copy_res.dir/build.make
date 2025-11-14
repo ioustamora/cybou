@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/dev/qtest
+CMAKE_SOURCE_DIR = /media/user/FILES/cybou
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/dev/qtest/build
+CMAKE_BINARY_DIR = /media/user/FILES/cybou/build
 
 # Utility rule file for cybou_copy_res.
 
@@ -68,9 +68,9 @@ include CMakeFiles/cybou_copy_res.dir/progress.make
 
 CMakeFiles/cybou_copy_res: .qt/cybou_res.txt
 
-.qt/cybou_res.txt: /usr/lib/x86_64-linux-gnu/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/user/dev/qtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying cybou qml resources into build dir"
-	/usr/bin/cmake -DFILES_INFO_PATH=/home/user/dev/qtest/build/.qt/cybou_res.cmake -P /usr/lib/x86_64-linux-gnu/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
+.qt/cybou_res.txt: /home/user/Qt/6.10.0/gcc_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/user/FILES/cybou/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying cybou qml resources into build dir"
+	/usr/bin/cmake -DFILES_INFO_PATH=/media/user/FILES/cybou/build/.qt/cybou_res.cmake -P /home/user/Qt/6.10.0/gcc_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
 
 CMakeFiles/cybou_copy_res.dir/codegen:
 .PHONY : CMakeFiles/cybou_copy_res.dir/codegen
@@ -89,6 +89,6 @@ CMakeFiles/cybou_copy_res.dir/clean:
 .PHONY : CMakeFiles/cybou_copy_res.dir/clean
 
 CMakeFiles/cybou_copy_res.dir/depend:
-	cd /home/user/dev/qtest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/dev/qtest /home/user/dev/qtest /home/user/dev/qtest/build /home/user/dev/qtest/build /home/user/dev/qtest/build/CMakeFiles/cybou_copy_res.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /media/user/FILES/cybou/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/user/FILES/cybou /media/user/FILES/cybou /media/user/FILES/cybou/build /media/user/FILES/cybou/build /media/user/FILES/cybou/build/CMakeFiles/cybou_copy_res.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cybou_copy_res.dir/depend
 

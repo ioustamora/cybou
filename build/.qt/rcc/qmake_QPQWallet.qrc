@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/QPQWallet">
-    <file alias="qmldir">/home/user/dev/qtest/build/QPQWallet/qmldir</file>
-  </qresource>
-</RCC>
-

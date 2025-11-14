@@ -1,6 +1,6 @@
 <RCC>
   <qresource prefix="/CybouWallet">
-    <file alias="qmldir">/home/user/dev/qtest/build/CybouWallet/qmldir</file>
+    <file alias="qmldir">/media/user/FILES/cybou/build/CybouWallet/qmldir</file>
   </qresource>
 </RCC>
 
