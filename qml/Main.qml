@@ -12,6 +12,7 @@ ApplicationWindow {
     title: qsTr("cybou - Post-Quantum File & Text Encryption")
 
     property bool mnemonicAccepted: false
+    property string lastTextOperation: "" // "encrypt" or "decrypt"
 
     Component.onCompleted: splashDialog.open()
 
@@ -181,6 +182,12 @@ ApplicationWindow {
                     height: 100
                     placeholderText: qsTr("Enter text to encrypt... (Your secrets are quantum-safe here! 🔐)")
                     wrapMode: TextArea.Wrap
+                    background: Rectangle {
+                        color: "#e8f4fd"  // Light blue background for input
+                        border.color: "#4a90e2"
+                        border.width: 1
+                        radius: 4
+                    }
                 }
 
                 Row {
@@ -215,6 +222,7 @@ ApplicationWindow {
                             var result = PostQuantumCrypto.encryptText(inputText.text)
                             if (result !== "") {
                                 outputText.text = result
+                                lastTextOperation = "encrypt"
                                 textStatus.text = qsTr("✅ Text encrypted successfully!")
                                 textStatus.color = "green"
                             } else {
@@ -235,6 +243,7 @@ ApplicationWindow {
                             var result = PostQuantumCrypto.decryptText(inputText.text)
                             if (result !== "") {
                                 outputText.text = result
+                                lastTextOperation = "decrypt"
                                 textStatus.text = qsTr("✅ Text decrypted successfully!")
                                 textStatus.color = "green"
                             } else {
@@ -267,6 +276,16 @@ ApplicationWindow {
                     readOnly: true
                     wrapMode: TextArea.Wrap
                     selectByMouse: true
+                    background: Rectangle {
+                        color: outputText.text === "" ? "#f8f9fa" :  // Neutral gray when empty
+                               (lastTextOperation === "encrypt" ? "#e8f5e8" :  // Light green for encryption
+                               (lastTextOperation === "decrypt" ? "#fce8e6" : "#f8f9fa"))  // Light red for decryption, neutral otherwise
+                        border.color: outputText.text === "" ? "#dee2e6" :
+                                     (lastTextOperation === "encrypt" ? "#4caf50" :
+                                     (lastTextOperation === "decrypt" ? "#f44336" : "#dee2e6"))
+                        border.width: 1
+                        radius: 4
+                    }
                 }
 
                 Row {
@@ -303,6 +322,7 @@ ApplicationWindow {
                         text: qsTr("🗑️ Clear")
                         onClicked: {
                             outputText.text = ""
+                            lastTextOperation = ""
                             textStatus.text = ""
                         }
                     }
