@@ -1,4 +1,4 @@
-# QPQ Encryptor (Qt 6 + C++/QML + Post-Quantum Crypto)
+# cybou (Qt 6 + C++/QML + Post-Quantum Crypto)
 
 A comprehensive file and text encryption tool with post-quantum cryptographic security. Built with Qt 6, this application provides strong encryption for files, folders, and text using NIST-standard post-quantum algorithms (Kyber-1024 for key encapsulation and CRYSTALS-Dilithium for digital signatures), all derived from BIP-39 mnemonic phrases.
 
@@ -80,7 +80,7 @@ brew install openssl
 ## Build Instructions
 
 ```bash
-cd /path/to/qpq-encryptor
+cd /path/to/cybou
 cmake -B build -S . -DCMAKE_PREFIX_PATH="/path/to/qt/6.x"
 cmake --build build -j$(nproc)
 ```
@@ -88,7 +88,7 @@ cmake --build build -j$(nproc)
 ## Usage
 
 ```bash
-./build/qpq-encryptor
+./build/cybou
 ```
 
 ### Basic Workflow:
@@ -126,9 +126,9 @@ cmake --build build -j$(nproc)
 
 ## File Formats
 
-- **Encrypted Files**: `.qpq` extension with metadata header
-- **Key Files**: `.qpqkey` for shared encryption keys
-- **Signature Files**: `.qpqsig` for Dilithium signatures
+- **Encrypted Files**: `.cybou` extension with metadata header
+- **Key Files**: `.cyboukey` for shared encryption keys
+- **Signature Files**: `.cybousig` for Dilithium signatures
 - **Archive Format**: Custom format supporting folder encryption
 
 ## API Usage
@@ -137,14 +137,14 @@ The application can be used programmatically:
 
 ```cpp
 // Initialize crypto engine
-QPQEncryptor encryptor;
+cybou encryptor;
 encryptor.setMnemonic("your bip39 mnemonic here");
 
 // Encrypt a file
-encryptor.encryptFile("/path/to/input.txt", "/path/to/output.qpq");
+encryptor.encryptFile("/path/to/input.txt", "/path/to/output.cybou");
 
 // Decrypt a file
-encryptor.decryptFile("/path/to/input.qpq", "/path/to/output.txt");
+encryptor.decryptFile("/path/to/input.cybou", "/path/to/output.txt");
 
 // Sign content
 QString signature = encryptor.signData("Hello World");

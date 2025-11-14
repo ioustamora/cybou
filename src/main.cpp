@@ -33,14 +33,14 @@ static QObject *postQuantumCryptoProvider(QQmlEngine *engine, QJSEngine *scriptE
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-    app.setApplicationName("QPQ Encryptor");
-    app.setOrganizationName("QPQEncryptor");
+    app.setApplicationName("cybou");
+    app.setOrganizationName("cybou");
 
     QQmlApplicationEngine engine;
 
     // Register QML singletons
-    qmlRegisterSingletonType<MnemonicEngine>("QPQWallet", 1, 0, "MnemonicEngine", mnemonicEngineProvider);
-    qmlRegisterSingletonType<PostQuantumCrypto>("QPQWallet", 1, 0, "PostQuantumCrypto", postQuantumCryptoProvider);
+    qmlRegisterSingletonType<MnemonicEngine>("CybouWallet", 1, 0, "MnemonicEngine", mnemonicEngineProvider);
+    qmlRegisterSingletonType<PostQuantumCrypto>("CybouWallet", 1, 0, "PostQuantumCrypto", postQuantumCryptoProvider);
 
     // Get singleton instances and connect them
     MnemonicEngine *mnemonicEngine = qobject_cast<MnemonicEngine*>(mnemonicEngineProvider(nullptr, nullptr));
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         mnemonicEngine->setPostQuantumCrypto(pqCrypto);
     }
 
-    const QUrl url(QStringLiteral("qrc:/QPQWallet/qml/Main.qml"));
+    const QUrl url(QStringLiteral("qrc:/CybouWallet/qml/Main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)

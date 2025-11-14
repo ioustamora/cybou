@@ -1,11 +1,11 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import QPQWallet 1.0
+import CybouWallet 1.0
 
 Dialog {
     id: root
-    title: qsTr("Brain Wallet Setup - Mnemonic & Keys Management")
+    title: qsTr("cybou Setup - Mnemonic & Keys Management")
     standardButtons: Dialog.NoButton
     modal: true
     closePolicy: Popup.NoAutoClose // Prevent ESC key or outside click from closing
@@ -27,7 +27,7 @@ Dialog {
 
         Label {
             Layout.fillWidth: true
-            text: qsTr("🔐 Brain Wallet Setup\n\nGenerate or import a BIP-39 mnemonic phrase to create your post-quantum wallet. This mnemonic will derive all your cryptographic keys.")
+            text: qsTr("🔐 cybou Setup\n\nGenerate or import a BIP-39 mnemonic phrase to create your post-quantum wallet. This mnemonic will derive all your cryptographic keys.")
             wrapMode: Text.WordWrap
             font.pixelSize: 14
         }
@@ -142,7 +142,7 @@ Dialog {
         // Help text
         Label {
             Layout.fillWidth: true
-            text: qsTr("💡 Tip: Write down your mnemonic phrase and store it securely. Never share it with anyone. This phrase gives access to all your funds.")
+            text: qsTr("💡 Tip: Write down your mnemonic phrase and store it securely. Never share it with anyone. This phrase gives access to all your encrypted data.")
             wrapMode: Text.WordWrap
             font.pixelSize: 11
             color: "#666666"

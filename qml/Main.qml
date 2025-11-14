@@ -1,14 +1,14 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import QPQWallet 1.0
+import CybouWallet 1.0
 
 ApplicationWindow {
     id: mainWindow
     width: 960
     height: 600
     visible: true
-    title: qsTr("QPQ Encryptor - Post-Quantum File & Text Encryption")
+    title: qsTr("cybou - Post-Quantum File & Text Encryption")
 
     property bool mnemonicAccepted: false
 
@@ -19,13 +19,13 @@ ApplicationWindow {
         modal: true
         onMnemonicValidated: function(mnemonic) {
             mnemonicAccepted = true
-            mainWindow.title = qsTr("QPQ Encryptor - Ready for Encryption")
+            mainWindow.title = qsTr("cybou - Ready for Encryption")
         }
     }
 
     header: ToolBar {
         Label {
-            text: qsTr("QPQ Encryptor")
+            text: qsTr("cybou")
             anchors.verticalCenter: parent.verticalCenter
             font.bold: true
             leftPadding: 12
@@ -90,11 +90,20 @@ ApplicationWindow {
                 width: parent.width
             }
 
+            Label {
+                text: qsTr("🚀 'In a world where quantum computers threaten everything, cybou keeps your secrets safe!'")
+                font.pixelSize: 12
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
+                color: "#666666"
+                font.italic: true
+            }
+
             TextArea {
                 id: inputText
                 width: parent.width
                 height: 120
-                placeholderText: qsTr("Enter text to encrypt...")
+                placeholderText: qsTr("Enter text to encrypt... (Your secrets are quantum-safe here! 🔐)")
                 wrapMode: TextArea.Wrap
             }
 
@@ -293,7 +302,7 @@ ApplicationWindow {
         visible: !mnemonicAccepted
 
         Label {
-            text: qsTr("🔐 Post-Quantum Encryptor Setup Required")
+            text: qsTr("🔐 cybou Setup Required")
             font.pixelSize: 20
             font.bold: true
             horizontalAlignment: Text.AlignHCenter
@@ -301,7 +310,7 @@ ApplicationWindow {
         }
 
         Label {
-            text: qsTr("Please complete the mnemonic setup in the dialog that appeared.\n\nYour post-quantum encryptor will be ready for secure file and text encryption operations.")
+            text: qsTr("Please complete the mnemonic setup in the dialog that appeared.\n\nYour cybou post-quantum encryptor will be ready for secure file and text encryption operations.")
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
             width: parent.width * 0.8
