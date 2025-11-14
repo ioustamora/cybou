@@ -162,30 +162,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor
+# Target rules for targets named cybou
 
 # Build rule for target.
-qpq-encryptor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor
-.PHONY : qpq-encryptor
+cybou: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou
+.PHONY : cybou
 
 # fast build rule for target.
-qpq-encryptor/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build
-.PHONY : qpq-encryptor/fast
+cybou/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build
+.PHONY : cybou/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_qmltyperegistration
+# Target rules for targets named cybou_qmltyperegistration
 
 # Build rule for target.
-qpq-encryptor_qmltyperegistration: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_qmltyperegistration
-.PHONY : qpq-encryptor_qmltyperegistration
+cybou_qmltyperegistration: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_qmltyperegistration
+.PHONY : cybou_qmltyperegistration
 
 # fast build rule for target.
-qpq-encryptor_qmltyperegistration/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_qmltyperegistration.dir/build.make CMakeFiles/qpq-encryptor_qmltyperegistration.dir/build
-.PHONY : qpq-encryptor_qmltyperegistration/fast
+cybou_qmltyperegistration/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_qmltyperegistration.dir/build.make CMakeFiles/cybou_qmltyperegistration.dir/build
+.PHONY : cybou_qmltyperegistration/fast
 
 #=============================================================================
 # Target rules for targets named all_qmltyperegistrations
@@ -201,43 +201,43 @@ all_qmltyperegistrations/fast:
 .PHONY : all_qmltyperegistrations/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_qmllint
+# Target rules for targets named cybou_qmllint
 
 # Build rule for target.
-qpq-encryptor_qmllint: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_qmllint
-.PHONY : qpq-encryptor_qmllint
+cybou_qmllint: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_qmllint
+.PHONY : cybou_qmllint
 
 # fast build rule for target.
-qpq-encryptor_qmllint/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_qmllint.dir/build.make CMakeFiles/qpq-encryptor_qmllint.dir/build
-.PHONY : qpq-encryptor_qmllint/fast
+cybou_qmllint/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_qmllint.dir/build.make CMakeFiles/cybou_qmllint.dir/build
+.PHONY : cybou_qmllint/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_qmllint_json
+# Target rules for targets named cybou_qmllint_json
 
 # Build rule for target.
-qpq-encryptor_qmllint_json: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_qmllint_json
-.PHONY : qpq-encryptor_qmllint_json
+cybou_qmllint_json: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_qmllint_json
+.PHONY : cybou_qmllint_json
 
 # fast build rule for target.
-qpq-encryptor_qmllint_json/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_qmllint_json.dir/build.make CMakeFiles/qpq-encryptor_qmllint_json.dir/build
-.PHONY : qpq-encryptor_qmllint_json/fast
+cybou_qmllint_json/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_qmllint_json.dir/build.make CMakeFiles/cybou_qmllint_json.dir/build
+.PHONY : cybou_qmllint_json/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_qmllint_module
+# Target rules for targets named cybou_qmllint_module
 
 # Build rule for target.
-qpq-encryptor_qmllint_module: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_qmllint_module
-.PHONY : qpq-encryptor_qmllint_module
+cybou_qmllint_module: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_qmllint_module
+.PHONY : cybou_qmllint_module
 
 # fast build rule for target.
-qpq-encryptor_qmllint_module/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_qmllint_module.dir/build.make CMakeFiles/qpq-encryptor_qmllint_module.dir/build
-.PHONY : qpq-encryptor_qmllint_module/fast
+cybou_qmllint_module/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_qmllint_module.dir/build.make CMakeFiles/cybou_qmllint_module.dir/build
+.PHONY : cybou_qmllint_module/fast
 
 #=============================================================================
 # Target rules for targets named all_qmllint
@@ -279,43 +279,43 @@ all_qmllint_module/fast:
 .PHONY : all_qmllint_module/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_copy_qml
+# Target rules for targets named cybou_copy_qml
 
 # Build rule for target.
-qpq-encryptor_copy_qml: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_copy_qml
-.PHONY : qpq-encryptor_copy_qml
+cybou_copy_qml: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_copy_qml
+.PHONY : cybou_copy_qml
 
 # fast build rule for target.
-qpq-encryptor_copy_qml/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_copy_qml.dir/build.make CMakeFiles/qpq-encryptor_copy_qml.dir/build
-.PHONY : qpq-encryptor_copy_qml/fast
+cybou_copy_qml/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_copy_qml.dir/build.make CMakeFiles/cybou_copy_qml.dir/build
+.PHONY : cybou_copy_qml/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_copy_res
+# Target rules for targets named cybou_copy_res
 
 # Build rule for target.
-qpq-encryptor_copy_res: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_copy_res
-.PHONY : qpq-encryptor_copy_res
+cybou_copy_res: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_copy_res
+.PHONY : cybou_copy_res
 
 # fast build rule for target.
-qpq-encryptor_copy_res/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_copy_res.dir/build.make CMakeFiles/qpq-encryptor_copy_res.dir/build
-.PHONY : qpq-encryptor_copy_res/fast
+cybou_copy_res/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_copy_res.dir/build.make CMakeFiles/cybou_copy_res.dir/build
+.PHONY : cybou_copy_res/fast
 
 #=============================================================================
-# Target rules for targets named module_qpq-encryptor_aotstats_target
+# Target rules for targets named module_cybou_aotstats_target
 
 # Build rule for target.
-module_qpq-encryptor_aotstats_target: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 module_qpq-encryptor_aotstats_target
-.PHONY : module_qpq-encryptor_aotstats_target
+module_cybou_aotstats_target: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 module_cybou_aotstats_target
+.PHONY : module_cybou_aotstats_target
 
 # fast build rule for target.
-module_qpq-encryptor_aotstats_target/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_qpq-encryptor_aotstats_target.dir/build.make CMakeFiles/module_qpq-encryptor_aotstats_target.dir/build
-.PHONY : module_qpq-encryptor_aotstats_target/fast
+module_cybou_aotstats_target/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_cybou_aotstats_target.dir/build.make CMakeFiles/module_cybou_aotstats_target.dir/build
+.PHONY : module_cybou_aotstats_target/fast
 
 #=============================================================================
 # Target rules for targets named all_aotstats
@@ -331,218 +331,218 @@ all_aotstats/fast:
 .PHONY : all_aotstats/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_qmlimportscan
+# Target rules for targets named cybou_qmlimportscan
 
 # Build rule for target.
-qpq-encryptor_qmlimportscan: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_qmlimportscan
-.PHONY : qpq-encryptor_qmlimportscan
+cybou_qmlimportscan: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_qmlimportscan
+.PHONY : cybou_qmlimportscan
 
 # fast build rule for target.
-qpq-encryptor_qmlimportscan/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_qmlimportscan.dir/build.make CMakeFiles/qpq-encryptor_qmlimportscan.dir/build
-.PHONY : qpq-encryptor_qmlimportscan/fast
+cybou_qmlimportscan/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_qmlimportscan.dir/build.make CMakeFiles/cybou_qmlimportscan.dir/build
+.PHONY : cybou_qmlimportscan/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_autogen_timestamp_deps
+# Target rules for targets named cybou_autogen_timestamp_deps
 
 # Build rule for target.
-qpq-encryptor_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_autogen_timestamp_deps
-.PHONY : qpq-encryptor_autogen_timestamp_deps
+cybou_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_autogen_timestamp_deps
+.PHONY : cybou_autogen_timestamp_deps
 
 # fast build rule for target.
-qpq-encryptor_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_autogen_timestamp_deps.dir/build.make CMakeFiles/qpq-encryptor_autogen_timestamp_deps.dir/build
-.PHONY : qpq-encryptor_autogen_timestamp_deps/fast
+cybou_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_autogen_timestamp_deps.dir/build.make CMakeFiles/cybou_autogen_timestamp_deps.dir/build
+.PHONY : cybou_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named qpq-encryptor_autogen
+# Target rules for targets named cybou_autogen
 
 # Build rule for target.
-qpq-encryptor_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qpq-encryptor_autogen
-.PHONY : qpq-encryptor_autogen
+cybou_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cybou_autogen
+.PHONY : cybou_autogen
 
 # fast build rule for target.
-qpq-encryptor_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor_autogen.dir/build.make CMakeFiles/qpq-encryptor_autogen.dir/build
-.PHONY : qpq-encryptor_autogen/fast
+cybou_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou_autogen.dir/build.make CMakeFiles/cybou_autogen.dir/build
+.PHONY : cybou_autogen/fast
 
-build/.qt/rcc/qrc_qmake_QPQWallet.o: build/.qt/rcc/qrc_qmake_QPQWallet.cpp.o
-.PHONY : build/.qt/rcc/qrc_qmake_QPQWallet.o
-
-# target to build an object file
-build/.qt/rcc/qrc_qmake_QPQWallet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qmake_QPQWallet.cpp.o
-.PHONY : build/.qt/rcc/qrc_qmake_QPQWallet.cpp.o
-
-build/.qt/rcc/qrc_qmake_QPQWallet.i: build/.qt/rcc/qrc_qmake_QPQWallet.cpp.i
-.PHONY : build/.qt/rcc/qrc_qmake_QPQWallet.i
-
-# target to preprocess a source file
-build/.qt/rcc/qrc_qmake_QPQWallet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qmake_QPQWallet.cpp.i
-.PHONY : build/.qt/rcc/qrc_qmake_QPQWallet.cpp.i
-
-build/.qt/rcc/qrc_qmake_QPQWallet.s: build/.qt/rcc/qrc_qmake_QPQWallet.cpp.s
-.PHONY : build/.qt/rcc/qrc_qmake_QPQWallet.s
-
-# target to generate assembly for a file
-build/.qt/rcc/qrc_qmake_QPQWallet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qmake_QPQWallet.cpp.s
-.PHONY : build/.qt/rcc/qrc_qmake_QPQWallet.cpp.s
-
-build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.o: build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.o
-.PHONY : build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.o
+build/.qt/rcc/qrc_cybou_raw_qml_0.o: build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o
+.PHONY : build/.qt/rcc/qrc_cybou_raw_qml_0.o
 
 # target to build an object file
-build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.o
-.PHONY : build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.o
+build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o
+.PHONY : build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.o
 
-build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.i: build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.i
-.PHONY : build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.i
+build/.qt/rcc/qrc_cybou_raw_qml_0.i: build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.i
+.PHONY : build/.qt/rcc/qrc_cybou_raw_qml_0.i
 
 # target to preprocess a source file
-build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.i
-.PHONY : build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.i
+build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.i
+.PHONY : build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.i
 
-build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.s: build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.s
-.PHONY : build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.s
+build/.qt/rcc/qrc_cybou_raw_qml_0.s: build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.s
+.PHONY : build/.qt/rcc/qrc_cybou_raw_qml_0.s
 
 # target to generate assembly for a file
-build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.s
-.PHONY : build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.cpp.s
+build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.s
+.PHONY : build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.s
 
-build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.o: build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.o
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.o
+build/.qt/rcc/qrc_qmake_CybouWallet.o: build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_CybouWallet.o
 
 # target to build an object file
-build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.o
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.o
+build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o
+.PHONY : build/.qt/rcc/qrc_qmake_CybouWallet.cpp.o
 
-build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.i: build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.i
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.i
+build/.qt/rcc/qrc_qmake_CybouWallet.i: build/.qt/rcc/qrc_qmake_CybouWallet.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_CybouWallet.i
 
 # target to preprocess a source file
-build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.i
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.i
+build/.qt/rcc/qrc_qmake_CybouWallet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.i
+.PHONY : build/.qt/rcc/qrc_qmake_CybouWallet.cpp.i
 
-build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.s: build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.s
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.s
+build/.qt/rcc/qrc_qmake_CybouWallet.s: build/.qt/rcc/qrc_qmake_CybouWallet.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_CybouWallet.s
 
 # target to generate assembly for a file
-build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.s
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.cpp.s
+build/.qt/rcc/qrc_qmake_CybouWallet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.s
+.PHONY : build/.qt/rcc/qrc_qmake_CybouWallet.cpp.s
 
-build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.o: build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.o
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.o
+build/.rcc/qmlcache/cybou_qml/Main_qml.o: build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/cybou_qml/Main_qml.o
 
 # target to build an object file
-build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.o
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.o
+build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.o
 
-build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.i: build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.i
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.i
+build/.rcc/qmlcache/cybou_qml/Main_qml.i: build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/cybou_qml/Main_qml.i
 
 # target to preprocess a source file
-build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.i
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.i
+build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.i
 
-build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.s: build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.s
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.s
+build/.rcc/qmlcache/cybou_qml/Main_qml.s: build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/cybou_qml/Main_qml.s
 
 # target to generate assembly for a file
-build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.s
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.cpp.s
+build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.s
 
-build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.o: build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.o
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.o
+build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.o: build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.o
 
 # target to build an object file
-build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.o
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.o
+build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.o
 
-build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.i: build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.i
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.i
+build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.i: build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.i
 
 # target to preprocess a source file
-build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.i
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.i
+build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.i
 
-build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.s: build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.s
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.s
+build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.s: build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.s
 
 # target to generate assembly for a file
-build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.s
-.PHONY : build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.cpp.s
+build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.s
 
-qpq-encryptor_autogen/mocs_compilation.o: qpq-encryptor_autogen/mocs_compilation.cpp.o
-.PHONY : qpq-encryptor_autogen/mocs_compilation.o
+build/.rcc/qmlcache/cybou_qmlcache_loader.o: build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o
+.PHONY : build/.rcc/qmlcache/cybou_qmlcache_loader.o
 
 # target to build an object file
-qpq-encryptor_autogen/mocs_compilation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/qpq-encryptor_autogen/mocs_compilation.cpp.o
-.PHONY : qpq-encryptor_autogen/mocs_compilation.cpp.o
+build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o
+.PHONY : build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.o
 
-qpq-encryptor_autogen/mocs_compilation.i: qpq-encryptor_autogen/mocs_compilation.cpp.i
-.PHONY : qpq-encryptor_autogen/mocs_compilation.i
+build/.rcc/qmlcache/cybou_qmlcache_loader.i: build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.i
+.PHONY : build/.rcc/qmlcache/cybou_qmlcache_loader.i
 
 # target to preprocess a source file
-qpq-encryptor_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/qpq-encryptor_autogen/mocs_compilation.cpp.i
-.PHONY : qpq-encryptor_autogen/mocs_compilation.cpp.i
+build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.i
+.PHONY : build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.i
 
-qpq-encryptor_autogen/mocs_compilation.s: qpq-encryptor_autogen/mocs_compilation.cpp.s
-.PHONY : qpq-encryptor_autogen/mocs_compilation.s
+build/.rcc/qmlcache/cybou_qmlcache_loader.s: build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.s
+.PHONY : build/.rcc/qmlcache/cybou_qmlcache_loader.s
 
 # target to generate assembly for a file
-qpq-encryptor_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/qpq-encryptor_autogen/mocs_compilation.cpp.s
-.PHONY : qpq-encryptor_autogen/mocs_compilation.cpp.s
+build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.s
+.PHONY : build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.s
 
-qpq-encryptor_qmltyperegistrations.o: qpq-encryptor_qmltyperegistrations.cpp.o
-.PHONY : qpq-encryptor_qmltyperegistrations.o
+cybou_autogen/mocs_compilation.o: cybou_autogen/mocs_compilation.cpp.o
+.PHONY : cybou_autogen/mocs_compilation.o
 
 # target to build an object file
-qpq-encryptor_qmltyperegistrations.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/qpq-encryptor_qmltyperegistrations.cpp.o
-.PHONY : qpq-encryptor_qmltyperegistrations.cpp.o
+cybou_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.o
+.PHONY : cybou_autogen/mocs_compilation.cpp.o
 
-qpq-encryptor_qmltyperegistrations.i: qpq-encryptor_qmltyperegistrations.cpp.i
-.PHONY : qpq-encryptor_qmltyperegistrations.i
+cybou_autogen/mocs_compilation.i: cybou_autogen/mocs_compilation.cpp.i
+.PHONY : cybou_autogen/mocs_compilation.i
 
 # target to preprocess a source file
-qpq-encryptor_qmltyperegistrations.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/qpq-encryptor_qmltyperegistrations.cpp.i
-.PHONY : qpq-encryptor_qmltyperegistrations.cpp.i
+cybou_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.i
+.PHONY : cybou_autogen/mocs_compilation.cpp.i
 
-qpq-encryptor_qmltyperegistrations.s: qpq-encryptor_qmltyperegistrations.cpp.s
-.PHONY : qpq-encryptor_qmltyperegistrations.s
+cybou_autogen/mocs_compilation.s: cybou_autogen/mocs_compilation.cpp.s
+.PHONY : cybou_autogen/mocs_compilation.s
 
 # target to generate assembly for a file
-qpq-encryptor_qmltyperegistrations.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/qpq-encryptor_qmltyperegistrations.cpp.s
-.PHONY : qpq-encryptor_qmltyperegistrations.cpp.s
+cybou_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.s
+.PHONY : cybou_autogen/mocs_compilation.cpp.s
+
+cybou_qmltyperegistrations.o: cybou_qmltyperegistrations.cpp.o
+.PHONY : cybou_qmltyperegistrations.o
+
+# target to build an object file
+cybou_qmltyperegistrations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.o
+.PHONY : cybou_qmltyperegistrations.cpp.o
+
+cybou_qmltyperegistrations.i: cybou_qmltyperegistrations.cpp.i
+.PHONY : cybou_qmltyperegistrations.i
+
+# target to preprocess a source file
+cybou_qmltyperegistrations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.i
+.PHONY : cybou_qmltyperegistrations.cpp.i
+
+cybou_qmltyperegistrations.s: cybou_qmltyperegistrations.cpp.s
+.PHONY : cybou_qmltyperegistrations.s
+
+# target to generate assembly for a file
+cybou_qmltyperegistrations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.s
+.PHONY : cybou_qmltyperegistrations.cpp.s
 
 src/crypto/MnemonicEngine.o: src/crypto/MnemonicEngine.cpp.o
 .PHONY : src/crypto/MnemonicEngine.o
 
 # target to build an object file
 src/crypto/MnemonicEngine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/crypto/MnemonicEngine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.o
 .PHONY : src/crypto/MnemonicEngine.cpp.o
 
 src/crypto/MnemonicEngine.i: src/crypto/MnemonicEngine.cpp.i
@@ -550,7 +550,7 @@ src/crypto/MnemonicEngine.i: src/crypto/MnemonicEngine.cpp.i
 
 # target to preprocess a source file
 src/crypto/MnemonicEngine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/crypto/MnemonicEngine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.i
 .PHONY : src/crypto/MnemonicEngine.cpp.i
 
 src/crypto/MnemonicEngine.s: src/crypto/MnemonicEngine.cpp.s
@@ -558,7 +558,7 @@ src/crypto/MnemonicEngine.s: src/crypto/MnemonicEngine.cpp.s
 
 # target to generate assembly for a file
 src/crypto/MnemonicEngine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/crypto/MnemonicEngine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.s
 .PHONY : src/crypto/MnemonicEngine.cpp.s
 
 src/crypto/PostQuantumCrypto.o: src/crypto/PostQuantumCrypto.cpp.o
@@ -566,7 +566,7 @@ src/crypto/PostQuantumCrypto.o: src/crypto/PostQuantumCrypto.cpp.o
 
 # target to build an object file
 src/crypto/PostQuantumCrypto.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/crypto/PostQuantumCrypto.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.o
 .PHONY : src/crypto/PostQuantumCrypto.cpp.o
 
 src/crypto/PostQuantumCrypto.i: src/crypto/PostQuantumCrypto.cpp.i
@@ -574,7 +574,7 @@ src/crypto/PostQuantumCrypto.i: src/crypto/PostQuantumCrypto.cpp.i
 
 # target to preprocess a source file
 src/crypto/PostQuantumCrypto.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/crypto/PostQuantumCrypto.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.i
 .PHONY : src/crypto/PostQuantumCrypto.cpp.i
 
 src/crypto/PostQuantumCrypto.s: src/crypto/PostQuantumCrypto.cpp.s
@@ -582,7 +582,7 @@ src/crypto/PostQuantumCrypto.s: src/crypto/PostQuantumCrypto.cpp.s
 
 # target to generate assembly for a file
 src/crypto/PostQuantumCrypto.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/crypto/PostQuantumCrypto.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.s
 .PHONY : src/crypto/PostQuantumCrypto.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -590,7 +590,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -598,7 +598,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -606,7 +606,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qpq-encryptor.dir/build.make CMakeFiles/qpq-encryptor.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cybou.dir/build.make CMakeFiles/cybou.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -626,38 +626,38 @@ help:
 	@echo "... all_qmllint_json"
 	@echo "... all_qmllint_module"
 	@echo "... all_qmltyperegistrations"
-	@echo "... module_qpq-encryptor_aotstats_target"
-	@echo "... qpq-encryptor_autogen"
-	@echo "... qpq-encryptor_autogen_timestamp_deps"
-	@echo "... qpq-encryptor_copy_qml"
-	@echo "... qpq-encryptor_copy_res"
-	@echo "... qpq-encryptor_qmlimportscan"
-	@echo "... qpq-encryptor_qmllint"
-	@echo "... qpq-encryptor_qmllint_json"
-	@echo "... qpq-encryptor_qmllint_module"
-	@echo "... qpq-encryptor_qmltyperegistration"
-	@echo "... qpq-encryptor"
-	@echo "... build/.qt/rcc/qrc_qmake_QPQWallet.o"
-	@echo "... build/.qt/rcc/qrc_qmake_QPQWallet.i"
-	@echo "... build/.qt/rcc/qrc_qmake_QPQWallet.s"
-	@echo "... build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.o"
-	@echo "... build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.i"
-	@echo "... build/.qt/rcc/qrc_qpq-encryptor_raw_qml_0.s"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.o"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.i"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qml/Main_qml.s"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.o"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.i"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qml/SplashDialog_qml.s"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.o"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.i"
-	@echo "... build/.rcc/qmlcache/qpq-encryptor_qmlcache_loader.s"
-	@echo "... qpq-encryptor_autogen/mocs_compilation.o"
-	@echo "... qpq-encryptor_autogen/mocs_compilation.i"
-	@echo "... qpq-encryptor_autogen/mocs_compilation.s"
-	@echo "... qpq-encryptor_qmltyperegistrations.o"
-	@echo "... qpq-encryptor_qmltyperegistrations.i"
-	@echo "... qpq-encryptor_qmltyperegistrations.s"
+	@echo "... cybou_autogen"
+	@echo "... cybou_autogen_timestamp_deps"
+	@echo "... cybou_copy_qml"
+	@echo "... cybou_copy_res"
+	@echo "... cybou_qmlimportscan"
+	@echo "... cybou_qmllint"
+	@echo "... cybou_qmllint_json"
+	@echo "... cybou_qmllint_module"
+	@echo "... cybou_qmltyperegistration"
+	@echo "... module_cybou_aotstats_target"
+	@echo "... cybou"
+	@echo "... build/.qt/rcc/qrc_cybou_raw_qml_0.o"
+	@echo "... build/.qt/rcc/qrc_cybou_raw_qml_0.i"
+	@echo "... build/.qt/rcc/qrc_cybou_raw_qml_0.s"
+	@echo "... build/.qt/rcc/qrc_qmake_CybouWallet.o"
+	@echo "... build/.qt/rcc/qrc_qmake_CybouWallet.i"
+	@echo "... build/.qt/rcc/qrc_qmake_CybouWallet.s"
+	@echo "... build/.rcc/qmlcache/cybou_qml/Main_qml.o"
+	@echo "... build/.rcc/qmlcache/cybou_qml/Main_qml.i"
+	@echo "... build/.rcc/qmlcache/cybou_qml/Main_qml.s"
+	@echo "... build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.o"
+	@echo "... build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.i"
+	@echo "... build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.s"
+	@echo "... build/.rcc/qmlcache/cybou_qmlcache_loader.o"
+	@echo "... build/.rcc/qmlcache/cybou_qmlcache_loader.i"
+	@echo "... build/.rcc/qmlcache/cybou_qmlcache_loader.s"
+	@echo "... cybou_autogen/mocs_compilation.o"
+	@echo "... cybou_autogen/mocs_compilation.i"
+	@echo "... cybou_autogen/mocs_compilation.s"
+	@echo "... cybou_qmltyperegistrations.o"
+	@echo "... cybou_qmltyperegistrations.i"
+	@echo "... cybou_qmltyperegistrations.s"
 	@echo "... src/crypto/MnemonicEngine.o"
 	@echo "... src/crypto/MnemonicEngine.i"
 	@echo "... src/crypto/MnemonicEngine.s"

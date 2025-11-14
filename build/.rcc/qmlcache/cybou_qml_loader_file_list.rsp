@@ -1,0 +1,6 @@
+--resource
+/home/user/dev/qtest/build/.qt/rcc/qmake_CybouWallet.qrc
+--resource
+/home/user/dev/qtest/build/.qt/rcc/cybou_raw_qml_0.qrc
+/CybouWallet/qml/Main.qml
+/CybouWallet/qml/SplashDialog.qml

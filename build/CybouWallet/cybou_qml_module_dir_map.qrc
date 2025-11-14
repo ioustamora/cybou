@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/CybouWallet">/home/user/dev/qtest/build/CybouWallet</file>
+
+  </qresource>
+</RCC>

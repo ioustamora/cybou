@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/CybouWallet/">
+    <file alias="qml/Main.qml">/home/user/dev/qtest/qml/Main.qml</file>
+    <file alias="qml/SplashDialog.qml">/home/user/dev/qtest/qml/SplashDialog.qml</file>
+  </qresource>
+</RCC>
+

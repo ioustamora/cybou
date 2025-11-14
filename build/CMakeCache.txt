@@ -170,7 +170,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=qpq-encryptor
+CMAKE_PROJECT_NAME:STATIC=cybou
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -375,6 +375,15 @@ XKB_INCLUDE_DIR:PATH=XKB_INCLUDE_DIR-NOTFOUND
 
 //Path to a library.
 XKB_LIBRARY:FILEPATH=XKB_LIBRARY-NOTFOUND
+
+//Value Computed by CMake
+cybou_BINARY_DIR:STATIC=/home/user/dev/qtest/build
+
+//Value Computed by CMake
+cybou_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+cybou_SOURCE_DIR:STATIC=/home/user/dev/qtest
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypto.so

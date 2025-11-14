@@ -1,0 +1,6 @@
+module CybouWallet
+typeinfo cybou.qmltypes
+prefer :/CybouWallet/
+Main 1.0 qml/Main.qml
+SplashDialog 1.0 qml/SplashDialog.qml
+
