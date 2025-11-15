@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 2,
                             "column": 33,
-                            "durationMicroseconds": 164,
+                            "durationMicroseconds": 401,
                             "functionName": "selectedFiles",
                             "line": 17,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 92,
+                            "durationMicroseconds": 306,
                             "functionName": "onActivated",
                             "line": 22,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -32,7 +32,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 45,
+                            "durationMicroseconds": 177,
                             "functionName": "onActivated",
                             "line": 26,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -40,7 +40,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 35,
+                            "durationMicroseconds": 69,
                             "functionName": "onActivated",
                             "line": 30,
                             "message": "Cannot access value for name darkMode"
@@ -48,7 +48,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 39,
+                            "durationMicroseconds": 126,
                             "functionName": "onActivated",
                             "line": 34,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -56,7 +56,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 17,
+                            "durationMicroseconds": 42,
                             "functionName": "onCompleted",
                             "line": 58,
                             "message": "Cannot retrieve a non-object type by ID: splashDialog"
@@ -64,7 +64,7 @@
                         {
                             "codegenResult": 2,
                             "column": 17,
-                            "durationMicroseconds": 30,
+                            "durationMicroseconds": 66,
                             "functionName": "target",
                             "line": 61,
                             "message": "Cannot access value for name PostQuantumCrypto"
@@ -80,7 +80,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 61,
+                            "durationMicroseconds": 2172,
                             "functionName": "fileMode",
                             "line": 73,
                             "message": ""
@@ -88,15 +88,15 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 74,
+                            "durationMicroseconds": 560,
                             "functionName": "onAccepted",
                             "line": 74,
-                            "message": "Cannot retrieve a non-object type by ID: filePath"
+                            "message": "Cannot access value for name filePath"
                         },
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 32,
+                            "durationMicroseconds": 185,
                             "functionName": "fileMode",
                             "line": 82,
                             "message": ""
@@ -104,7 +104,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 717,
+                            "durationMicroseconds": 3391,
                             "functionName": "onAccepted",
                             "line": 83,
                             "message": "Can't assign to read-only property selectedFiles"
@@ -112,7 +112,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 33,
+                            "durationMicroseconds": 141,
                             "functionName": "fileMode",
                             "line": 96,
                             "message": ""
@@ -120,7 +120,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 120,
+                            "durationMicroseconds": 166,
                             "functionName": "nameFilters",
                             "line": 97,
                             "message": ""
@@ -128,7 +128,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 160,
+                            "durationMicroseconds": 538,
                             "functionName": "onAccepted",
                             "line": 99,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -136,7 +136,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 31,
+                            "durationMicroseconds": 105,
                             "functionName": "fileMode",
                             "line": 114,
                             "message": ""
@@ -144,7 +144,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 81,
+                            "durationMicroseconds": 127,
                             "functionName": "nameFilters",
                             "line": 115,
                             "message": ""
@@ -152,1457 +152,233 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 189,
+                            "durationMicroseconds": 536,
                             "functionName": "onAccepted",
                             "line": 116,
                             "message": "method urlToLocalPath cannot be resolved."
                         },
                         {
-                            "codegenResult": 0,
-                            "column": 19,
-                            "durationMicroseconds": 29,
-                            "functionName": "fileMode",
+                            "codegenResult": 2,
+                            "column": 29,
+                            "durationMicroseconds": 0,
+                            "functionName": "onMnemonicAccepted",
                             "line": 133,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 94,
-                            "functionName": "nameFilters",
-                            "line": 134,
-                            "message": ""
+                            "message": "Could not find signal \"mnemonicAccepted\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 21,
-                            "durationMicroseconds": 144,
-                            "functionName": "onAccepted",
-                            "line": 136,
-                            "message": "method urlToLocalPath cannot be resolved."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 19,
-                            "durationMicroseconds": 29,
-                            "functionName": "fileMode",
-                            "line": 152,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 70,
-                            "functionName": "nameFilters",
-                            "line": 153,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 21,
-                            "durationMicroseconds": 143,
-                            "functionName": "onAccepted",
-                            "line": 155,
-                            "message": "method urlToLocalPath cannot be resolved."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 19,
-                            "durationMicroseconds": 55,
-                            "functionName": "fileMode",
-                            "line": 170,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 64,
-                            "functionName": "nameFilters",
-                            "line": 171,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 21,
-                            "durationMicroseconds": 139,
-                            "functionName": "onAccepted",
-                            "line": 172,
-                            "message": "method urlToLocalPath cannot be resolved."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 19,
+                            "column": 18,
                             "durationMicroseconds": 27,
-                            "functionName": "fileMode",
-                            "line": 189,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 64,
-                            "functionName": "nameFilters",
-                            "line": 190,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 21,
-                            "durationMicroseconds": 211,
-                            "functionName": "onAccepted",
-                            "line": 192,
-                            "message": "method urlToLocalPath cannot be resolved."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 19,
-                            "durationMicroseconds": 28,
-                            "functionName": "fileMode",
-                            "line": 214,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 77,
-                            "functionName": "nameFilters",
-                            "line": 215,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 21,
-                            "durationMicroseconds": 353,
-                            "functionName": "onAccepted",
-                            "line": 216,
-                            "message": "method urlToLocalPath cannot be resolved."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 19,
-                            "functionName": "onMnemonicValidated",
-                            "line": 248,
-                            "message": "Cannot find name mnemonicAccepted"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 30,
-                            "durationMicroseconds": 20,
-                            "functionName": "onMnemonicValidated",
-                            "line": 248,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 20,
-                            "durationMicroseconds": 16,
-                            "functionName": "color",
-                            "line": 257,
-                            "message": "Cannot access value for name darkMode"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 20,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 265,
-                            "message": "Could not find property \"color\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 37,
-                            "durationMicroseconds": 0,
-                            "functionName": "verticalCenter",
-                            "line": 262,
-                            "message": "Could not find property \"verticalCenter\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 11,
-                            "functionName": "right",
-                            "line": 269,
-                            "message": "Cannot access value for name parent"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 37,
-                            "durationMicroseconds": 6,
-                            "functionName": "verticalCenter",
-                            "line": 271,
-                            "message": "Cannot access value for name parent"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 275,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 276,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 277,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 282,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 283,
-                            "message": "Could not find property \"color\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 289,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 290,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 16,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 298,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 18,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 299,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 16,
-                            "durationMicroseconds": 47,
-                            "functionName": "width",
-                            "line": 316,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 17,
-                            "durationMicroseconds": 83,
-                            "functionName": "height",
-                            "line": 317,
-                            "message": "Cannot retrieve a non-object type by ID: tabBar"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 10,
-                            "functionName": "currentIndex",
-                            "line": 318,
-                            "message": "Cannot retrieve a non-object type by ID: tabBar"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 18,
-                            "durationMicroseconds": 9,
-                            "functionName": "visible",
-                            "line": 319,
+                            "line": 142,
                             "message": "Cannot access value for name mnemonicAccepted"
                         },
                         {
                             "codegenResult": 0,
+                            "column": 23,
+                            "durationMicroseconds": 73,
+                            "functionName": "fill",
+                            "line": 141,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
                             "column": 20,
-                            "durationMicroseconds": 108,
-                            "functionName": "width",
-                            "line": 324,
-                            "message": ""
+                            "durationMicroseconds": 42,
+                            "functionName": "color",
+                            "line": 149,
+                            "message": "Cannot access value for name darkMode"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 330,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 331,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 337,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 338,
-                            "message": "Could not find property \"width\"."
+                            "column": 27,
+                            "durationMicroseconds": 30,
+                            "functionName": "color",
+                            "line": 150,
+                            "message": "Cannot access value for name darkMode"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 32,
-                            "functionName": "width",
-                            "line": 346,
+                            "column": 31,
+                            "durationMicroseconds": 56,
+                            "functionName": "fill",
+                            "line": 154,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
                             "column": 28,
                             "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 355,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 358,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 39,
-                            "functionName": "right",
-                            "line": 373,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 378,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 386,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 36,
-                            "functionName": "horizontalCenter",
-                            "line": 395,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 400,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 421,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 29,
-                            "functionName": "width",
-                            "line": 444,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 454,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 458,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 46,
                             "functionName": "color",
-                            "line": 465,
-                            "message": "Cannot access value for name outputText"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 38,
-                            "functionName": "color",
-                            "line": 468,
-                            "message": "Cannot access value for name outputText"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 39,
-                            "functionName": "right",
-                            "line": 478,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 483,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 484,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 494,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 495,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 502,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 509,
-                            "message": "Could not find signal \"clicked\"."
+                            "line": 162,
+                            "message": "Could not find property \"color\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 27,
                             "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 521,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 522,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 103,
-                            "functionName": "width",
-                            "line": 531,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 537,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 538,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 544,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 545,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 29,
-                            "functionName": "width",
-                            "line": 552,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 35,
-                            "functionName": "color",
-                            "line": 554,
-                            "message": "Cannot access value for name darkMode"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 13,
-                            "functionName": "color",
-                            "line": 555,
-                            "message": "Cannot access value for name darkMode"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 1759,
-                            "functionName": "onDropped",
-                            "line": 563,
-                            "message": "Cannot retrieve a non-object type by ID: filePath"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 22,
-                            "functionName": "onDropped",
-                            "line": 563,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 26,
-                            "functionName": "fill",
-                            "line": 562,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 22,
-                            "functionName": "centerIn",
-                            "line": 582,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 590,
-                            "message": "Could not find property \"color\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 55,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalCenter",
-                            "line": 589,
-                            "message": "Could not find property \"horizontalCenter\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 597,
-                            "message": "Could not find property \"color\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 55,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalCenter",
-                            "line": 596,
-                            "message": "Could not find property \"horizontalCenter\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 605,
-                            "message": "Could not find property \"color\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 55,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalCenter",
-                            "line": 604,
-                            "message": "Could not find property \"horizontalCenter\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 96,
-                            "functionName": "width",
-                            "line": 613,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 618,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 623,
-                            "message": "Could not find property \"color\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 18,
-                            "functionName": "color",
-                            "line": 625,
-                            "message": "Cannot access value for name darkMode"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 13,
-                            "functionName": "color",
-                            "line": 626,
-                            "message": "Cannot access value for name darkMode"
+                            "functionName": "text",
+                            "line": 167,
+                            "message": "Could not find property \"text\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 635,
+                            "line": 168,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 643,
-                            "message": "Could not find signal \"clicked\"."
+                            "column": 27,
+                            "durationMicroseconds": 37,
+                            "functionName": "currentIndex",
+                            "line": 203,
+                            "message": "Cannot retrieve a non-object type by ID: tabBar"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 646,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 33,
-                            "functionName": "width",
-                            "line": 654,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 14,
-                            "functionName": "visible",
-                            "line": 656,
-                            "message": "Cannot retrieve a non-object type by ID: fileProgressBar"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 665,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 20,
-                            "functionName": "width",
-                            "line": 680,
-                            "message": "Cannot access value for name fileProgressBar"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 37,
-                            "durationMicroseconds": 6,
-                            "functionName": "height",
-                            "line": 681,
-                            "message": "Cannot access value for name parent"
+                            "column": 27,
+                            "durationMicroseconds": 21,
+                            "functionName": "darkMode",
+                            "line": 207,
+                            "message": "Cannot retrieve a non-object type by ID: mainWindow"
                         },
                         {
                             "codegenResult": 2,
                             "column": 36,
                             "durationMicroseconds": 17,
-                            "functionName": "color",
-                            "line": 682,
-                            "message": "Cannot access value for name fileProgressBar"
+                            "functionName": "lastTextOperation",
+                            "line": 208,
+                            "message": "Cannot retrieve a non-object type by ID: mainWindow"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 332,
-                            "functionName": "horizontalCenter",
-                            "line": 698,
+                            "column": 38,
+                            "durationMicroseconds": 131,
+                            "functionName": "onSaveTextRequested",
+                            "line": 209,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 91,
+                            "functionName": "onLoadTextRequested",
+                            "line": 210,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 704,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 707,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 705,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 746,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 749,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 747,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 748,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 784,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 787,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 785,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 845,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 848,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 846,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 847,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 898,
-                            "message": "Could not find property \"wrapMode\"."
+                            "durationMicroseconds": 56,
+                            "functionName": "darkMode",
+                            "line": 215,
+                            "message": "Cannot retrieve a non-object type by ID: mainWindow"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 899,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 900,
-                            "message": "Could not find property \"color\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 906,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 907,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 908,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 911,
-                            "message": "Could not find property \"color\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 912,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "bold",
-                            "line": 910,
-                            "message": "Could not find property \"bold\"."
+                            "column": 32,
+                            "durationMicroseconds": 21,
+                            "functionName": "selectedFiles",
+                            "line": 216,
+                            "message": "Cannot retrieve a non-object type by ID: mainWindow"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 52,
-                            "functionName": "width",
-                            "line": 917,
+                            "column": 36,
+                            "durationMicroseconds": 168,
+                            "functionName": "onBrowseRequested",
+                            "line": 217,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 41,
+                            "durationMicroseconds": 215,
+                            "functionName": "onBatchSelectRequested",
+                            "line": 218,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 25,
-                            "durationMicroseconds": 21,
-                            "functionName": "height",
-                            "line": 918,
-                            "message": "Cannot retrieve a non-object type by ID: shortcutsLabel"
+                            "column": 33,
+                            "durationMicroseconds": 570,
+                            "functionName": "onFilesDropped",
+                            "line": 219,
+                            "message": "Cannot access value for name batchStatus"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 33,
+                            "durationMicroseconds": 47,
+                            "functionName": "onFilesDropped",
+                            "line": 219,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 29,
+                            "functionName": "darkMode",
+                            "line": 228,
+                            "message": "Cannot retrieve a non-object type by ID: mainWindow"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 18,
+                            "functionName": "darkMode",
+                            "line": 233,
+                            "message": "Cannot retrieve a non-object type by ID: mainWindow"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 187,
+                            "functionName": "color",
+                            "line": 241,
+                            "message": "Cannot access value for name darkMode"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 51,
+                            "functionName": "color",
+                            "line": 242,
+                            "message": "Cannot access value for name darkMode"
                         },
                         {
                             "codegenResult": 2,
                             "column": 24,
-                            "durationMicroseconds": 21,
-                            "functionName": "color",
-                            "line": 919,
-                            "message": "Cannot access value for name darkMode"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 19,
-                            "functionName": "color",
-                            "line": 920,
-                            "message": "Cannot access value for name darkMode"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 929,
+                            "line": 250,
                             "message": "Could not find property \"color\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 39,
+                            "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 926,
+                            "line": 247,
                             "message": "Could not find property \"centerIn\"."
                         },
                         {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 101,
-                            "functionName": "width",
-                            "line": 937,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 943,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 944,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 950,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 951,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 30,
-                            "functionName": "width",
-                            "line": 959,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 968,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 971,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 40,
-                            "functionName": "right",
-                            "line": 986,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 990,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 998,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 37,
-                            "functionName": "horizontalCenter",
-                            "line": 1007,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1012,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1032,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 29,
-                            "functionName": "width",
-                            "line": 1059,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 1069,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 1073,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 23,
-                            "functionName": "color",
-                            "line": 1080,
-                            "message": "Cannot access value for name signatureOutput"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 17,
-                            "functionName": "color",
-                            "line": 1081,
-                            "message": "Cannot access value for name signatureOutput"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 42,
-                            "functionName": "right",
-                            "line": 1089,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 1093,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1094,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 1104,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1105,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1112,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1119,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 1130,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 1131,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 61,
-                            "functionName": "width",
-                            "line": 1140,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 1146,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 1147,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 1153,
-                            "message": "Could not find property \"horizontalAlignment\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 1154,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 34,
-                            "functionName": "width",
-                            "line": 1160,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 23,
-                            "functionName": "fill",
-                            "line": 1168,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 1179,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 35,
-                            "functionName": "width",
-                            "line": 1202,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 1211,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 1215,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 1217,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 41,
-                            "functionName": "right",
-                            "line": 1228,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 1232,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1233,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 1243,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1244,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 38,
-                            "functionName": "horizontalCenter",
-                            "line": 1253,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1257,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 1271,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1272,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 1279,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 1287,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 1288,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 1297,
-                            "message": "Could not find property \"wrapMode\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 1298,
-                            "message": "Could not find property \"width\"."
-                        },
-                        {
                             "codegenResult": 2,
                             "column": 18,
-                            "durationMicroseconds": 13,
+                            "durationMicroseconds": 32,
                             "functionName": "visible",
-                            "line": 1309,
+                            "line": 259,
                             "message": "Cannot access value for name mnemonicAccepted"
                         },
                         {
                             "codegenResult": 0,
                             "column": 27,
-                            "durationMicroseconds": 22,
+                            "durationMicroseconds": 88,
                             "functionName": "centerIn",
-                            "line": 1307,
+                            "line": 257,
                             "message": ""
                         },
                         {
@@ -1610,7 +386,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 1315,
+                            "line": 265,
                             "message": "Could not find property \"horizontalAlignment\"."
                         },
                         {
@@ -1618,7 +394,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 1316,
+                            "line": 266,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -1626,7 +402,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 1321,
+                            "line": 271,
                             "message": "Could not find property \"wrapMode\"."
                         },
                         {
@@ -1634,7 +410,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 1322,
+                            "line": 272,
                             "message": "Could not find property \"horizontalAlignment\"."
                         },
                         {
@@ -1642,7 +418,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 1323,
+                            "line": 273,
                             "message": "Could not find property \"width\"."
                         }
                     ],

@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 0,
                             "column": 12,
-                            "durationMicroseconds": 656,
+                            "durationMicroseconds": 327,
                             "functionName": "width",
                             "line": 31,
                             "message": ""
@@ -16,7 +16,7 @@
                         {
                             "codegenResult": 2,
                             "column": 33,
-                            "durationMicroseconds": 127,
+                            "durationMicroseconds": 68,
                             "functionName": "selectedFiles",
                             "line": 40,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
@@ -48,7 +48,7 @@
                         {
                             "codegenResult": 2,
                             "column": 5,
-                            "durationMicroseconds": 84,
+                            "durationMicroseconds": 48,
                             "functionName": "showProgress",
                             "line": 295,
                             "message": "Cannot retrieve a non-object type by ID: fileProgressBar"
@@ -56,7 +56,7 @@
                         {
                             "codegenResult": 2,
                             "column": 5,
-                            "durationMicroseconds": 51,
+                            "durationMicroseconds": 40,
                             "functionName": "hideProgress",
                             "line": 300,
                             "message": "Cannot retrieve a non-object type by ID: fileProgressBar"
@@ -64,7 +64,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 173,
+                            "durationMicroseconds": 108,
                             "functionName": "horizontalCenter",
                             "line": 32,
                             "message": ""
@@ -72,7 +72,7 @@
                         {
                             "codegenResult": 0,
                             "column": 18,
-                            "durationMicroseconds": 116,
+                            "durationMicroseconds": 90,
                             "functionName": "top",
                             "line": 34,
                             "message": ""
@@ -112,7 +112,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 119,
+                            "durationMicroseconds": 58,
                             "functionName": "width",
                             "line": 69,
                             "message": ""
@@ -120,7 +120,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 566,
+                            "durationMicroseconds": 369,
                             "functionName": "color",
                             "line": 71,
                             "message": ""
@@ -128,7 +128,7 @@
                         {
                             "codegenResult": 0,
                             "column": 23,
-                            "durationMicroseconds": 386,
+                            "durationMicroseconds": 139,
                             "functionName": "color",
                             "line": 72,
                             "message": ""
@@ -136,7 +136,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 578,
+                            "durationMicroseconds": 214,
                             "functionName": "onDropped",
                             "line": 79,
                             "message": ""
@@ -144,7 +144,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 64,
+                            "durationMicroseconds": 27,
                             "functionName": "onDropped",
                             "line": 79,
                             "message": ""
@@ -152,7 +152,7 @@
                         {
                             "codegenResult": 0,
                             "column": 27,
-                            "durationMicroseconds": 76,
+                            "durationMicroseconds": 34,
                             "functionName": "fill",
                             "line": 78,
                             "message": ""
@@ -160,7 +160,7 @@
                         {
                             "codegenResult": 0,
                             "column": 35,
-                            "durationMicroseconds": 58,
+                            "durationMicroseconds": 31,
                             "functionName": "centerIn",
                             "line": 86,
                             "message": ""
@@ -216,7 +216,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 86,
+                            "durationMicroseconds": 45,
                             "functionName": "width",
                             "line": 118,
                             "message": ""
@@ -240,7 +240,7 @@
                         {
                             "codegenResult": 2,
                             "column": 24,
-                            "durationMicroseconds": 84,
+                            "durationMicroseconds": 35,
                             "functionName": "color",
                             "line": 130,
                             "message": "Cannot access value for name root"
@@ -248,7 +248,7 @@
                         {
                             "codegenResult": 2,
                             "column": 31,
-                            "durationMicroseconds": 39,
+                            "durationMicroseconds": 22,
                             "functionName": "color",
                             "line": 131,
                             "message": "Cannot access value for name root"
@@ -280,7 +280,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 112,
+                            "durationMicroseconds": 61,
                             "functionName": "width",
                             "line": 155,
                             "message": ""
@@ -288,7 +288,7 @@
                         {
                             "codegenResult": 2,
                             "column": 18,
-                            "durationMicroseconds": 69,
+                            "durationMicroseconds": 25,
                             "functionName": "visible",
                             "line": 157,
                             "message": "Cannot retrieve a non-object type by ID: fileProgressBar"
@@ -304,7 +304,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 57,
+                            "durationMicroseconds": 30,
                             "functionName": "width",
                             "line": 181,
                             "message": "Cannot access value for name fileProgressBar"
@@ -312,7 +312,7 @@
                         {
                             "codegenResult": 2,
                             "column": 29,
-                            "durationMicroseconds": 16,
+                            "durationMicroseconds": 9,
                             "functionName": "height",
                             "line": 182,
                             "message": "Cannot access value for name parent"
@@ -320,7 +320,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 82,
+                            "durationMicroseconds": 27,
                             "functionName": "color",
                             "line": 183,
                             "message": "Cannot access value for name fileProgressBar"
@@ -328,7 +328,7 @@
                         {
                             "codegenResult": 0,
                             "column": 35,
-                            "durationMicroseconds": 119,
+                            "durationMicroseconds": 62,
                             "functionName": "horizontalCenter",
                             "line": 200,
                             "message": ""
@@ -488,7 +488,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 77,
+                            "durationMicroseconds": 47,
                             "functionName": "width",
                             "line": 263,
                             "message": ""
@@ -496,7 +496,7 @@
                         {
                             "codegenResult": 2,
                             "column": 17,
-                            "durationMicroseconds": 38,
+                            "durationMicroseconds": 23,
                             "functionName": "height",
                             "line": 264,
                             "message": "Cannot retrieve a non-object type by ID: shortcutsLabel"
@@ -504,7 +504,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 243,
+                            "durationMicroseconds": 158,
                             "functionName": "color",
                             "line": 265,
                             "message": ""
@@ -512,7 +512,7 @@
                         {
                             "codegenResult": 0,
                             "column": 23,
-                            "durationMicroseconds": 177,
+                            "durationMicroseconds": 121,
                             "functionName": "color",
                             "line": 266,
                             "message": ""

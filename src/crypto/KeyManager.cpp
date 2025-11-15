@@ -24,6 +24,9 @@ KeyManager::KeyManager(QObject *parent)
     , m_dilithiumPublicKey(nullptr)
     , m_dilithiumSecretKey(nullptr)
 {
+    // Initialize OQS library
+    OQS_init();
+    
     // Verify that required algorithms are available in liboqs
     if (!OQS_KEM_alg_is_enabled(OQS_KEM_alg_kyber_1024)) {
         qWarning() << "KeyManager: Kyber-1024 not enabled in liboqs";

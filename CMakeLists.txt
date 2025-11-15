@@ -22,7 +22,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find Qt6 components required for the application
-find_package(Qt6 6.5 COMPONENTS Core Gui Qml Quick QuickControls2 REQUIRED)
+find_package(Qt6 6.5 COMPONENTS Core Gui Qml Quick QuickControls2 Test REQUIRED)
 
 # Find liboqs for post-quantum cryptography
 # Try pkg-config first, fall back to manual paths if not available
@@ -163,3 +163,60 @@ target_link_libraries(test_signatures
         OpenSSL::Crypto
 )
 target_include_directories(test_signatures PRIVATE src)
+
+# New unit test executables for individual modules
+add_executable(test_keymanager
+    test_keymanager.cpp
+    src/crypto/KeyManager.cpp
+)
+target_link_libraries(test_keymanager
+    PRIVATE
+        Qt6::Core
+        Qt6::Test
+        PkgConfig::OQS
+        OpenSSL::Crypto
+)
+target_include_directories(test_keymanager PRIVATE src)
+
+add_executable(test_encryptionengine
+    test_encryptionengine.cpp
+    src/crypto/KeyManager.cpp
+    src/crypto/EncryptionEngine.cpp
+)
+target_link_libraries(test_encryptionengine
+    PRIVATE
+        Qt6::Core
+        Qt6::Test
+        PkgConfig::OQS
+        OpenSSL::Crypto
+)
+target_include_directories(test_encryptionengine PRIVATE src)
+
+add_executable(test_signatureengine
+    test_signatureengine.cpp
+    src/crypto/KeyManager.cpp
+    src/crypto/SignatureEngine.cpp
+)
+target_link_libraries(test_signatureengine
+    PRIVATE
+        Qt6::Core
+        Qt6::Test
+        PkgConfig::OQS
+        OpenSSL::Crypto
+)
+target_include_directories(test_signatureengine PRIVATE src)
+
+# Performance benchmark executable
+add_executable(benchmark_crypto
+    benchmark_crypto.cpp
+    src/crypto/KeyManager.cpp
+    src/crypto/EncryptionEngine.cpp
+    src/crypto/SignatureEngine.cpp
+)
+target_link_libraries(benchmark_crypto
+    PRIVATE
+        Qt6::Core
+        PkgConfig::OQS
+        OpenSSL::Crypto
+)
+target_include_directories(benchmark_crypto PRIVATE src)
