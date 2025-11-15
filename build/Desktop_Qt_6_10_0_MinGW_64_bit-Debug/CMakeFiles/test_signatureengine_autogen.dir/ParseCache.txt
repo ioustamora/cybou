@@ -762,6 +762,7 @@ C:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
  mdp:C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_signatureengine_autogen/moc_predefs.h
  mdp:C:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.h
+C:/Users/yosta/Documents/cybou/src/crypto/KeyManager.cpp
 C:/Users/yosta/Documents/cybou/test_signatureengine.cpp
  mmc:Q_OBJECT
  mid:test_signatureengine.moc
@@ -1244,5 +1245,4 @@ C:/Users/yosta/Documents/cybou/test_signatureengine.cpp
  mdp:C:/msys64/mingw64/include/oqs/sig_sphincs.h
  mdp:C:/msys64/mingw64/include/oqs/sig_stfl.h
  mdp:C:/msys64/mingw64/include/oqs/sig_uov.h
-C:/Users/yosta/Documents/cybou/src/crypto/KeyManager.cpp
 C:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.cpp

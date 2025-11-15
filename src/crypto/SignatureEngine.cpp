@@ -78,7 +78,6 @@ QString SignatureEngine::signMessage(const QString &message)
             throw std::runtime_error("ML-DSA-65 signing failed");
         }
         
-        qDebug() << "SignatureEngine: Actual signature length after signing:" << signature_len;
         QByteArray signatureData(reinterpret_cast<char*>(signature), signature_len);
         QString signatureHex = signatureData.toHex().toUpper();
         

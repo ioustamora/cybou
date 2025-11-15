@@ -278,7 +278,7 @@ bool EncryptionEngine::decryptFile(const QString &inputFilePath, const QString &
         QByteArray encryptedData = inputFile.readAll();
         inputFile.close();
         
-        if (encryptedData.size() < 16) {
+        if (encryptedData.size() < 29) {
             emit operationCompleted("decryptFile", false, "Invalid encrypted file format");
             return false;
         }
@@ -345,7 +345,7 @@ bool EncryptionEngine::decryptFile(const QString &inputFilePath, const QString &
  * Uses XOR with deterministic key derived from PQ keys.
  *
  * @param plaintext Binary data to encrypt
- * @return QByteArray IV + encrypted data, empty on failure
+ * @return QByteArray Magic header + IV + encrypted data, empty on failure
  */
 QByteArray EncryptionEngine::encryptBinary(const QByteArray &plaintext)
 {
@@ -370,8 +370,13 @@ QByteArray EncryptionEngine::encryptBinary(const QByteArray &plaintext)
             ciphertext[i] = ciphertext[i] ^ symmetricKey[i % symmetricKey.size()];
         }
         
-        // Combine IV + ciphertext
+        // Magic header to identify encrypted files
+        const char* magic = "CYBOU_PQENC";
+        QByteArray magicBytes(magic, 12);
+        
+        // Combine magic + IV + ciphertext
         QByteArray combined;
+        combined.append(magicBytes);
         combined.append(iv);
         combined.append(ciphertext);
         
@@ -387,9 +392,9 @@ QByteArray EncryptionEngine::encryptBinary(const QByteArray &plaintext)
  * @brief Decrypts binary data with IV extraction
  * 
  * Internal method used by both text and file decryption.
- * Expects IV as first 16 bytes of input.
+ * Expects magic header + IV as first 28 bytes of input.
  *
- * @param ciphertext IV + encrypted binary data
+ * @param ciphertext Magic header + IV + encrypted binary data
  * @return QByteArray Decrypted data, empty on failure
  */
 QByteArray EncryptionEngine::decryptBinary(const QByteArray &ciphertext)
@@ -399,13 +404,21 @@ QByteArray EncryptionEngine::decryptBinary(const QByteArray &ciphertext)
             return QByteArray();
         }
         
-        if (ciphertext.size() < 16) {
+        // Check minimum size: magic(12) + IV(16) + at least 1 byte of data
+        if (ciphertext.size() < 29) {
             return QByteArray();
         }
         
+        // Check magic header
+        const char* expectedMagic = "CYBOU_PQENC";
+        QByteArray magicBytes(ciphertext.left(12));
+        if (magicBytes != QByteArray(expectedMagic, 12)) {
+            return QByteArray(); // Invalid magic header
+        }
+        
         // Extract IV and ciphertext
-        QByteArray iv = ciphertext.left(16);
-        QByteArray encryptedData = ciphertext.mid(16);
+        QByteArray iv = ciphertext.mid(12, 16);
+        QByteArray encryptedData = ciphertext.mid(28);
         
         // Generate the SAME deterministic symmetric key
         QByteArray symmetricKey = m_keyManager->generateDeterministicKey();
