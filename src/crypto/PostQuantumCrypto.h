@@ -1,14 +1,15 @@
 /**
  * @file PostQuantumCrypto.h
- * @brief Post-quantum cryptographic operations using Kyber and Dilithium
+ * @brief Post-quantum cryptographic operations facade
  *
- * This class provides quantum-resistant cryptographic functionality using
- * NIST-standard post-quantum algorithms:
- * - Kyber-1024: Key encapsulation mechanism for secure key exchange
- * - ML-DSA-65: Digital signature algorithm for authentication
+ * This class provides a unified interface to quantum-resistant cryptographic
+ * functionality by delegating to specialized modules:
+ * - KeyManager: Key generation, import/export, deterministic derivation
+ * - EncryptionEngine: Text and file encryption/decryption
+ * - SignatureEngine: Digital signatures and key encapsulation
  *
- * The implementation uses the Open Quantum Safe (OQS) library and provides
- * a Qt-friendly interface for encryption, decryption, signing, and verification.
+ * This facade pattern maintains backward compatibility while providing
+ * better code organization and separation of concerns.
  */
 
 #pragma once
@@ -17,13 +18,11 @@
 #include <QString>
 #include <QByteArray>
 #include <QVariantMap>
-#include <QFile>
-#include <QTextStream>
-#include <QCryptographicHash>
 
-extern "C" {
-#include <oqs/oqs.h>
-}
+// Forward declarations for specialized modules
+class KeyManager;
+class EncryptionEngine;
+class SignatureEngine;
 
 /**
  * @class PostQuantumCrypto
@@ -284,70 +283,8 @@ signals:
     void operationProgress(const QString &operation, int progress, const QString &status);
 
 private:
-    // Kyber-1024 key pair for key encapsulation
-    uint8_t *m_kyberPublicKey = nullptr;  ///< Kyber public key
-    uint8_t *m_kyberSecretKey = nullptr;  ///< Kyber private key
-
-    // CRYSTALS-Dilithium key pair for digital signatures
-    uint8_t *m_dilithiumPublicKey = nullptr;  ///< Dilithium public key
-    uint8_t *m_dilithiumSecretKey = nullptr;  ///< Dilithium private key
-
-    QString m_publicKeyHex;  ///< Cached combined public key in hex format
-
-    /**
-     * @brief Initializes the OQS library and checks algorithm availability
-     * @return bool True if OQS is properly initialized
-     */
-    bool initializeOQS();
-
-    /**
-     * @brief Securely cleans up and frees cryptographic key material
-     */
-    void cleanupKeys();
-
-    /**
-     * @brief Performs Kyber key encapsulation
-     * @param publicKey Recipient's Kyber public key
-     * @param publicKeyLen Length of the public key
-     * @return QByteArray Ciphertext containing encapsulated key and shared secret
-     */
-    QByteArray kyberEncapsulate(const uint8_t *publicKey, size_t publicKeyLen);
-
-    /**
-     * @brief Performs Kyber key decapsulation
-     * @param ciphertext The encapsulated key ciphertext
-     * @param secretKey The recipient's Kyber private key
-     * @param secretKeyLen Length of the private key
-     * @return QByteArray The decapsulated shared secret
-     */
-    QByteArray kyberDecapsulate(const QByteArray &ciphertext, const uint8_t *secretKey, size_t secretKeyLen);
-
-    /**
-     * @brief Signs a message using Dilithium
-     * @param message The message to sign
-     * @param secretKey The Dilithium private key
-     * @param secretKeyLen Length of the private key
-     * @return QByteArray The digital signature
-     */
-    QByteArray dilithiumSign(const QByteArray &message, const uint8_t *secretKey, size_t secretKeyLen);
-
-    /**
-     * @brief Verifies a Dilithium signature
-     * @param message The original message
-     * @param signature The signature to verify
-     * @param publicKey The Dilithium public key
-     * @param publicKeyLen Length of the public key
-     * @return bool True if signature is valid
-     */
-    bool dilithiumVerify(const QByteArray &message, const QByteArray &signature, const uint8_t *publicKey, size_t publicKeyLen);
-
-    /**
-     * @brief Generates a deterministic symmetric key from PQ keys
-     *
-     * Creates a consistent 32-byte key for symmetric encryption/decryption
-     * by hashing the combination of Kyber and Dilithium private keys.
-     *
-     * @return QByteArray 32-byte deterministic symmetric key
-     */
-    QByteArray generateDeterministicKey();
+    // Forward declarations for specialized modules
+    class KeyManager *m_keyManager;           ///< Handles key generation and management
+    class EncryptionEngine *m_encryptionEngine; ///< Handles encryption/decryption
+    class SignatureEngine *m_signatureEngine;   ///< Handles signatures and key encapsulation
 };
