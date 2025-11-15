@@ -134,3 +134,15 @@
 1295	7879	7849397795130957	CMakeFiles/test_signatures.dir/src/crypto/BatchProcessor.cpp.obj	d057c960206f838d
 7147	14138	7849397853665022	CMakeFiles/test_encryption.dir/src/crypto/BatchProcessor.cpp.obj	c8443cde7de26520
 7613	14380	7849397858304914	CMakeFiles/cybou.dir/src/crypto/BatchProcessor.cpp.obj	aad43f9d71deb625
+13	995	7849402332879056	test_batch_autogen/timestamp	3cb78f098c618ddc
+13	995	7849402332879056	test_batch_autogen/mocs_compilation.cpp	3cb78f098c618ddc
+13	995	7849402332879056	C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/timestamp	3cb78f098c618ddc
+13	995	7849402332879056	C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/mocs_compilation.cpp	3cb78f098c618ddc
+1002	4841	7849402333839567	CMakeFiles/test_batch.dir/src/crypto/KeyManager.cpp.obj	b10efd285459c2f
+1009	5021	7849402333905015	CMakeFiles/test_batch.dir/src/crypto/SignatureEngine.cpp.obj	f2717a04b4dfa3e1
+1012	5130	7849402333927395	CMakeFiles/test_batch.dir/src/crypto/PostQuantumCrypto.cpp.obj	dd5330d8c1bae279
+1006	5186	7849402333869584	CMakeFiles/test_batch.dir/src/crypto/EncryptionEngine.cpp.obj	d76707ccecc32a66
+999	5630	7849402333799538	CMakeFiles/test_batch.dir/test_batch.cpp.obj	975ece14dc6c1829
+996	5994	7849402333763048	CMakeFiles/test_batch.dir/test_batch_autogen/mocs_compilation.cpp.obj	371ed5d2bf60b8cd
+1015	6042	7849402333967394	CMakeFiles/test_batch.dir/src/crypto/BatchProcessor.cpp.obj	8f4770fcfef368e0
+6042	6915	7849402384231442	test_batch.exe	d4118bad54dd311
