@@ -10,6 +10,7 @@
 #include "EncryptionEngine.h"
 #include "KeyManager.h"
 #include <QFile>
+#include <QTextStream>
 #include <QRandomGenerator>
 #include <QDebug>
 #include <stdexcept>
@@ -426,4 +427,50 @@ QByteArray EncryptionEngine::decryptBinary(const QByteArray &ciphertext)
     }
 }
 
+/**
+ * @brief Saves text content to a file
+ *
+ * Utility method for saving encrypted/decrypted text to a file.
+ *
+ * @param content Text content to save
+ * @param filePath Destination file path
+ * @return bool True if save succeeded
+ */
+bool EncryptionEngine::saveTextToFile(const QString &content, const QString &filePath)
+{
+    QFile file(filePath);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qWarning() << "EncryptionEngine: Failed to open file for writing:" << filePath;
+        return false;
+    }
+    
+    QTextStream out(&file);
+    out << content;
+    file.close();
+    
+    return true;
+}
+
+/**
+ * @brief Loads text content from a file
+ *
+ * Utility method for loading encrypted/decrypted text from a file.
+ *
+ * @param filePath Source file path
+ * @return QString File contents, or empty on failure
+ */
+QString EncryptionEngine::loadTextFromFile(const QString &filePath)
+{
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "EncryptionEngine: Failed to open file for reading:" << filePath;
+        return QString();
+    }
+    
+    QTextStream in(&file);
+    QString content = in.readAll();
+    file.close();
+    
+    return content;
+}
 

@@ -246,19 +246,19 @@ public:
      * @brief Checks if cryptographic keys are available
      * @return bool True if both Kyber and Dilithium keys are loaded
      */
-    bool hasKeys() const { return m_kyberPublicKey != nullptr && m_dilithiumPublicKey != nullptr; }
+    bool hasKeys() const;
 
     /**
      * @brief Gets the combined public key
      * @return QString Combined Kyber + Dilithium public key in hex format
      */
-    QString publicKey() const { return m_publicKeyHex; }
+    QString publicKey() const;
 
     /**
      * @brief Gets the algorithm description
      * @return QString Description of the cryptographic algorithms used
      */
-    QString keyAlgorithm() const { return QStringLiteral("Kyber-1024/Dilithium"); }
+    QString keyAlgorithm() const;
 
 signals:
     /**

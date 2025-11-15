@@ -1,0 +1,10 @@
+--resource
+C:/Users/yosta/Documents/cybou/build/.qt/rcc/qmake_CybouWallet.qrc
+--resource
+C:/Users/yosta/Documents/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc
+/CybouWallet/qml/Main.qml
+/CybouWallet/qml/SplashDialog.qml
+/CybouWallet/qml/components/TextEncryptionTab.qml
+/CybouWallet/qml/components/FileEncryptionTab.qml
+/CybouWallet/qml/components/SignatureTab.qml
+/CybouWallet/qml/components/KeyManagementTab.qml
