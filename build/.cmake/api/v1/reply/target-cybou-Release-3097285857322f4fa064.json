@@ -429,7 +429,7 @@
 			{
 				"command" : 18,
 				"file" : 12,
-				"line" : 976,
+				"line" : 970,
 				"parent" : 29
 			},
 			{
@@ -441,7 +441,7 @@
 			{
 				"command" : 18,
 				"file" : 12,
-				"line" : 970,
+				"line" : 976,
 				"parent" : 29
 			},
 			{
@@ -1134,11 +1134,14 @@
 	[
 		{
 			"backtrace" : 65,
-			"id" : "cybou_copy_res::@6890427a1f51a3e7e1df"
+			"id" : "cybou_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 67,
-			"id" : "cybou_copy_qml::@6890427a1f51a3e7e1df"
+			"id" : "cybou_copy_res::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "cybou_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 74,
@@ -1147,9 +1150,6 @@
 		{
 			"backtrace" : 76,
 			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "cybou_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,

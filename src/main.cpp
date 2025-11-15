@@ -7,11 +7,8 @@
  * post-quantum encryption capabilities using Kyber-1024 and ML-DSA-65 algorithms.
  */
 
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
-#include <QIcon>
-#include <QQmlEngine>
+#include <QApplication>
+#include <QMessageBox>
 
 #include "crypto/MnemonicEngine.h"
 #include "crypto/PostQuantumCrypto.h"
@@ -76,40 +73,14 @@ static QObject *postQuantumCryptoProvider(QQmlEngine *engine, QJSEngine *scriptE
  */
 int main(int argc, char *argv[])
 {
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
     app.setApplicationName("cybou");
     app.setOrganizationName("cybou");
 
-    QQmlApplicationEngine engine;
+    qDebug() << "Qt application started successfully";
 
-    // Register QML singletons
-    qmlRegisterSingletonType<MnemonicEngine>("CybouWallet", 1, 0, "MnemonicEngine", mnemonicEngineProvider);
-    qmlRegisterSingletonType<PostQuantumCrypto>("CybouWallet", 1, 0, "PostQuantumCrypto", postQuantumCryptoProvider);
-
-    // Get singleton instances and connect them
-    MnemonicEngine *mnemonicEngine = qobject_cast<MnemonicEngine*>(mnemonicEngineProvider(nullptr, nullptr));
-    PostQuantumCrypto *pqCrypto = qobject_cast<PostQuantumCrypto*>(postQuantumCryptoProvider(nullptr, nullptr));
-
-    if (mnemonicEngine && pqCrypto) {
-        mnemonicEngine->setPostQuantumCrypto(pqCrypto);
-    }
-
-    const QUrl url(QStringLiteral("qrc:/qml/TestWindow.qml"));
-    qDebug() << "Loading QML from:" << url;
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl) {
-            qDebug() << "Failed to create QML object from" << objUrl;
-            QCoreApplication::exit(-1);
-        } else {
-            qDebug() << "Successfully created QML object from" << objUrl;
-        }
-    }, Qt::QueuedConnection);
-
-    qDebug() << "About to load QML...";
-    engine.load(url);
-    qDebug() << "QML load completed";
-
-    const int result = app.exec();
-    return result;
+    // Just show a message box for testing
+    QMessageBox::information(nullptr, "Test", "Qt application is working!");
+    
+    return app.exec();
 }
