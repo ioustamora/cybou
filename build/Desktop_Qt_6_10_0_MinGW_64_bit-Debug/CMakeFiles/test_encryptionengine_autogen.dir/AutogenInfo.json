@@ -1030,6 +1030,7 @@
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qrc_qmake_CybouWallet.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/Main_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp",
+		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp",
@@ -1037,6 +1038,7 @@
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qmlcache_loader.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/cybou_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/cybou_qmltyperegistrations.cpp",
+		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_encryption_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_keymanager_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_signatures_autogen/mocs_compilation.cpp"
@@ -1075,6 +1077,7 @@
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qrc_qmake_CybouWallet.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/Main_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp",
+		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp",
@@ -1082,6 +1085,7 @@
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qmlcache_loader.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/cybou_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/cybou_qmltyperegistrations.cpp",
+		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_encryption_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_keymanager_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_signatures_autogen/mocs_compilation.cpp"

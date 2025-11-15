@@ -105,6 +105,7 @@ qt_add_qml_module(cybou
         qml/SplashDialog.qml
         qml/components/TextEncryptionTab.qml
         qml/components/FileEncryptionTab.qml
+        qml/components/BatchProgressDialog.qml
         qml/components/SignatureTab.qml
         qml/components/KeyManagementTab.qml
 )
@@ -166,6 +167,23 @@ target_link_libraries(test_signatures
         OpenSSL::Crypto
 )
 target_include_directories(test_signatures PRIVATE src)
+
+# Batch processing test
+add_executable(test_batch
+    test_batch.cpp
+    src/crypto/KeyManager.cpp
+    src/crypto/EncryptionEngine.cpp
+    src/crypto/SignatureEngine.cpp
+    src/crypto/PostQuantumCrypto.cpp
+    src/crypto/BatchProcessor.cpp
+)
+target_link_libraries(test_batch
+    PRIVATE
+        Qt6::Core
+        PkgConfig::OQS
+        OpenSSL::Crypto
+)
+target_include_directories(test_batch PRIVATE src)
 
 # New unit test executables for individual modules
 add_executable(test_keymanager

@@ -962,6 +962,7 @@
 		"C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_qmake_CybouWallet.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp",
+		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp",
@@ -969,6 +970,7 @@
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp",
 		"C:/Users/yosta/Documents/cybou/build/cybou_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/cybou_qmltyperegistrations.cpp",
+		"C:/Users/yosta/Documents/cybou/build/test_batch_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/test_encryption_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/test_keymanager_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/mocs_compilation.cpp"
@@ -1007,6 +1009,7 @@
 		"C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_qmake_CybouWallet.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp",
+		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp",
@@ -1014,6 +1017,7 @@
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp",
 		"C:/Users/yosta/Documents/cybou/build/cybou_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/cybou_qmltyperegistrations.cpp",
+		"C:/Users/yosta/Documents/cybou/build/test_batch_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/test_encryption_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/test_keymanager_autogen/mocs_compilation.cpp",
 		"C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/mocs_compilation.cpp"

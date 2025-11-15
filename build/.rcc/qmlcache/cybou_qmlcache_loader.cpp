@@ -33,6 +33,13 @@ namespace _0x5f_CybouWallet_qml_components_FileEncryptionTab_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _0x5f_CybouWallet_qml_components_BatchProgressDialog_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 namespace _0x5f_CybouWallet_qml_components_SignatureTab_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
@@ -65,6 +72,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/CybouWallet/qml/SplashDialog.qml"), &QmlCacheGeneratedCode::_0x5f_CybouWallet_qml_SplashDialog_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/CybouWallet/qml/components/TextEncryptionTab.qml"), &QmlCacheGeneratedCode::_0x5f_CybouWallet_qml_components_TextEncryptionTab_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/CybouWallet/qml/components/FileEncryptionTab.qml"), &QmlCacheGeneratedCode::_0x5f_CybouWallet_qml_components_FileEncryptionTab_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/CybouWallet/qml/components/BatchProgressDialog.qml"), &QmlCacheGeneratedCode::_0x5f_CybouWallet_qml_components_BatchProgressDialog_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/CybouWallet/qml/components/SignatureTab.qml"), &QmlCacheGeneratedCode::_0x5f_CybouWallet_qml_components_SignatureTab_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/CybouWallet/qml/components/KeyManagementTab.qml"), &QmlCacheGeneratedCode::_0x5f_CybouWallet_qml_components_KeyManagementTab_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;

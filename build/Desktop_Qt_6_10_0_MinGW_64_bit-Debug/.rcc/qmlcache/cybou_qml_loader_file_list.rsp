@@ -6,5 +6,6 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rc
 /CybouWallet/qml/SplashDialog.qml
 /CybouWallet/qml/components/TextEncryptionTab.qml
 /CybouWallet/qml/components/FileEncryptionTab.qml
+/CybouWallet/qml/components/BatchProgressDialog.qml
 /CybouWallet/qml/components/SignatureTab.qml
 /CybouWallet/qml/components/KeyManagementTab.qml

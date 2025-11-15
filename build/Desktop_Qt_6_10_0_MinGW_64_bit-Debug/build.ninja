@@ -47,7 +47,7 @@ cmake_ninja_workdir = C$:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_Mi
 #############################################
 # Order-only phony target for cybou
 
-build cmake_object_order_depends_target_cybou: phony || .qt/rcc/qrc_cybou_raw_qml_0.cpp .qt/rcc/qrc_qmake_CybouWallet.cpp .rcc/qmlcache/cybou_qml/Main_qml.cpp .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qmlcache_loader.cpp CybouWallet/cybou.qmltypes cybou_autogen cybou_autogen/mocs_compilation.cpp cybou_autogen/timestamp cybou_autogen_timestamp_deps cybou_copy_qml cybou_copy_res cybou_qmlimportscan cybou_qmltyperegistrations.cpp generate_qmlls_build_ini_file meta_types/cybou_json_file_list.txt meta_types/cybou_json_file_list.txt.timestamp meta_types/qt6cybou_metatypes.json meta_types/qt6cybou_metatypes.json.gen
+build cmake_object_order_depends_target_cybou: phony || .qt/rcc/qrc_cybou_raw_qml_0.cpp .qt/rcc/qrc_qmake_CybouWallet.cpp .rcc/qmlcache/cybou_qml/Main_qml.cpp .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qmlcache_loader.cpp CybouWallet/cybou.qmltypes cybou_autogen cybou_autogen/mocs_compilation.cpp cybou_autogen/timestamp cybou_autogen_timestamp_deps cybou_copy_qml cybou_copy_res cybou_qmlimportscan cybou_qmltyperegistrations.cpp generate_qmlls_build_ini_file meta_types/cybou_json_file_list.txt meta_types/cybou_json_file_list.txt.timestamp meta_types/qt6cybou_metatypes.json meta_types/qt6cybou_metatypes.json.gen
 
 build CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__cybou_unscanned_Debug C$:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/cybou_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_cybou
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
@@ -169,6 +169,14 @@ build CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlca
   OBJECT_DIR = CMakeFiles\cybou.dir
   OBJECT_FILE_DIR = CMakeFiles\cybou.dir\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.rcc\qmlcache\cybou_qml\components
 
+build CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.obj: CXX_COMPILER__cybou_unscanned_Debug C$:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp || cmake_object_order_depends_target_cybou
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\cybou.dir\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.rcc\qmlcache\cybou_qml\components\BatchProgressDialog_qml.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/cybou_autogen/include -IC:/Users/yosta/Documents/cybou -isystem C:/Qt/6.10.0/mingw_64/include/QtQml -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtQmlIntegration -isystem C:/Qt/6.10.0/mingw_64/include/QtNetwork -isystem C:/Qt/6.10.0/mingw_64/include/QtGui -isystem C:/Qt/6.10.0/mingw_64/include/QtQuick -isystem C:/Qt/6.10.0/mingw_64/include/QtQmlMeta -isystem C:/Qt/6.10.0/mingw_64/include/QtQmlModels -isystem C:/Qt/6.10.0/mingw_64/include/QtQmlWorkerScript -isystem C:/Qt/6.10.0/mingw_64/include/QtOpenGL -isystem C:/Qt/6.10.0/mingw_64/include/QtQuickControls2 -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\cybou.dir
+  OBJECT_FILE_DIR = CMakeFiles\cybou.dir\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.rcc\qmlcache\cybou_qml\components
+
 build CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.obj: CXX_COMPILER__cybou_unscanned_Debug C$:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp || cmake_object_order_depends_target_cybou
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\cybou.dir\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.rcc\qmlcache\cybou_qml\components\SignatureTab_qml.cpp.obj.d
@@ -201,7 +209,7 @@ build CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qr
 #############################################
 # Link the executable cybou.exe
 
-build cybou.exe: CXX_EXECUTABLE_LINKER__cybou_Debug CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.obj CMakeFiles/cybou.dir/src/main.cpp.obj CMakeFiles/cybou.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/cybou.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.obj CMakeFiles/cybou.dir/src/crypto/BatchProcessor.cpp.obj CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qrc_qmake_CybouWallet.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qmlcache_loader.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/Main_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qrc_cybou_raw_qml_0.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6QuickControls2.a C$:/msys64/mingw64/lib/liboqs.dll.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Quick.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlMeta.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlWorkerScript.a C$:/Qt/6.10.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlModels.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Qml.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Network.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a || cybou_autogen cybou_autogen_timestamp_deps cybou_copy_qml cybou_copy_res cybou_qmlimportscan generate_qmlls_build_ini_file
+build cybou.exe: CXX_EXECUTABLE_LINKER__cybou_Debug CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.obj CMakeFiles/cybou.dir/src/main.cpp.obj CMakeFiles/cybou.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/cybou.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.obj CMakeFiles/cybou.dir/src/crypto/BatchProcessor.cpp.obj CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qrc_qmake_CybouWallet.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qmlcache_loader.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/Main_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.obj CMakeFiles/cybou.dir/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qrc_cybou_raw_qml_0.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6QuickControls2.a C$:/msys64/mingw64/lib/liboqs.dll.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Quick.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlMeta.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlWorkerScript.a C$:/Qt/6.10.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlModels.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Qml.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Network.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a || cybou_autogen cybou_autogen_timestamp_deps cybou_copy_qml cybou_copy_res cybou_qmlimportscan generate_qmlls_build_ini_file
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6QuickControls2.a  C:/msys64/mingw64/lib/liboqs.dll.a  C:/msys64/mingw64/lib/libcrypto.dll.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Quick.a  C:/Qt/6.10.0/mingw_64/lib/libQt6QmlMeta.a  C:/Qt/6.10.0/mingw_64/lib/libQt6QmlWorkerScript.a  C:/Qt/6.10.0/mingw_64/lib/libQt6OpenGL.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -luser32  C:/Qt/6.10.0/mingw_64/lib/libQt6QmlModels.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Qml.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Network.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a  -lws2_32  -lshell32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -445,6 +453,89 @@ build test_signatures.exe: CXX_EXECUTABLE_LINKER__test_signatures_Debug CMakeFil
   TARGET_FILE = test_signatures.exe
   TARGET_IMPLIB = libtest_signatures.dll.a
   TARGET_PDB = test_signatures.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test_batch
+
+
+#############################################
+# Order-only phony target for test_batch
+
+build cmake_object_order_depends_target_test_batch: phony || test_batch_autogen test_batch_autogen/mocs_compilation.cpp test_batch_autogen/timestamp test_batch_autogen_timestamp_deps
+
+build CMakeFiles/test_batch.dir/test_batch_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__test_batch_unscanned_Debug C$:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_test_batch
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_batch.dir\test_batch_autogen\mocs_compilation.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_batch.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_batch.dir\test_batch_autogen
+
+build CMakeFiles/test_batch.dir/test_batch.cpp.obj: CXX_COMPILER__test_batch_unscanned_Debug C$:/Users/yosta/Documents/cybou/test_batch.cpp || cmake_object_order_depends_target_test_batch
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_batch.dir\test_batch.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_batch.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_batch.dir
+
+build CMakeFiles/test_batch.dir/src/crypto/KeyManager.cpp.obj: CXX_COMPILER__test_batch_unscanned_Debug C$:/Users/yosta/Documents/cybou/src/crypto/KeyManager.cpp || cmake_object_order_depends_target_test_batch
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_batch.dir\src\crypto\KeyManager.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_batch.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_batch.dir\src\crypto
+
+build CMakeFiles/test_batch.dir/src/crypto/EncryptionEngine.cpp.obj: CXX_COMPILER__test_batch_unscanned_Debug C$:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.cpp || cmake_object_order_depends_target_test_batch
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_batch.dir\src\crypto\EncryptionEngine.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_batch.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_batch.dir\src\crypto
+
+build CMakeFiles/test_batch.dir/src/crypto/SignatureEngine.cpp.obj: CXX_COMPILER__test_batch_unscanned_Debug C$:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.cpp || cmake_object_order_depends_target_test_batch
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_batch.dir\src\crypto\SignatureEngine.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_batch.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_batch.dir\src\crypto
+
+build CMakeFiles/test_batch.dir/src/crypto/PostQuantumCrypto.cpp.obj: CXX_COMPILER__test_batch_unscanned_Debug C$:/Users/yosta/Documents/cybou/src/crypto/PostQuantumCrypto.cpp || cmake_object_order_depends_target_test_batch
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_batch.dir\src\crypto\PostQuantumCrypto.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_batch.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_batch.dir\src\crypto
+
+build CMakeFiles/test_batch.dir/src/crypto/BatchProcessor.cpp.obj: CXX_COMPILER__test_batch_unscanned_Debug C$:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.cpp || cmake_object_order_depends_target_test_batch
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_batch.dir\src\crypto\BatchProcessor.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_batch.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_batch.dir\src\crypto
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_batch
+
+
+#############################################
+# Link the executable test_batch.exe
+
+build test_batch.exe: CXX_EXECUTABLE_LINKER__test_batch_Debug CMakeFiles/test_batch.dir/test_batch_autogen/mocs_compilation.cpp.obj CMakeFiles/test_batch.dir/test_batch.cpp.obj CMakeFiles/test_batch.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/test_batch.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/test_batch.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/test_batch.dir/src/crypto/PostQuantumCrypto.cpp.obj CMakeFiles/test_batch.dir/src/crypto/BatchProcessor.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/msys64/mingw64/lib/liboqs.dll.a C$:/msys64/mingw64/lib/libcrypto.dll.a || test_batch_autogen test_batch_autogen_timestamp_deps
+  FLAGS = -DQT_QML_DEBUG -g
+  LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  C:/msys64/mingw64/lib/liboqs.dll.a  C:/msys64/mingw64/lib/libcrypto.dll.a  -lmpr  -luserenv  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\test_batch.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = test_batch.exe
+  TARGET_IMPLIB = libtest_batch.dll.a
+  TARGET_PDB = test_batch.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_keymanager
@@ -700,13 +791,13 @@ build generate_qmlls_build_ini_file: phony CMakeFiles/generate_qmlls_build_ini_f
 #############################################
 # Utility command for module_cybou_aotstats_target
 
-build module_cybou_aotstats_target: phony CMakeFiles/module_cybou_aotstats_target .rcc/qmlcache/module_cybou.aotstats .rcc/qmlcache/cybou_qml/Main_qml.cpp .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.aotstats cybou_qmltyperegistrations.cpp CybouWallet/cybou.qmltypes cybou_qmltyperegistration
+build module_cybou_aotstats_target: phony CMakeFiles/module_cybou_aotstats_target .rcc/qmlcache/module_cybou.aotstats .rcc/qmlcache/cybou_qml/Main_qml.cpp .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.aotstats cybou_qmltyperegistrations.cpp CybouWallet/cybou.qmltypes cybou_qmltyperegistration
 
 
 #############################################
 # Utility command for all_aotstats
 
-build all_aotstats: phony CMakeFiles/all_aotstats .rcc/qmlcache/all_aotstats.aotstats .rcc/qmlcache/all_aotstats.txt .rcc/qmlcache/module_cybou.aotstats .rcc/qmlcache/cybou_qml/Main_qml.cpp .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.aotstats cybou_qmltyperegistrations.cpp CybouWallet/cybou.qmltypes module_cybou_aotstats_target
+build all_aotstats: phony CMakeFiles/all_aotstats .rcc/qmlcache/all_aotstats.aotstats .rcc/qmlcache/all_aotstats.txt .rcc/qmlcache/module_cybou.aotstats .rcc/qmlcache/cybou_qml/Main_qml.cpp .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.aotstats cybou_qmltyperegistrations.cpp CybouWallet/cybou.qmltypes module_cybou_aotstats_target
 
 
 #############################################
@@ -815,6 +906,18 @@ build test_signatures_autogen_timestamp_deps: phony
 # Utility command for test_signatures_autogen
 
 build test_signatures_autogen: phony CMakeFiles/test_signatures_autogen test_signatures_autogen/timestamp test_signatures_autogen/mocs_compilation.cpp test_signatures_autogen_timestamp_deps
+
+
+#############################################
+# Utility command for test_batch_autogen_timestamp_deps
+
+build test_batch_autogen_timestamp_deps: phony
+
+
+#############################################
+# Utility command for test_batch_autogen
+
+build test_batch_autogen: phony CMakeFiles/test_batch_autogen test_batch_autogen/timestamp test_batch_autogen/mocs_compilation.cpp test_batch_autogen_timestamp_deps
 
 
 #############################################
@@ -938,6 +1041,15 @@ build .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp .rcc/qmlcache
 
 
 #############################################
+# Custom command for .rcc\qmlcache\cybou_qml\components\BatchProgressDialog_qml.cpp
+
+build .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.aotstats | ${cmake_ninja_workdir}.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp ${cmake_ninja_workdir}.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.aotstats: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmlcachegen.exe C$:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml .qt/rcc/qmake_CybouWallet.qrc .qt/rcc/cybou_raw_qml_0.qrc CybouWallet/cybou.qmltypes CybouWallet/qmldir
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components && C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.10.0/mingw_64/bin/qmlcachegen.exe --bare --resource-path /CybouWallet/qml/components/BatchProgressDialog.qml -I C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug -I C:/Qt/6.10.0/mingw_64/qml -i C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CybouWallet/qmldir --resource C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qmake_CybouWallet.qrc --resource C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/cybou_raw_qml_0.qrc --dump-aot-stats --module-id=CybouWallet(cybou) -o C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp C:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml"
+  DESC = Generating .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp, .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.aotstats
+  restat = 1
+
+
+#############################################
 # Custom command for .rcc\qmlcache\cybou_qml\components\SignatureTab_qml.cpp
 
 build .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats | ${cmake_ninja_workdir}.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp ${cmake_ninja_workdir}.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmlcachegen.exe C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml .qt/rcc/qmake_CybouWallet.qrc .qt/rcc/cybou_raw_qml_0.qrc CybouWallet/cybou.qmltypes CybouWallet/qmldir
@@ -958,7 +1070,7 @@ build .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp .rcc/qmlcache/
 #############################################
 # Custom command for .qt\rcc\qrc_cybou_raw_qml_0.cpp
 
-build .qt/rcc/qrc_cybou_raw_qml_0.cpp | ${cmake_ninja_workdir}.qt/rcc/qrc_cybou_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml .qt/rcc/cybou_raw_qml_0.qrc C$:/Qt/6.10.0/mingw_64/bin/rcc.exe || cybou_autogen cybou_autogen_timestamp_deps cybou_copy_qml cybou_copy_res cybou_qmlimportscan generate_qmlls_build_ini_file
+build .qt/rcc/qrc_cybou_raw_qml_0.cpp | ${cmake_ninja_workdir}.qt/rcc/qrc_cybou_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml .qt/rcc/cybou_raw_qml_0.qrc C$:/Qt/6.10.0/mingw_64/bin/rcc.exe || cybou_autogen cybou_autogen_timestamp_deps cybou_copy_qml cybou_copy_res cybou_qmlimportscan generate_qmlls_build_ini_file
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug && C:\Qt\6.10.0\mingw_64\bin\rcc.exe --output C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qrc_cybou_raw_qml_0.cpp --name cybou_raw_qml_0 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/cybou_raw_qml_0.qrc --no-zstd"
   DESC = Running rcc for resource cybou_raw_qml_0
   restat = 1
@@ -993,21 +1105,21 @@ build CMakeFiles/cybou_qmltyperegistration | ${cmake_ninja_workdir}CMakeFiles/cy
 #############################################
 # Custom command for CMakeFiles\cybou_qmllint
 
-build CMakeFiles/cybou_qmllint | ${cmake_ninja_workdir}CMakeFiles/cybou_qmllint: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmllint.exe C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml .rcc/qmllint/cybou.rsp || all_qmltyperegistrations cybou_qmltyperegistration
+build CMakeFiles/cybou_qmllint | ${cmake_ninja_workdir}CMakeFiles/cybou_qmllint: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmllint.exe C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml .rcc/qmllint/cybou.rsp || all_qmltyperegistrations cybou_qmltyperegistration
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou && C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.10.0/mingw_64/bin/qmllint.exe @C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmllint/cybou.rsp"
 
 
 #############################################
 # Custom command for CMakeFiles\cybou_qmllint_json
 
-build CMakeFiles/cybou_qmllint_json | ${cmake_ninja_workdir}CMakeFiles/cybou_qmllint_json: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmllint.exe C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml .rcc/qmllint/cybou_json.rsp || all_qmltyperegistrations cybou_qmltyperegistration
+build CMakeFiles/cybou_qmllint_json | ${cmake_ninja_workdir}CMakeFiles/cybou_qmllint_json: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmllint.exe C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml .rcc/qmllint/cybou_json.rsp || all_qmltyperegistrations cybou_qmltyperegistration
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou && C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.10.0/mingw_64/bin/qmllint.exe @C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmllint/cybou_json.rsp"
 
 
 #############################################
 # Custom command for CMakeFiles\cybou_qmllint_module
 
-build CMakeFiles/cybou_qmllint_module | ${cmake_ninja_workdir}CMakeFiles/cybou_qmllint_module: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmllint.exe C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml .rcc/qmllint/cybou_module.rsp || all_qmltyperegistrations cybou_qmltyperegistration
+build CMakeFiles/cybou_qmllint_module | ${cmake_ninja_workdir}CMakeFiles/cybou_qmllint_module: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmllint.exe C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml .rcc/qmllint/cybou_module.rsp || all_qmltyperegistrations cybou_qmltyperegistration
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou && C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.10.0/mingw_64/bin/qmllint.exe @C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmllint/cybou_module.rsp"
 
 
@@ -1020,7 +1132,7 @@ build CMakeFiles/cybou_copy_qml | ${cmake_ninja_workdir}CMakeFiles/cybou_copy_qm
 #############################################
 # Custom command for .qt\cybou_qml.txt
 
-build .qt/cybou_qml.txt | ${cmake_ninja_workdir}.qt/cybou_qml.txt: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml
+build .qt/cybou_qml.txt | ${cmake_ninja_workdir}.qt/cybou_qml.txt: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -DFILES_INFO_PATH=C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/cybou_qml.cmake -P C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake"
   DESC = Copying cybou qml sources into build dir
   restat = 1
@@ -1059,6 +1171,17 @@ build test_signatures_autogen/timestamp test_signatures_autogen/mocs_compilation
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_signatures_autogen.dir/AutogenInfo.json Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_signatures_autogen/timestamp && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile C:/Users/yosta/Documents/cybou C:/Users/yosta/Documents/cybou C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_signatures_autogen/deps C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/d/fef0ddd4fa78fdcf0aa1dad1d527d90b46d59cfe3dad100bd297993272535b9b.d"
   DESC = Automatic MOC and UIC for target test_signatures
   depfile = CMakeFiles\d\fef0ddd4fa78fdcf0aa1dad1d527d90b46d59cfe3dad100bd297993272535b9b.d
+  deps = gcc
+  restat = 1
+
+
+#############################################
+# Custom command for test_batch_autogen\timestamp
+
+build test_batch_autogen/timestamp test_batch_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}test_batch_autogen/timestamp ${cmake_ninja_workdir}test_batch_autogen/mocs_compilation.cpp: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/moc.exe || test_batch_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_batch_autogen.dir/AutogenInfo.json Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/timestamp && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile C:/Users/yosta/Documents/cybou C:/Users/yosta/Documents/cybou C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_batch_autogen/deps C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/d/2ecdbe4dfcf2bdb9dd6d330e84d8af77094c46b27d3b25e1eeb8c3020987040c.d"
+  DESC = Automatic MOC and UIC for target test_batch
+  depfile = CMakeFiles\d\2ecdbe4dfcf2bdb9dd6d330e84d8af77094c46b27d3b25e1eeb8c3020987040c.d
   deps = gcc
   restat = 1
 
@@ -1131,7 +1254,7 @@ build CMakeFiles/module_cybou_aotstats_target | ${cmake_ninja_workdir}CMakeFiles
 #############################################
 # Custom command for .rcc\qmlcache\module_cybou.aotstats
 
-build .rcc/qmlcache/module_cybou.aotstats | ${cmake_ninja_workdir}.rcc/qmlcache/module_cybou.aotstats: CUSTOM_COMMAND .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.aotstats .rcc/qmlcache/module_cybou.aotstatslist || cybou_qmltyperegistration
+build .rcc/qmlcache/module_cybou.aotstats | ${cmake_ninja_workdir}.rcc/qmlcache/module_cybou.aotstats: CUSTOM_COMMAND .rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/BatchProgressDialog_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.aotstats .rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.aotstats .rcc/qmlcache/module_cybou.aotstatslist || cybou_qmltyperegistration
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug && C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.10.0/mingw_64/bin/qmlaotstats.exe aggregate C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/module_cybou.aotstatslist C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.rcc/qmlcache/module_cybou.aotstats"
   DESC = Generating .rcc/qmlcache/module_cybou.aotstats
   restat = 1
@@ -1162,7 +1285,7 @@ build CMakeFiles/cybou_qmlimportscan | ${cmake_ninja_workdir}CMakeFiles/cybou_qm
 #############################################
 # Custom command for .qt\qml_imports\cybou_build.cmake
 
-build .qt/qml_imports/cybou_build.cmake | ${cmake_ninja_workdir}.qt/qml_imports/cybou_build.cmake: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmlimportscanner.exe .qt/rcc/qmake_CybouWallet.qrc .qt/rcc/cybou_raw_qml_0.qrc C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml
+build .qt/qml_imports/cybou_build.cmake | ${cmake_ninja_workdir}.qt/qml_imports/cybou_build.cmake: CUSTOM_COMMAND C$:/Qt/6.10.0/mingw_64/bin/qmlimportscanner.exe .qt/rcc/qmake_CybouWallet.qrc .qt/rcc/cybou_raw_qml_0.qrc C$:/Users/yosta/Documents/cybou/qml/Main.qml C$:/Users/yosta/Documents/cybou/qml/SplashDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml C$:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml C$:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml C$:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\yosta\Documents\cybou && C:\Users\yosta\Documents\cybou\build\Desktop_Qt_6_10_0_MinGW_64_bit-Debug\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.10.0/mingw_64/bin/qmlimportscanner.exe @C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/qml_imports/cybou_build.rsp"
   DESC = Running qmlimportscanner for cybou
   restat = 1
@@ -1184,6 +1307,12 @@ build CMakeFiles/test_encryption_autogen | ${cmake_ninja_workdir}CMakeFiles/test
 # Phony custom command for CMakeFiles\test_signatures_autogen
 
 build CMakeFiles/test_signatures_autogen | ${cmake_ninja_workdir}CMakeFiles/test_signatures_autogen: phony test_signatures_autogen/timestamp || test_signatures_autogen_timestamp_deps
+
+
+#############################################
+# Phony custom command for CMakeFiles\test_batch_autogen
+
+build CMakeFiles/test_batch_autogen | ${cmake_ninja_workdir}CMakeFiles/test_batch_autogen: phony test_batch_autogen/timestamp || test_batch_autogen_timestamp_deps
 
 
 #############################################
@@ -1216,6 +1345,8 @@ build benchmark_crypto: phony benchmark_crypto.exe
 
 build cybou: phony cybou.exe
 
+build test_batch: phony test_batch.exe
+
 build test_encryption: phony test_encryption.exe
 
 build test_encryptionengine: phony test_encryptionengine.exe
@@ -1234,7 +1365,7 @@ build test_signatures: phony test_signatures.exe
 #############################################
 # Folder: C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug
 
-build all: phony cybou.exe test_encryption.exe test_signatures.exe test_keymanager.exe test_encryptionengine.exe test_signatureengine.exe benchmark_crypto.exe
+build all: phony cybou.exe test_encryption.exe test_signatures.exe test_batch.exe test_keymanager.exe test_encryptionengine.exe test_signatureengine.exe benchmark_crypto.exe
 
 # =============================================================================
 # Built-in targets

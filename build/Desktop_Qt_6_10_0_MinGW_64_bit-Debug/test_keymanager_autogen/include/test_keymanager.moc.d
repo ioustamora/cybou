@@ -1,13 +1,23 @@
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_keymanager_autogen/include/test_keymanager.moc: C:/Users/yosta/Documents/cybou/test_keymanager.cpp \
   C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_keymanager_autogen/moc_predefs.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QAtomicInt \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QCoreApplication \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QDeadlineTimer \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QDebug \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QElapsedTimer \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QHash \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QMap \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QMutex \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QObject \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QQueue \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QRunnable \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QSet \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QThreadPool \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QVariantMap \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QWaitCondition \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20iterator.h \
@@ -62,6 +72,7 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_k
   C:/Qt/6.10.0/mingw_64/include/QtCore/qdebug.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qdir.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qdirlisting.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qelapsedtimer.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qendian.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qeventloop.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qexceptionhandling.h \
@@ -94,6 +105,7 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_k
   C:/Qt/6.10.0/mingw_64/include/QtCore/qmetaobject.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qmetatype.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qminmax.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qmutex.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qnamespace.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qnativeinterface.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qnumeric.h \
@@ -105,9 +117,11 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_k
   C:/Qt/6.10.0/mingw_64/include/QtCore/qpair.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qpoint.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qprocessordetection.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qqueue.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qrefcount.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qregularexpression.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qrunnable.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qset.h \
@@ -147,11 +161,13 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_k
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtextstream.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtformat_impl.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qthread.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qthreadpool.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtimezone.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtmetamacros.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtnoop.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtpreprocessorsupport.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtresource.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qtsan_impl.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qttranslation.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qttypetraits.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtversion.h \
@@ -165,6 +181,7 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_k
   C:/Qt/6.10.0/mingw_64/include/QtCore/qvariantmap.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qversiontagging.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qwaitcondition.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qxpfunctional.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qyieldcpu.h \
@@ -451,8 +468,11 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/test_k
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
+  C:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.h \
+  C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.h \
   C:/Users/yosta/Documents/cybou/src/crypto/KeyManager.h \
   C:/Users/yosta/Documents/cybou/src/crypto/PostQuantumCrypto.h \
+  C:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.h \
   C:/msys64/mingw64/include/oqs/aes_ops.h \
   C:/msys64/mingw64/include/oqs/common.h \
   C:/msys64/mingw64/include/oqs/kem.h \

@@ -5,6 +5,7 @@ Main 1.0 qml/Main.qml
 SplashDialog 1.0 qml/SplashDialog.qml
 TextEncryptionTab 1.0 qml/components/TextEncryptionTab.qml
 FileEncryptionTab 1.0 qml/components/FileEncryptionTab.qml
+BatchProgressDialog 1.0 qml/components/BatchProgressDialog.qml
 SignatureTab 1.0 qml/components/SignatureTab.qml
 KeyManagementTab 1.0 qml/components/KeyManagementTab.qml
 depends QtQuick

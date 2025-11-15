@@ -11,6 +11,7 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeF
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/cybou_copy_res.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_encryption.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_signatures.dir
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_batch.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_keymanager.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_encryptionengine.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_signatureengine.dir
@@ -31,6 +32,8 @@ C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeF
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_encryption_autogen.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_signatures_autogen_timestamp_deps.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_signatures_autogen.dir
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_batch_autogen_timestamp_deps.dir
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_batch_autogen.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_keymanager_autogen_timestamp_deps.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_keymanager_autogen.dir
 C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/test_encryptionengine_autogen_timestamp_deps.dir
