@@ -121,13 +121,12 @@ bool KeyManager::generateKeyPair()
         );
         m_publicKeyHex = combinedPubKey.toHex().toUpper();
         
-        emit keysGenerated();
+        emit keysChanged();
         return true;
         
     } catch (const std::exception &e) {
         cleanupKeys();
         qWarning() << "KeyManager: Failed to generate key pairs:" << e.what();
-        emit keyOperationFailed(QString("Key generation failed: %1").arg(e.what()));
         return false;
     }
 }
@@ -136,46 +135,26 @@ bool KeyManager::generateKeyPair()
  * @brief Imports a key pair from hex-encoded strings
  * 
  * Loads previously exported keys back into the KeyManager. The keys must
- * be in the exact format produced by the export methods.
+ * be in the combined format (Kyber + Dilithium).
  *
- * @param kyberPrivateKeyHex Hex-encoded Kyber-1024 secret key
- * @param kyberPublicKeyHex Hex-encoded Kyber-1024 public key
- * @param dilithiumPrivateKeyHex Hex-encoded ML-DSA-65 secret key
- * @param dilithiumPublicKeyHex Hex-encoded ML-DSA-65 public key
+ * @param privateKeyHex Hex-encoded combined private key
+ * @param publicKeyHex Hex-encoded combined public key
  * @return bool True if import succeeded, false if validation failed
- * @emits keysGenerated() on success
- * @emits keyOperationFailed() on failure
  */
-bool KeyManager::importKeyPair(const QString &kyberPrivateKeyHex,
-                                const QString &kyberPublicKeyHex,
-                                const QString &dilithiumPrivateKeyHex,
-                                const QString &dilithiumPublicKeyHex)
+bool KeyManager::importKeyPair(const QString &privateKeyHex, const QString &publicKeyHex)
 {
     cleanupKeys();
     
     try {
-        // Decode Kyber keys from hex
-        QByteArray kyberPrivData = QByteArray::fromHex(kyberPrivateKeyHex.toUtf8());
-        QByteArray kyberPubData = QByteArray::fromHex(kyberPublicKeyHex.toUtf8());
+        QByteArray privateKeyData = QByteArray::fromHex(privateKeyHex.toUtf8());
+        QByteArray publicKeyData = QByteArray::fromHex(publicKeyHex.toUtf8());
         
-        // Validate Kyber key lengths
-        if (kyberPrivData.size() != static_cast<int>(OQS_KEM_kyber_1024_length_secret_key)) {
-            throw std::runtime_error("Invalid Kyber private key length");
+        // Validate combined key lengths
+        if (privateKeyData.size() != OQS_KEM_kyber_1024_length_secret_key + OQS_SIG_ml_dsa_65_length_secret_key) {
+            throw std::runtime_error("Invalid private key length");
         }
-        if (kyberPubData.size() != static_cast<int>(OQS_KEM_kyber_1024_length_public_key)) {
-            throw std::runtime_error("Invalid Kyber public key length");
-        }
-        
-        // Decode Dilithium keys from hex
-        QByteArray dilithiumPrivData = QByteArray::fromHex(dilithiumPrivateKeyHex.toUtf8());
-        QByteArray dilithiumPubData = QByteArray::fromHex(dilithiumPublicKeyHex.toUtf8());
-        
-        // Validate Dilithium key lengths
-        if (dilithiumPrivData.size() != static_cast<int>(OQS_SIG_ml_dsa_65_length_secret_key)) {
-            throw std::runtime_error("Invalid Dilithium private key length");
-        }
-        if (dilithiumPubData.size() != static_cast<int>(OQS_SIG_ml_dsa_65_length_public_key)) {
-            throw std::runtime_error("Invalid Dilithium public key length");
+        if (publicKeyData.size() != OQS_KEM_kyber_1024_length_public_key + OQS_SIG_ml_dsa_65_length_public_key) {
+            throw std::runtime_error("Invalid public key length");
         }
         
         // Allocate and copy Kyber keys
@@ -190,8 +169,8 @@ bool KeyManager::importKeyPair(const QString &kyberPrivateKeyHex,
             throw std::runtime_error("Failed to allocate memory for Kyber keys");
         }
         
-        memcpy(m_kyberPublicKey, kyberPubData.constData(), OQS_KEM_kyber_1024_length_public_key);
-        memcpy(m_kyberSecretKey, kyberPrivData.constData(), OQS_KEM_kyber_1024_length_secret_key);
+        memcpy(m_kyberPublicKey, publicKeyData.constData(), OQS_KEM_kyber_1024_length_public_key);
+        memcpy(m_kyberSecretKey, privateKeyData.constData(), OQS_KEM_kyber_1024_length_secret_key);
         
         // Allocate and copy Dilithium keys
         m_dilithiumPublicKey = static_cast<uint8_t*>(
@@ -205,88 +184,76 @@ bool KeyManager::importKeyPair(const QString &kyberPrivateKeyHex,
             throw std::runtime_error("Failed to allocate memory for Dilithium keys");
         }
         
-        memcpy(m_dilithiumPublicKey, dilithiumPubData.constData(), OQS_SIG_ml_dsa_65_length_public_key);
-        memcpy(m_dilithiumSecretKey, dilithiumPrivData.constData(), OQS_SIG_ml_dsa_65_length_secret_key);
+        memcpy(m_dilithiumPublicKey, publicKeyData.constData() + OQS_KEM_kyber_1024_length_public_key, OQS_SIG_ml_dsa_65_length_public_key);
+        memcpy(m_dilithiumSecretKey, privateKeyData.constData() + OQS_KEM_kyber_1024_length_secret_key, OQS_SIG_ml_dsa_65_length_secret_key);
         
-        // Reconstruct combined public key hex
-        QByteArray combinedPubKey;
-        combinedPubKey.append(kyberPubData);
-        combinedPubKey.append(dilithiumPubData);
-        m_publicKeyHex = combinedPubKey.toHex().toUpper();
+        m_publicKeyHex = publicKeyHex.toUpper();
         
         qDebug() << "KeyManager: Key pair imported successfully";
-        emit keysGenerated();
+        emit keysChanged();
         return true;
         
     } catch (const std::exception &e) {
         cleanupKeys();
         qWarning() << "KeyManager: Failed to import key pair:" << e.what();
-        emit keyOperationFailed(QString("Key import failed: %1").arg(e.what()));
         return false;
     }
 }
 
 /**
- * @brief Exports the Kyber-1024 private key as hex string
- * @param type Key type (KEM or Signature)
- * @return QString Hex-encoded private key, empty if key doesn't exist
+ * @brief Exports the combined private key as hex string
+ * @return QString Hex-encoded private key (Kyber + Dilithium), empty if key doesn't exist
  */
-QString KeyManager::exportPrivateKey(KeyType type) const
+QString KeyManager::exportPrivateKey() const
 {
-    if (type == KeyType::KEM && m_kyberSecretKey) {
-        QByteArray keyData(
-            reinterpret_cast<char*>(m_kyberSecretKey),
-            OQS_KEM_kyber_1024_length_secret_key
-        );
-        return keyData.toHex().toUpper();
-    } else if (type == KeyType::Signature && m_dilithiumSecretKey) {
-        QByteArray keyData(
-            reinterpret_cast<char*>(m_dilithiumSecretKey),
-            OQS_SIG_ml_dsa_65_length_secret_key
-        );
-        return keyData.toHex().toUpper();
+    if (!m_kyberSecretKey || !m_dilithiumSecretKey) {
+        return QString();
     }
     
-    return QString();
+    QByteArray combinedPrivateKey;
+    combinedPrivateKey.append(
+        reinterpret_cast<char*>(m_kyberSecretKey),
+        OQS_KEM_kyber_1024_length_secret_key
+    );
+    combinedPrivateKey.append(
+        reinterpret_cast<char*>(m_dilithiumSecretKey),
+        OQS_SIG_ml_dsa_65_length_secret_key
+    );
+    
+    return combinedPrivateKey.toHex().toUpper();
 }
 
 /**
- * @brief Exports the public key as hex string
- * @param type Key type (KEM or Signature)
- * @return QString Hex-encoded public key, empty if key doesn't exist
+ * @brief Exports the combined public key as hex string
+ * @return QString Hex-encoded public key (Kyber + Dilithium)
  */
-QString KeyManager::exportPublicKey(KeyType type) const
-{
-    if (type == KeyType::KEM && m_kyberPublicKey) {
-        QByteArray keyData(
-            reinterpret_cast<char*>(m_kyberPublicKey),
-            OQS_KEM_kyber_1024_length_public_key
-        );
-        return keyData.toHex().toUpper();
-    } else if (type == KeyType::Signature && m_dilithiumPublicKey) {
-        QByteArray keyData(
-            reinterpret_cast<char*>(m_dilithiumPublicKey),
-            OQS_SIG_ml_dsa_65_length_public_key
-        );
-        return keyData.toHex().toUpper();
-    }
-    
-    return QString();
-}
-
-/**
- * @brief Exports the combined public key (Kyber + Dilithium) as hex
- * @return QString Hex-encoded combined public key
- */
-QString KeyManager::exportCombinedPublicKey() const
+QString KeyManager::exportPublicKey() const
 {
     return m_publicKeyHex;
 }
 
 /**
+ * @brief Gets the combined public key in hex format
+ * @return QString Public key string for display/export
+ */
+QString KeyManager::publicKey() const
+{
+    return m_publicKeyHex;
+}
+
+/**
+ * @brief Gets the algorithm identification string
+ * @return QString Description of algorithms in use
+ */
+QString KeyManager::keyAlgorithm() const
+{
+    return "Kyber-1024 + ML-DSA-65";
+}
+
+/**
  * @brief Generates a deterministic symmetric key from PQ keys
  *
- * Creates a consistent key for symmetric encryption/decryption
+ * Creates a consistent 32-byte key for symmetric encryption/decryption
  * by hashing the combination of Kyber and Dilithium private keys.
  *
  * This ensures that:
@@ -297,12 +264,11 @@ QString KeyManager::exportCombinedPublicKey() const
  * Process:
  * 1. Combine Kyber and Dilithium secret keys
  * 2. Add a fixed salt for domain separation
- * 3. Hash with SHA-256 to produce requested key length
+ * 3. Hash with SHA-256 to produce 32-byte key
  *
- * @param keyLength Desired key length in bytes (default 32)
- * @return QByteArray Deterministic symmetric key of requested length
+ * @return QByteArray Deterministic symmetric key (32 bytes)
  */
-QByteArray KeyManager::generateDeterministicKey(int keyLength) const
+QByteArray KeyManager::generateDeterministicKey()
 {
     if (!hasKeys()) {
         qWarning() << "KeyManager: Cannot generate deterministic key without keys";
@@ -330,15 +296,9 @@ QByteArray KeyManager::generateDeterministicKey(int keyLength) const
     // This separates the key derivation domain from other uses
     keyMaterial.append("cybou_pq_key_derivation_salt_2024");
     
-    // Hash to get the requested key length
+    // Hash to get a 32-byte (256-bit) key suitable for symmetric encryption
     QByteArray hash = QCryptographicHash::hash(keyMaterial, QCryptographicHash::Sha256);
-    
-    // If more bytes are needed, hash again (simple key expansion)
-    while (hash.size() < keyLength) {
-        hash.append(QCryptographicHash::hash(hash, QCryptographicHash::Sha256));
-    }
-    
-    return hash.left(keyLength);
+    return hash;
 }
 
 /**
@@ -349,42 +309,6 @@ bool KeyManager::hasKeys() const
 {
     return m_kyberPublicKey && m_kyberSecretKey && 
            m_dilithiumPublicKey && m_dilithiumSecretKey;
-}
-
-/**
- * @brief Gets pointer to Kyber public key (for internal use)
- * @return const uint8_t* Pointer to key data, nullptr if not available
- */
-const uint8_t* KeyManager::getKyberPublicKey() const
-{
-    return m_kyberPublicKey;
-}
-
-/**
- * @brief Gets pointer to Kyber secret key (for internal use)
- * @return const uint8_t* Pointer to key data, nullptr if not available
- */
-const uint8_t* KeyManager::getKyberSecretKey() const
-{
-    return m_kyberSecretKey;
-}
-
-/**
- * @brief Gets pointer to Dilithium public key (for internal use)
- * @return const uint8_t* Pointer to key data, nullptr if not available
- */
-const uint8_t* KeyManager::getDilithiumPublicKey() const
-{
-    return m_dilithiumPublicKey;
-}
-
-/**
- * @brief Gets pointer to Dilithium secret key (for internal use)
- * @return const uint8_t* Pointer to key data, nullptr if not available
- */
-const uint8_t* KeyManager::getDilithiumSecretKey() const
-{
-    return m_dilithiumSecretKey;
 }
 
 /**

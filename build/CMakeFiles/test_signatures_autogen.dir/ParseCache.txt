@@ -422,6 +422,7 @@ C:/Users/yosta/Documents/cybou/src/crypto/PostQuantumCrypto.h
  mdp:C:/msys64/mingw64/include/oqs/sig_stfl.h
  mdp:C:/msys64/mingw64/include/oqs/sig_uov.h
 C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.cpp
+C:/Users/yosta/Documents/cybou/src/crypto/PostQuantumCrypto.cpp
 C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QByteArray
@@ -779,7 +780,7 @@ C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
  mdp:C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/moc_predefs.h
  mdp:C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.h
-C:/Users/yosta/Documents/cybou/src/crypto/PostQuantumCrypto.cpp
+C:/Users/yosta/Documents/cybou/test_signatures.cpp
 C:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QByteArray
@@ -1162,7 +1163,6 @@ C:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
  mdp:C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/moc_predefs.h
  mdp:C:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.h
-C:/Users/yosta/Documents/cybou/test_signatures.cpp
 C:/Users/yosta/Documents/cybou/src/crypto/KeyManager.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QByteArray

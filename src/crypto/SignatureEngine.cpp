@@ -7,8 +7,13 @@
  */
 
 #include "SignatureEngine.h"
+#include "KeyManager.h"
 #include <QDebug>
 #include <stdexcept>
+
+extern "C" {
+#include <oqs/oqs.h>
+}
 
 /**
  * @brief Constructs a SignatureEngine instance

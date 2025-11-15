@@ -8,6 +8,7 @@
  */
 
 #include "EncryptionEngine.h"
+#include "KeyManager.h"
 #include <QFile>
 #include <QRandomGenerator>
 #include <QDebug>
@@ -49,21 +50,21 @@ QString EncryptionEngine::encryptText(const QString &plaintext)
             throw std::runtime_error("No PQ keys available for encryption");
         }
         
-        emit encryptionProgress(0, "Initializing text encryption...");
+        emit operationProgress("encryptText", 0, "Initializing text encryption...");
         
         // Generate a deterministic symmetric key from PQ keys
-        QByteArray symmetricKey = m_keyManager->generateDeterministicKey(32);
+        QByteArray symmetricKey = m_keyManager->generateDeterministicKey();
         if (symmetricKey.size() != 32) {
             throw std::runtime_error("Failed to generate symmetric key");
         }
         
-        emit encryptionProgress(20, "Generating IV...");
+        emit operationProgress("encryptText", 20, "Generating IV...");
         
         // Generate random IV (Initialization Vector)
         QByteArray iv(16, 0);
         QRandomGenerator::global()->generate(iv.begin(), iv.end());
         
-        emit encryptionProgress(40, "Encrypting data...");
+        emit operationProgress("encryptText", 40, "Encrypting data...");
         
         // Convert plaintext to bytes
         QByteArray plaintextData = plaintext.toUtf8();
@@ -75,7 +76,7 @@ QString EncryptionEngine::encryptText(const QString &plaintext)
             ciphertext[i] = ciphertext[i] ^ symmetricKey[i % symmetricKey.size()];
         }
         
-        emit encryptionProgress(80, "Encoding result...");
+        emit operationProgress("encryptText", 80, "Encoding result...");
         
         // Combine IV + ciphertext and encode as Base64
         QByteArray combined;
@@ -84,13 +85,13 @@ QString EncryptionEngine::encryptText(const QString &plaintext)
         
         QString result = combined.toBase64();
         
-        emit encryptionProgress(100, "Text encryption completed");
-        emit encryptionCompleted(true, "Text encrypted successfully");
+        emit operationProgress("encryptText", 100, "Text encryption completed");
+        emit operationCompleted("encryptText", true, "Text encrypted successfully");
         return result;
         
     } catch (const std::exception &e) {
         qWarning() << "EncryptionEngine: Failed to encrypt text:" << e.what();
-        emit encryptionCompleted(false, QString("Error: %1").arg(e.what()));
+        emit operationCompleted("encryptText", false, QString("Error: %1").arg(e.what()));
         return QString();
     }
 }
@@ -117,7 +118,7 @@ QString EncryptionEngine::decryptText(const QString &ciphertext)
             throw std::runtime_error("No PQ keys available for decryption");
         }
         
-        emit decryptionProgress(0, "Initializing text decryption...");
+        emit operationProgress("decryptText", 0, "Initializing text decryption...");
         
         // Decode from Base64
         QByteArray combined = QByteArray::fromBase64(ciphertext.toUtf8());
@@ -125,21 +126,21 @@ QString EncryptionEngine::decryptText(const QString &ciphertext)
             throw std::runtime_error("Invalid ciphertext format");
         }
         
-        emit decryptionProgress(20, "Extracting IV...");
+        emit operationProgress("decryptText", 20, "Extracting IV...");
         
         // Extract IV and ciphertext
         QByteArray iv = combined.left(16);
         QByteArray encryptedData = combined.mid(16);
         
-        emit decryptionProgress(40, "Deriving key...");
+        emit operationProgress("decryptText", 40, "Deriving key...");
         
         // Generate the SAME deterministic symmetric key
-        QByteArray symmetricKey = m_keyManager->generateDeterministicKey(32);
+        QByteArray symmetricKey = m_keyManager->generateDeterministicKey();
         if (symmetricKey.size() != 32) {
             throw std::runtime_error("Failed to generate symmetric key");
         }
         
-        emit decryptionProgress(60, "Decrypting data...");
+        emit operationProgress("decryptText", 60, "Decrypting data...");
         
         // XOR decryption (matches encryption)
         QByteArray plaintext = encryptedData;
@@ -147,17 +148,17 @@ QString EncryptionEngine::decryptText(const QString &ciphertext)
             plaintext[i] = plaintext[i] ^ symmetricKey[i % symmetricKey.size()];
         }
         
-        emit decryptionProgress(90, "Converting to text...");
+        emit operationProgress("decryptText", 90, "Converting to text...");
         
         QString result = QString::fromUtf8(plaintext);
         
-        emit decryptionProgress(100, "Text decryption completed");
-        emit decryptionCompleted(true, "Text decrypted successfully");
+        emit operationProgress("decryptText", 100, "Text decryption completed");
+        emit operationCompleted("decryptText", true, "Text decrypted successfully");
         return result;
         
     } catch (const std::exception &e) {
         qWarning() << "EncryptionEngine: Failed to decrypt text:" << e.what();
-        emit decryptionCompleted(false, QString("Error: %1").arg(e.what()));
+        emit operationCompleted("decryptText", false, QString("Error: %1").arg(e.what()));
         return QString();
     }
 }
@@ -180,7 +181,7 @@ bool EncryptionEngine::encryptFile(const QString &inputFilePath, const QString &
         // Open input file
         QFile inputFile(inputFilePath);
         if (!inputFile.open(QIODevice::ReadOnly)) {
-            emit encryptionCompleted(false, QString("Cannot open input file: %1").arg(inputFilePath));
+            emit operationCompleted("encryptFile", false, QString("Cannot open input file: %1").arg(inputFilePath));
             return false;
         }
         
@@ -192,11 +193,11 @@ bool EncryptionEngine::encryptFile(const QString &inputFilePath, const QString &
         QFile outputFile(outputFilePath);
         if (!outputFile.open(QIODevice::WriteOnly)) {
             inputFile.close();
-            emit encryptionCompleted(false, QString("Cannot open output file: %1").arg(outputFilePath));
+            emit operationCompleted("encryptFile", false, QString("Cannot open output file: %1").arg(outputFilePath));
             return false;
         }
         
-        emit fileEncryptionProgress(inputFilePath, 0, "Initializing file encryption...");
+        emit operationProgress("encryptFile", 0, "Initializing file encryption...");
         
         // Process file in chunks to avoid loading large files into memory
         const qint64 chunkSize = 1024 * 1024; // 1MB chunks
@@ -213,7 +214,7 @@ bool EncryptionEngine::encryptFile(const QString &inputFilePath, const QString &
             if (encryptedChunk.isEmpty()) {
                 inputFile.close();
                 outputFile.close();
-                emit encryptionCompleted(false, "Encryption failed during processing");
+                emit operationCompleted("encryptFile", false, "Encryption failed during processing");
                 return false;
             }
             
@@ -223,8 +224,8 @@ bool EncryptionEngine::encryptFile(const QString &inputFilePath, const QString &
             // Update progress
             bytesProcessed += buffer.size();
             int progress = fileSize > 0 ? (bytesProcessed * 100) / fileSize : 0;
-            emit fileEncryptionProgress(
-                inputFilePath,
+            emit operationProgress(
+                "encryptFile",
                 progress,
                 QString("Encrypting... %1%").arg(progress)
             );
@@ -233,8 +234,9 @@ bool EncryptionEngine::encryptFile(const QString &inputFilePath, const QString &
         inputFile.close();
         outputFile.close();
         
-        emit fileEncryptionProgress(inputFilePath, 100, "File encryption completed");
-        emit encryptionCompleted(
+        emit operationProgress("encryptFile", 100, "File encryption completed");
+        emit operationCompleted(
+            "encryptFile",
             true,
             QString("File encrypted: %1 -> %2").arg(inputFilePath, outputFilePath)
         );
@@ -242,7 +244,7 @@ bool EncryptionEngine::encryptFile(const QString &inputFilePath, const QString &
         
     } catch (const std::exception &e) {
         qWarning() << "EncryptionEngine: Failed to encrypt file:" << e.what();
-        emit encryptionCompleted(false, QString("Error: %1").arg(e.what()));
+        emit operationCompleted("encryptFile", false, QString("Error: %1").arg(e.what()));
         return false;
     }
 }
@@ -265,36 +267,36 @@ bool EncryptionEngine::decryptFile(const QString &inputFilePath, const QString &
         // Open input file
         QFile inputFile(inputFilePath);
         if (!inputFile.open(QIODevice::ReadOnly)) {
-            emit decryptionCompleted(false, QString("Cannot open input file: %1").arg(inputFilePath));
+            emit operationCompleted("decryptFile", false, QString("Cannot open input file: %1").arg(inputFilePath));
             return false;
         }
         
-        emit fileDecryptionProgress(inputFilePath, 0, "Initializing file decryption...");
+        emit operationProgress("decryptFile", 0, "Initializing file decryption...");
         
         // Read the entire encrypted file (we need the IV from the beginning)
         QByteArray encryptedData = inputFile.readAll();
         inputFile.close();
         
         if (encryptedData.size() < 16) {
-            emit decryptionCompleted(false, "Invalid encrypted file format");
+            emit operationCompleted("decryptFile", false, "Invalid encrypted file format");
             return false;
         }
         
-        emit fileDecryptionProgress(inputFilePath, 30, "Decrypting data...");
+        emit operationProgress("decryptFile", 30, "Decrypting data...");
         
         // Decrypt the binary data
         QByteArray decryptedData = decryptBinary(encryptedData);
         if (decryptedData.isEmpty()) {
-            emit decryptionCompleted(false, "Decryption failed - invalid file or key");
+            emit operationCompleted("decryptFile", false, "Decryption failed - invalid file or key");
             return false;
         }
         
-        emit fileDecryptionProgress(inputFilePath, 60, "Writing decrypted file...");
+        emit operationProgress("decryptFile", 60, "Writing decrypted file...");
         
         // Open output file
         QFile outputFile(outputFilePath);
         if (!outputFile.open(QIODevice::WriteOnly)) {
-            emit decryptionCompleted(false, QString("Cannot open output file: %1").arg(outputFilePath));
+            emit operationCompleted("decryptFile", false, QString("Cannot open output file: %1").arg(outputFilePath));
             return false;
         }
         
@@ -311,8 +313,8 @@ bool EncryptionEngine::decryptFile(const QString &inputFilePath, const QString &
             
             bytesWritten += writeSize;
             int progress = 60 + (decryptedData.size() > 0 ? (bytesWritten * 40) / decryptedData.size() : 0);
-            emit fileDecryptionProgress(
-                inputFilePath,
+            emit operationProgress(
+                "decryptFile",
                 progress,
                 QString("Writing... %1%").arg(progress - 60)
             );
@@ -320,8 +322,9 @@ bool EncryptionEngine::decryptFile(const QString &inputFilePath, const QString &
         
         outputFile.close();
         
-        emit fileDecryptionProgress(inputFilePath, 100, "File decryption completed");
-        emit decryptionCompleted(
+        emit operationProgress("decryptFile", 100, "File decryption completed");
+        emit operationCompleted(
+            "decryptFile",
             true,
             QString("File decrypted: %1 -> %2").arg(inputFilePath, outputFilePath)
         );
@@ -329,7 +332,7 @@ bool EncryptionEngine::decryptFile(const QString &inputFilePath, const QString &
         
     } catch (const std::exception &e) {
         qWarning() << "EncryptionEngine: Failed to decrypt file:" << e.what();
-        emit decryptionCompleted(false, QString("Error: %1").arg(e.what()));
+        emit operationCompleted("decryptFile", false, QString("Error: %1").arg(e.what()));
         return false;
     }
 }
@@ -351,7 +354,7 @@ QByteArray EncryptionEngine::encryptBinary(const QByteArray &plaintext)
         }
         
         // Generate deterministic symmetric key
-        QByteArray symmetricKey = m_keyManager->generateDeterministicKey(32);
+        QByteArray symmetricKey = m_keyManager->generateDeterministicKey();
         if (symmetricKey.size() != 32) {
             return QByteArray();
         }
@@ -404,7 +407,7 @@ QByteArray EncryptionEngine::decryptBinary(const QByteArray &ciphertext)
         QByteArray encryptedData = ciphertext.mid(16);
         
         // Generate the SAME deterministic symmetric key
-        QByteArray symmetricKey = m_keyManager->generateDeterministicKey(32);
+        QByteArray symmetricKey = m_keyManager->generateDeterministicKey();
         if (symmetricKey.size() != 32) {
             return QByteArray();
         }
@@ -423,71 +426,4 @@ QByteArray EncryptionEngine::decryptBinary(const QByteArray &ciphertext)
     }
 }
 
-/**
- * @brief Saves encrypted text to a file
- * @param content Encrypted text content (Base64)
- * @param filePath Path to save file
- * @return bool True if save succeeded
- */
-bool EncryptionEngine::saveEncryptedTextToFile(const QString &content, const QString &filePath)
-{
-    try {
-        QFile file(filePath);
-        if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            emit encryptionCompleted(
-                false,
-                QString("Cannot open file for writing: %1").arg(filePath)
-            );
-            return false;
-        }
-        
-        QTextStream out(&file);
-        out << content;
-        file.close();
-        
-        emit encryptionCompleted(
-            true,
-            QString("Encrypted text saved to: %1").arg(filePath)
-        );
-        return true;
-        
-    } catch (const std::exception &e) {
-        qWarning() << "EncryptionEngine: Failed to save encrypted text:" << e.what();
-        emit encryptionCompleted(false, QString("Error: %1").arg(e.what()));
-        return false;
-    }
-}
 
-/**
- * @brief Loads encrypted text from a file
- * @param filePath Path to encrypted text file
- * @return QString Encrypted text content, empty on failure
- */
-QString EncryptionEngine::loadEncryptedTextFromFile(const QString &filePath)
-{
-    try {
-        QFile file(filePath);
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            emit decryptionCompleted(
-                false,
-                QString("Cannot open file for reading: %1").arg(filePath)
-            );
-            return QString();
-        }
-        
-        QTextStream in(&file);
-        QString content = in.readAll();
-        file.close();
-        
-        emit decryptionCompleted(
-            true,
-            QString("Encrypted text loaded from: %1").arg(filePath)
-        );
-        return content;
-        
-    } catch (const std::exception &e) {
-        qWarning() << "EncryptionEngine: Failed to load encrypted text:" << e.what();
-        emit decryptionCompleted(false, QString("Error: %1").arg(e.what()));
-        return QString();
-    }
-}
