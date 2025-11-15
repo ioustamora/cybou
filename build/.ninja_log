@@ -65,3 +65,16 @@
 12906	16951	7848748127570570	CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.obj	f818fedc34864d54
 13236	18844	7848748130853931	CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.obj	416a640062d813ba
 18844	19206	7848748186811246	cybou.exe	3b839eb2733240a4
+79	231	7848754452276918	.qt/cybou_qml.txt	a40b124afcc66b8
+79	231	7848754452276918	C:/Users/yosta/Documents/cybou/build/.qt/cybou_qml.txt	a40b124afcc66b8
+90	496	7848754454771905	.qt/qml_imports/cybou_build.cmake	dfca6b43c015d208
+90	496	7848754454771905	C:/Users/yosta/Documents/cybou/build/.qt/qml_imports/cybou_build.cmake	dfca6b43c015d208
+510	610	7848754455819408	.qt/rcc/qrc_cybou_raw_qml_0.cpp	5b1ec6f87bb832ff
+510	610	7848754455819408	C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp	5b1ec6f87bb832ff
+499	913	7848754458925401	.rcc/qmlcache/cybou_qml/Main_qml.cpp	b14b3f42093fd768
+499	913	7848754458925401	.rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats	b14b3f42093fd768
+499	913	7848754458925401	C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp	b14b3f42093fd768
+499	913	7848754458925401	C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.aotstats	b14b3f42093fd768
+918	1066	7848754459230017	CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.obj	9c25550bc689b59b
+914	8865	7848754459230017	CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.obj	416a640062d813ba
+8866	9183	7848754538734646	cybou.exe	3b839eb2733240a4

@@ -40,11 +40,16 @@ A comprehensive file and text encryption tool with post-quantum cryptographic se
 - Comprehensive testing suite for encryption operations
 - Secure key derivation and management
 - Proper file format handling (.cybou encrypted files, .cyboukey public keys)
+- **NEW v1.1:** Batch file processing with multi-file encrypt/decrypt
+- **NEW v1.1:** Dark mode with Ctrl+T toggle
+- **NEW v1.1:** Keyboard shortcuts (Ctrl+E/D/B/T)
+- **NEW v1.1:** Drag & drop file support
+- **NEW v1.1:** Enhanced error messages with troubleshooting guidance
+- **NEW v1.1:** Real-time progress tracking for batch operations
 
 🚧 **In Development:**
 - Key import/export functionality
-- Batch processing for multiple files
-- Progress indicators for large file operations
+- Multi-threaded batch processing for performance
 - Advanced security features (secure memory wiping, key backup/restore)
 
 ## Build Requirements
@@ -288,13 +293,13 @@ make
 
 ## Improvements Roadmap
 
-### 🔄 **High Priority**
-- **Progress Indicators**: Add progress bars for large file encryption/decryption operations
-- **Batch Processing**: Support encrypting/decrypting multiple files simultaneously
-- **Error Recovery**: Better error handling and recovery for corrupted files
-- **UI Enhancements**: Dark mode, keyboard shortcuts, drag-and-drop support
+### ✅ **High Priority - COMPLETED in v1.1**
+- ✅ **Progress Indicators**: Real-time progress bars for file encryption/decryption operations
+- ✅ **Batch Processing**: Encrypt/decrypt multiple files simultaneously with success tracking
+- ✅ **Error Recovery**: Enhanced error messages with specific troubleshooting guidance
+- ✅ **UI Enhancements**: Dark mode toggle, keyboard shortcuts (Ctrl+E/D/B/T), drag-and-drop support
 
-### 🚀 **Medium Priority**
+### 🔄 **Medium Priority - In Progress**
 - **Performance Optimization**: 
   - Multi-threaded encryption for large files
   - Memory-mapped file processing for reduced RAM usage

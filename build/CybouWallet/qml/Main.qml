@@ -13,6 +13,26 @@ ApplicationWindow {
 
     property bool mnemonicAccepted: false
     property string lastTextOperation: "" // "encrypt" or "decrypt"
+    property bool darkMode: false
+    property var selectedFiles: []
+
+    // Keyboard shortcuts
+    Shortcut {
+        sequence: "Ctrl+E"
+        onActivated: if (tabBar.currentIndex === 1 && encryptButton.enabled) encryptButton.clicked()
+    }
+    Shortcut {
+        sequence: "Ctrl+D"
+        onActivated: if (tabBar.currentIndex === 1 && decryptButton.enabled) decryptButton.clicked()
+    }
+    Shortcut {
+        sequence: "Ctrl+T"
+        onActivated: if (darkMode) darkMode = false; else darkMode = true
+    }
+    Shortcut {
+        sequence: "Ctrl+B"
+        onActivated: if (tabBar.currentIndex === 1) batchFileDialog.open()
+    }
 
     // Helper function to convert file:// URLs to local paths (cross-platform)
     function urlToLocalPath(urlString) {
@@ -53,6 +73,20 @@ ApplicationWindow {
         fileMode: FileDialog.OpenFile
         onAccepted: {
             filePath.text = urlToLocalPath(fileDialog.selectedFile)
+        }
+    }
+
+    FileDialog {
+        id: batchFileDialog
+        title: "Select multiple files for batch processing"
+        fileMode: FileDialog.OpenFiles
+        onAccepted: {
+            selectedFiles = []
+            for (var i = 0; i < batchFileDialog.selectedFiles.length; i++) {
+                selectedFiles.push(urlToLocalPath(batchFileDialog.selectedFiles[i]))
+            }
+            batchStatus.text = selectedFiles.length + " files selected for batch processing"
+            batchStatus.color = darkMode ? "#90caf9" : "blue"
         }
     }
 
@@ -218,11 +252,16 @@ ApplicationWindow {
     }
 
     header: ToolBar {
+        background: Rectangle {
+            color: darkMode ? "#2d2d2d" : "#f5f5f5"
+        }
+
         Label {
             text: qsTr("cybou")
             anchors.verticalCenter: parent.verticalCenter
             font.bold: true
             leftPadding: 12
+            color: darkMode ? "#ffffff" : "#000000"
         }
 
         Row {
@@ -231,9 +270,16 @@ ApplicationWindow {
             anchors.verticalCenter: parent.verticalCenter
             spacing: 8
 
+            ToolButton {
+                text: darkMode ? "☀️" : "🌙"
+                onClicked: darkMode = !darkMode
+                ToolTip.visible: hovered
+                ToolTip.text: qsTr("Toggle Dark Mode (Ctrl+T)")
+            }
+
             Label {
                 text: mnemonicAccepted ? qsTr("🔐 PQ Keys Active") : qsTr("🔓 Setup Required")
-                color: mnemonicAccepted ? "green" : "orange"
+                color: mnemonicAccepted ? (darkMode ? "#4caf50" : "green") : "orange"
                 font.pixelSize: 12
             }
 
@@ -491,15 +537,82 @@ ApplicationWindow {
                 font.italic: true
             }
 
+            // Drag and Drop Area
+            Rectangle {
+                width: parent.width
+                height: 120
+                color: dragArea.containsDrag ? (darkMode ? "#2c3e50" : "#e3f2fd") : (darkMode ? "#1e1e1e" : "#f5f5f5")
+                border.color: darkMode ? "#546e7a" : "#90caf9"
+                border.width: 2
+                radius: 8
+
+                DropArea {
+                    id: dragArea
+                    anchors.fill: parent
+                    onDropped: function(drop) {
+                        if (drop.hasUrls) {
+                            var urls = drop.urls
+                            if (urls.length === 1) {
+                                filePath.text = urlToLocalPath(urls[0])
+                                fileStatus.text = "✅ File ready: " + filePath.text
+                                fileStatus.color = darkMode ? "#4caf50" : "green"
+                            } else if (urls.length > 1) {
+                                selectedFiles = []
+                                for (var i = 0; i < urls.length; i++) {
+                                    selectedFiles.push(urlToLocalPath(urls[i]))
+                                }
+                                batchStatus.text = urls.length + " files dropped for batch processing"
+                                batchStatus.color = darkMode ? "#90caf9" : "blue"
+                            }
+                        }
+                    }
+
+                    Column {
+                        anchors.centerIn: parent
+                        spacing: 8
+
+                        Label {
+                            text: "🎯 Drag & Drop Files Here"
+                            font.pixelSize: 16
+                            font.bold: true
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            color: darkMode ? "#ffffff" : "#000000"
+                        }
+
+                        Label {
+                            text: "or use the browse button below"
+                            font.pixelSize: 12
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            color: darkMode ? "#b0b0b0" : "#666666"
+                        }
+
+                        Label {
+                            text: "💡 Multiple files = batch mode"
+                            font.pixelSize: 11
+                            font.italic: true
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            color: darkMode ? "#90caf9" : "#2196f3"
+                        }
+                    }
+                }
+            }
+
             Row {
                 spacing: 10
                 width: parent.width
 
                 TextField {
                     id: filePath
-                    width: parent.width - 120
+                    width: parent.width - 220
                     placeholderText: qsTr("Select file or folder path...")
                     readOnly: true
+                    color: darkMode ? "#ffffff" : "#000000"
+                    background: Rectangle {
+                        color: darkMode ? "#2d2d2d" : "#ffffff"
+                        border.color: darkMode ? "#546e7a" : "#cccccc"
+                        border.width: 1
+                        radius: 4
+                    }
                 }
 
                 Button {
@@ -508,6 +621,16 @@ ApplicationWindow {
                     onClicked: {
                         fileDialog.open()
                     }
+                }
+
+                Button {
+                    text: qsTr("📑 Batch")
+                    width: 100
+                    onClicked: {
+                        batchFileDialog.open()
+                    }
+                    ToolTip.visible: hovered
+                    ToolTip.text: qsTr("Select multiple files (Ctrl+B)")
                 }
             }
 
@@ -561,8 +684,10 @@ ApplicationWindow {
 
                 Button {
                     id: encryptButton
-                    text: qsTr("🔐 Encrypt File/Folder")
-                    enabled: !fileProgressBar.visible
+                    text: qsTr("🔐 Encrypt File")
+                    enabled: !fileProgressBar.visible && filePath.text.trim() !== ""
+                    ToolTip.visible: hovered
+                    ToolTip.text: qsTr("Encrypt single file (Ctrl+E)")
                     onClicked: {
                         if (filePath.text.trim() !== "") {
                             fileProgressBar.visible = true
@@ -575,15 +700,20 @@ ApplicationWindow {
                             var outputPath = inputPath + ".cybou"
 
                             fileStatus.text = "Encrypting: " + inputPath + " -> " + outputPath
-                            fileStatus.color = "blue"
+                            fileStatus.color = darkMode ? "#2196f3" : "blue"
 
-                            var success = PostQuantumCrypto.encryptFile(inputPath, outputPath)
-                            if (success) {
-                                fileStatus.text = "✅ Encryption completed: " + outputPath
-                                fileStatus.color = "green"
-                            } else {
-                                fileStatus.text = "❌ Encryption failed!"
-                                fileStatus.color = "red"
+                            try {
+                                var success = PostQuantumCrypto.encryptFile(inputPath, outputPath)
+                                if (success) {
+                                    fileStatus.text = "✅ Encryption completed: " + outputPath
+                                    fileStatus.color = darkMode ? "#4caf50" : "green"
+                                } else {
+                                    fileStatus.text = "❌ Encryption failed! Check if file exists and you have write permissions."
+                                    fileStatus.color = darkMode ? "#f44336" : "red"
+                                }
+                            } catch (error) {
+                                fileStatus.text = "❌ Error: " + error.message
+                                fileStatus.color = darkMode ? "#f44336" : "red"
                             }
 
                             fileProgressBar.visible = false
@@ -596,9 +726,48 @@ ApplicationWindow {
                 }
 
                 Button {
+                    text: qsTr("📦 Batch Encrypt")
+                    enabled: !fileProgressBar.visible && selectedFiles.length > 0
+                    ToolTip.visible: hovered
+                    ToolTip.text: qsTr("Encrypt " + selectedFiles.length + " files")
+                    onClicked: {
+                        fileProgressBar.visible = true
+                        fileProgressBar.value = 0
+                        var successCount = 0
+                        var failCount = 0
+                        
+                        for (var i = 0; i < selectedFiles.length; i++) {
+                            fileProgressBar.value = (i / selectedFiles.length) * 100
+                            progressStatus.text = "Encrypting file " + (i + 1) + " of " + selectedFiles.length
+                            
+                            var inputPath = selectedFiles[i]
+                            var outputPath = inputPath + ".cybou"
+                            
+                            try {
+                                if (PostQuantumCrypto.encryptFile(inputPath, outputPath)) {
+                                    successCount++
+                                } else {
+                                    failCount++
+                                }
+                            } catch (error) {
+                                failCount++
+                            }
+                        }
+                        
+                        fileProgressBar.value = 100
+                        fileProgressBar.visible = false
+                        progressStatus.text = ""
+                        batchStatus.text = "✅ Batch complete: " + successCount + " succeeded, " + failCount + " failed"
+                        batchStatus.color = failCount === 0 ? (darkMode ? "#4caf50" : "green") : "orange"
+                    }
+                }
+
+                Button {
                     id: decryptButton
-                    text: qsTr("🔓 Decrypt File/Folder")
-                    enabled: !fileProgressBar.visible
+                    text: qsTr("🔓 Decrypt File")
+                    enabled: !fileProgressBar.visible && filePath.text.trim() !== ""
+                    ToolTip.visible: hovered
+                    ToolTip.text: qsTr("Decrypt single file (Ctrl+D)")
                     onClicked: {
                         if (filePath.text.trim() !== "") {
                             fileProgressBar.visible = true
@@ -612,7 +781,7 @@ ApplicationWindow {
                             if (!inputPath.endsWith(".cybou")) {
                                 fileProgressBar.visible = false
                                 progressStatus.text = ""
-                                fileStatus.text = "⚠️ Selected file is not a .cybou encrypted file"
+                                fileStatus.text = "⚠️ Selected file is not a .cybou encrypted file. Please select a .cybou file."
                                 fileStatus.color = "orange"
                                 return
                             }
@@ -630,15 +799,20 @@ ApplicationWindow {
                             }
 
                             fileStatus.text = "Decrypting: " + inputPath + " -> " + outputPath
-                            fileStatus.color = "blue"
+                            fileStatus.color = darkMode ? "#2196f3" : "blue"
 
-                            var success = PostQuantumCrypto.decryptFile(inputPath, outputPath)
-                            if (success) {
-                                fileStatus.text = "✅ Decryption completed: " + outputPath
-                                fileStatus.color = "green"
-                            } else {
-                                fileStatus.text = "❌ Decryption failed!"
-                                fileStatus.color = "red"
+                            try {
+                                var success = PostQuantumCrypto.decryptFile(inputPath, outputPath)
+                                if (success) {
+                                    fileStatus.text = "✅ Decryption completed: " + outputPath
+                                    fileStatus.color = darkMode ? "#4caf50" : "green"
+                                } else {
+                                    fileStatus.text = "❌ Decryption failed! File may be corrupted or use a different mnemonic."
+                                    fileStatus.color = darkMode ? "#f44336" : "red"
+                                }
+                            } catch (error) {
+                                fileStatus.text = "❌ Error: " + error.message
+                                fileStatus.color = darkMode ? "#f44336" : "red"
                             }
 
                             fileProgressBar.visible = false
@@ -649,6 +823,57 @@ ApplicationWindow {
                         }
                     }
                 }
+
+                Button {
+                    text: qsTr("📦 Batch Decrypt")
+                    enabled: !fileProgressBar.visible && selectedFiles.length > 0
+                    ToolTip.visible: hovered
+                    ToolTip.text: qsTr("Decrypt " + selectedFiles.length + " files")
+                    onClicked: {
+                        fileProgressBar.visible = true
+                        fileProgressBar.value = 0
+                        var successCount = 0
+                        var failCount = 0
+                        
+                        for (var i = 0; i < selectedFiles.length; i++) {
+                            fileProgressBar.value = (i / selectedFiles.length) * 100
+                            progressStatus.text = "Decrypting file " + (i + 1) + " of " + selectedFiles.length
+                            
+                            var inputPath = selectedFiles[i]
+                            
+                            // Skip non-.cybou files
+                            if (!inputPath.endsWith(".cybou")) {
+                                failCount++
+                                continue
+                            }
+                            
+                            var baseName = inputPath.substring(0, inputPath.length - 6)
+                            var outputPath = baseName + "_decrypted"
+                            var lastDot = baseName.lastIndexOf(".")
+                            if (lastDot !== -1) {
+                                var namePart = baseName.substring(0, lastDot)
+                                var extPart = baseName.substring(lastDot)
+                                outputPath = namePart + "_decrypted" + extPart
+                            }
+                            
+                            try {
+                                if (PostQuantumCrypto.decryptFile(inputPath, outputPath)) {
+                                    successCount++
+                                } else {
+                                    failCount++
+                                }
+                            } catch (error) {
+                                failCount++
+                            }
+                        }
+                        
+                        fileProgressBar.value = 100
+                        fileProgressBar.visible = false
+                        progressStatus.text = ""
+                        batchStatus.text = "✅ Batch complete: " + successCount + " succeeded, " + failCount + " failed"
+                        batchStatus.color = failCount === 0 ? (darkMode ? "#4caf50" : "green") : "orange"
+                    }
+                }
             }
 
             Label {
@@ -656,7 +881,37 @@ ApplicationWindow {
                 text: qsTr("Select a file or folder to begin encryption/decryption operations.")
                 wrapMode: Text.WordWrap
                 width: parent.width
-                color: "#666666"
+                color: darkMode ? "#b0b0b0" : "#666666"
+                font.pixelSize: 12
+            }
+
+            Label {
+                id: batchStatus
+                text: selectedFiles.length > 0 ? ("📑 " + selectedFiles.length + " files selected for batch processing") : ""
+                wrapMode: Text.WordWrap
+                width: parent.width
+                font.pixelSize: 12
+                font.bold: selectedFiles.length > 0
+                color: darkMode ? "#90caf9" : "#2196f3"
+                visible: selectedFiles.length > 0
+            }
+
+            // Keyboard shortcuts info
+            Rectangle {
+                width: parent.width
+                height: shortcutsLabel.height + 16
+                color: darkMode ? "#2d2d2d" : "#f5f5f5"
+                border.color: darkMode ? "#546e7a" : "#e0e0e0"
+                border.width: 1
+                radius: 4
+
+                Label {
+                    id: shortcutsLabel
+                    anchors.centerIn: parent
+                    text: "⌨️ Shortcuts: Ctrl+E (Encrypt) | Ctrl+D (Decrypt) | Ctrl+B (Batch Select) | Ctrl+T (Dark Mode)"
+                    font.pixelSize: 11
+                    color: darkMode ? "#b0b0b0" : "#666666"
+                }
             }
         }
 
