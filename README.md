@@ -124,16 +124,47 @@ cmake --build build -j$(nproc)
 cmake --install build
 ```
 
-## Running Tests
+## Running the Application
 
-```bash
+### Windows
+```batch
+# Method 1: Using the batch file (recommended)
+run_cybou.bat
+
+# Method 2: Using PowerShell build script
+.\build.ps1 -run
+
+# Method 3: Manual setup
+set PATH=C:\Qt\6.10.0\mingw_64\bin;%PATH%
 cd build
-# Run encryption tests
-./test_encryption
-
-# Run mnemonic tests
-./test_mnemonic
+cybou.exe
 ```
+
+### Linux/macOS
+```bash
+# Build and run
+./build.ps1 -run
+# or
+cd build && ./cybou
+```
+
+**Important**: The Qt libraries must be in your PATH for the application to run. The build scripts automatically set this up, but if running manually, ensure Qt 6.10.0 bin directory is in PATH.
+
+### Troubleshooting
+
+**App won't start / no GUI visible**:
+- Ensure Qt libraries are in PATH (see above)
+- Check that all dependencies are installed (Qt 6, liboqs, OpenSSL)
+- Try running from the build directory: `cd build && ./cybou.exe`
+
+**QML errors on startup**:
+- Clean and rebuild: `./build.ps1 -clean`
+- Ensure all QML files are included in CMakeLists.txt
+
+**Build errors**:
+- Verify Qt 6.10.0 is installed and CMAKE_PREFIX_PATH is set correctly
+- Check that liboqs and OpenSSL are properly installed
+- Run `./build.ps1 -clean` to rebuild from scratch
 
 ## Usage
 

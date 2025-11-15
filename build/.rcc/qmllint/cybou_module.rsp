@@ -6,5 +6,7 @@ C:/Qt/6.10.0/mingw_64/qml
 C:/Users/yosta/Documents/cybou/build/.qt/rcc/qmake_CybouWallet.qrc
 --resource
 C:/Users/yosta/Documents/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc
+--resource
+C:/Users/yosta/Documents/cybou/build/.qt/rcc/cybou_raw_qml_0_extra_qmldirs.qrc
 --module
 CybouWallet

@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/qt/qml/CybouWallet/">
+    <file alias="qml/qmldir">C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/qmldir</file>
+    <file alias="qml/components/qmldir">C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/components/qmldir</file>
+  </qresource>
+</RCC>
+

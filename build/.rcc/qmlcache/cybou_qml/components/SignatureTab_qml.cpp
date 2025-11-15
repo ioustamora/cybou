@@ -1,4 +1,4 @@
-// /CybouWallet/qml/components/SignatureTab.qml
+// /qt/qml/CybouWallet/qml/components/SignatureTab.qml
 #include <QtQml/qqmlprivate.h>
 #include <QtCore/qdatetime.h>
 #include <QtCore/qobject.h>
@@ -16,7 +16,7 @@
 #include <QtQml/qqmllist.h>
 #include <type_traits>
 namespace QmlCacheGeneratedCode {
-namespace _0x5f_CybouWallet_qml_components_SignatureTab_qml {
+namespace _qt_qml_CybouWallet_qml_components_SignatureTab_qml {
 extern const unsigned char qmlData alignas(16) [];
 extern const unsigned char qmlData alignas(16) [] = {
 

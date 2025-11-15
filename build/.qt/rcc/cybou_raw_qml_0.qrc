@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="/CybouWallet/">
+  <qresource prefix="/qt/qml/CybouWallet/">
     <file alias="qml/Main.qml">C:/Users/yosta/Documents/cybou/qml/Main.qml</file>
     <file alias="qml/SplashDialog.qml">C:/Users/yosta/Documents/cybou/qml/SplashDialog.qml</file>
     <file alias="qml/components/TextEncryptionTab.qml">C:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml</file>

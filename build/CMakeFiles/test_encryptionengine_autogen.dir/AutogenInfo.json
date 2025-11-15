@@ -873,6 +873,9 @@
 		"C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
 		"C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
+		"C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
+		"C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
+		"C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
 		"C:/Users/yosta/Documents/cybou/build/.qt/qml_imports/cybou_conf.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/yosta/Documents/cybou",
@@ -959,6 +962,7 @@
 	"MOC_SKIP" : 
 	[
 		"C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp",
+		"C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0_extra_qmldirs.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_qmake_CybouWallet.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp",
@@ -1006,6 +1010,7 @@
 	"UIC_SKIP" : 
 	[
 		"C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp",
+		"C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_cybou_raw_qml_0_extra_qmldirs.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.qt/rcc/qrc_qmake_CybouWallet.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp",
 		"C:/Users/yosta/Documents/cybou/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp",

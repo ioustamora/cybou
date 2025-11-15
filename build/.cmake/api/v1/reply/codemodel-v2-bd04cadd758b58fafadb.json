@@ -1,0 +1,394 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-26c851528970971cda7e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "cybou",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Release-20c0af694670eec3ad25.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Release-400be9fa4c2e4aa7e665.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Release-16dd4ad042f6e4c9dad2.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Release-185a0282e1b982e0f5c2.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Release-fa7f8f81f945f690887c.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "benchmark_crypto::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-benchmark_crypto-Release-24e2aec37f19c787650f.json",
+					"name" : "benchmark_crypto",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "benchmark_crypto_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-benchmark_crypto_autogen-Release-23a25dfe46f1b0d156c7.json",
+					"name" : "benchmark_crypto_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "benchmark_crypto_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-benchmark_crypto_autogen_timestamp_deps-Release-0b2fbaaa6c5c02a13478.json",
+					"name" : "benchmark_crypto_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou-Release-ead14c70c6ac067c10db.json",
+					"name" : "cybou",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_autogen-Release-9495f1afb7f58fb6af96.json",
+					"name" : "cybou_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_autogen_timestamp_deps-Release-9c7b728a7e5840100b85.json",
+					"name" : "cybou_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_copy_qml-Release-35a571f71fb77e4d5fa8.json",
+					"name" : "cybou_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_copy_res-Release-4c98c5074487c7da42dc.json",
+					"name" : "cybou_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmlimportscan-Release-dcbfc2a51e366435430c.json",
+					"name" : "cybou_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmllint-Release-cd037fde1b8efb39865a.json",
+					"name" : "cybou_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmllint_json-Release-9459c657351e885026b3.json",
+					"name" : "cybou_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmllint_module-Release-e409144140957a172236.json",
+					"name" : "cybou_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cybou_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cybou_qmltyperegistration-Release-78818e987ad4e54cfde4.json",
+					"name" : "cybou_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_qmlls_build_ini_file-Release-e2c7e41f085904ea8a39.json",
+					"name" : "generate_qmlls_build_ini_file",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_cybou_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_cybou_aotstats_target-Release-86014e14cc08f83d00d4.json",
+					"name" : "module_cybou_aotstats_target",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_batch::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_batch-Release-279c7b64ec4f4e70ebab.json",
+					"name" : "test_batch",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_batch_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_batch_autogen-Release-24a31df8c47eea386f96.json",
+					"name" : "test_batch_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_batch_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_batch_autogen_timestamp_deps-Release-f09c04195518743d9d7e.json",
+					"name" : "test_batch_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryption::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryption-Release-862641583db60ece09b1.json",
+					"name" : "test_encryption",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryption_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryption_autogen-Release-d56a0bc5ccf27afd6dc4.json",
+					"name" : "test_encryption_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryption_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryption_autogen_timestamp_deps-Release-2d7b731ecc7204e78708.json",
+					"name" : "test_encryption_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryptionengine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryptionengine-Release-d0be13fb540080dece8b.json",
+					"name" : "test_encryptionengine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryptionengine_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryptionengine_autogen-Release-e38366bd21f084a6b541.json",
+					"name" : "test_encryptionengine_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encryptionengine_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encryptionengine_autogen_timestamp_deps-Release-e693fdef7a09489842e8.json",
+					"name" : "test_encryptionengine_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_keymanager::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_keymanager-Release-fa899c1f78141c890ad5.json",
+					"name" : "test_keymanager",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_keymanager_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_keymanager_autogen-Release-126e2d1f180c61432a4f.json",
+					"name" : "test_keymanager_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_keymanager_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_keymanager_autogen_timestamp_deps-Release-f673cf8fa4d2f9f24537.json",
+					"name" : "test_keymanager_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_signatureengine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatureengine-Release-8e01fc7dcaafc5d83e2d.json",
+					"name" : "test_signatureengine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_signatureengine_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatureengine_autogen-Release-cf2902e33b76d79162ee.json",
+					"name" : "test_signatureengine_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_signatureengine_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatureengine_autogen_timestamp_deps-Release-43ee9c81ba97c29a4b46.json",
+					"name" : "test_signatureengine_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_signatures::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatures-Release-dffb9810c1e46e46e5b8.json",
+					"name" : "test_signatures",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_signatures_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatures_autogen-Release-3d5d4798cf6bf379bba8.json",
+					"name" : "test_signatures_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_signatures_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_signatures_autogen_timestamp_deps-Release-b16bce8580ef4cc1cf44.json",
+					"name" : "test_signatures_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/yosta/Documents/cybou/build",
+		"source" : "C:/Users/yosta/Documents/cybou"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

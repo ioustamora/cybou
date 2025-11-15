@@ -84,6 +84,9 @@ endif()
 
 qt_standard_project_setup()
 
+qt_policy(SET QTP0001 NEW)
+qt_policy(SET QTP0004 NEW)
+
 # Main application executable
 qt_add_executable(cybou
     src/main.cpp

@@ -94,14 +94,21 @@ int main(int argc, char *argv[])
         mnemonicEngine->setPostQuantumCrypto(pqCrypto);
     }
 
-    const QUrl url(QStringLiteral("qrc:/CybouWallet/qml/Main.qml"));
+    const QUrl url(QStringLiteral("qrc:/qml/TestWindow.qml"));
+    qDebug() << "Loading QML from:" << url;
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
+        if (!obj && url == objUrl) {
+            qDebug() << "Failed to create QML object from" << objUrl;
             QCoreApplication::exit(-1);
+        } else {
+            qDebug() << "Successfully created QML object from" << objUrl;
+        }
     }, Qt::QueuedConnection);
 
+    qDebug() << "About to load QML...";
     engine.load(url);
+    qDebug() << "QML load completed";
 
     const int result = app.exec();
     return result;

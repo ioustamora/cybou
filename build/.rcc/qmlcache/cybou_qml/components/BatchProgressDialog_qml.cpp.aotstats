@@ -16,7 +16,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 251,
+                            "durationMicroseconds": 249,
                             "functionName": "fileList",
                             "line": 43,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 2,
                             "column": 5,
-                            "durationMicroseconds": 371,
+                            "durationMicroseconds": 1404,
                             "functionName": "updateFileList",
                             "line": 352,
                             "message": "Cannot retrieve a non-object type by ID: batchDialog"
@@ -48,7 +48,7 @@
                         {
                             "codegenResult": 2,
                             "column": 16,
-                            "durationMicroseconds": 69,
+                            "durationMicroseconds": 55,
                             "functionName": "color",
                             "line": 52,
                             "message": "Cannot access value for name batchDialog"
@@ -56,7 +56,7 @@
                         {
                             "codegenResult": 2,
                             "column": 23,
-                            "durationMicroseconds": 28,
+                            "durationMicroseconds": 22,
                             "functionName": "color",
                             "line": 53,
                             "message": "Cannot access value for name batchDialog"
@@ -64,7 +64,7 @@
                         {
                             "codegenResult": 0,
                             "column": 23,
-                            "durationMicroseconds": 106,
+                            "durationMicroseconds": 156,
                             "functionName": "fill",
                             "line": 60,
                             "message": ""
@@ -72,7 +72,7 @@
                         {
                             "codegenResult": 2,
                             "column": 20,
-                            "durationMicroseconds": 51,
+                            "durationMicroseconds": 78,
                             "functionName": "color",
                             "line": 67,
                             "message": "Cannot retrieve a non-object type by ID: batchDialog"
@@ -88,7 +88,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 60,
+                            "durationMicroseconds": 147,
                             "functionName": "fill",
                             "line": 73,
                             "message": ""
@@ -128,7 +128,7 @@
                         {
                             "codegenResult": 2,
                             "column": 30,
-                            "durationMicroseconds": 22,
+                            "durationMicroseconds": 39,
                             "functionName": "visible",
                             "line": 103,
                             "message": "Cannot retrieve a non-object type by ID: batchDialog"
@@ -176,7 +176,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 70,
+                            "durationMicroseconds": 120,
                             "functionName": "color",
                             "line": 145,
                             "message": "Cannot access value for name batchDialog"
@@ -184,7 +184,7 @@
                         {
                             "codegenResult": 2,
                             "column": 35,
-                            "durationMicroseconds": 34,
+                            "durationMicroseconds": 86,
                             "functionName": "color",
                             "line": 146,
                             "message": "Cannot access value for name batchDialog"
@@ -192,7 +192,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 50,
+                            "durationMicroseconds": 65,
                             "functionName": "width",
                             "line": 153,
                             "message": "Cannot access value for name overallProgressBar"
@@ -208,7 +208,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 59,
+                            "durationMicroseconds": 76,
                             "functionName": "color",
                             "line": 155,
                             "message": "Cannot access value for name batchDialog"
@@ -240,7 +240,7 @@
                         {
                             "codegenResult": 2,
                             "column": 24,
-                            "durationMicroseconds": 21,
+                            "durationMicroseconds": 23,
                             "functionName": "model",
                             "line": 185,
                             "message": "Cannot retrieve a non-object type by ID: batchDialog"
@@ -248,7 +248,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 33,
+                            "durationMicroseconds": 48,
                             "functionName": "width",
                             "line": 189,
                             "message": "Cannot access value for name fileListView"
@@ -256,7 +256,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 111,
+                            "durationMicroseconds": 79,
                             "functionName": "color",
                             "line": 191,
                             "message": "Cannot access value for name index"
@@ -264,7 +264,7 @@
                         {
                             "codegenResult": 2,
                             "column": 35,
-                            "durationMicroseconds": 43,
+                            "durationMicroseconds": 28,
                             "functionName": "color",
                             "line": 194,
                             "message": "Cannot access value for name batchDialog"
@@ -272,7 +272,7 @@
                         {
                             "codegenResult": 0,
                             "column": 39,
-                            "durationMicroseconds": 90,
+                            "durationMicroseconds": 89,
                             "functionName": "fill",
                             "line": 198,
                             "message": ""
@@ -328,7 +328,7 @@
                         {
                             "codegenResult": 2,
                             "column": 40,
-                            "durationMicroseconds": 58,
+                            "durationMicroseconds": 106,
                             "functionName": "color",
                             "line": 237,
                             "message": "Cannot access value for name batchDialog"
@@ -336,7 +336,7 @@
                         {
                             "codegenResult": 2,
                             "column": 44,
-                            "durationMicroseconds": 28,
+                            "durationMicroseconds": 40,
                             "functionName": "width",
                             "line": 243,
                             "message": "Cannot access value for name parent"
@@ -352,7 +352,7 @@
                         {
                             "codegenResult": 2,
                             "column": 44,
-                            "durationMicroseconds": 212,
+                            "durationMicroseconds": 323,
                             "functionName": "color",
                             "line": 245,
                             "message": "Cannot access value for name modelData"
@@ -376,7 +376,7 @@
                         {
                             "codegenResult": 2,
                             "column": 20,
-                            "durationMicroseconds": 38,
+                            "durationMicroseconds": 43,
                             "functionName": "color",
                             "line": 272,
                             "message": "Cannot retrieve a non-object type by ID: batchDialog"
@@ -384,7 +384,7 @@
                         {
                             "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 23,
+                            "durationMicroseconds": 20,
                             "functionName": "color",
                             "line": 273,
                             "message": "Cannot retrieve a non-object type by ID: batchDialog"
@@ -392,7 +392,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 70,
+                            "durationMicroseconds": 87,
                             "functionName": "fill",
                             "line": 278,
                             "message": ""
@@ -432,7 +432,7 @@
                         {
                             "codegenResult": 0,
                             "column": 39,
-                            "durationMicroseconds": 123,
+                            "durationMicroseconds": 303,
                             "functionName": "alignment",
                             "line": 299,
                             "message": ""
@@ -440,7 +440,7 @@
                         {
                             "codegenResult": 2,
                             "column": 17,
-                            "durationMicroseconds": 85,
+                            "durationMicroseconds": 119,
                             "functionName": "target",
                             "line": 307,
                             "message": "Cannot access value for name PostQuantumCrypto"
@@ -480,7 +480,7 @@
                         {
                             "codegenResult": 2,
                             "column": 9,
-                            "durationMicroseconds": 60,
+                            "durationMicroseconds": 56,
                             "functionName": "onBatchQueueChanged",
                             "line": 345,
                             "message": "method updateFileList cannot be resolved."

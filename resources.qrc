@@ -3,4 +3,14 @@
 <qresource prefix="/">
     <file>bip39_wordlist.txt</file>
 </qresource>
+<qresource prefix="/qml">
+    <file>qml/Main.qml</file>
+    <file>qml/TestWindow.qml</file>
+    <file>qml/SplashDialog.qml</file>
+    <file>qml/components/TextEncryptionTab.qml</file>
+    <file>qml/components/FileEncryptionTab.qml</file>
+    <file>qml/components/BatchProgressDialog.qml</file>
+    <file>qml/components/SignatureTab.qml</file>
+    <file>qml/components/KeyManagementTab.qml</file>
+</qresource>
 </RCC>
