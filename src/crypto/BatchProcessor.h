@@ -134,6 +134,9 @@ public:
     void setMaxConcurrentWorkers(int maxWorkers);
     void setOutputDirectory(const QString& dir) { m_outputDirectory = dir; }
 
+    // Data access for UI
+    QVariantList fileList() const;
+
 signals:
     // Overall batch progress
     void batchProgressUpdated(double progress, const QString& status);

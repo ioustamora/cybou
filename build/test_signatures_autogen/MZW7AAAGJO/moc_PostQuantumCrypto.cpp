@@ -92,6 +92,8 @@ template <> constexpr inline auto PostQuantumCrypto::qt_create_metaobjectdata<qt
         "filePaths",
         "encrypt",
         "startBatchProcessing",
+        "startBatchEncryption",
+        "startBatchDecryption",
         "pauseBatchProcessing",
         "resumeBatchProcessing",
         "cancelBatchProcessing",
@@ -208,40 +210,44 @@ template <> constexpr inline auto PostQuantumCrypto::qt_create_metaobjectdata<qt
         }}),
         // Method 'startBatchProcessing'
         QtMocHelpers::MethodData<void()>(53, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'pauseBatchProcessing'
+        // Method 'startBatchEncryption'
         QtMocHelpers::MethodData<void()>(54, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'resumeBatchProcessing'
+        // Method 'startBatchDecryption'
         QtMocHelpers::MethodData<void()>(55, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'cancelBatchProcessing'
+        // Method 'pauseBatchProcessing'
         QtMocHelpers::MethodData<void()>(56, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'clearBatchQueue'
+        // Method 'resumeBatchProcessing'
         QtMocHelpers::MethodData<void()>(57, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'cancelBatchProcessing'
+        QtMocHelpers::MethodData<void()>(58, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'clearBatchQueue'
+        QtMocHelpers::MethodData<void()>(59, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'batchQueueSize'
-        QtMocHelpers::MethodData<int() const>(58, 2, QMC::AccessPublic, QMetaType::Int),
-        // Method 'batchCompletedCount'
-        QtMocHelpers::MethodData<int() const>(59, 2, QMC::AccessPublic, QMetaType::Int),
-        // Method 'batchSuccessCount'
         QtMocHelpers::MethodData<int() const>(60, 2, QMC::AccessPublic, QMetaType::Int),
-        // Method 'batchErrorCount'
+        // Method 'batchCompletedCount'
         QtMocHelpers::MethodData<int() const>(61, 2, QMC::AccessPublic, QMetaType::Int),
+        // Method 'batchSuccessCount'
+        QtMocHelpers::MethodData<int() const>(62, 2, QMC::AccessPublic, QMetaType::Int),
+        // Method 'batchErrorCount'
+        QtMocHelpers::MethodData<int() const>(63, 2, QMC::AccessPublic, QMetaType::Int),
         // Method 'batchOverallProgress'
-        QtMocHelpers::MethodData<double() const>(62, 2, QMC::AccessPublic, QMetaType::Double),
+        QtMocHelpers::MethodData<double() const>(64, 2, QMC::AccessPublic, QMetaType::Double),
         // Method 'batchStatusMessage'
-        QtMocHelpers::MethodData<QString() const>(63, 2, QMC::AccessPublic, QMetaType::QString),
+        QtMocHelpers::MethodData<QString() const>(65, 2, QMC::AccessPublic, QMetaType::QString),
         // Method 'batchFileList'
-        QtMocHelpers::MethodData<QVariantList() const>(64, 2, QMC::AccessPublic, 0x80000000 | 65),
+        QtMocHelpers::MethodData<QVariantList() const>(66, 2, QMC::AccessPublic, 0x80000000 | 67),
         // Method 'generateSharedSecret'
-        QtMocHelpers::MethodData<QString(const QString &)>(66, 2, QMC::AccessPublic, QMetaType::QString, {{
-            { QMetaType::QString, 67 },
+        QtMocHelpers::MethodData<QString(const QString &)>(68, 2, QMC::AccessPublic, QMetaType::QString, {{
+            { QMetaType::QString, 69 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'hasKeys'
-        QtMocHelpers::PropertyData<bool>(68, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(70, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'publicKey'
-        QtMocHelpers::PropertyData<QString>(69, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(71, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'keyAlgorithm'
-        QtMocHelpers::PropertyData<QString>(70, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<QString>(72, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Constant),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -306,25 +312,27 @@ void PostQuantumCrypto::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 24: _t->addFilesToBatch((*reinterpret_cast<std::add_pointer_t<QStringList>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2]))); break;
         case 25: _t->addFilesToBatch((*reinterpret_cast<std::add_pointer_t<QStringList>>(_a[1]))); break;
         case 26: _t->startBatchProcessing(); break;
-        case 27: _t->pauseBatchProcessing(); break;
-        case 28: _t->resumeBatchProcessing(); break;
-        case 29: _t->cancelBatchProcessing(); break;
-        case 30: _t->clearBatchQueue(); break;
-        case 31: { int _r = _t->batchQueueSize();
+        case 27: _t->startBatchEncryption(); break;
+        case 28: _t->startBatchDecryption(); break;
+        case 29: _t->pauseBatchProcessing(); break;
+        case 30: _t->resumeBatchProcessing(); break;
+        case 31: _t->cancelBatchProcessing(); break;
+        case 32: _t->clearBatchQueue(); break;
+        case 33: { int _r = _t->batchQueueSize();
             if (_a[0]) *reinterpret_cast<int*>(_a[0]) = std::move(_r); }  break;
-        case 32: { int _r = _t->batchCompletedCount();
+        case 34: { int _r = _t->batchCompletedCount();
             if (_a[0]) *reinterpret_cast<int*>(_a[0]) = std::move(_r); }  break;
-        case 33: { int _r = _t->batchSuccessCount();
+        case 35: { int _r = _t->batchSuccessCount();
             if (_a[0]) *reinterpret_cast<int*>(_a[0]) = std::move(_r); }  break;
-        case 34: { int _r = _t->batchErrorCount();
+        case 36: { int _r = _t->batchErrorCount();
             if (_a[0]) *reinterpret_cast<int*>(_a[0]) = std::move(_r); }  break;
-        case 35: { double _r = _t->batchOverallProgress();
+        case 37: { double _r = _t->batchOverallProgress();
             if (_a[0]) *reinterpret_cast<double*>(_a[0]) = std::move(_r); }  break;
-        case 36: { QString _r = _t->batchStatusMessage();
+        case 38: { QString _r = _t->batchStatusMessage();
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 37: { QVariantList _r = _t->batchFileList();
+        case 39: { QVariantList _r = _t->batchFileList();
             if (_a[0]) *reinterpret_cast<QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 38: { QString _r = _t->generateSharedSecret((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 40: { QString _r = _t->generateSharedSecret((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -377,14 +385,14 @@ int PostQuantumCrypto::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 39)
+        if (_id < 41)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 39;
+        _id -= 41;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 39)
+        if (_id < 41)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 39;
+        _id -= 41;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

@@ -448,3 +448,28 @@ bool BatchProcessor::validateFile(const QString& filePath) const {
     QFileInfo info(filePath);
     return info.exists() && info.isFile() && info.isReadable();
 }
+
+/**
+ * @brief Get the current file list for UI display
+ */
+QVariantList BatchProcessor::fileList() const {
+    QMutexLocker locker(&m_mutex);
+    QVariantList result;
+
+    for (int i = 0; i < m_queue.size(); ++i) {
+        const BatchFileItem& item = m_queue[i];
+        QVariantMap fileData;
+        fileData["inputPath"] = item.inputPath;
+        fileData["outputPath"] = item.outputPath;
+        fileData["fileSize"] = item.fileSize;
+        fileData["status"] = item.status;
+        fileData["progress"] = item.progress;
+        fileData["completed"] = item.completed;
+        fileData["success"] = item.success;
+        fileData["errorMessage"] = item.errorMessage;
+
+        result.append(fileData);
+    }
+
+    return result;
+}

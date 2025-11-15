@@ -211,8 +211,6 @@ void PostQuantumCrypto::startBatchProcessing()
  */
 void PostQuantumCrypto::startBatchEncryption()
 {
-    // Clear any existing queue first
-    m_batchProcessor->clearQueue();
     m_batchProcessor->startProcessing();
 }
 
@@ -221,8 +219,6 @@ void PostQuantumCrypto::startBatchEncryption()
  */
 void PostQuantumCrypto::startBatchDecryption()
 {
-    // Clear any existing queue first
-    m_batchProcessor->clearQueue();
     m_batchProcessor->startProcessing();
 }
 
@@ -278,11 +274,5 @@ QString PostQuantumCrypto::batchStatusMessage() const
 
 QVariantList PostQuantumCrypto::batchFileList() const
 {
-    QVariantList result;
-    
-    // This is a simplified implementation - in a real app you'd want to expose
-    // the actual BatchFileItem data through the BatchProcessor
-    // For now, return an empty list as the UI will be updated via signals
-    
-    return result;
+    return m_batchProcessor->fileList();
 }

@@ -262,83 +262,97 @@
                     "access": "public",
                     "index": 27,
                     "lineNumber": 254,
-                    "name": "pauseBatchProcessing",
+                    "name": "startBatchEncryption",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 28,
                     "lineNumber": 259,
-                    "name": "resumeBatchProcessing",
+                    "name": "startBatchDecryption",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 29,
                     "lineNumber": 264,
-                    "name": "cancelBatchProcessing",
+                    "name": "pauseBatchProcessing",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 30,
                     "lineNumber": 269,
-                    "name": "clearBatchQueue",
+                    "name": "resumeBatchProcessing",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 31,
-                    "isConst": true,
-                    "lineNumber": 275,
-                    "name": "batchQueueSize",
-                    "returnType": "int"
+                    "lineNumber": 274,
+                    "name": "cancelBatchProcessing",
+                    "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 32,
-                    "isConst": true,
-                    "lineNumber": 281,
-                    "name": "batchCompletedCount",
-                    "returnType": "int"
+                    "lineNumber": 279,
+                    "name": "clearBatchQueue",
+                    "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 33,
                     "isConst": true,
-                    "lineNumber": 287,
-                    "name": "batchSuccessCount",
+                    "lineNumber": 285,
+                    "name": "batchQueueSize",
                     "returnType": "int"
                 },
                 {
                     "access": "public",
                     "index": 34,
                     "isConst": true,
-                    "lineNumber": 293,
-                    "name": "batchErrorCount",
+                    "lineNumber": 291,
+                    "name": "batchCompletedCount",
                     "returnType": "int"
                 },
                 {
                     "access": "public",
                     "index": 35,
                     "isConst": true,
-                    "lineNumber": 299,
-                    "name": "batchOverallProgress",
-                    "returnType": "double"
+                    "lineNumber": 297,
+                    "name": "batchSuccessCount",
+                    "returnType": "int"
                 },
                 {
                     "access": "public",
                     "index": 36,
                     "isConst": true,
-                    "lineNumber": 305,
-                    "name": "batchStatusMessage",
-                    "returnType": "QString"
+                    "lineNumber": 303,
+                    "name": "batchErrorCount",
+                    "returnType": "int"
                 },
                 {
                     "access": "public",
                     "index": 37,
                     "isConst": true,
-                    "lineNumber": 311,
+                    "lineNumber": 309,
+                    "name": "batchOverallProgress",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "index": 38,
+                    "isConst": true,
+                    "lineNumber": 315,
+                    "name": "batchStatusMessage",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 39,
+                    "isConst": true,
+                    "lineNumber": 321,
                     "name": "batchFileList",
                     "returnType": "QVariantList"
                 },
@@ -350,8 +364,8 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 38,
-                    "lineNumber": 322,
+                    "index": 40,
+                    "lineNumber": 332,
                     "name": "generateSharedSecret",
                     "returnType": "QString"
                 }
@@ -408,7 +422,7 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 346,
+                    "lineNumber": 356,
                     "name": "keysChanged",
                     "returnType": "void"
                 },
@@ -429,7 +443,7 @@
                         }
                     ],
                     "index": 1,
-                    "lineNumber": 354,
+                    "lineNumber": 364,
                     "name": "operationCompleted",
                     "returnType": "void"
                 },
@@ -450,7 +464,7 @@
                         }
                     ],
                     "index": 2,
-                    "lineNumber": 362,
+                    "lineNumber": 372,
                     "name": "operationProgress",
                     "returnType": "void"
                 },
@@ -467,7 +481,7 @@
                         }
                     ],
                     "index": 3,
-                    "lineNumber": 369,
+                    "lineNumber": 379,
                     "name": "batchProgressUpdated",
                     "returnType": "void"
                 },
@@ -492,7 +506,7 @@
                         }
                     ],
                     "index": 4,
-                    "lineNumber": 378,
+                    "lineNumber": 388,
                     "name": "batchCompleted",
                     "returnType": "void"
                 },
@@ -513,7 +527,7 @@
                         }
                     ],
                     "index": 5,
-                    "lineNumber": 386,
+                    "lineNumber": 396,
                     "name": "fileProgressUpdated",
                     "returnType": "void"
                 },
@@ -534,14 +548,14 @@
                         }
                     ],
                     "index": 6,
-                    "lineNumber": 394,
+                    "lineNumber": 404,
                     "name": "fileCompleted",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 7,
-                    "lineNumber": 399,
+                    "lineNumber": 409,
                     "name": "batchQueueChanged",
                     "returnType": "void"
                 }
