@@ -112,6 +112,15 @@ build CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.obj: CXX_COMPILER__c
   OBJECT_DIR = CMakeFiles\cybou.dir
   OBJECT_FILE_DIR = CMakeFiles\cybou.dir\src\crypto
 
+build CMakeFiles/cybou.dir/src/crypto/BatchProcessor.cpp.obj: CXX_COMPILER__cybou_unscanned_Release C$:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.cpp || cmake_object_order_depends_target_cybou
+  CONFIG = Release
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\cybou.dir\src\crypto\BatchProcessor.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/cybou_autogen/include -IC:/Users/yosta/Documents/cybou -isystem C:/Qt/6.10.0/mingw_64/include/QtQml -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtQmlIntegration -isystem C:/Qt/6.10.0/mingw_64/include/QtNetwork -isystem C:/Qt/6.10.0/mingw_64/include/QtGui -isystem C:/Qt/6.10.0/mingw_64/include/QtQuick -isystem C:/Qt/6.10.0/mingw_64/include/QtQmlMeta -isystem C:/Qt/6.10.0/mingw_64/include/QtQmlModels -isystem C:/Qt/6.10.0/mingw_64/include/QtQmlWorkerScript -isystem C:/Qt/6.10.0/mingw_64/include/QtOpenGL -isystem C:/Qt/6.10.0/mingw_64/include/QtQuickControls2 -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\cybou.dir
+  OBJECT_FILE_DIR = CMakeFiles\cybou.dir\src\crypto
+
 build CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.obj: CXX_COMPILER__cybou_unscanned_Release C$:/Users/yosta/Documents/cybou/build/cybou_qmltyperegistrations.cpp || cmake_object_order_depends_target_cybou
   CONFIG = Release
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
@@ -210,7 +219,7 @@ build CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.obj: CXX_COMPIL
 #############################################
 # Link the executable cybou.exe
 
-build cybou.exe: CXX_EXECUTABLE_LINKER__cybou_Release CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.obj CMakeFiles/cybou.dir/src/main.cpp.obj CMakeFiles/cybou.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/cybou.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.obj CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.obj CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.obj CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6QuickControls2.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Quick.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlMeta.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlWorkerScript.a C$:/Qt/6.10.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlModels.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Qml.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Network.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a C$:/msys64/mingw64/lib/liboqs.dll.a || cybou_autogen cybou_autogen_timestamp_deps cybou_copy_qml cybou_copy_res cybou_qmlimportscan generate_qmlls_build_ini_file
+build cybou.exe: CXX_EXECUTABLE_LINKER__cybou_Release CMakeFiles/cybou.dir/cybou_autogen/mocs_compilation.cpp.obj CMakeFiles/cybou.dir/src/main.cpp.obj CMakeFiles/cybou.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/cybou.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/MnemonicEngine.cpp.obj CMakeFiles/cybou.dir/src/crypto/PostQuantumCrypto.cpp.obj CMakeFiles/cybou.dir/src/crypto/BatchProcessor.cpp.obj CMakeFiles/cybou.dir/cybou_qmltyperegistrations.cpp.obj CMakeFiles/cybou.dir/build/.qt/rcc/qrc_qmake_CybouWallet.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qmlcache_loader.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/Main_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/SplashDialog_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/components/TextEncryptionTab_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/components/FileEncryptionTab_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/components/SignatureTab_qml.cpp.obj CMakeFiles/cybou.dir/build/.rcc/qmlcache/cybou_qml/components/KeyManagementTab_qml.cpp.obj CMakeFiles/cybou.dir/build/.qt/rcc/qrc_cybou_raw_qml_0.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6QuickControls2.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Quick.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlMeta.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlWorkerScript.a C$:/Qt/6.10.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6QmlModels.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Qml.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Network.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a C$:/msys64/mingw64/lib/liboqs.dll.a || cybou_autogen cybou_autogen_timestamp_deps cybou_copy_qml cybou_copy_res cybou_qmlimportscan generate_qmlls_build_ini_file
   CONFIG = Release
   FLAGS = -O3 -DNDEBUG
   LINK_FLAGS = -mwindows
@@ -354,6 +363,15 @@ build CMakeFiles/test_encryption.dir/src/crypto/MnemonicEngine.cpp.obj: CXX_COMP
   OBJECT_DIR = CMakeFiles\test_encryption.dir
   OBJECT_FILE_DIR = CMakeFiles\test_encryption.dir\src\crypto
 
+build CMakeFiles/test_encryption.dir/src/crypto/BatchProcessor.cpp.obj: CXX_COMPILER__test_encryption_unscanned_Release C$:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.cpp || cmake_object_order_depends_target_test_encryption
+  CONFIG = Release
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_NO_DEBUG -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_encryption.dir\src\crypto\BatchProcessor.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/test_encryption_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_encryption.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_encryption.dir\src\crypto
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target test_encryption
@@ -362,7 +380,7 @@ build CMakeFiles/test_encryption.dir/src/crypto/MnemonicEngine.cpp.obj: CXX_COMP
 #############################################
 # Link the executable test_encryption.exe
 
-build test_encryption.exe: CXX_EXECUTABLE_LINKER__test_encryption_Release CMakeFiles/test_encryption.dir/test_encryption_autogen/mocs_compilation.cpp.obj CMakeFiles/test_encryption.dir/test_encryption.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/PostQuantumCrypto.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/MnemonicEngine.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/msys64/mingw64/lib/liboqs.dll.a || test_encryption_autogen test_encryption_autogen_timestamp_deps
+build test_encryption.exe: CXX_EXECUTABLE_LINKER__test_encryption_Release CMakeFiles/test_encryption.dir/test_encryption_autogen/mocs_compilation.cpp.obj CMakeFiles/test_encryption.dir/test_encryption.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/PostQuantumCrypto.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/MnemonicEngine.cpp.obj CMakeFiles/test_encryption.dir/src/crypto/BatchProcessor.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/msys64/mingw64/lib/liboqs.dll.a || test_encryption_autogen test_encryption_autogen_timestamp_deps
   CONFIG = Release
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  C:/msys64/mingw64/lib/libcrypto.dll.a  -lmpr  -luserenv  C:/msys64/mingw64/lib/liboqs.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -436,6 +454,15 @@ build CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.obj: CXX_C
   OBJECT_DIR = CMakeFiles\test_signatures.dir
   OBJECT_FILE_DIR = CMakeFiles\test_signatures.dir\src\crypto
 
+build CMakeFiles/test_signatures.dir/src/crypto/BatchProcessor.cpp.obj: CXX_COMPILER__test_signatures_unscanned_Release C$:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.cpp || cmake_object_order_depends_target_test_signatures
+  CONFIG = Release
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_NO_DEBUG -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\test_signatures.dir\src\crypto\BatchProcessor.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/test_signatures_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\test_signatures.dir
+  OBJECT_FILE_DIR = CMakeFiles\test_signatures.dir\src\crypto
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target test_signatures
@@ -444,7 +471,7 @@ build CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.obj: CXX_C
 #############################################
 # Link the executable test_signatures.exe
 
-build test_signatures.exe: CXX_EXECUTABLE_LINKER__test_signatures_Release CMakeFiles/test_signatures.dir/test_signatures_autogen/mocs_compilation.cpp.obj CMakeFiles/test_signatures.dir/test_signatures.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/msys64/mingw64/lib/liboqs.dll.a || test_signatures_autogen test_signatures_autogen_timestamp_deps
+build test_signatures.exe: CXX_EXECUTABLE_LINKER__test_signatures_Release CMakeFiles/test_signatures.dir/test_signatures_autogen/mocs_compilation.cpp.obj CMakeFiles/test_signatures.dir/test_signatures.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/PostQuantumCrypto.cpp.obj CMakeFiles/test_signatures.dir/src/crypto/BatchProcessor.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/msys64/mingw64/lib/liboqs.dll.a || test_signatures_autogen test_signatures_autogen_timestamp_deps
   CONFIG = Release
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  C:/msys64/mingw64/lib/libcrypto.dll.a  -lmpr  -luserenv  C:/msys64/mingw64/lib/liboqs.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -692,6 +719,15 @@ build CMakeFiles/benchmark_crypto.dir/src/crypto/SignatureEngine.cpp.obj: CXX_CO
   OBJECT_DIR = CMakeFiles\benchmark_crypto.dir
   OBJECT_FILE_DIR = CMakeFiles\benchmark_crypto.dir\src\crypto
 
+build CMakeFiles/benchmark_crypto.dir/src/crypto/BatchProcessor.cpp.obj: CXX_COMPILER__benchmark_crypto_unscanned_Release C$:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.cpp || cmake_object_order_depends_target_benchmark_crypto
+  CONFIG = Release
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_NO_DEBUG -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\benchmark_crypto.dir\src\crypto\BatchProcessor.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20
+  INCLUDES = -IC:/Users/yosta/Documents/cybou/build/benchmark_crypto_autogen/include -IC:/Users/yosta/Documents/cybou/src -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include
+  OBJECT_DIR = CMakeFiles\benchmark_crypto.dir
+  OBJECT_FILE_DIR = CMakeFiles\benchmark_crypto.dir\src\crypto
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target benchmark_crypto
@@ -700,7 +736,7 @@ build CMakeFiles/benchmark_crypto.dir/src/crypto/SignatureEngine.cpp.obj: CXX_CO
 #############################################
 # Link the executable benchmark_crypto.exe
 
-build benchmark_crypto.exe: CXX_EXECUTABLE_LINKER__benchmark_crypto_Release CMakeFiles/benchmark_crypto.dir/benchmark_crypto_autogen/mocs_compilation.cpp.obj CMakeFiles/benchmark_crypto.dir/benchmark_crypto.cpp.obj CMakeFiles/benchmark_crypto.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/benchmark_crypto.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/benchmark_crypto.dir/src/crypto/SignatureEngine.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/msys64/mingw64/lib/liboqs.dll.a || benchmark_crypto_autogen benchmark_crypto_autogen_timestamp_deps
+build benchmark_crypto.exe: CXX_EXECUTABLE_LINKER__benchmark_crypto_Release CMakeFiles/benchmark_crypto.dir/benchmark_crypto_autogen/mocs_compilation.cpp.obj CMakeFiles/benchmark_crypto.dir/benchmark_crypto.cpp.obj CMakeFiles/benchmark_crypto.dir/src/crypto/KeyManager.cpp.obj CMakeFiles/benchmark_crypto.dir/src/crypto/EncryptionEngine.cpp.obj CMakeFiles/benchmark_crypto.dir/src/crypto/SignatureEngine.cpp.obj CMakeFiles/benchmark_crypto.dir/src/crypto/BatchProcessor.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/msys64/mingw64/lib/libcrypto.dll.a C$:/msys64/mingw64/lib/liboqs.dll.a || benchmark_crypto_autogen benchmark_crypto_autogen_timestamp_deps
   CONFIG = Release
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  C:/msys64/mingw64/lib/libcrypto.dll.a  -lmpr  -luserenv  C:/msys64/mingw64/lib/liboqs.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

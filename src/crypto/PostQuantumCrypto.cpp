@@ -32,6 +32,7 @@ PostQuantumCrypto::PostQuantumCrypto(QObject *parent)
     m_keyManager = new KeyManager(this);
     m_encryptionEngine = new EncryptionEngine(m_keyManager, this);
     m_signatureEngine = new SignatureEngine(m_keyManager, this);
+    m_batchProcessor = new BatchProcessor(m_keyManager, this);
     
     // Connect module signals to facade signals
     connect(m_keyManager, &KeyManager::keysChanged, 
@@ -44,6 +45,18 @@ PostQuantumCrypto::PostQuantumCrypto(QObject *parent)
     
     connect(m_signatureEngine, &SignatureEngine::operationCompleted,
             this, &PostQuantumCrypto::operationCompleted);
+    
+    // Connect batch processor signals
+    connect(m_batchProcessor, &BatchProcessor::batchProgressUpdated,
+            this, &PostQuantumCrypto::batchProgressUpdated);
+    connect(m_batchProcessor, &BatchProcessor::batchCompleted,
+            this, &PostQuantumCrypto::batchCompleted);
+    connect(m_batchProcessor, &BatchProcessor::fileProgressUpdated,
+            this, &PostQuantumCrypto::fileProgressUpdated);
+    connect(m_batchProcessor, &BatchProcessor::fileCompleted,
+            this, &PostQuantumCrypto::fileCompleted);
+    connect(m_batchProcessor, &BatchProcessor::queueChanged,
+            this, &PostQuantumCrypto::batchQueueChanged);
     
     qDebug() << "PostQuantumCrypto facade initialized with modular architecture";
 }
@@ -176,4 +189,80 @@ QByteArray PostQuantumCrypto::decapsulateKey(const QVariantMap &encapsulatedKey)
 QString PostQuantumCrypto::generateSharedSecret(const QString &otherPublicKeyHex)
 {
     return m_signatureEngine->generateSharedSecret(otherPublicKeyHex);
+}
+
+// ============================================================================
+// Batch Processing Operations - Delegated to BatchProcessor
+// ============================================================================
+
+void PostQuantumCrypto::addFilesToBatch(const QStringList &filePaths, bool encrypt)
+{
+    BatchOperation operation = encrypt ? BatchOperation::Encrypt : BatchOperation::Decrypt;
+    m_batchProcessor->addFiles(filePaths, QString(), operation);
+}
+
+void PostQuantumCrypto::startBatchProcessing()
+{
+    m_batchProcessor->startProcessing();
+}
+
+void PostQuantumCrypto::pauseBatchProcessing()
+{
+    m_batchProcessor->pauseProcessing();
+}
+
+void PostQuantumCrypto::resumeBatchProcessing()
+{
+    m_batchProcessor->resumeProcessing();
+}
+
+void PostQuantumCrypto::cancelBatchProcessing()
+{
+    m_batchProcessor->cancelProcessing();
+}
+
+void PostQuantumCrypto::clearBatchQueue()
+{
+    m_batchProcessor->clearQueue();
+}
+
+int PostQuantumCrypto::batchQueueSize() const
+{
+    return m_batchProcessor->queueSize();
+}
+
+int PostQuantumCrypto::batchCompletedCount() const
+{
+    return m_batchProcessor->completedCount();
+}
+
+int PostQuantumCrypto::batchSuccessCount() const
+{
+    return m_batchProcessor->successCount();
+}
+
+int PostQuantumCrypto::batchErrorCount() const
+{
+    return m_batchProcessor->errorCount();
+}
+
+double PostQuantumCrypto::batchOverallProgress() const
+{
+    return m_batchProcessor->overallProgress();
+}
+
+QString PostQuantumCrypto::batchStatusMessage() const
+{
+    return m_batchProcessor->currentStatusMessage();
+}
+
+QVariantList PostQuantumCrypto::batchFileList() const
+{
+    QVariantList result;
+    
+    // This is a simplified implementation - in a real app you'd want to expose
+    // the actual BatchFileItem data through the BatchProcessor
+    // For now, return an empty list as the UI will be updated via signals
+    
+    return result;
 }

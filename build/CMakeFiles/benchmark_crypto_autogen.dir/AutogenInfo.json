@@ -882,6 +882,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.h",
+			"MU",
+			"MZW7AAAGJO/moc_BatchProcessor.cpp",
+			null
+		],
+		[
 			"C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.h",
 			"MU",
 			"MZW7AAAGJO/moc_EncryptionEngine.cpp",
@@ -988,6 +994,11 @@
 	"SOURCES" : 
 	[
 		[ "C:/Users/yosta/Documents/cybou/benchmark_crypto.cpp", "MU", null ],
+		[
+			"C:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.cpp",
 			"MU",

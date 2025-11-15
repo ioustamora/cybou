@@ -882,6 +882,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.h",
+			"MU",
+			"MZW7AAAGJO/moc_BatchProcessor.cpp",
+			null
+		],
+		[
 			"C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.h",
 			"MU",
 			"MZW7AAAGJO/moc_EncryptionEngine.cpp",
@@ -994,6 +1000,11 @@
 	"SETTINGS_FILE" : "C:/Users/yosta/Documents/cybou/build/CMakeFiles/test_encryption_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.cpp",
 			"MU",

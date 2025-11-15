@@ -13,6 +13,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Dialogs
 import CybouWallet 1.0
+import "./BatchProgressDialog.qml" as BatchDialog
 
 /**
  * @component FileEncryptionTab
@@ -215,7 +216,10 @@ Column {
             enabled: !fileProgressBar.visible && root.selectedFiles.length > 0
             ToolTip.visible: hovered
             ToolTip.text: qsTr("Encrypt " + root.selectedFiles.length + " files")
-            // Click handler will be connected from parent
+            onClicked: {
+                PostQuantumCrypto.startBatchEncryption()
+                batchProgressDialog.open()
+            }
         }
 
         Button {
@@ -233,7 +237,10 @@ Column {
             enabled: !fileProgressBar.visible && root.selectedFiles.length > 0
             ToolTip.visible: hovered
             ToolTip.text: qsTr("Decrypt " + root.selectedFiles.length + " files")
-            // Click handler will be connected from parent
+            onClicked: {
+                PostQuantumCrypto.startBatchDecryption()
+                batchProgressDialog.open()
+            }
         }
     }
 
@@ -274,6 +281,12 @@ Column {
             font.pixelSize: 11
             color: root.darkMode ? "#b0b0b0" : "#666666"
         }
+    }
+
+    // Batch Progress Dialog
+    BatchDialog.BatchProgressDialog {
+        id: batchProgressDialog
+        darkMode: root.darkMode
     }
 
     // Public functions for updating UI

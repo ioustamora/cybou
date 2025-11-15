@@ -40,7 +40,7 @@
                         {
                             "codegenResult": 2,
                             "column": 5,
-                            "durationMicroseconds": 294,
+                            "durationMicroseconds": 922,
                             "functionName": "isValidMnemonic",
                             "line": 192,
                             "message": "Cannot retrieve a non-object type by ID: mnemonicField"
@@ -56,7 +56,7 @@
                         {
                             "codegenResult": 0,
                             "column": 23,
-                            "durationMicroseconds": 209,
+                            "durationMicroseconds": 1264,
                             "functionName": "fill",
                             "line": 24,
                             "message": ""
@@ -128,7 +128,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 326,
+                            "durationMicroseconds": 408,
                             "functionName": "visible",
                             "line": 115,
                             "message": "Cannot retrieve a non-object type by ID: mnemonicField"
@@ -136,7 +136,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 93,
+                            "durationMicroseconds": 88,
                             "functionName": "fill",
                             "line": 118,
                             "message": ""

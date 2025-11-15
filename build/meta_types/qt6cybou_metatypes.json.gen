@@ -2,6 +2,259 @@
     {
         "classes": [
             {
+                "className": "FileWorker",
+                "lineNumber": 73,
+                "object": true,
+                "qualifiedClassName": "FileWorker",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "workerId",
+                                "type": "int"
+                            },
+                            {
+                                "name": "progress",
+                                "type": "int"
+                            },
+                            {
+                                "name": "status",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "lineNumber": 82,
+                        "name": "progressUpdated",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "workerId",
+                                "type": "int"
+                            },
+                            {
+                                "name": "success",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "errorMessage",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 83,
+                        "name": "completed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "workerId",
+                                "type": "int"
+                            },
+                            {
+                                "name": "success",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 2,
+                        "isCloned": true,
+                        "lineNumber": 83,
+                        "name": "completed",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    },
+                    {
+                        "access": "public",
+                        "name": "QRunnable"
+                    }
+                ]
+            },
+            {
+                "className": "BatchProcessor",
+                "lineNumber": 103,
+                "object": true,
+                "qualifiedClassName": "BatchProcessor",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "progress",
+                                "type": "double"
+                            },
+                            {
+                                "name": "status",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "lineNumber": 137,
+                        "name": "batchProgressUpdated",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "totalFiles",
+                                "type": "int"
+                            },
+                            {
+                                "name": "successCount",
+                                "type": "int"
+                            },
+                            {
+                                "name": "errorCount",
+                                "type": "int"
+                            },
+                            {
+                                "name": "totalTimeMs",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 138,
+                        "name": "batchCompleted",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "fileIndex",
+                                "type": "int"
+                            },
+                            {
+                                "name": "progress",
+                                "type": "int"
+                            },
+                            {
+                                "name": "status",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 2,
+                        "lineNumber": 141,
+                        "name": "fileProgressUpdated",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "fileIndex",
+                                "type": "int"
+                            },
+                            {
+                                "name": "success",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "errorMessage",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "lineNumber": 142,
+                        "name": "fileCompleted",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "newStatus",
+                                "type": "BatchStatus"
+                            }
+                        ],
+                        "index": 4,
+                        "lineNumber": 145,
+                        "name": "statusChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "lineNumber": 146,
+                        "name": "queueChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "name": "workerId",
+                                "type": "int"
+                            },
+                            {
+                                "name": "progress",
+                                "type": "int"
+                            },
+                            {
+                                "name": "status",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "lineNumber": 149,
+                        "name": "onWorkerProgress",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "name": "workerId",
+                                "type": "int"
+                            },
+                            {
+                                "name": "success",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "errorMessage",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "lineNumber": 150,
+                        "name": "onWorkerCompleted",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "index": 8,
+                        "lineNumber": 151,
+                        "name": "processNextItems",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "BatchProcessor.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
                 "className": "EncryptionEngine",
                 "lineNumber": 37,
                 "object": true,
@@ -294,7 +547,7 @@
                 "methods": [
                     {
                         "access": "public",
-                        "index": 3,
+                        "index": 8,
                         "lineNumber": 73,
                         "name": "generateKeyPair",
                         "returnType": "bool"
@@ -311,14 +564,14 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 4,
+                        "index": 9,
                         "lineNumber": 85,
                         "name": "importKeyPair",
                         "returnType": "bool"
                     },
                     {
                         "access": "public",
-                        "index": 5,
+                        "index": 10,
                         "isConst": true,
                         "lineNumber": 91,
                         "name": "exportPrivateKey",
@@ -326,7 +579,7 @@
                     },
                     {
                         "access": "public",
-                        "index": 6,
+                        "index": 11,
                         "isConst": true,
                         "lineNumber": 97,
                         "name": "exportPublicKey",
@@ -340,7 +593,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 7,
+                        "index": 12,
                         "lineNumber": 108,
                         "name": "signMessage",
                         "returnType": "QString"
@@ -361,7 +614,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 8,
+                        "index": 13,
                         "lineNumber": 120,
                         "name": "verifySignature",
                         "returnType": "bool"
@@ -374,7 +627,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 9,
+                        "index": 14,
                         "lineNumber": 132,
                         "name": "encapsulateKey",
                         "returnType": "QVariantMap"
@@ -387,7 +640,7 @@
                                 "type": "QVariantMap"
                             }
                         ],
-                        "index": 10,
+                        "index": 15,
                         "lineNumber": 143,
                         "name": "decapsulateKey",
                         "returnType": "QByteArray"
@@ -400,7 +653,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 11,
+                        "index": 16,
                         "lineNumber": 154,
                         "name": "encryptText",
                         "returnType": "QString"
@@ -413,7 +666,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 12,
+                        "index": 17,
                         "lineNumber": 165,
                         "name": "decryptText",
                         "returnType": "QString"
@@ -430,7 +683,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 13,
+                        "index": 18,
                         "lineNumber": 176,
                         "name": "saveEncryptedTextToFile",
                         "returnType": "bool"
@@ -443,7 +696,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 14,
+                        "index": 19,
                         "lineNumber": 186,
                         "name": "loadEncryptedTextFromFile",
                         "returnType": "QString"
@@ -460,7 +713,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 15,
+                        "index": 20,
                         "lineNumber": 198,
                         "name": "encryptFile",
                         "returnType": "bool"
@@ -477,7 +730,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 16,
+                        "index": 21,
                         "lineNumber": 210,
                         "name": "decryptFile",
                         "returnType": "bool"
@@ -490,7 +743,7 @@
                                 "type": "QByteArray"
                             }
                         ],
-                        "index": 17,
+                        "index": 22,
                         "lineNumber": 221,
                         "name": "encryptBinary",
                         "returnType": "QByteArray"
@@ -503,10 +756,132 @@
                                 "type": "QByteArray"
                             }
                         ],
-                        "index": 18,
+                        "index": 23,
                         "lineNumber": 232,
                         "name": "decryptBinary",
                         "returnType": "QByteArray"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filePaths",
+                                "type": "QStringList"
+                            },
+                            {
+                                "name": "encrypt",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 24,
+                        "lineNumber": 244,
+                        "name": "addFilesToBatch",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filePaths",
+                                "type": "QStringList"
+                            }
+                        ],
+                        "index": 25,
+                        "isCloned": true,
+                        "lineNumber": 244,
+                        "name": "addFilesToBatch",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 26,
+                        "lineNumber": 249,
+                        "name": "startBatchProcessing",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 27,
+                        "lineNumber": 254,
+                        "name": "pauseBatchProcessing",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 28,
+                        "lineNumber": 259,
+                        "name": "resumeBatchProcessing",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 29,
+                        "lineNumber": 264,
+                        "name": "cancelBatchProcessing",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 30,
+                        "lineNumber": 269,
+                        "name": "clearBatchQueue",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 31,
+                        "isConst": true,
+                        "lineNumber": 275,
+                        "name": "batchQueueSize",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "index": 32,
+                        "isConst": true,
+                        "lineNumber": 281,
+                        "name": "batchCompletedCount",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "index": 33,
+                        "isConst": true,
+                        "lineNumber": 287,
+                        "name": "batchSuccessCount",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "index": 34,
+                        "isConst": true,
+                        "lineNumber": 293,
+                        "name": "batchErrorCount",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "index": 35,
+                        "isConst": true,
+                        "lineNumber": 299,
+                        "name": "batchOverallProgress",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "index": 36,
+                        "isConst": true,
+                        "lineNumber": 305,
+                        "name": "batchStatusMessage",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "index": 37,
+                        "isConst": true,
+                        "lineNumber": 311,
+                        "name": "batchFileList",
+                        "returnType": "QVariantList"
                     },
                     {
                         "access": "public",
@@ -516,8 +891,8 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 19,
-                        "lineNumber": 243,
+                        "index": 38,
+                        "lineNumber": 322,
                         "name": "generateSharedSecret",
                         "returnType": "QString"
                     }
@@ -574,7 +949,7 @@
                     {
                         "access": "public",
                         "index": 0,
-                        "lineNumber": 267,
+                        "lineNumber": 346,
                         "name": "keysChanged",
                         "returnType": "void"
                     },
@@ -595,7 +970,7 @@
                             }
                         ],
                         "index": 1,
-                        "lineNumber": 275,
+                        "lineNumber": 354,
                         "name": "operationCompleted",
                         "returnType": "void"
                     },
@@ -616,8 +991,99 @@
                             }
                         ],
                         "index": 2,
-                        "lineNumber": 283,
+                        "lineNumber": 362,
                         "name": "operationProgress",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "progress",
+                                "type": "double"
+                            },
+                            {
+                                "name": "status",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "lineNumber": 369,
+                        "name": "batchProgressUpdated",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "totalFiles",
+                                "type": "int"
+                            },
+                            {
+                                "name": "successCount",
+                                "type": "int"
+                            },
+                            {
+                                "name": "errorCount",
+                                "type": "int"
+                            },
+                            {
+                                "name": "totalTimeMs",
+                                "type": "qint64"
+                            }
+                        ],
+                        "index": 4,
+                        "lineNumber": 378,
+                        "name": "batchCompleted",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "fileIndex",
+                                "type": "int"
+                            },
+                            {
+                                "name": "progress",
+                                "type": "int"
+                            },
+                            {
+                                "name": "status",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 5,
+                        "lineNumber": 386,
+                        "name": "fileProgressUpdated",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "fileIndex",
+                                "type": "int"
+                            },
+                            {
+                                "name": "success",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "errorMessage",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "lineNumber": 394,
+                        "name": "fileCompleted",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 7,
+                        "lineNumber": 399,
+                        "name": "batchQueueChanged",
                         "returnType": "void"
                     }
                 ],

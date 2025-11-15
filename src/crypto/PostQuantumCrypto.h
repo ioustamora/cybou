@@ -19,10 +19,10 @@
 #include <QByteArray>
 #include <QVariantMap>
 
-// Forward declarations for specialized modules
-class KeyManager;
-class EncryptionEngine;
-class SignatureEngine;
+#include "KeyManager.h"
+#include "EncryptionEngine.h"
+#include "SignatureEngine.h"
+#include "BatchProcessor.h"
 
 /**
  * @class PostQuantumCrypto
@@ -231,6 +231,85 @@ public:
      */
     Q_INVOKABLE QByteArray decryptBinary(const QByteArray &ciphertext);
 
+    // ============================================================================
+    // Batch Processing Operations
+    // ============================================================================
+
+    /**
+     * @brief Adds files to the batch processing queue
+     *
+     * @param filePaths List of file paths to process
+     * @param encrypt True for encryption, false for decryption
+     */
+    Q_INVOKABLE void addFilesToBatch(const QStringList &filePaths, bool encrypt = true);
+
+    /**
+     * @brief Starts batch processing of queued files
+     */
+    Q_INVOKABLE void startBatchProcessing();
+
+    /**
+     * @brief Pauses batch processing
+     */
+    Q_INVOKABLE void pauseBatchProcessing();
+
+    /**
+     * @brief Resumes batch processing
+     */
+    Q_INVOKABLE void resumeBatchProcessing();
+
+    /**
+     * @brief Cancels batch processing
+     */
+    Q_INVOKABLE void cancelBatchProcessing();
+
+    /**
+     * @brief Clears the batch processing queue
+     */
+    Q_INVOKABLE void clearBatchQueue();
+
+    /**
+     * @brief Gets the number of files in the batch queue
+     * @return int Number of files queued
+     */
+    Q_INVOKABLE int batchQueueSize() const;
+
+    /**
+     * @brief Gets the number of completed files
+     * @return int Number of completed files
+     */
+    Q_INVOKABLE int batchCompletedCount() const;
+
+    /**
+     * @brief Gets the number of successfully processed files
+     * @return int Number of successful operations
+     */
+    Q_INVOKABLE int batchSuccessCount() const;
+
+    /**
+     * @brief Gets the number of failed files
+     * @return int Number of failed operations
+     */
+    Q_INVOKABLE int batchErrorCount() const;
+
+    /**
+     * @brief Gets the overall batch progress percentage
+     * @return double Progress percentage (0.0 to 100.0)
+     */
+    Q_INVOKABLE double batchOverallProgress() const;
+
+    /**
+     * @brief Gets the current batch status message
+     * @return QString Status message
+     */
+    Q_INVOKABLE QString batchStatusMessage() const;
+
+    /**
+     * @brief Gets the list of files in the batch queue with their status
+     * @return QVariantList List of file information maps
+     */
+    Q_INVOKABLE QVariantList batchFileList() const;
+
     /**
      * @brief Generates a shared secret using Kyber key encapsulation
      *
@@ -282,9 +361,47 @@ signals:
      */
     void operationProgress(const QString &operation, int progress, const QString &status);
 
+    /**
+     * @brief Emitted when batch processing progress updates
+     * @param progress Overall progress percentage (0.0-100.0)
+     * @param status Current status message
+     */
+    void batchProgressUpdated(double progress, const QString &status);
+
+    /**
+     * @brief Emitted when batch processing completes
+     * @param totalFiles Total number of files processed
+     * @param successCount Number of successful operations
+     * @param errorCount Number of failed operations
+     * @param totalTimeMs Total processing time in milliseconds
+     */
+    void batchCompleted(int totalFiles, int successCount, int errorCount, qint64 totalTimeMs);
+
+    /**
+     * @brief Emitted when individual file progress updates
+     * @param fileIndex Index of the file in the queue
+     * @param progress File progress percentage (0-100)
+     * @param status Current file status
+     */
+    void fileProgressUpdated(int fileIndex, int progress, const QString &status);
+
+    /**
+     * @brief Emitted when individual file processing completes
+     * @param fileIndex Index of the file in the queue
+     * @param success Whether the operation succeeded
+     * @param errorMessage Error message if operation failed
+     */
+    void fileCompleted(int fileIndex, bool success, const QString &errorMessage);
+
+    /**
+     * @brief Emitted when the batch queue changes
+     */
+    void batchQueueChanged();
+
 private:
     // Forward declarations for specialized modules
     class KeyManager *m_keyManager;           ///< Handles key generation and management
     class EncryptionEngine *m_encryptionEngine; ///< Handles encryption/decryption
     class SignatureEngine *m_signatureEngine;   ///< Handles signatures and key encapsulation
+    class BatchProcessor *m_batchProcessor;     ///< Handles batch file processing
 };

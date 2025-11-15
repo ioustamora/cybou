@@ -5,7 +5,7 @@
 		"commands" : 
 		[
 			"add_custom_target",
-			"_qt_internal_qml_copy_files_to_build_dir",
+			"_qt_internal_qml_type_registration",
 			"qt6_add_qml_module",
 			"qt_add_qml_module"
 		],
@@ -22,7 +22,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 99,
+				"line" : 100,
 				"parent" : 0
 			},
 			{
@@ -34,13 +34,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 976,
+				"line" : 835,
 				"parent" : 2
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 3088,
+				"line" : 4201,
 				"parent" : 3
 			}
 		]
@@ -49,8 +49,8 @@
 	{
 		"name" : "QtInternalTargets"
 	},
-	"id" : "cybou_copy_res::@6890427a1f51a3e7e1df",
-	"name" : "cybou_copy_res",
+	"id" : "cybou_qmltyperegistration::@6890427a1f51a3e7e1df",
+	"name" : "cybou_qmltyperegistration",
 	"paths" : 
 	{
 		"build" : ".",
@@ -79,19 +79,19 @@
 		{
 			"backtrace" : 4,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/cybou_copy_res",
+			"path" : "build/CMakeFiles/cybou_qmltyperegistration",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/cybou_copy_res.rule",
+			"path" : "build/CMakeFiles/cybou_qmltyperegistration.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/.qt/cybou_res.txt.rule",
+			"path" : "build/cybou_qmltyperegistrations.cpp.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -1,27 +1,21 @@
-C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCrypto.cpp: C:/Users/yosta/Documents/cybou/src/crypto/PostQuantumCrypto.h \
-  C:/Users/yosta/Documents/cybou/build/cybou_autogen/moc_predefs.h \
+C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/MZW7AAAGJO/moc_BatchProcessor.cpp: C:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.h \
+  C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/moc_predefs.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QAtomicInt \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QDeadlineTimer \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QElapsedTimer \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/QMap \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QMutex \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QQueue \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QRunnable \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QThreadPool \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/QVariantMap \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QWaitCondition \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20type_traits.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/q20utility.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/q23utility.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qalgorithms.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qalloc.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qanystringview.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qarraydata.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qarraydataops.h \
@@ -45,11 +39,9 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/6.10.0/mingw_64/include/QtCore/qcontainerfwd.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qcontainerinfo.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qcontainertools_impl.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qcontiguouscache.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qdatastream.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qdeadlinetimer.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qdebug.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qelapsedtimer.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qexceptionhandling.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qflags.h \
@@ -60,7 +52,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/6.10.0/mingw_64/include/QtCore/qgenericatomic.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qglobal.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qglobalstatic.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qhash.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qhashfunctions.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qiterable.h \
@@ -69,7 +60,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/6.10.0/mingw_64/include/QtCore/qlist.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qlogging.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qmalloc.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qmap.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qmath.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qmetacontainer.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qmetatype.h \
@@ -89,11 +79,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/6.10.0/mingw_64/include/QtCore/qrunnable.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qscopeguard.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qset.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qshareddata.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qshareddata_impl.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qsharedpointer.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qstdlibdetection.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qstring.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qstringalgorithms.h \
@@ -119,7 +104,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtdeprecationdefinitions.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtdeprecationmarkers.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtenvironmentvariables.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qtextstream.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtformat_impl.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qthread.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qthreadpool.h \
@@ -135,9 +119,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtypeinfo.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtypes.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qutf8stringview.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qvariant.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qvariantmap.h \
-  C:/Qt/6.10.0/mingw_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qwaitcondition.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qxptype_traits.h \
@@ -239,12 +220,10 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_list.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h \
-  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_raw_storage_iter.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h \
-  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
@@ -259,7 +238,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_ptr.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
-  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h \
@@ -268,7 +246,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cerrno \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/charconv \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/chrono \
-  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/climits \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/clocale \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/compare \
@@ -320,7 +297,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ranges \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
-  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/span \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdexcept \
@@ -346,7 +322,6 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/typeinfo \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
-  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/utility \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
@@ -407,10 +382,8 @@ C:/Users/yosta/Documents/cybou/build/cybou_autogen/MZW7AAAGJO/moc_PostQuantumCry
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
-  C:/Users/yosta/Documents/cybou/src/crypto/BatchProcessor.h \
   C:/Users/yosta/Documents/cybou/src/crypto/EncryptionEngine.h \
   C:/Users/yosta/Documents/cybou/src/crypto/KeyManager.h \
-  C:/Users/yosta/Documents/cybou/src/crypto/SignatureEngine.h \
   C:/msys64/mingw64/include/oqs/aes_ops.h \
   C:/msys64/mingw64/include/oqs/common.h \
   C:/msys64/mingw64/include/oqs/kem.h \

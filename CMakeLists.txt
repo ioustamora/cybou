@@ -92,6 +92,7 @@ qt_add_executable(cybou
     src/crypto/SignatureEngine.cpp
     src/crypto/MnemonicEngine.cpp
     src/crypto/PostQuantumCrypto.cpp
+    src/crypto/BatchProcessor.cpp
     resources.qrc
 )
 
@@ -140,6 +141,7 @@ add_executable(test_encryption
     src/crypto/SignatureEngine.cpp
     src/crypto/PostQuantumCrypto.cpp 
     src/crypto/MnemonicEngine.cpp
+    src/crypto/BatchProcessor.cpp
 )
 target_link_libraries(test_encryption
     PRIVATE
@@ -155,6 +157,7 @@ add_executable(test_signatures
     src/crypto/EncryptionEngine.cpp
     src/crypto/SignatureEngine.cpp
     src/crypto/PostQuantumCrypto.cpp
+    src/crypto/BatchProcessor.cpp
 )
 target_link_libraries(test_signatures
     PRIVATE
@@ -212,6 +215,7 @@ add_executable(benchmark_crypto
     src/crypto/KeyManager.cpp
     src/crypto/EncryptionEngine.cpp
     src/crypto/SignatureEngine.cpp
+    src/crypto/BatchProcessor.cpp
 )
 target_link_libraries(benchmark_crypto
     PRIVATE
