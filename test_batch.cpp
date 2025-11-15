@@ -233,6 +233,53 @@ bool testBatchDecryption() {
 }
 
 /**
+ * @brief Simple test for batch processing functionality
+ */
+bool testBasicBatch() {
+    qDebug() << "Testing basic batch functionality...";
+
+    // Create test files
+    QStringList inputFiles = {
+        "test_simple_file1.txt",
+        "test_simple_file2.txt"
+    };
+
+    QString testContent = "Simple test content.";
+    if (!createTestFiles(inputFiles, testContent)) {
+        return false;
+    }
+
+    // Initialize PostQuantumCrypto
+    PostQuantumCrypto crypto;
+    if (!crypto.generateKeyPair()) {
+        qWarning() << "Failed to generate key pair";
+        cleanupTestFiles(inputFiles);
+        return false;
+    }
+
+    // Test adding files to batch
+    crypto.addFilesToBatch(inputFiles, true); // encrypt
+
+    if (crypto.batchQueueSize() != 2) {
+        qWarning() << "Expected 2 files in queue, got" << crypto.batchQueueSize();
+        cleanupTestFiles(inputFiles);
+        return false;
+    }
+
+    // Test clearing queue
+    crypto.clearBatchQueue();
+    if (crypto.batchQueueSize() != 0) {
+        qWarning() << "Expected empty queue after clear";
+        cleanupTestFiles(inputFiles);
+        return false;
+    }
+
+    qDebug() << "Basic batch functionality test passed!";
+    cleanupTestFiles(inputFiles);
+    return true;
+}
+
+/**
  * @brief Main test function
  */
 int main(int argc, char *argv[]) {
@@ -241,6 +288,12 @@ int main(int argc, char *argv[]) {
     qDebug() << "Starting batch processing tests...";
 
     bool allTestsPassed = true;
+
+    // Test basic batch functionality first
+    if (!testBasicBatch()) {
+        qWarning() << "Basic batch test FAILED";
+        allTestsPassed = false;
+    }
 
     // Test batch encryption
     if (!testBatchEncryption()) {
