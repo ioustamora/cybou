@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 0,
                             "column": 23,
-                            "durationMicroseconds": 493,
+                            "durationMicroseconds": 15358,
                             "functionName": "fill",
                             "line": 23,
                             "message": ""
@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 162,
+                            "durationMicroseconds": 186,
                             "functionName": "fill",
                             "line": 41,
                             "message": ""
@@ -56,7 +56,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 106,
+                            "durationMicroseconds": 2169,
                             "functionName": "color",
                             "line": 62,
                             "message": "Cannot access value for name parent"
@@ -64,7 +64,7 @@
                         {
                             "codegenResult": 2,
                             "column": 31,
-                            "durationMicroseconds": 21,
+                            "durationMicroseconds": 169,
                             "functionName": "text",
                             "line": 66,
                             "message": "Cannot access value for name parent"
@@ -72,7 +72,7 @@
                         {
                             "codegenResult": 2,
                             "column": 46,
-                            "durationMicroseconds": 337,
+                            "durationMicroseconds": 607,
                             "functionName": "horizontalAlignment",
                             "line": 68,
                             "message": "Cannot access value for name Text"
@@ -80,7 +80,7 @@
                         {
                             "codegenResult": 2,
                             "column": 44,
-                            "durationMicroseconds": 213,
+                            "durationMicroseconds": 694,
                             "functionName": "verticalAlignment",
                             "line": 69,
                             "message": "Cannot access value for name Text"
@@ -128,7 +128,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 65,
+                            "durationMicroseconds": 214,
                             "functionName": "color",
                             "line": 91,
                             "message": "Cannot access value for name darkMode"
@@ -136,7 +136,7 @@
                         {
                             "codegenResult": 2,
                             "column": 43,
-                            "durationMicroseconds": 34,
+                            "durationMicroseconds": 50,
                             "functionName": "color",
                             "line": 92,
                             "message": "Cannot access value for name darkMode"
@@ -144,7 +144,7 @@
                         {
                             "codegenResult": 2,
                             "column": 30,
-                            "durationMicroseconds": 36,
+                            "durationMicroseconds": 97,
                             "functionName": "visible",
                             "line": 103,
                             "message": "Cannot access value for name hasKeys"
@@ -160,7 +160,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 33,
+                            "durationMicroseconds": 50,
                             "functionName": "color",
                             "line": 113,
                             "message": "Cannot access value for name parent"
@@ -168,7 +168,7 @@
                         {
                             "codegenResult": 2,
                             "column": 35,
-                            "durationMicroseconds": 19,
+                            "durationMicroseconds": 23,
                             "functionName": "text",
                             "line": 117,
                             "message": "Cannot access value for name parent"
@@ -176,7 +176,7 @@
                         {
                             "codegenResult": 2,
                             "column": 50,
-                            "durationMicroseconds": 263,
+                            "durationMicroseconds": 424,
                             "functionName": "horizontalAlignment",
                             "line": 119,
                             "message": "Cannot access value for name Text"
@@ -184,7 +184,7 @@
                         {
                             "codegenResult": 2,
                             "column": 48,
-                            "durationMicroseconds": 8682,
+                            "durationMicroseconds": 723,
                             "functionName": "verticalAlignment",
                             "line": 120,
                             "message": "Cannot access value for name Text"
@@ -200,7 +200,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 115,
+                            "durationMicroseconds": 245,
                             "functionName": "fill",
                             "line": 134,
                             "message": ""
@@ -232,7 +232,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 54,
+                            "durationMicroseconds": 290,
                             "functionName": "color",
                             "line": 155,
                             "message": "Cannot access value for name parent"
@@ -240,7 +240,7 @@
                         {
                             "codegenResult": 2,
                             "column": 35,
-                            "durationMicroseconds": 21,
+                            "durationMicroseconds": 44,
                             "functionName": "text",
                             "line": 159,
                             "message": "Cannot access value for name parent"
@@ -248,7 +248,7 @@
                         {
                             "codegenResult": 2,
                             "column": 50,
-                            "durationMicroseconds": 282,
+                            "durationMicroseconds": 541,
                             "functionName": "horizontalAlignment",
                             "line": 161,
                             "message": "Cannot access value for name Text"
@@ -256,7 +256,7 @@
                         {
                             "codegenResult": 2,
                             "column": 48,
-                            "durationMicroseconds": 202,
+                            "durationMicroseconds": 264,
                             "functionName": "verticalAlignment",
                             "line": 162,
                             "message": "Cannot access value for name Text"
@@ -272,7 +272,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 28,
+                            "durationMicroseconds": 51,
                             "functionName": "color",
                             "line": 173,
                             "message": "Cannot access value for name parent"
@@ -280,7 +280,7 @@
                         {
                             "codegenResult": 2,
                             "column": 35,
-                            "durationMicroseconds": 17,
+                            "durationMicroseconds": 26,
                             "functionName": "text",
                             "line": 177,
                             "message": "Cannot access value for name parent"
@@ -288,7 +288,7 @@
                         {
                             "codegenResult": 2,
                             "column": 50,
-                            "durationMicroseconds": 240,
+                            "durationMicroseconds": 10466,
                             "functionName": "horizontalAlignment",
                             "line": 179,
                             "message": "Cannot access value for name Text"
@@ -296,7 +296,7 @@
                         {
                             "codegenResult": 2,
                             "column": 48,
-                            "durationMicroseconds": 178,
+                            "durationMicroseconds": 421,
                             "functionName": "verticalAlignment",
                             "line": 180,
                             "message": "Cannot access value for name Text"
@@ -320,7 +320,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 38,
+                            "durationMicroseconds": 158,
                             "functionName": "color",
                             "line": 197,
                             "message": "Cannot access value for name darkMode"
@@ -328,7 +328,7 @@
                         {
                             "codegenResult": 2,
                             "column": 43,
-                            "durationMicroseconds": 29,
+                            "durationMicroseconds": 53,
                             "functionName": "color",
                             "line": 198,
                             "message": "Cannot access value for name darkMode"
@@ -352,7 +352,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 44,
+                            "durationMicroseconds": 2727,
                             "functionName": "color",
                             "line": 216,
                             "message": "Cannot access value for name parent"
@@ -360,7 +360,7 @@
                         {
                             "codegenResult": 2,
                             "column": 31,
-                            "durationMicroseconds": 14,
+                            "durationMicroseconds": 273,
                             "functionName": "text",
                             "line": 220,
                             "message": "Cannot access value for name parent"
@@ -368,7 +368,7 @@
                         {
                             "codegenResult": 2,
                             "column": 46,
-                            "durationMicroseconds": 212,
+                            "durationMicroseconds": 1002,
                             "functionName": "horizontalAlignment",
                             "line": 222,
                             "message": "Cannot access value for name Text"
@@ -376,7 +376,7 @@
                         {
                             "codegenResult": 2,
                             "column": 44,
-                            "durationMicroseconds": 171,
+                            "durationMicroseconds": 700,
                             "functionName": "verticalAlignment",
                             "line": 223,
                             "message": "Cannot access value for name Text"
@@ -384,7 +384,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 169,
+                            "durationMicroseconds": 231,
                             "functionName": "fill",
                             "line": 236,
                             "message": ""
@@ -400,7 +400,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 1,
                             "functionName": "color",
                             "line": 246,
                             "message": "Could not find property \"color\"."
@@ -424,7 +424,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 74,
+                            "durationMicroseconds": 119,
                             "functionName": "color",
                             "line": 260,
                             "message": "Cannot access value for name darkMode"
@@ -432,7 +432,7 @@
                         {
                             "codegenResult": 2,
                             "column": 43,
-                            "durationMicroseconds": 35,
+                            "durationMicroseconds": 331,
                             "functionName": "color",
                             "line": 261,
                             "message": "Cannot access value for name darkMode"
@@ -464,7 +464,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 32,
+                            "durationMicroseconds": 259,
                             "functionName": "color",
                             "line": 286,
                             "message": "Cannot access value for name darkMode"
@@ -472,7 +472,7 @@
                         {
                             "codegenResult": 2,
                             "column": 43,
-                            "durationMicroseconds": 27,
+                            "durationMicroseconds": 426,
                             "functionName": "color",
                             "line": 287,
                             "message": "Cannot access value for name darkMode"
@@ -496,7 +496,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 61,
+                            "durationMicroseconds": 7328,
                             "functionName": "color",
                             "line": 316,
                             "message": "Cannot access value for name parent"
@@ -504,7 +504,7 @@
                         {
                             "codegenResult": 2,
                             "column": 35,
-                            "durationMicroseconds": 19,
+                            "durationMicroseconds": 113,
                             "functionName": "text",
                             "line": 320,
                             "message": "Cannot access value for name parent"
@@ -512,7 +512,7 @@
                         {
                             "codegenResult": 2,
                             "column": 50,
-                            "durationMicroseconds": 312,
+                            "durationMicroseconds": 2599,
                             "functionName": "horizontalAlignment",
                             "line": 322,
                             "message": "Cannot access value for name Text"
@@ -520,7 +520,7 @@
                         {
                             "codegenResult": 2,
                             "column": 48,
-                            "durationMicroseconds": 173,
+                            "durationMicroseconds": 544,
                             "functionName": "verticalAlignment",
                             "line": 323,
                             "message": "Cannot access value for name Text"
@@ -536,7 +536,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 55,
+                            "durationMicroseconds": 101,
                             "functionName": "color",
                             "line": 334,
                             "message": "Cannot access value for name parent"
@@ -544,7 +544,7 @@
                         {
                             "codegenResult": 2,
                             "column": 35,
-                            "durationMicroseconds": 18,
+                            "durationMicroseconds": 75,
                             "functionName": "text",
                             "line": 338,
                             "message": "Cannot access value for name parent"
@@ -552,7 +552,7 @@
                         {
                             "codegenResult": 2,
                             "column": 50,
-                            "durationMicroseconds": 186,
+                            "durationMicroseconds": 483,
                             "functionName": "horizontalAlignment",
                             "line": 340,
                             "message": "Cannot access value for name Text"
@@ -560,7 +560,7 @@
                         {
                             "codegenResult": 2,
                             "column": 48,
-                            "durationMicroseconds": 157,
+                            "durationMicroseconds": 142477,
                             "functionName": "verticalAlignment",
                             "line": 341,
                             "message": "Cannot access value for name Text"

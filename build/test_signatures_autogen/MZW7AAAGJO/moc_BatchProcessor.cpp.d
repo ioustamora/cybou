@@ -4,10 +4,12 @@ C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/MZW7AAAGJO/moc_Batc
   C:/Qt/6.10.0/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QDeadlineTimer \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QElapsedTimer \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QHash \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QMutex \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QQueue \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QRunnable \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QSet \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QThreadPool \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QWaitCondition \
@@ -52,6 +54,7 @@ C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/MZW7AAAGJO/moc_Batc
   C:/Qt/6.10.0/mingw_64/include/QtCore/qgenericatomic.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qglobal.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qglobalstatic.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qhash.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qhashfunctions.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qiterable.h \
@@ -79,6 +82,7 @@ C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/MZW7AAAGJO/moc_Batc
   C:/Qt/6.10.0/mingw_64/include/QtCore/qrunnable.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qscopeguard.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qset.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qstdlibdetection.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qstring.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qstringalgorithms.h \

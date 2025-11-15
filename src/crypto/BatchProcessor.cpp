@@ -29,14 +29,14 @@ FileWorker::FileWorker(BatchFileItem* item, KeyManager* keyManager, int workerId
     : QObject(parent), QRunnable(), m_item(item), m_keyManager(keyManager), m_workerId(workerId)
 {
     setAutoDelete(false); // We'll manage deletion ourselves
-    m_cancelled.store(0);
+    m_cancelled.storeRelaxed(0);
 }
 
 /**
  * @brief FileWorker run method - processes a single file
  */
 void FileWorker::run() {
-    if (!m_item || m_cancelled.load()) {
+    if (!m_item || m_cancelled.loadRelaxed()) {
         emit completed(m_workerId, false, "Cancelled");
         return;
     }
@@ -128,7 +128,6 @@ BatchProcessor::BatchProcessor(KeyManager* keyManager, QObject* parent)
     , m_completedCount(0)
     , m_successCount(0)
     , m_errorCount(0)
-    , m_activeWorkers(0)
     , m_nextWorkerId(0)
 {
     m_threadPool->setMaxThreadCount(m_maxConcurrentWorkers);
@@ -252,13 +251,7 @@ void BatchProcessor::resumeProcessing() {
  */
 void BatchProcessor::cancelProcessing() {
     updateStatus(BatchStatus::Cancelled);
-
-    // Cancel active workers
-    QMutexLocker locker(&m_mutex);
-    for (auto it = m_activeWorkers.begin(); it != m_activeWorkers.end(); ++it) {
-        // Note: In a real implementation, you'd need to add cancellation support to FileWorker
-        // For now, we'll just wait for them to complete
-    }
+    // TODO: Add proper cancellation support to active workers
 }
 
 /**
@@ -294,7 +287,7 @@ QString BatchProcessor::currentStatusMessage() const {
             return QString("Ready - %1 files queued").arg(m_queue.size());
         case BatchStatus::Running:
             return QString("Processing %1/%2 files (%3 active workers)")
-                    .arg(m_completedCount).arg(m_queue.size()).arg(m_activeWorkers);
+                    .arg(m_completedCount).arg(m_queue.size()).arg(m_activeWorkers.size());
         case BatchStatus::Paused:
             return QString("Paused - %1/%2 files completed").arg(m_completedCount).arg(m_queue.size());
         case BatchStatus::Cancelled:
@@ -319,7 +312,7 @@ void BatchProcessor::processNextItems() {
     }
 
     // Start new workers up to the limit
-    while (m_activeWorkers < m_maxConcurrentWorkers && !m_queue.isEmpty()) {
+    while (m_activeWorkers.size() < m_maxConcurrentWorkers && !m_queue.isEmpty()) {
         // Find next unprocessed item
         int itemIndex = -1;
         for (int i = 0; i < m_queue.size(); ++i) {
@@ -335,7 +328,7 @@ void BatchProcessor::processNextItems() {
 
         // Create worker for this item
         FileWorker* worker = new FileWorker(&m_queue[itemIndex], m_keyManager, m_nextWorkerId++);
-        m_activeWorkers++;
+        m_activeWorkers.insert(m_nextWorkerId - 1);
 
         // Connect worker signals
         connect(worker, &FileWorker::progressUpdated,
@@ -396,7 +389,7 @@ void BatchProcessor::onWorkerCompleted(int workerId, bool success, const QString
             emit fileCompleted(itemIndex, success, errorMessage);
         }
 
-        m_activeWorkers--;
+        m_activeWorkers.remove(workerId);
         m_activeWorkersMap.remove(workerId);
 
         // Check if batch is complete

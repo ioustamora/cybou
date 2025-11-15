@@ -4,11 +4,13 @@ C:/Users/yosta/Documents/cybou/build/test_signatures_autogen/MZW7AAAGJO/moc_Post
   C:/Qt/6.10.0/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QDeadlineTimer \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QElapsedTimer \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QHash \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QMap \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QMutex \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QQueue \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QRunnable \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QSet \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QThreadPool \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant \

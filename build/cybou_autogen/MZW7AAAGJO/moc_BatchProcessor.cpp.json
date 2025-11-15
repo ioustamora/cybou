@@ -2,7 +2,7 @@
     "classes": [
         {
             "className": "FileWorker",
-            "lineNumber": 73,
+            "lineNumber": 75,
             "object": true,
             "qualifiedClassName": "FileWorker",
             "signals": [
@@ -23,7 +23,7 @@
                         }
                     ],
                     "index": 0,
-                    "lineNumber": 82,
+                    "lineNumber": 84,
                     "name": "progressUpdated",
                     "returnType": "void"
                 },
@@ -44,7 +44,7 @@
                         }
                     ],
                     "index": 1,
-                    "lineNumber": 83,
+                    "lineNumber": 85,
                     "name": "completed",
                     "returnType": "void"
                 },
@@ -62,7 +62,7 @@
                     ],
                     "index": 2,
                     "isCloned": true,
-                    "lineNumber": 83,
+                    "lineNumber": 85,
                     "name": "completed",
                     "returnType": "void"
                 }
@@ -80,7 +80,7 @@
         },
         {
             "className": "BatchProcessor",
-            "lineNumber": 103,
+            "lineNumber": 105,
             "object": true,
             "qualifiedClassName": "BatchProcessor",
             "signals": [
@@ -97,7 +97,7 @@
                         }
                     ],
                     "index": 0,
-                    "lineNumber": 137,
+                    "lineNumber": 139,
                     "name": "batchProgressUpdated",
                     "returnType": "void"
                 },
@@ -122,7 +122,7 @@
                         }
                     ],
                     "index": 1,
-                    "lineNumber": 138,
+                    "lineNumber": 140,
                     "name": "batchCompleted",
                     "returnType": "void"
                 },
@@ -143,7 +143,7 @@
                         }
                     ],
                     "index": 2,
-                    "lineNumber": 141,
+                    "lineNumber": 143,
                     "name": "fileProgressUpdated",
                     "returnType": "void"
                 },
@@ -164,7 +164,7 @@
                         }
                     ],
                     "index": 3,
-                    "lineNumber": 142,
+                    "lineNumber": 144,
                     "name": "fileCompleted",
                     "returnType": "void"
                 },
@@ -177,14 +177,14 @@
                         }
                     ],
                     "index": 4,
-                    "lineNumber": 145,
+                    "lineNumber": 147,
                     "name": "statusChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 5,
-                    "lineNumber": 146,
+                    "lineNumber": 148,
                     "name": "queueChanged",
                     "returnType": "void"
                 }
@@ -207,7 +207,7 @@
                         }
                     ],
                     "index": 6,
-                    "lineNumber": 149,
+                    "lineNumber": 151,
                     "name": "onWorkerProgress",
                     "returnType": "void"
                 },
@@ -228,14 +228,14 @@
                         }
                     ],
                     "index": 7,
-                    "lineNumber": 150,
+                    "lineNumber": 152,
                     "name": "onWorkerCompleted",
                     "returnType": "void"
                 },
                 {
                     "access": "private",
                     "index": 8,
-                    "lineNumber": 151,
+                    "lineNumber": 153,
                     "name": "processNextItems",
                     "returnType": "void"
                 }

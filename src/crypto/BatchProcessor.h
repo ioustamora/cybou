@@ -17,6 +17,8 @@
 #include <QWaitCondition>
 #include <QAtomicInt>
 #include <QElapsedTimer>
+#include <QHash>
+#include <QSet>
 
 #include "KeyManager.h"
 #include "EncryptionEngine.h"
@@ -124,7 +126,7 @@ public:
     int completedCount() const { return m_completedCount; }
     int successCount() const { return m_successCount; }
     int errorCount() const { return m_errorCount; }
-    int activeWorkers() const { return m_activeWorkers; }
+    int activeWorkers() const { return m_activeWorkers.size(); }
     double overallProgress() const;
     QString currentStatusMessage() const;
 
@@ -155,7 +157,7 @@ private:
     QThreadPool* m_threadPool;
     QList<BatchFileItem> m_queue;
     QHash<int, int> m_activeWorkersMap; // workerId -> itemIndex
-    QMutex m_mutex;
+    mutable QMutex m_mutex;
     QWaitCondition m_waitCondition;
     QElapsedTimer m_batchTimer;
 
@@ -164,7 +166,7 @@ private:
     int m_completedCount;
     int m_successCount;
     int m_errorCount;
-    int m_activeWorkers;
+    QSet<int> m_activeWorkers; // Set of active worker IDs
     QString m_outputDirectory;
     int m_nextWorkerId;
 

@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 2,
                             "column": 33,
-                            "durationMicroseconds": 16945,
+                            "durationMicroseconds": 910,
                             "functionName": "selectedFiles",
                             "line": 17,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 346,
+                            "durationMicroseconds": 7769,
                             "functionName": "onActivated",
                             "line": 22,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -32,7 +32,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 178,
+                            "durationMicroseconds": 2556,
                             "functionName": "onActivated",
                             "line": 26,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -40,7 +40,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 70,
+                            "durationMicroseconds": 500,
                             "functionName": "onActivated",
                             "line": 30,
                             "message": "Cannot access value for name darkMode"
@@ -48,7 +48,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 97,
+                            "durationMicroseconds": 282,
                             "functionName": "onActivated",
                             "line": 34,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -56,7 +56,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 39,
+                            "durationMicroseconds": 86,
                             "functionName": "onCompleted",
                             "line": 58,
                             "message": "Cannot retrieve a non-object type by ID: splashDialog"
@@ -64,7 +64,7 @@
                         {
                             "codegenResult": 2,
                             "column": 17,
-                            "durationMicroseconds": 72,
+                            "durationMicroseconds": 163,
                             "functionName": "target",
                             "line": 61,
                             "message": "Cannot access value for name PostQuantumCrypto"
@@ -80,7 +80,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 441,
+                            "durationMicroseconds": 39868,
                             "functionName": "fileMode",
                             "line": 73,
                             "message": ""
@@ -88,7 +88,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 329,
+                            "durationMicroseconds": 522,
                             "functionName": "onAccepted",
                             "line": 74,
                             "message": "Cannot access value for name filePath"
@@ -96,7 +96,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 137,
+                            "durationMicroseconds": 838,
                             "functionName": "fileMode",
                             "line": 82,
                             "message": ""
@@ -104,7 +104,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 2454,
+                            "durationMicroseconds": 7866,
                             "functionName": "onAccepted",
                             "line": 83,
                             "message": "Can't assign to read-only property selectedFiles"
@@ -112,7 +112,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 278,
+                            "durationMicroseconds": 221,
                             "functionName": "fileMode",
                             "line": 96,
                             "message": ""
@@ -120,7 +120,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 516,
+                            "durationMicroseconds": 15133,
                             "functionName": "nameFilters",
                             "line": 97,
                             "message": ""
@@ -128,7 +128,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 797,
+                            "durationMicroseconds": 1723,
                             "functionName": "onAccepted",
                             "line": 99,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -136,7 +136,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 141,
+                            "durationMicroseconds": 282,
                             "functionName": "fileMode",
                             "line": 114,
                             "message": ""
@@ -144,7 +144,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 146,
+                            "durationMicroseconds": 234,
                             "functionName": "nameFilters",
                             "line": 115,
                             "message": ""
@@ -152,7 +152,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 730,
+                            "durationMicroseconds": 1426,
                             "functionName": "onAccepted",
                             "line": 116,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -168,7 +168,7 @@
                         {
                             "codegenResult": 2,
                             "column": 18,
-                            "durationMicroseconds": 37,
+                            "durationMicroseconds": 58,
                             "functionName": "visible",
                             "line": 142,
                             "message": "Cannot access value for name mnemonicAccepted"
@@ -176,7 +176,7 @@
                         {
                             "codegenResult": 0,
                             "column": 23,
-                            "durationMicroseconds": 105,
+                            "durationMicroseconds": 228,
                             "functionName": "fill",
                             "line": 141,
                             "message": ""
@@ -184,7 +184,7 @@
                         {
                             "codegenResult": 2,
                             "column": 20,
-                            "durationMicroseconds": 47,
+                            "durationMicroseconds": 85,
                             "functionName": "color",
                             "line": 149,
                             "message": "Cannot access value for name darkMode"
@@ -192,7 +192,7 @@
                         {
                             "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 32,
+                            "durationMicroseconds": 46,
                             "functionName": "color",
                             "line": 150,
                             "message": "Cannot access value for name darkMode"
@@ -200,7 +200,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 65,
+                            "durationMicroseconds": 116,
                             "functionName": "fill",
                             "line": 154,
                             "message": ""
@@ -232,7 +232,7 @@
                         {
                             "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 37,
+                            "durationMicroseconds": 75,
                             "functionName": "currentIndex",
                             "line": 203,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -240,7 +240,7 @@
                         {
                             "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 23,
+                            "durationMicroseconds": 99,
                             "functionName": "darkMode",
                             "line": 207,
                             "message": "Cannot retrieve a non-object type by ID: mainWindow"
@@ -248,7 +248,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 18,
+                            "durationMicroseconds": 30,
                             "functionName": "lastTextOperation",
                             "line": 208,
                             "message": "Cannot retrieve a non-object type by ID: mainWindow"
@@ -256,7 +256,7 @@
                         {
                             "codegenResult": 0,
                             "column": 38,
-                            "durationMicroseconds": 594,
+                            "durationMicroseconds": 422,
                             "functionName": "onSaveTextRequested",
                             "line": 209,
                             "message": ""
@@ -264,7 +264,7 @@
                         {
                             "codegenResult": 0,
                             "column": 38,
-                            "durationMicroseconds": 167,
+                            "durationMicroseconds": 637,
                             "functionName": "onLoadTextRequested",
                             "line": 210,
                             "message": ""
@@ -272,7 +272,7 @@
                         {
                             "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 34,
+                            "durationMicroseconds": 127,
                             "functionName": "darkMode",
                             "line": 215,
                             "message": "Cannot retrieve a non-object type by ID: mainWindow"
@@ -280,7 +280,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 18,
+                            "durationMicroseconds": 28,
                             "functionName": "selectedFiles",
                             "line": 216,
                             "message": "Cannot retrieve a non-object type by ID: mainWindow"
@@ -288,7 +288,7 @@
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 150,
+                            "durationMicroseconds": 431,
                             "functionName": "onBrowseRequested",
                             "line": 217,
                             "message": ""
@@ -296,7 +296,7 @@
                         {
                             "codegenResult": 0,
                             "column": 41,
-                            "durationMicroseconds": 213,
+                            "durationMicroseconds": 383,
                             "functionName": "onBatchSelectRequested",
                             "line": 218,
                             "message": ""
@@ -304,7 +304,7 @@
                         {
                             "codegenResult": 2,
                             "column": 33,
-                            "durationMicroseconds": 564,
+                            "durationMicroseconds": 52511,
                             "functionName": "onFilesDropped",
                             "line": 219,
                             "message": "Cannot access value for name batchStatus"
@@ -312,7 +312,7 @@
                         {
                             "codegenResult": 0,
                             "column": 33,
-                            "durationMicroseconds": 46,
+                            "durationMicroseconds": 233,
                             "functionName": "onFilesDropped",
                             "line": 219,
                             "message": ""
@@ -320,7 +320,7 @@
                         {
                             "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 23,
+                            "durationMicroseconds": 43,
                             "functionName": "darkMode",
                             "line": 228,
                             "message": "Cannot retrieve a non-object type by ID: mainWindow"
@@ -328,7 +328,7 @@
                         {
                             "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 19,
+                            "durationMicroseconds": 26,
                             "functionName": "darkMode",
                             "line": 233,
                             "message": "Cannot retrieve a non-object type by ID: mainWindow"
@@ -336,7 +336,7 @@
                         {
                             "codegenResult": 2,
                             "column": 20,
-                            "durationMicroseconds": 127,
+                            "durationMicroseconds": 66,
                             "functionName": "color",
                             "line": 241,
                             "message": "Cannot access value for name darkMode"
@@ -344,7 +344,7 @@
                         {
                             "codegenResult": 2,
                             "column": 27,
-                            "durationMicroseconds": 44,
+                            "durationMicroseconds": 78,
                             "functionName": "color",
                             "line": 242,
                             "message": "Cannot access value for name darkMode"
@@ -368,7 +368,7 @@
                         {
                             "codegenResult": 2,
                             "column": 18,
-                            "durationMicroseconds": 28,
+                            "durationMicroseconds": 36,
                             "functionName": "visible",
                             "line": 259,
                             "message": "Cannot access value for name mnemonicAccepted"
@@ -376,7 +376,7 @@
                         {
                             "codegenResult": 0,
                             "column": 27,
-                            "durationMicroseconds": 107,
+                            "durationMicroseconds": 322,
                             "functionName": "centerIn",
                             "line": 257,
                             "message": ""
