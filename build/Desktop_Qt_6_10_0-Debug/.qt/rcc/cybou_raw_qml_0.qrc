@@ -1,7 +1,0 @@
-<RCC>
-  <qresource prefix="/CybouWallet/">
-    <file alias="qml/Main.qml">/media/user/FILES/cybou/qml/Main.qml</file>
-    <file alias="qml/SplashDialog.qml">/media/user/FILES/cybou/qml/SplashDialog.qml</file>
-  </qresource>
-</RCC>
-

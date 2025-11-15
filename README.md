@@ -2,6 +2,8 @@
 
 A comprehensive file and text encryption tool with post-quantum cryptographic security. Built with Qt 6, this application provides strong encryption for files, folders, and text using NIST-standard post-quantum algorithms (Kyber-1024 for key encapsulation and ML-DSA-65 for digital signatures), all derived from BIP-39 mnemonic phrases.
 
+**✅ Fully Cross-Platform**: Builds from the same source code on Windows, Linux, and macOS
+
 ## Features
 
 - **BIP-39 Mnemonic Generation**: Generate cryptographically secure 12-24 word mnemonics using the complete standard word list
@@ -14,7 +16,7 @@ A comprehensive file and text encryption tool with post-quantum cryptographic se
 - **Public Key Management**: Display, copy, and save public keys in `.cyboukey` format
 - **Signature Management**: Create, verify, and save digital signatures in `.cybousig` format
 - **Visual Feedback**: Color-coded text fields for operation feedback (encryption green, decryption red, signing yellow)
-- **Cross-platform**: Built with CMake for Linux, Windows, and macOS
+- **Cross-platform**: Built with CMake for Linux, Windows, and macOS with proper file path handling
 
 ## Cryptographic Security
 

@@ -45,6 +45,9 @@ template <> constexpr inline auto PostQuantumCrypto::qt_create_metaobjectdata<qt
         "operation",
         "success",
         "result",
+        "operationProgress",
+        "progress",
+        "status",
         "generateKeyPair",
         "importKeyPair",
         "privateKeyHex",
@@ -88,76 +91,80 @@ template <> constexpr inline auto PostQuantumCrypto::qt_create_metaobjectdata<qt
         QtMocHelpers::SignalData<void(const QString &, bool, const QString &)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 4 }, { QMetaType::Bool, 5 }, { QMetaType::QString, 6 },
         }}),
+        // Signal 'operationProgress'
+        QtMocHelpers::SignalData<void(const QString &, int, const QString &)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 4 }, { QMetaType::Int, 8 }, { QMetaType::QString, 9 },
+        }}),
         // Method 'generateKeyPair'
-        QtMocHelpers::MethodData<bool()>(7, 2, QMC::AccessPublic, QMetaType::Bool),
+        QtMocHelpers::MethodData<bool()>(10, 2, QMC::AccessPublic, QMetaType::Bool),
         // Method 'importKeyPair'
-        QtMocHelpers::MethodData<bool(const QString &, const QString &)>(8, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 9 }, { QMetaType::QString, 10 },
+        QtMocHelpers::MethodData<bool(const QString &, const QString &)>(11, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 12 }, { QMetaType::QString, 13 },
         }}),
         // Method 'exportPrivateKey'
-        QtMocHelpers::MethodData<QString() const>(11, 2, QMC::AccessPublic, QMetaType::QString),
+        QtMocHelpers::MethodData<QString() const>(14, 2, QMC::AccessPublic, QMetaType::QString),
         // Method 'exportPublicKey'
-        QtMocHelpers::MethodData<QString() const>(12, 2, QMC::AccessPublic, QMetaType::QString),
+        QtMocHelpers::MethodData<QString() const>(15, 2, QMC::AccessPublic, QMetaType::QString),
         // Method 'signMessage'
-        QtMocHelpers::MethodData<QString(const QString &)>(13, 2, QMC::AccessPublic, QMetaType::QString, {{
-            { QMetaType::QString, 14 },
+        QtMocHelpers::MethodData<QString(const QString &)>(16, 2, QMC::AccessPublic, QMetaType::QString, {{
+            { QMetaType::QString, 17 },
         }}),
         // Method 'verifySignature'
-        QtMocHelpers::MethodData<bool(const QString &, const QString &, const QString &)>(15, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 14 }, { QMetaType::QString, 16 }, { QMetaType::QString, 10 },
+        QtMocHelpers::MethodData<bool(const QString &, const QString &, const QString &)>(18, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 17 }, { QMetaType::QString, 19 }, { QMetaType::QString, 13 },
         }}),
         // Method 'encapsulateKey'
-        QtMocHelpers::MethodData<QVariantMap(const QString &)>(17, 2, QMC::AccessPublic, 0x80000000 | 18, {{
-            { QMetaType::QString, 19 },
+        QtMocHelpers::MethodData<QVariantMap(const QString &)>(20, 2, QMC::AccessPublic, 0x80000000 | 21, {{
+            { QMetaType::QString, 22 },
         }}),
         // Method 'decapsulateKey'
-        QtMocHelpers::MethodData<QByteArray(const QVariantMap &)>(20, 2, QMC::AccessPublic, QMetaType::QByteArray, {{
-            { 0x80000000 | 18, 21 },
+        QtMocHelpers::MethodData<QByteArray(const QVariantMap &)>(23, 2, QMC::AccessPublic, QMetaType::QByteArray, {{
+            { 0x80000000 | 21, 24 },
         }}),
         // Method 'encryptText'
-        QtMocHelpers::MethodData<QString(const QString &)>(22, 2, QMC::AccessPublic, QMetaType::QString, {{
-            { QMetaType::QString, 23 },
+        QtMocHelpers::MethodData<QString(const QString &)>(25, 2, QMC::AccessPublic, QMetaType::QString, {{
+            { QMetaType::QString, 26 },
         }}),
         // Method 'decryptText'
-        QtMocHelpers::MethodData<QString(const QString &)>(24, 2, QMC::AccessPublic, QMetaType::QString, {{
-            { QMetaType::QString, 25 },
-        }}),
-        // Method 'saveEncryptedTextToFile'
-        QtMocHelpers::MethodData<bool(const QString &, const QString &)>(26, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 27 }, { QMetaType::QString, 28 },
-        }}),
-        // Method 'loadEncryptedTextFromFile'
-        QtMocHelpers::MethodData<QString(const QString &)>(29, 2, QMC::AccessPublic, QMetaType::QString, {{
+        QtMocHelpers::MethodData<QString(const QString &)>(27, 2, QMC::AccessPublic, QMetaType::QString, {{
             { QMetaType::QString, 28 },
         }}),
+        // Method 'saveEncryptedTextToFile'
+        QtMocHelpers::MethodData<bool(const QString &, const QString &)>(29, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 30 }, { QMetaType::QString, 31 },
+        }}),
+        // Method 'loadEncryptedTextFromFile'
+        QtMocHelpers::MethodData<QString(const QString &)>(32, 2, QMC::AccessPublic, QMetaType::QString, {{
+            { QMetaType::QString, 31 },
+        }}),
         // Method 'encryptFile'
-        QtMocHelpers::MethodData<bool(const QString &, const QString &)>(30, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 31 }, { QMetaType::QString, 32 },
+        QtMocHelpers::MethodData<bool(const QString &, const QString &)>(33, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 34 }, { QMetaType::QString, 35 },
         }}),
         // Method 'decryptFile'
-        QtMocHelpers::MethodData<bool(const QString &, const QString &)>(33, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 31 }, { QMetaType::QString, 32 },
+        QtMocHelpers::MethodData<bool(const QString &, const QString &)>(36, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 34 }, { QMetaType::QString, 35 },
         }}),
         // Method 'encryptBinary'
-        QtMocHelpers::MethodData<QByteArray(const QByteArray &)>(34, 2, QMC::AccessPublic, QMetaType::QByteArray, {{
-            { QMetaType::QByteArray, 23 },
+        QtMocHelpers::MethodData<QByteArray(const QByteArray &)>(37, 2, QMC::AccessPublic, QMetaType::QByteArray, {{
+            { QMetaType::QByteArray, 26 },
         }}),
         // Method 'decryptBinary'
-        QtMocHelpers::MethodData<QByteArray(const QByteArray &)>(35, 2, QMC::AccessPublic, QMetaType::QByteArray, {{
-            { QMetaType::QByteArray, 25 },
+        QtMocHelpers::MethodData<QByteArray(const QByteArray &)>(38, 2, QMC::AccessPublic, QMetaType::QByteArray, {{
+            { QMetaType::QByteArray, 28 },
         }}),
         // Method 'generateSharedSecret'
-        QtMocHelpers::MethodData<QString(const QString &)>(36, 2, QMC::AccessPublic, QMetaType::QString, {{
-            { QMetaType::QString, 37 },
+        QtMocHelpers::MethodData<QString(const QString &)>(39, 2, QMC::AccessPublic, QMetaType::QString, {{
+            { QMetaType::QString, 40 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'hasKeys'
-        QtMocHelpers::PropertyData<bool>(38, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(41, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'publicKey'
-        QtMocHelpers::PropertyData<QString>(39, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(42, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'keyAlgorithm'
-        QtMocHelpers::PropertyData<QString>(40, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<QString>(43, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Constant),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -181,39 +188,40 @@ void PostQuantumCrypto::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         switch (_id) {
         case 0: _t->keysChanged(); break;
         case 1: _t->operationCompleted((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
-        case 2: { bool _r = _t->generateKeyPair();
+        case 2: _t->operationProgress((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
+        case 3: { bool _r = _t->generateKeyPair();
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 3: { bool _r = _t->importKeyPair((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
+        case 4: { bool _r = _t->importKeyPair((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 4: { QString _r = _t->exportPrivateKey();
+        case 5: { QString _r = _t->exportPrivateKey();
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 5: { QString _r = _t->exportPublicKey();
+        case 6: { QString _r = _t->exportPublicKey();
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 6: { QString _r = _t->signMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 7: { QString _r = _t->signMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 7: { bool _r = _t->verifySignature((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3])));
+        case 8: { bool _r = _t->verifySignature((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 8: { QVariantMap _r = _t->encapsulateKey((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 9: { QVariantMap _r = _t->encapsulateKey((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QVariantMap*>(_a[0]) = std::move(_r); }  break;
-        case 9: { QByteArray _r = _t->decapsulateKey((*reinterpret_cast<std::add_pointer_t<QVariantMap>>(_a[1])));
+        case 10: { QByteArray _r = _t->decapsulateKey((*reinterpret_cast<std::add_pointer_t<QVariantMap>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QByteArray*>(_a[0]) = std::move(_r); }  break;
-        case 10: { QString _r = _t->encryptText((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 11: { QString _r = _t->encryptText((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 11: { QString _r = _t->decryptText((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 12: { QString _r = _t->decryptText((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 12: { bool _r = _t->saveEncryptedTextToFile((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
+        case 13: { bool _r = _t->saveEncryptedTextToFile((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 13: { QString _r = _t->loadEncryptedTextFromFile((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 14: { QString _r = _t->loadEncryptedTextFromFile((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 14: { bool _r = _t->encryptFile((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
+        case 15: { bool _r = _t->encryptFile((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 15: { bool _r = _t->decryptFile((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
+        case 16: { bool _r = _t->decryptFile((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 16: { QByteArray _r = _t->encryptBinary((*reinterpret_cast<std::add_pointer_t<QByteArray>>(_a[1])));
+        case 17: { QByteArray _r = _t->encryptBinary((*reinterpret_cast<std::add_pointer_t<QByteArray>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QByteArray*>(_a[0]) = std::move(_r); }  break;
-        case 17: { QByteArray _r = _t->decryptBinary((*reinterpret_cast<std::add_pointer_t<QByteArray>>(_a[1])));
+        case 18: { QByteArray _r = _t->decryptBinary((*reinterpret_cast<std::add_pointer_t<QByteArray>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QByteArray*>(_a[0]) = std::move(_r); }  break;
-        case 18: { QString _r = _t->generateSharedSecret((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 19: { QString _r = _t->generateSharedSecret((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -222,6 +230,8 @@ void PostQuantumCrypto::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         if (QtMocHelpers::indexOfMethod<void (PostQuantumCrypto::*)()>(_a, &PostQuantumCrypto::keysChanged, 0))
             return;
         if (QtMocHelpers::indexOfMethod<void (PostQuantumCrypto::*)(const QString & , bool , const QString & )>(_a, &PostQuantumCrypto::operationCompleted, 1))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (PostQuantumCrypto::*)(const QString & , int , const QString & )>(_a, &PostQuantumCrypto::operationProgress, 2))
             return;
     }
     if (_c == QMetaObject::ReadProperty) {
@@ -254,14 +264,14 @@ int PostQuantumCrypto::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 20;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 20)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 19;
+        _id -= 20;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
@@ -282,5 +292,11 @@ void PostQuantumCrypto::keysChanged()
 void PostQuantumCrypto::operationCompleted(const QString & _t1, bool _t2, const QString & _t3)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1, _t2, _t3);
+}
+
+// SIGNAL 2
+void PostQuantumCrypto::operationProgress(const QString & _t1, int _t2, const QString & _t3)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1, _t2, _t3);
 }
 QT_WARNING_POP

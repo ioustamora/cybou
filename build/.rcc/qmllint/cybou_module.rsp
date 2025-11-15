@@ -1,10 +1,10 @@
 -I
-/media/user/FILES/cybou/build
+C:/Users/yosta/Documents/cybou/build
 -I
-/home/user/Qt/6.10.0/gcc_64/qml
+C:/Qt/6.10.0/mingw_64/qml
 --resource
-/media/user/FILES/cybou/build/.qt/rcc/qmake_CybouWallet.qrc
+C:/Users/yosta/Documents/cybou/build/.qt/rcc/qmake_CybouWallet.qrc
 --resource
-/media/user/FILES/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc
+C:/Users/yosta/Documents/cybou/build/.qt/rcc/cybou_raw_qml_0.qrc
 --module
 CybouWallet

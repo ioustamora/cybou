@@ -14,6 +14,27 @@ ApplicationWindow {
     property bool mnemonicAccepted: false
     property string lastTextOperation: "" // "encrypt" or "decrypt"
 
+    // Helper function to convert file:// URLs to local paths (cross-platform)
+    function urlToLocalPath(urlString) {
+        var url = urlString.toString()
+        // Remove file:// prefix and handle Windows/Linux differences
+        if (url.startsWith("file:///")) {
+            // Windows: file:///C:/path -> C:/path
+            // Linux: file:///home/path -> /home/path
+            url = url.substring(8) // Remove "file:///"
+            // On Windows, we get the correct path. On Linux, add back leading /
+            if (Qt.platform.os !== "windows" && !url.startsWith("/")) {
+                url = "/" + url
+            }
+        } else if (url.startsWith("file://")) {
+            url = url.substring(7) // Remove "file://"
+            if (Qt.platform.os !== "windows" && !url.startsWith("/")) {
+                url = "/" + url
+            }
+        }
+        return url
+    }
+
     Component.onCompleted: splashDialog.open()
 
     Connections {
@@ -31,7 +52,7 @@ ApplicationWindow {
         title: "Select file or folder to encrypt/decrypt"
         fileMode: FileDialog.OpenFile
         onAccepted: {
-            filePath.text = fileDialog.selectedFile.toString().replace("file://", "")
+            filePath.text = urlToLocalPath(fileDialog.selectedFile)
         }
     }
 
@@ -42,7 +63,7 @@ ApplicationWindow {
         nameFilters: ["cybou files (*.cybou)", "All files (*)"]
         defaultSuffix: "cybou"
         onAccepted: {
-            var filePath = saveTextDialog.selectedFile.toString().replace("file://", "")
+            var filePath = urlToLocalPath(saveTextDialog.selectedFile)
             if (PostQuantumCrypto.saveEncryptedTextToFile(outputText.text, filePath)) {
                 textStatus.text = qsTr("💾 Text saved to: ") + filePath
                 textStatus.color = "green"
@@ -59,7 +80,7 @@ ApplicationWindow {
         fileMode: FileDialog.OpenFile
         nameFilters: ["cybou files (*.cybou)", "All files (*)"]
         onAccepted: {
-            var filePath = loadTextDialog.selectedFile.toString().replace("file://", "")
+            var filePath = urlToLocalPath(loadTextDialog.selectedFile)
             var content = PostQuantumCrypto.loadEncryptedTextFromFile(filePath)
             if (content !== "") {
                 inputText.text = content
@@ -79,7 +100,7 @@ ApplicationWindow {
         nameFilters: ["cyboukey files (*.cyboukey)", "Text files (*.txt)", "All files (*)"]
         defaultSuffix: "cyboukey"
         onAccepted: {
-            var filePath = savePublicKeyDialog.selectedFile.toString().replace("file://", "")
+            var filePath = urlToLocalPath(savePublicKeyDialog.selectedFile)
             // Save the public key to file
             if (PostQuantumCrypto.saveEncryptedTextToFile(publicKeyDisplay.text, filePath)) {
                 keyStatus.text = qsTr("💾 Public key saved to: ") + filePath
@@ -98,7 +119,7 @@ ApplicationWindow {
         nameFilters: ["cybousig files (*.cybousig)", "Text files (*.txt)", "All files (*)"]
         defaultSuffix: "cybousig"
         onAccepted: {
-            var filePath = saveSignatureDialog.selectedFile.toString().replace("file://", "")
+            var filePath = urlToLocalPath(saveSignatureDialog.selectedFile)
             if (PostQuantumCrypto.saveEncryptedTextToFile(signatureOutput.text, filePath)) {
                 signatureStatus.text = qsTr("💾 Signature saved to: ") + filePath
                 signatureStatus.color = "green"
@@ -115,7 +136,7 @@ ApplicationWindow {
         fileMode: FileDialog.OpenFile
         nameFilters: ["cybousig files (*.cybousig)", "Text files (*.txt)", "All files (*)"]
         onAccepted: {
-            var filePath = loadSignatureDialog.selectedFile.toString().replace("file://", "")
+            var filePath = urlToLocalPath(loadSignatureDialog.selectedFile)
             var content = PostQuantumCrypto.loadEncryptedTextFromFile(filePath)
             if (content !== "") {
                 signatureOutput.text = content
@@ -135,7 +156,7 @@ ApplicationWindow {
         nameFilters: ["cyboukey files (*.cyboukey)", "Text files (*.txt)", "All files (*)"]
         defaultSuffix: "cyboukey"
         onAccepted: {
-            var filePath = savePrivateKeyDialog.selectedFile.toString().replace("file://", "")
+            var filePath = urlToLocalPath(savePrivateKeyDialog.selectedFile)
             // Export and save the private key
             var privateKey = PostQuantumCrypto.exportPrivateKey()
             if (privateKey !== "") {
@@ -159,7 +180,7 @@ ApplicationWindow {
         fileMode: FileDialog.OpenFile
         nameFilters: ["cyboukey files (*.cyboukey)", "Text files (*.txt)", "All files (*)"]
         onAccepted: {
-            var filePath = loadKeyPairDialog.selectedFile.toString().replace("file://", "")
+            var filePath = urlToLocalPath(loadKeyPairDialog.selectedFile)
             var content = PostQuantumCrypto.loadEncryptedTextFromFile(filePath)
             if (content !== "") {
                 // Try to parse the content as private key + public key
