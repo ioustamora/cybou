@@ -249,6 +249,16 @@ public:
     Q_INVOKABLE void startBatchProcessing();
 
     /**
+     * @brief Convenience method to start batch encryption of queued files
+     */
+    Q_INVOKABLE void startBatchEncryption();
+
+    /**
+     * @brief Convenience method to start batch decryption of queued files
+     */
+    Q_INVOKABLE void startBatchDecryption();
+
+    /**
      * @brief Pauses batch processing
      */
     Q_INVOKABLE void pauseBatchProcessing();

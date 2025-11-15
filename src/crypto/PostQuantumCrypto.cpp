@@ -206,6 +206,26 @@ void PostQuantumCrypto::startBatchProcessing()
     m_batchProcessor->startProcessing();
 }
 
+/**
+ * @brief Convenience method to start batch encryption
+ */
+void PostQuantumCrypto::startBatchEncryption()
+{
+    // Clear any existing queue first
+    m_batchProcessor->clearQueue();
+    m_batchProcessor->startProcessing();
+}
+
+/**
+ * @brief Convenience method to start batch decryption
+ */
+void PostQuantumCrypto::startBatchDecryption()
+{
+    // Clear any existing queue first
+    m_batchProcessor->clearQueue();
+    m_batchProcessor->startProcessing();
+}
+
 void PostQuantumCrypto::pauseBatchProcessing()
 {
     m_batchProcessor->pauseProcessing();
