@@ -40,6 +40,7 @@ A comprehensive file and text encryption tool with post-quantum cryptographic se
 - Comprehensive testing suite for encryption operations
 - Secure key derivation and management
 - Proper file format handling (.cybou encrypted files, .cyboukey public keys)
+- **NEW v1.1:** Key import/export functionality (private/public key management)
 - **NEW v1.1:** Batch file processing with multi-file encrypt/decrypt
 - **NEW v1.1:** Dark mode with Ctrl+T toggle
 - **NEW v1.1:** Keyboard shortcuts (Ctrl+E/D/B/T)
@@ -47,10 +48,11 @@ A comprehensive file and text encryption tool with post-quantum cryptographic se
 - **NEW v1.1:** Enhanced error messages with troubleshooting guidance
 - **NEW v1.1:** Real-time progress tracking for batch operations
 
-🚧 **In Development:**
-- Key import/export functionality
+🚧 **Planned:**
 - Multi-threaded batch processing for performance
-- Advanced security features (secure memory wiping, key backup/restore)
+- Memory-mapped file I/O for large files
+- Advanced security features (secure memory wiping, password-protected key backup/restore)
+- Operation history and undo functionality
 
 ## Build Requirements
 
@@ -299,20 +301,22 @@ make
 - ✅ **Error Recovery**: Enhanced error messages with specific troubleshooting guidance
 - ✅ **UI Enhancements**: Dark mode toggle, keyboard shortcuts (Ctrl+E/D/B/T), drag-and-drop support
 
-### 🔄 **Medium Priority - In Progress**
+### 🔄 **Medium Priority - Planned**
 - **Performance Optimization**: 
-  - Multi-threaded encryption for large files
-  - Memory-mapped file processing for reduced RAM usage
-  - GPU acceleration for cryptographic operations
+  - Multi-threaded batch processing for parallel file encryption/decryption
+  - Memory-mapped file I/O for large files (>100MB) to reduce RAM usage
+  - Streaming encryption improvements for better memory efficiency
+  - GPU acceleration for cryptographic operations (future research)
 - **Security Enhancements**:
-  - Secure key backup/restore with encryption
-  - Memory locking to prevent key leakage
-  - Secure deletion of temporary files
+  - Secure key backup/restore with password protection
+  - Memory locking to prevent key leakage to swap files
+  - Secure deletion of temporary files and memory wiping
+  - Hardware security module (HSM) integration
 - **UI/UX Improvements**:
-  - Dark mode support
-  - Keyboard shortcuts
-  - Drag-and-drop file operations
-  - Operation history and undo functionality
+  - Operation history log showing past encryptions/decryptions
+  - Undo functionality for recent file operations
+  - File preview showing encrypted file metadata
+  - Settings persistence (remember dark mode, last directory, etc.)
 
 ### 🔮 **Future Enhancements**
 - **Additional PQ Algorithms**: Support for other NIST-standard algorithms (Falcon, SPHINCS+)

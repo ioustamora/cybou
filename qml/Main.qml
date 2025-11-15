@@ -320,9 +320,12 @@ ApplicationWindow {
         // Text Encryption Tab
         Column {
             spacing: 20
-            width: parent.width * 0.9
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.topMargin: 20
+            width: parent.width * 0.85
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 30
+            anchors.top: parent.top
+            anchors.leftMargin: 20
+            anchors.rightMargin: 20
 
             Label {
                 text: qsTr("🔤 Text Encryption/Decryption")
@@ -343,7 +346,7 @@ ApplicationWindow {
 
             // Input Section
             Column {
-                spacing: 8
+                spacing: 12
                 width: parent.width
 
                 Label {
@@ -354,9 +357,13 @@ ApplicationWindow {
                 TextArea {
                     id: inputText
                     width: parent.width
-                    height: 100
+                    height: 120
                     placeholderText: qsTr("Enter text to encrypt... (Your secrets are quantum-safe here! 🔐)")
                     wrapMode: TextArea.Wrap
+                    leftPadding: 12
+                    rightPadding: 12
+                    topPadding: 10
+                    bottomPadding: 10
                     background: Rectangle {
                         color: "#e8f4fd"  // Light blue background for input
                         border.color: "#4a90e2"
@@ -366,8 +373,9 @@ ApplicationWindow {
                 }
 
                 Row {
-                    spacing: 10
+                    spacing: 12
                     anchors.right: parent.right
+                    topPadding: 8
 
                     Button {
                         text: qsTr("📋 Paste")
@@ -387,8 +395,9 @@ ApplicationWindow {
             }
 
             Row {
-                spacing: 10
+                spacing: 15
                 anchors.horizontalCenter: parent.horizontalCenter
+                topPadding: 10
 
                 Button {
                     text: qsTr("🔐 Encrypt Text")
@@ -435,8 +444,9 @@ ApplicationWindow {
 
             // Output Section
             Column {
-                spacing: 8
+                spacing: 12
                 width: parent.width
+                topPadding: 10
 
                 Label {
                     text: qsTr("📄 Output Text:")
@@ -446,11 +456,15 @@ ApplicationWindow {
                 TextArea {
                     id: outputText
                     width: parent.width
-                    height: 100
+                    height: 120
                     placeholderText: qsTr("Encrypted/decrypted result will appear here...")
                     readOnly: true
                     wrapMode: TextArea.Wrap
                     selectByMouse: true
+                    leftPadding: 12
+                    rightPadding: 12
+                    topPadding: 10
+                    bottomPadding: 10
                     background: Rectangle {
                         color: outputText.text === "" ? "#f8f9fa" :  // Neutral gray when empty
                                (lastTextOperation === "encrypt" ? "#e8f5e8" :  // Light green for encryption
@@ -464,8 +478,9 @@ ApplicationWindow {
                 }
 
                 Row {
-                    spacing: 10
+                    spacing: 12
                     anchors.right: parent.right
+                    topPadding: 8
 
                     Button {
                         text: qsTr("📋 Copy")
@@ -510,15 +525,19 @@ ApplicationWindow {
                 wrapMode: Text.WordWrap
                 width: parent.width
                 font.pixelSize: 12
+                topPadding: 10
             }
         }
 
         // File Encryption Tab
         Column {
             spacing: 20
-            width: parent.width * 0.9
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.topMargin: 20
+            width: parent.width * 0.85
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 30
+            anchors.top: parent.top
+            anchors.leftMargin: 20
+            anchors.rightMargin: 20
 
             Label {
                 text: qsTr("📁 File/Folder Encryption")
@@ -540,11 +559,12 @@ ApplicationWindow {
             // Drag and Drop Area
             Rectangle {
                 width: parent.width
-                height: 120
+                height: 140
                 color: dragArea.containsDrag ? (darkMode ? "#2c3e50" : "#e3f2fd") : (darkMode ? "#1e1e1e" : "#f5f5f5")
                 border.color: darkMode ? "#546e7a" : "#90caf9"
                 border.width: 2
                 radius: 8
+                Layout.topMargin: 10
 
                 DropArea {
                     id: dragArea
@@ -598,12 +618,15 @@ ApplicationWindow {
             }
 
             Row {
-                spacing: 10
+                spacing: 12
                 width: parent.width
+                topPadding: 10
 
                 TextField {
                     id: filePath
-                    width: parent.width - 220
+                    width: parent.width - 230
+                    leftPadding: 12
+                    rightPadding: 12
                     placeholderText: qsTr("Select file or folder path...")
                     readOnly: true
                     color: darkMode ? "#ffffff" : "#000000"
@@ -636,8 +659,9 @@ ApplicationWindow {
 
             // Progress Bar for file operations
             Column {
-                spacing: 8
+                spacing: 10
                 width: parent.width
+                topPadding: 15
                 visible: fileProgressBar.visible
 
                 Label {
@@ -679,8 +703,9 @@ ApplicationWindow {
             }
 
             Row {
-                spacing: 10
+                spacing: 15
                 anchors.horizontalCenter: parent.horizontalCenter
+                topPadding: 10
 
                 Button {
                     id: encryptButton
@@ -918,9 +943,12 @@ ApplicationWindow {
         // Digital Signatures Tab
         Column {
             spacing: 20
-            width: parent.width * 0.9
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.topMargin: 20
+            width: parent.width * 0.85
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 30
+            anchors.top: parent.top
+            anchors.leftMargin: 20
+            anchors.rightMargin: 20
 
             Label {
                 text: qsTr("✍️ Digital Signatures")
@@ -941,7 +969,7 @@ ApplicationWindow {
 
             // Message Input Section
             Column {
-                spacing: 8
+                spacing: 12
                 width: parent.width
 
                 Label {
@@ -952,9 +980,13 @@ ApplicationWindow {
                 TextArea {
                     id: signMessageText
                     width: parent.width
-                    height: 100
+                    height: 120
                     placeholderText: qsTr("Enter message to sign with ML-DSA-65...")
                     wrapMode: TextArea.Wrap
+                    leftPadding: 12
+                    rightPadding: 12
+                    topPadding: 10
+                    bottomPadding: 10
                     background: Rectangle {
                         color: "#fff3cd"  // Light yellow background for signing
                         border.color: "#ffc107"
@@ -985,8 +1017,9 @@ ApplicationWindow {
             }
 
             Row {
-                spacing: 10
+                spacing: 15
                 anchors.horizontalCenter: parent.horizontalCenter
+                topPadding: 10
 
                 Button {
                     text: qsTr("✍️ Sign Message")
@@ -1036,8 +1069,9 @@ ApplicationWindow {
 
             // Signature Output Section
             Column {
-                spacing: 8
+                spacing: 12
                 width: parent.width
+                topPadding: 10
 
                 Label {
                     text: qsTr("🔏 Signature (ML-DSA-65):")
@@ -1047,11 +1081,15 @@ ApplicationWindow {
                 TextArea {
                     id: signatureOutput
                     width: parent.width
-                    height: 80
+                    height: 100
                     placeholderText: qsTr("Signature will appear here...")
                     readOnly: true
                     wrapMode: TextArea.Wrap
                     selectByMouse: true
+                    leftPadding: 12
+                    rightPadding: 12
+                    topPadding: 10
+                    bottomPadding: 10
                     background: Rectangle {
                         color: signatureOutput.text === "" ? "#f8f9fa" : "#e8f5e8"  // Light green when signature present
                         border.color: signatureOutput.text === "" ? "#dee2e6" : "#4caf50"
@@ -1113,9 +1151,12 @@ ApplicationWindow {
         // Key Management Tab
         Column {
             spacing: 20
-            width: parent.width * 0.9
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.topMargin: 20
+            width: parent.width * 0.85
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 30
+            anchors.top: parent.top
+            anchors.leftMargin: 20
+            anchors.rightMargin: 20
 
             Label {
                 text: qsTr("🔑 Post-Quantum Key Management")
