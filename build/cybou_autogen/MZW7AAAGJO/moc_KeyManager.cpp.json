@@ -1,0 +1,73 @@
+{
+    "classes": [
+        {
+            "className": "KeyManager",
+            "lineNumber": 39,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 42,
+                    "name": "hasKeys",
+                    "notify": "keysChanged",
+                    "read": "hasKeys",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 43,
+                    "name": "publicKey",
+                    "notify": "keysChanged",
+                    "read": "publicKey",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 44,
+                    "name": "keyAlgorithm",
+                    "read": "keyAlgorithm",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "KeyManager",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 139,
+                    "name": "keysChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "KeyManager.h",
+    "outputRevision": 69
+}

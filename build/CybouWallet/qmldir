@@ -3,5 +3,9 @@ typeinfo cybou.qmltypes
 prefer :/CybouWallet/
 Main 1.0 qml/Main.qml
 SplashDialog 1.0 qml/SplashDialog.qml
+TextEncryptionTab 1.0 qml/components/TextEncryptionTab.qml
+FileEncryptionTab 1.0 qml/components/FileEncryptionTab.qml
+SignatureTab 1.0 qml/components/SignatureTab.qml
+KeyManagementTab 1.0 qml/components/KeyManagementTab.qml
 depends QtQuick
 

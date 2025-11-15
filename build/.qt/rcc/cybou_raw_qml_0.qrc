@@ -2,6 +2,10 @@
   <qresource prefix="/CybouWallet/">
     <file alias="qml/Main.qml">C:/Users/yosta/Documents/cybou/qml/Main.qml</file>
     <file alias="qml/SplashDialog.qml">C:/Users/yosta/Documents/cybou/qml/SplashDialog.qml</file>
+    <file alias="qml/components/TextEncryptionTab.qml">C:/Users/yosta/Documents/cybou/qml/components/TextEncryptionTab.qml</file>
+    <file alias="qml/components/FileEncryptionTab.qml">C:/Users/yosta/Documents/cybou/qml/components/FileEncryptionTab.qml</file>
+    <file alias="qml/components/SignatureTab.qml">C:/Users/yosta/Documents/cybou/qml/components/SignatureTab.qml</file>
+    <file alias="qml/components/KeyManagementTab.qml">C:/Users/yosta/Documents/cybou/qml/components/KeyManagementTab.qml</file>
   </qresource>
 </RCC>
 

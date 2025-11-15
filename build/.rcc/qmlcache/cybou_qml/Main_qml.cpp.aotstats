@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 2,
                             "column": 33,
-                            "durationMicroseconds": 364,
+                            "durationMicroseconds": 261,
                             "functionName": "selectedFiles",
                             "line": 17,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 218,
+                            "durationMicroseconds": 139,
                             "functionName": "onActivated",
                             "line": 22,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -32,7 +32,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 111,
+                            "durationMicroseconds": 70,
                             "functionName": "onActivated",
                             "line": 26,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -40,7 +40,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 96,
+                            "durationMicroseconds": 56,
                             "functionName": "onActivated",
                             "line": 30,
                             "message": "Cannot access value for name darkMode"
@@ -48,7 +48,7 @@
                         {
                             "codegenResult": 2,
                             "column": 22,
-                            "durationMicroseconds": 103,
+                            "durationMicroseconds": 62,
                             "functionName": "onActivated",
                             "line": 34,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -56,7 +56,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 44,
+                            "durationMicroseconds": 32,
                             "functionName": "onCompleted",
                             "line": 58,
                             "message": "Cannot retrieve a non-object type by ID: splashDialog"
@@ -64,7 +64,7 @@
                         {
                             "codegenResult": 2,
                             "column": 17,
-                            "durationMicroseconds": 77,
+                            "durationMicroseconds": 48,
                             "functionName": "target",
                             "line": 61,
                             "message": "Cannot access value for name PostQuantumCrypto"
@@ -80,7 +80,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 154,
+                            "durationMicroseconds": 100,
                             "functionName": "fileMode",
                             "line": 73,
                             "message": ""
@@ -88,7 +88,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 179,
+                            "durationMicroseconds": 106,
                             "functionName": "onAccepted",
                             "line": 74,
                             "message": "Cannot retrieve a non-object type by ID: filePath"
@@ -96,7 +96,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 85,
+                            "durationMicroseconds": 52,
                             "functionName": "fileMode",
                             "line": 82,
                             "message": ""
@@ -104,7 +104,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 1829,
+                            "durationMicroseconds": 1141,
                             "functionName": "onAccepted",
                             "line": 83,
                             "message": "Can't assign to read-only property selectedFiles"
@@ -112,7 +112,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 86,
+                            "durationMicroseconds": 69,
                             "functionName": "fileMode",
                             "line": 96,
                             "message": ""
@@ -120,7 +120,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 161,
+                            "durationMicroseconds": 113,
                             "functionName": "nameFilters",
                             "line": 97,
                             "message": ""
@@ -128,7 +128,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 378,
+                            "durationMicroseconds": 248,
                             "functionName": "onAccepted",
                             "line": 99,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -136,7 +136,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 78,
+                            "durationMicroseconds": 50,
                             "functionName": "fileMode",
                             "line": 114,
                             "message": ""
@@ -144,7 +144,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 121,
+                            "durationMicroseconds": 85,
                             "functionName": "nameFilters",
                             "line": 115,
                             "message": ""
@@ -152,7 +152,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 425,
+                            "durationMicroseconds": 285,
                             "functionName": "onAccepted",
                             "line": 116,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -160,7 +160,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 75,
+                            "durationMicroseconds": 46,
                             "functionName": "fileMode",
                             "line": 133,
                             "message": ""
@@ -168,7 +168,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 171,
+                            "durationMicroseconds": 104,
                             "functionName": "nameFilters",
                             "line": 134,
                             "message": ""
@@ -176,7 +176,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 340,
+                            "durationMicroseconds": 227,
                             "functionName": "onAccepted",
                             "line": 136,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -184,7 +184,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 73,
+                            "durationMicroseconds": 94,
                             "functionName": "fileMode",
                             "line": 152,
                             "message": ""
@@ -192,7 +192,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 223,
+                            "durationMicroseconds": 312,
                             "functionName": "nameFilters",
                             "line": 153,
                             "message": ""
@@ -200,7 +200,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 355,
+                            "durationMicroseconds": 347,
                             "functionName": "onAccepted",
                             "line": 155,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -208,7 +208,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 74,
+                            "durationMicroseconds": 70,
                             "functionName": "fileMode",
                             "line": 170,
                             "message": ""
@@ -216,7 +216,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 143,
+                            "durationMicroseconds": 111,
                             "functionName": "nameFilters",
                             "line": 171,
                             "message": ""
@@ -224,7 +224,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 388,
+                            "durationMicroseconds": 289,
                             "functionName": "onAccepted",
                             "line": 172,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -232,7 +232,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 76,
+                            "durationMicroseconds": 57,
                             "functionName": "fileMode",
                             "line": 189,
                             "message": ""
@@ -240,7 +240,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 145,
+                            "durationMicroseconds": 112,
                             "functionName": "nameFilters",
                             "line": 190,
                             "message": ""
@@ -248,7 +248,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 472,
+                            "durationMicroseconds": 357,
                             "functionName": "onAccepted",
                             "line": 192,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -256,7 +256,7 @@
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 74,
+                            "durationMicroseconds": 60,
                             "functionName": "fileMode",
                             "line": 214,
                             "message": ""
@@ -264,7 +264,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 217,
+                            "durationMicroseconds": 189,
                             "functionName": "nameFilters",
                             "line": 215,
                             "message": ""
@@ -272,7 +272,7 @@
                         {
                             "codegenResult": 2,
                             "column": 21,
-                            "durationMicroseconds": 826,
+                            "durationMicroseconds": 590,
                             "functionName": "onAccepted",
                             "line": 216,
                             "message": "method urlToLocalPath cannot be resolved."
@@ -280,7 +280,7 @@
                         {
                             "codegenResult": 2,
                             "column": 30,
-                            "durationMicroseconds": 57,
+                            "durationMicroseconds": 41,
                             "functionName": "onMnemonicValidated",
                             "line": 248,
                             "message": "Cannot find name mnemonicAccepted"
@@ -288,7 +288,7 @@
                         {
                             "codegenResult": 0,
                             "column": 30,
-                            "durationMicroseconds": 59,
+                            "durationMicroseconds": 42,
                             "functionName": "onMnemonicValidated",
                             "line": 248,
                             "message": ""
@@ -296,7 +296,7 @@
                         {
                             "codegenResult": 2,
                             "column": 20,
-                            "durationMicroseconds": 46,
+                            "durationMicroseconds": 32,
                             "functionName": "color",
                             "line": 256,
                             "message": "Cannot access value for name darkMode"
@@ -320,7 +320,7 @@
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 32,
+                            "durationMicroseconds": 17,
                             "functionName": "right",
                             "line": 268,
                             "message": "Cannot access value for name parent"
@@ -328,7 +328,7 @@
                         {
                             "codegenResult": 2,
                             "column": 37,
-                            "durationMicroseconds": 16,
+                            "durationMicroseconds": 10,
                             "functionName": "verticalCenter",
                             "line": 270,
                             "message": "Cannot access value for name parent"
@@ -408,7 +408,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 130,
+                            "durationMicroseconds": 144,
                             "functionName": "width",
                             "line": 315,
                             "message": ""
@@ -416,7 +416,7 @@
                         {
                             "codegenResult": 2,
                             "column": 17,
-                            "durationMicroseconds": 237,
+                            "durationMicroseconds": 1184,
                             "functionName": "height",
                             "line": 316,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -424,7 +424,7 @@
                         {
                             "codegenResult": 2,
                             "column": 23,
-                            "durationMicroseconds": 29,
+                            "durationMicroseconds": 37,
                             "functionName": "currentIndex",
                             "line": 317,
                             "message": "Cannot retrieve a non-object type by ID: tabBar"
@@ -432,7 +432,7 @@
                         {
                             "codegenResult": 2,
                             "column": 18,
-                            "durationMicroseconds": 27,
+                            "durationMicroseconds": 25,
                             "functionName": "visible",
                             "line": 318,
                             "message": "Cannot access value for name mnemonicAccepted"
@@ -440,7 +440,7 @@
                         {
                             "codegenResult": 0,
                             "column": 20,
-                            "durationMicroseconds": 391,
+                            "durationMicroseconds": 276,
                             "functionName": "width",
                             "line": 323,
                             "message": ""
@@ -448,7 +448,7 @@
                         {
                             "codegenResult": 0,
                             "column": 39,
-                            "durationMicroseconds": 107,
+                            "durationMicroseconds": 84,
                             "functionName": "horizontalCenter",
                             "line": 324,
                             "message": ""
@@ -456,7 +456,7 @@
                         {
                             "codegenResult": 0,
                             "column": 26,
-                            "durationMicroseconds": 96,
+                            "durationMicroseconds": 63,
                             "functionName": "top",
                             "line": 326,
                             "message": ""
@@ -496,7 +496,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 73,
+                            "durationMicroseconds": 53,
                             "functionName": "width",
                             "line": 350,
                             "message": ""
@@ -520,7 +520,7 @@
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 87,
+                            "durationMicroseconds": 121,
                             "functionName": "right",
                             "line": 377,
                             "message": ""
@@ -544,7 +544,7 @@
                         {
                             "codegenResult": 0,
                             "column": 43,
-                            "durationMicroseconds": 97,
+                            "durationMicroseconds": 147,
                             "functionName": "horizontalCenter",
                             "line": 399,
                             "message": ""
@@ -568,7 +568,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 73,
+                            "durationMicroseconds": 63,
                             "functionName": "width",
                             "line": 448,
                             "message": ""
@@ -592,7 +592,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 127,
+                            "durationMicroseconds": 105,
                             "functionName": "color",
                             "line": 469,
                             "message": "Cannot access value for name outputText"
@@ -600,7 +600,7 @@
                         {
                             "codegenResult": 2,
                             "column": 39,
-                            "durationMicroseconds": 102,
+                            "durationMicroseconds": 76,
                             "functionName": "color",
                             "line": 472,
                             "message": "Cannot access value for name outputText"
@@ -608,7 +608,7 @@
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 95,
+                            "durationMicroseconds": 83,
                             "functionName": "right",
                             "line": 482,
                             "message": ""
@@ -680,7 +680,7 @@
                         {
                             "codegenResult": 0,
                             "column": 20,
-                            "durationMicroseconds": 1433,
+                            "durationMicroseconds": 106,
                             "functionName": "width",
                             "line": 535,
                             "message": ""
@@ -688,7 +688,7 @@
                         {
                             "codegenResult": 0,
                             "column": 39,
-                            "durationMicroseconds": 149,
+                            "durationMicroseconds": 75,
                             "functionName": "horizontalCenter",
                             "line": 536,
                             "message": ""
@@ -696,7 +696,7 @@
                         {
                             "codegenResult": 0,
                             "column": 26,
-                            "durationMicroseconds": 93,
+                            "durationMicroseconds": 69,
                             "functionName": "top",
                             "line": 538,
                             "message": ""
@@ -736,7 +736,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 80,
+                            "durationMicroseconds": 54,
                             "functionName": "width",
                             "line": 561,
                             "message": ""
@@ -744,7 +744,7 @@
                         {
                             "codegenResult": 2,
                             "column": 24,
-                            "durationMicroseconds": 124,
+                            "durationMicroseconds": 63,
                             "functionName": "color",
                             "line": 563,
                             "message": "Cannot access value for name darkMode"
@@ -752,7 +752,7 @@
                         {
                             "codegenResult": 2,
                             "column": 31,
-                            "durationMicroseconds": 39,
+                            "durationMicroseconds": 24,
                             "functionName": "color",
                             "line": 564,
                             "message": "Cannot access value for name darkMode"
@@ -760,7 +760,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 4156,
+                            "durationMicroseconds": 4276,
                             "functionName": "onDropped",
                             "line": 572,
                             "message": "Cannot retrieve a non-object type by ID: filePath"
@@ -768,7 +768,7 @@
                         {
                             "codegenResult": 0,
                             "column": 32,
-                            "durationMicroseconds": 67,
+                            "durationMicroseconds": 60,
                             "functionName": "onDropped",
                             "line": 572,
                             "message": ""
@@ -776,7 +776,7 @@
                         {
                             "codegenResult": 0,
                             "column": 35,
-                            "durationMicroseconds": 73,
+                            "durationMicroseconds": 57,
                             "functionName": "fill",
                             "line": 571,
                             "message": ""
@@ -784,7 +784,7 @@
                         {
                             "codegenResult": 0,
                             "column": 43,
-                            "durationMicroseconds": 60,
+                            "durationMicroseconds": 42,
                             "functionName": "centerIn",
                             "line": 591,
                             "message": ""
@@ -840,7 +840,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 80,
+                            "durationMicroseconds": 61,
                             "functionName": "width",
                             "line": 622,
                             "message": ""
@@ -864,7 +864,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 44,
+                            "durationMicroseconds": 36,
                             "functionName": "color",
                             "line": 634,
                             "message": "Cannot access value for name darkMode"
@@ -872,7 +872,7 @@
                         {
                             "codegenResult": 2,
                             "column": 39,
-                            "durationMicroseconds": 34,
+                            "durationMicroseconds": 24,
                             "functionName": "color",
                             "line": 635,
                             "message": "Cannot access value for name darkMode"
@@ -904,7 +904,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 242,
+                            "durationMicroseconds": 53,
                             "functionName": "width",
                             "line": 663,
                             "message": ""
@@ -912,7 +912,7 @@
                         {
                             "codegenResult": 2,
                             "column": 26,
-                            "durationMicroseconds": 48,
+                            "durationMicroseconds": 26,
                             "functionName": "visible",
                             "line": 665,
                             "message": "Cannot retrieve a non-object type by ID: fileProgressBar"
@@ -928,7 +928,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 61,
+                            "durationMicroseconds": 43,
                             "functionName": "width",
                             "line": 689,
                             "message": "Cannot access value for name fileProgressBar"
@@ -936,7 +936,7 @@
                         {
                             "codegenResult": 2,
                             "column": 37,
-                            "durationMicroseconds": 29,
+                            "durationMicroseconds": 10,
                             "functionName": "height",
                             "line": 690,
                             "message": "Cannot access value for name parent"
@@ -944,7 +944,7 @@
                         {
                             "codegenResult": 2,
                             "column": 36,
-                            "durationMicroseconds": 60,
+                            "durationMicroseconds": 31,
                             "functionName": "color",
                             "line": 691,
                             "message": "Cannot access value for name fileProgressBar"
@@ -952,7 +952,7 @@
                         {
                             "codegenResult": 0,
                             "column": 43,
-                            "durationMicroseconds": 100,
+                            "durationMicroseconds": 70,
                             "functionName": "horizontalCenter",
                             "line": 707,
                             "message": ""
@@ -1144,7 +1144,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 101,
+                            "durationMicroseconds": 60,
                             "functionName": "width",
                             "line": 926,
                             "message": ""
@@ -1152,7 +1152,7 @@
                         {
                             "codegenResult": 2,
                             "column": 25,
-                            "durationMicroseconds": 46,
+                            "durationMicroseconds": 30,
                             "functionName": "height",
                             "line": 927,
                             "message": "Cannot retrieve a non-object type by ID: shortcutsLabel"
@@ -1160,7 +1160,7 @@
                         {
                             "codegenResult": 2,
                             "column": 24,
-                            "durationMicroseconds": 50,
+                            "durationMicroseconds": 32,
                             "functionName": "color",
                             "line": 928,
                             "message": "Cannot access value for name darkMode"
@@ -1168,7 +1168,7 @@
                         {
                             "codegenResult": 2,
                             "column": 31,
-                            "durationMicroseconds": 37,
+                            "durationMicroseconds": 24,
                             "functionName": "color",
                             "line": 929,
                             "message": "Cannot access value for name darkMode"
@@ -1192,7 +1192,7 @@
                         {
                             "codegenResult": 0,
                             "column": 20,
-                            "durationMicroseconds": 141,
+                            "durationMicroseconds": 101,
                             "functionName": "width",
                             "line": 946,
                             "message": ""
@@ -1200,7 +1200,7 @@
                         {
                             "codegenResult": 0,
                             "column": 39,
-                            "durationMicroseconds": 101,
+                            "durationMicroseconds": 84,
                             "functionName": "horizontalCenter",
                             "line": 947,
                             "message": ""
@@ -1208,7 +1208,7 @@
                         {
                             "codegenResult": 0,
                             "column": 26,
-                            "durationMicroseconds": 85,
+                            "durationMicroseconds": 58,
                             "functionName": "top",
                             "line": 949,
                             "message": ""
@@ -1248,7 +1248,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 76,
+                            "durationMicroseconds": 210,
                             "functionName": "width",
                             "line": 973,
                             "message": ""
@@ -1272,7 +1272,7 @@
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 84,
+                            "durationMicroseconds": 138,
                             "functionName": "right",
                             "line": 1000,
                             "message": ""
@@ -1296,7 +1296,7 @@
                         {
                             "codegenResult": 0,
                             "column": 43,
-                            "durationMicroseconds": 81,
+                            "durationMicroseconds": 98,
                             "functionName": "horizontalCenter",
                             "line": 1021,
                             "message": ""
@@ -1320,7 +1320,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 77,
+                            "durationMicroseconds": 186,
                             "functionName": "width",
                             "line": 1073,
                             "message": ""
@@ -1344,7 +1344,7 @@
                         {
                             "codegenResult": 2,
                             "column": 32,
-                            "durationMicroseconds": 504,
+                            "durationMicroseconds": 114,
                             "functionName": "color",
                             "line": 1094,
                             "message": "Cannot access value for name signatureOutput"
@@ -1352,7 +1352,7 @@
                         {
                             "codegenResult": 2,
                             "column": 39,
-                            "durationMicroseconds": 150,
+                            "durationMicroseconds": 68,
                             "functionName": "color",
                             "line": 1095,
                             "message": "Cannot access value for name signatureOutput"
@@ -1360,7 +1360,7 @@
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 392,
+                            "durationMicroseconds": 453,
                             "functionName": "right",
                             "line": 1103,
                             "message": ""
@@ -1432,7 +1432,7 @@
                         {
                             "codegenResult": 0,
                             "column": 20,
-                            "durationMicroseconds": 202,
+                            "durationMicroseconds": 171,
                             "functionName": "width",
                             "line": 1154,
                             "message": ""
@@ -1440,7 +1440,7 @@
                         {
                             "codegenResult": 0,
                             "column": 39,
-                            "durationMicroseconds": 105,
+                            "durationMicroseconds": 100,
                             "functionName": "horizontalCenter",
                             "line": 1155,
                             "message": ""
@@ -1448,7 +1448,7 @@
                         {
                             "codegenResult": 0,
                             "column": 26,
-                            "durationMicroseconds": 85,
+                            "durationMicroseconds": 72,
                             "functionName": "top",
                             "line": 1157,
                             "message": ""
@@ -1488,7 +1488,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 71,
+                            "durationMicroseconds": 274,
                             "functionName": "width",
                             "line": 1179,
                             "message": ""
@@ -1496,7 +1496,7 @@
                         {
                             "codegenResult": 0,
                             "column": 35,
-                            "durationMicroseconds": 57,
+                            "durationMicroseconds": 84,
                             "functionName": "fill",
                             "line": 1187,
                             "message": ""
@@ -1512,7 +1512,7 @@
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 71,
+                            "durationMicroseconds": 70,
                             "functionName": "width",
                             "line": 1221,
                             "message": ""
@@ -1544,7 +1544,7 @@
                         {
                             "codegenResult": 0,
                             "column": 36,
-                            "durationMicroseconds": 90,
+                            "durationMicroseconds": 89,
                             "functionName": "right",
                             "line": 1247,
                             "message": ""
@@ -1584,7 +1584,7 @@
                         {
                             "codegenResult": 0,
                             "column": 43,
-                            "durationMicroseconds": 99,
+                            "durationMicroseconds": 69,
                             "functionName": "horizontalCenter",
                             "line": 1272,
                             "message": ""
@@ -1656,7 +1656,7 @@
                         {
                             "codegenResult": 2,
                             "column": 18,
-                            "durationMicroseconds": 42,
+                            "durationMicroseconds": 32,
                             "functionName": "visible",
                             "line": 1328,
                             "message": "Cannot access value for name mnemonicAccepted"
@@ -1664,7 +1664,7 @@
                         {
                             "codegenResult": 0,
                             "column": 27,
-                            "durationMicroseconds": 57,
+                            "durationMicroseconds": 46,
                             "functionName": "centerIn",
                             "line": 1326,
                             "message": ""

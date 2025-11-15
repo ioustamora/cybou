@@ -1,2 +1,5 @@
+C:/Users/yosta/Documents/cybou/build/cybou_autogen/include/../MZW7AAAGJO/moc_EncryptionEngine.cpp.json
+C:/Users/yosta/Documents/cybou/build/cybou_autogen/include/../MZW7AAAGJO/moc_KeyManager.cpp.json
 C:/Users/yosta/Documents/cybou/build/cybou_autogen/include/../MZW7AAAGJO/moc_MnemonicEngine.cpp.json
 C:/Users/yosta/Documents/cybou/build/cybou_autogen/include/../MZW7AAAGJO/moc_PostQuantumCrypto.cpp.json
+C:/Users/yosta/Documents/cybou/build/cybou_autogen/include/../MZW7AAAGJO/moc_SignatureEngine.cpp.json

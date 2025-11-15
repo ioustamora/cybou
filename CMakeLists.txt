@@ -37,6 +37,9 @@ qt_standard_project_setup()
 # Main application executable
 qt_add_executable(cybou
     src/main.cpp
+    src/crypto/KeyManager.cpp
+    src/crypto/EncryptionEngine.cpp
+    src/crypto/SignatureEngine.cpp
     src/crypto/MnemonicEngine.cpp
     src/crypto/PostQuantumCrypto.cpp
     resources.qrc
@@ -49,6 +52,10 @@ qt_add_qml_module(cybou
     QML_FILES
         qml/Main.qml
         qml/SplashDialog.qml
+        qml/components/TextEncryptionTab.qml
+        qml/components/FileEncryptionTab.qml
+        qml/components/SignatureTab.qml
+        qml/components/KeyManagementTab.qml
 )
 
 # Set executable properties for different platforms
@@ -76,7 +83,14 @@ install(TARGETS cybou
 )
 
 # Test executables
-add_executable(test_encryption test_encryption.cpp src/crypto/PostQuantumCrypto.cpp src/crypto/MnemonicEngine.cpp)
+add_executable(test_encryption 
+    test_encryption.cpp 
+    src/crypto/KeyManager.cpp
+    src/crypto/EncryptionEngine.cpp
+    src/crypto/SignatureEngine.cpp
+    src/crypto/PostQuantumCrypto.cpp 
+    src/crypto/MnemonicEngine.cpp
+)
 target_link_libraries(test_encryption
     PRIVATE
         Qt6::Core
@@ -85,7 +99,13 @@ target_link_libraries(test_encryption
 )
 target_include_directories(test_encryption PRIVATE src)
 
-add_executable(test_signatures test_signatures.cpp src/crypto/PostQuantumCrypto.cpp)
+add_executable(test_signatures 
+    test_signatures.cpp 
+    src/crypto/KeyManager.cpp
+    src/crypto/EncryptionEngine.cpp
+    src/crypto/SignatureEngine.cpp
+    src/crypto/PostQuantumCrypto.cpp
+)
 target_link_libraries(test_signatures
     PRIVATE
         Qt6::Core
