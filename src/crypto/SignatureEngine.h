@@ -103,6 +103,15 @@ public:
      */
     QString generateSharedSecret(const QString &recipientPublicKeyHex);
 
+signals:
+    /**
+     * @brief Emitted when a signature operation completes
+     * @param operation Name of operation (signMessage/verifySignature/encapsulateKey/decapsulateKey/generateSharedSecret)
+     * @param success Whether operation succeeded
+     * @param message Status or error message
+     */
+    void operationCompleted(const QString &operation, bool success, const QString &message);
+
 private:
     KeyManager *m_keyManager; ///< Pointer to key manager for key access
 };

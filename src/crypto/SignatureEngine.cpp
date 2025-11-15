@@ -44,12 +44,12 @@ SignatureEngine::SignatureEngine(KeyManager *keyManager, QObject *parent)
 QString SignatureEngine::signMessage(const QString &message)
 {
     if (!m_keyManager || !m_keyManager->hasKeys()) {
-        emit signatureOperationFailed("No Dilithium private key available");
+        emit operationCompleted("signMessage", false, "No Dilithium private key available");
         return QString();
     }
     
     try {
-        const uint8_t *dilithiumSecretKey = m_keyManager->getDilithiumSecretKey();
+        const uint8_t *dilithiumSecretKey = m_keyManager->dilithiumSecretKey();
         if (!dilithiumSecretKey) {
             throw std::runtime_error("Dilithium secret key not available");
         }
@@ -85,12 +85,12 @@ QString SignatureEngine::signMessage(const QString &message)
         OQS_MEM_secure_free(signature, signature_len);
         
         qDebug() << "SignatureEngine: Message signed successfully";
-        emit signatureCreated(signatureHex);
+        emit operationCompleted("signMessage", true, "Message signed with ML-DSA-65");
         return signatureHex;
         
     } catch (const std::exception &e) {
         qWarning() << "SignatureEngine: Failed to sign message:" << e.what();
-        emit signatureOperationFailed(QString("Signing failed: %1").arg(e.what()));
+        emit operationCompleted("signMessage", false, QString("Signing failed: %1").arg(e.what()));
         return QString();
     }
 }
@@ -146,17 +146,17 @@ bool SignatureEngine::verifySignature(const QString &message,
         
         if (valid) {
             qDebug() << "SignatureEngine: Signature verified successfully";
-            emit signatureVerified(true, "ML-DSA-65 signature verified");
+            emit operationCompleted("verifySignature", true, "ML-DSA-65 signature verified");
         } else {
             qDebug() << "SignatureEngine: Signature verification failed";
-            emit signatureVerified(false, "Signature verification failed");
+            emit operationCompleted("verifySignature", false, "Signature verification failed");
         }
         
         return valid;
         
     } catch (const std::exception &e) {
         qWarning() << "SignatureEngine: Failed to verify signature:" << e.what();
-        emit signatureOperationFailed(QString("Verification failed: %1").arg(e.what()));
+        emit operationCompleted("verifySignature", false, QString("Verification failed: %1").arg(e.what()));
         return false;
     }
 }
@@ -237,12 +237,12 @@ QVariantMap SignatureEngine::encapsulateKey(const QString &recipientPublicKeyHex
         OQS_MEM_secure_free(shared_secret, OQS_KEM_kyber_1024_length_shared_secret);
         
         qDebug() << "SignatureEngine: Key encapsulation successful";
-        emit keyEncapsulated(result["ciphertext"].toString(), result["sharedSecret"].toString());
+        emit operationCompleted("encapsulateKey", true, "Kyber key encapsulation successful");
         
     } catch (const std::exception &e) {
         qWarning() << "SignatureEngine: Failed to encapsulate key:" << e.what();
         result["error"] = QString("Error: %1").arg(e.what());
-        emit signatureOperationFailed(QString("Encapsulation failed: %1").arg(e.what()));
+        emit operationCompleted("encapsulateKey", false, QString("Encapsulation failed: %1").arg(e.what()));
     }
     
     return result;
@@ -254,20 +254,27 @@ QVariantMap SignatureEngine::encapsulateKey(const QString &recipientPublicKeyHex
  * Recovers the shared secret from a ciphertext using the
  * local Kyber secret key.
  *
- * @param ciphertextHex Hex-encoded Kyber ciphertext
+ * @param encapsulatedKey Map containing "ciphertext" from encapsulateKey
  * @return QByteArray Shared secret bytes, empty on failure
- * @emits keyDecapsulated() on success
- * @emits signatureOperationFailed() on failure
+ * @emits operationCompleted() on completion
  */
-QByteArray SignatureEngine::decapsulateKey(const QString &ciphertextHex)
+QByteArray SignatureEngine::decapsulateKey(const QVariantMap &encapsulatedKey)
 {
     if (!m_keyManager || !m_keyManager->hasKeys()) {
-        emit signatureOperationFailed("No Kyber private key available");
+        emit operationCompleted("decapsulateKey", false, "No Kyber private key available");
         return QByteArray();
     }
     
+    // Extract ciphertext from the encapsulated key map
+    if (!encapsulatedKey.contains("ciphertext")) {
+        emit operationCompleted("decapsulateKey", false, "Invalid encapsulated key format");
+        return QByteArray();
+    }
+    
+    QString ciphertextHex = encapsulatedKey["ciphertext"].toString();
+    
     try {
-        const uint8_t *kyberSecretKey = m_keyManager->getKyberSecretKey();
+        const uint8_t *kyberSecretKey = m_keyManager->kyberSecretKey();
         if (!kyberSecretKey) {
             throw std::runtime_error("Kyber secret key not available");
         }
@@ -307,12 +314,12 @@ QByteArray SignatureEngine::decapsulateKey(const QString &ciphertextHex)
         OQS_MEM_secure_free(shared_secret, OQS_KEM_kyber_1024_length_shared_secret);
         
         qDebug() << "SignatureEngine: Key decapsulation successful";
-        emit keyDecapsulated(sharedSecretData);
+        emit operationCompleted("decapsulateKey", true, "Kyber key decapsulation successful");
         return sharedSecretData;
         
     } catch (const std::exception &e) {
         qWarning() << "SignatureEngine: Failed to decapsulate key:" << e.what();
-        emit signatureOperationFailed(QString("Decapsulation failed: %1").arg(e.what()));
+        emit operationCompleted("decapsulateKey", false, QString("Decapsulation failed: %1").arg(e.what()));
         return QByteArray();
     }
 }
@@ -387,7 +394,7 @@ QString SignatureEngine::generateSharedSecret(const QString &recipientPublicKeyH
         
     } catch (const std::exception &e) {
         qWarning() << "SignatureEngine: Failed to generate shared secret:" << e.what();
-        emit signatureOperationFailed(QString("Shared secret generation failed: %1").arg(e.what()));
+        emit operationCompleted("generateSharedSecret", false, QString("Shared secret generation failed: %1").arg(e.what()));
         return QString();
     }
 }

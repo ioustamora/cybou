@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 0,
                             "column": 12,
-                            "durationMicroseconds": 345,
+                            "durationMicroseconds": 348,
                             "functionName": "width",
                             "line": 31,
                             "message": ""
@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 0,
                             "column": 31,
-                            "durationMicroseconds": 101,
+                            "durationMicroseconds": 114,
                             "functionName": "horizontalCenter",
                             "line": 32,
                             "message": ""
@@ -32,7 +32,7 @@
                         {
                             "codegenResult": 0,
                             "column": 18,
-                            "durationMicroseconds": 71,
+                            "durationMicroseconds": 88,
                             "functionName": "top",
                             "line": 34,
                             "message": ""
@@ -72,7 +72,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 55,
+                            "durationMicroseconds": 57,
                             "functionName": "width",
                             "line": 67,
                             "message": ""
@@ -96,7 +96,7 @@
                         {
                             "codegenResult": 0,
                             "column": 28,
-                            "durationMicroseconds": 68,
+                            "durationMicroseconds": 75,
                             "functionName": "right",
                             "line": 94,
                             "message": ""
@@ -120,7 +120,7 @@
                         {
                             "codegenResult": 0,
                             "column": 35,
-                            "durationMicroseconds": 74,
+                            "durationMicroseconds": 78,
                             "functionName": "horizontalCenter",
                             "line": 117,
                             "message": ""
@@ -144,7 +144,7 @@
                         {
                             "codegenResult": 0,
                             "column": 16,
-                            "durationMicroseconds": 76,
+                            "durationMicroseconds": 48,
                             "functionName": "width",
                             "line": 166,
                             "message": ""
@@ -168,7 +168,7 @@
                         {
                             "codegenResult": 2,
                             "column": 24,
-                            "durationMicroseconds": 113,
+                            "durationMicroseconds": 114,
                             "functionName": "color",
                             "line": 187,
                             "message": "Cannot access value for name outputText"
@@ -176,7 +176,7 @@
                         {
                             "codegenResult": 2,
                             "column": 31,
-                            "durationMicroseconds": 65,
+                            "durationMicroseconds": 84,
                             "functionName": "color",
                             "line": 190,
                             "message": "Cannot access value for name outputText"
@@ -184,7 +184,7 @@
                         {
                             "codegenResult": 0,
                             "column": 28,
-                            "durationMicroseconds": 83,
+                            "durationMicroseconds": 99,
                             "functionName": "right",
                             "line": 200,
                             "message": ""

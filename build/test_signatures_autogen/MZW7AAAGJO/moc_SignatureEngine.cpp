@@ -38,10 +38,19 @@ template <> constexpr inline auto SignatureEngine::qt_create_metaobjectdata<qt_m
 {
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
-        "SignatureEngine"
+        "SignatureEngine",
+        "operationCompleted",
+        "",
+        "operation",
+        "success",
+        "message"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'operationCompleted'
+        QtMocHelpers::SignalData<void(const QString &, bool, const QString &)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 3 }, { QMetaType::Bool, 4 }, { QMetaType::QString, 5 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -63,10 +72,16 @@ Q_CONSTINIT const QMetaObject SignatureEngine::staticMetaObject = { {
 void SignatureEngine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     auto *_t = static_cast<SignatureEngine *>(_o);
-    (void)_t;
-    (void)_c;
-    (void)_id;
-    (void)_a;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: _t->operationCompleted((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
+        default: ;
+        }
+    }
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (SignatureEngine::*)(const QString & , bool , const QString & )>(_a, &SignatureEngine::operationCompleted, 0))
+            return;
+    }
 }
 
 const QMetaObject *SignatureEngine::metaObject() const
@@ -85,6 +100,24 @@ void *SignatureEngine::qt_metacast(const char *_clname)
 int SignatureEngine::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 1)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 1;
+    }
     return _id;
+}
+
+// SIGNAL 0
+void SignatureEngine::operationCompleted(const QString & _t1, bool _t2, const QString & _t3)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1, _t2, _t3);
 }
 QT_WARNING_POP
