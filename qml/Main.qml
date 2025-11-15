@@ -252,6 +252,7 @@ ApplicationWindow {
     }
 
     header: ToolBar {
+        anchors.margins: 20
         background: Rectangle {
             color: darkMode ? "#2d2d2d" : "#f5f5f5"
         }
@@ -321,11 +322,6 @@ ApplicationWindow {
         Column {
             spacing: 20
             width: parent.width * 0.85
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: 30
-            anchors.top: parent.top
-            anchors.leftMargin: 20
-            anchors.rightMargin: 20
 
             Label {
                 text: qsTr("🔤 Text Encryption/Decryption")
@@ -533,11 +529,6 @@ ApplicationWindow {
         Column {
             spacing: 20
             width: parent.width * 0.85
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: 30
-            anchors.top: parent.top
-            anchors.leftMargin: 20
-            anchors.rightMargin: 20
 
             Label {
                 text: qsTr("📁 File/Folder Encryption")
@@ -944,11 +935,6 @@ ApplicationWindow {
         Column {
             spacing: 20
             width: parent.width * 0.85
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: 30
-            anchors.top: parent.top
-            anchors.leftMargin: 20
-            anchors.rightMargin: 20
 
             Label {
                 text: qsTr("✍️ Digital Signatures")
@@ -1152,11 +1138,6 @@ ApplicationWindow {
         Column {
             spacing: 20
             width: parent.width * 0.85
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: 30
-            anchors.top: parent.top
-            anchors.leftMargin: 20
-            anchors.rightMargin: 20
 
             Label {
                 text: qsTr("🔑 Post-Quantum Key Management")

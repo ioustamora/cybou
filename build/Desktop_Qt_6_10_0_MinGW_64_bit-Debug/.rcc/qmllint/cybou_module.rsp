@@ -1,0 +1,10 @@
+-I
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug
+-I
+C:/Qt/6.10.0/mingw_64/qml
+--resource
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qmake_CybouWallet.qrc
+--resource
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/cybou_raw_qml_0.qrc
+--module
+CybouWallet

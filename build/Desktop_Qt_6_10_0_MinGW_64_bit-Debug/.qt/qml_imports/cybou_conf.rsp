@@ -1,0 +1,14 @@
+-rootPath
+C:/Users/yosta/Documents/cybou
+-cmake-output
+-output-file
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/qml_imports/cybou_conf.cmake
+-importPath
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CybouWallet
+-importPath
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug
+-importPath
+C:/Qt/6.10.0/mingw_64/qml
+-qrcFiles
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/qmake_CybouWallet.qrc
+C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/.qt/rcc/cybou_raw_qml_0.qrc

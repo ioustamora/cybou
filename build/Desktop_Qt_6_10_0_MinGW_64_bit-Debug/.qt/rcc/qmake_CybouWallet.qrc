@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/CybouWallet">
+    <file alias="qmldir">C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CybouWallet/qmldir</file>
+  </qresource>
+</RCC>
+
