@@ -390,11 +390,13 @@ C:/Users/yosta/Documents/cybou/test_keymanager.cpp
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QDeadlineTimer
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QDebug
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QElapsedTimer
+ mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QHash
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QMap
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QMutex
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QQueue
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QRunnable
+ mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QSet
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QString
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QThreadPool
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant

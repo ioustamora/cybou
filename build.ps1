@@ -61,6 +61,7 @@ if ($args -contains "-test") {
 # Run app if requested
 if ($args -contains "-run") {
     Write-Host "`n=== Launching Cybou ===" -ForegroundColor Cyan
+    $env:PATH = "C:\Qt\6.10.0\mingw_64\bin;$env:PATH"
     Start-Process -FilePath ".\build\cybou.exe"
 }
 

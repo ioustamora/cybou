@@ -1,4 +1,4 @@
-set(qml_import_scanner_imports_count 37)
+set(qml_import_scanner_imports_count 36)
 set(qml_import_scanner_import_0 "CLASSNAME;QtQuick2Plugin;LINKTARGET;Qt6::qtquick2plugin;NAME;QtQuick;PATH;C:/Qt/6.10.0/mingw_64/qml/QtQuick;PLUGIN;qtquick2plugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/;RELATIVEPATH;QtQuick;TYPE;module;")
 set(qml_import_scanner_import_1 "CLASSNAME;QtQmlPlugin;LINKTARGET;Qt6::qmlplugin;NAME;QtQml;PATH;C:/Qt/6.10.0/mingw_64/qml/QtQml;PLUGIN;qmlplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQml/;RELATIVEPATH;QtQml;TYPE;module;")
 set(qml_import_scanner_import_2 "NAME;QML;PATH;C:/Qt/6.10.0/mingw_64/qml/QML;PREFER;:/qt-project.org/imports/QML/;RELATIVEPATH;QML;TYPE;module;")
@@ -34,6 +34,5 @@ set(qml_import_scanner_import_31 "CLASSNAME;QtQuickDialogs2QuickImplPlugin;COMPO
 set(qml_import_scanner_import_32 "CLASSNAME;QmlFolderListModelPlugin;LINKTARGET;Qt6::qmlfolderlistmodelplugin;NAME;Qt.labs.folderlistmodel;PATH;C:/Qt/6.10.0/mingw_64/qml/Qt/labs/folderlistmodel;PLUGIN;qmlfolderlistmodelplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/Qt/labs/folderlistmodel/;RELATIVEPATH;Qt/labs/folderlistmodel;TYPE;module;")
 set(qml_import_scanner_import_33 "COMPONENTS;C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/Main.qml;C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/SplashDialog.qml;C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/components/BatchProgressDialog.qml;C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/components/FileEncryptionTab.qml;C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/components/KeyManagementTab.qml;C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/components/SignatureTab.qml;C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/components/TextEncryptionTab.qml;NAME;CybouWallet;PATH;C:/Users/yosta/Documents/cybou/build/CybouWallet;PREFER;:/CybouWallet/;RELATIVEPATH;CybouWallet;TYPE;module;")
 set(qml_import_scanner_import_34 "NAME;./BatchProgressDialog.qml;PATH;C:/Users/yosta/Documents/cybou/build/CybouWallet/qml/components/BatchProgressDialog.qml;TYPE;directory;")
-set(qml_import_scanner_import_35 "NAME;./BatchProgressDialog.qml;PATH;C:/Users/yosta/Documents/cybou/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CybouWallet/qml/components/BatchProgressDialog.qml;TYPE;directory;")
-set(qml_import_scanner_import_36 "NAME;./BatchProgressDialog.qml;PATH;C:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml;TYPE;directory;")
+set(qml_import_scanner_import_35 "NAME;./BatchProgressDialog.qml;PATH;C:/Users/yosta/Documents/cybou/qml/components/BatchProgressDialog.qml;TYPE;directory;")
 
