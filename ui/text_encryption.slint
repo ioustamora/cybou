@@ -64,23 +64,22 @@ export component TextEncryptionWindow inherits Window {
             }
         }
 
-        // Key/Password Input
-        GroupBox {
-            title: "🔑 Key / Password";
-
-            VerticalBox {
-                Text { text: "Enter encryption key or password:"; }
-                LineEdit {
-                    placeholder-text: "Enter key/password...";
-                    text <=> root.key-password;
-                }
-                Text {
-                    text: "For hybrid encryption, this will be used to derive the symmetric key.";
-                    font-size: 12px;
-                    color: #666666;
-                }
-            }
-        }
+        // Key/Password Input - REMOVED: Using mnemonic-derived keys
+        // GroupBox {
+        //     title: "🔑 Key / Password";
+        //     VerticalBox {
+        //         Text { text: "Enter encryption key or password:"; }
+        //         LineEdit {
+        //             placeholder-text: "Enter key/password...";
+        //             text <=> root.key-password;
+        //         }
+        //         Text {
+        //             text: "For hybrid encryption, this will be used to derive the symmetric key.";
+        //             font-size: 12px;
+        //             color: #666666;
+        //         }
+        //     }
+        // }
 
         // Input Text
         GroupBox {

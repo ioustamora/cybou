@@ -8,7 +8,7 @@ export component MainDashboard inherits Window {
 
     property <string> status-text: "Ready";
     property <string> last-status: "";
-    property <bool> keys-loaded: false;
+    in-out property <bool> keys-loaded: false;
     property <bool> backup-active: false;
     property <int> backup-file-count: 0;
     property <string> cloud-status: "Not Configured";
@@ -43,39 +43,47 @@ export component MainDashboard inherits Window {
             HorizontalBox {
                 Button {
                     text: "📝 Text Encryption (Ctrl+T)";
+                    enabled: keys-loaded;
                     clicked => { open-window("text-encryption"); }
                 }
                 Button {
                     text: "📁 File Encryption (Ctrl+F)";
+                    enabled: keys-loaded;
                     clicked => { open-window("file-encryption"); }
                 }
                 Button {
                     text: "✍️ Digital Signatures (Ctrl+S)";
+                    enabled: keys-loaded;
                     clicked => { open-window("digital-signatures"); }
                 }
                 Button {
                     text: "📂 Folder Encryption (Ctrl+D)";
+                    enabled: keys-loaded;
                     clicked => { open-window("folder-encryption"); }
                 }
                 Button {
                     text: "🔧 Password Tools (Ctrl+P)";
+                    enabled: keys-loaded;
                     clicked => { open-window("password-tools"); }
                 }
                 Button {
                     text: "💾 Backup Management (Ctrl+B)";
+                    enabled: keys-loaded;
                     clicked => { open-window("backup-management"); }
                 }
                 Button {
                     text: "☁️ Cloud Storage (Ctrl+C)";
+                    enabled: keys-loaded;
                     clicked => { open-window("cloud-storage"); }
                 }
                 Button {
                     text: "🔑 Key Management (Ctrl+K)";
+                    enabled: keys-loaded;
                     clicked => { open-window("key-management"); }
                 }
                 Button {
-                    text: "⚙️ Settings (Ctrl+G)";
-                    clicked => { open-window("settings"); }
+                    text: "🔑 Mnemonic Management (Ctrl+M)";
+                    clicked => { open-window("mnemonic-management"); }
                 }
             }
         }

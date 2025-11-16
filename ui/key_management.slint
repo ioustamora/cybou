@@ -11,7 +11,7 @@ export component KeyManagementWindow inherits Window {
     property <string> private-key: "";
     property <string> key-name: "";
     property <string> status: "Ready";
-    property <bool> keys-loaded: false;
+    in-out property <bool> keys-loaded: false;
     property <string> key-info: "";
     property <string> key-list: "";
 

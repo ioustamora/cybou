@@ -160,20 +160,89 @@ pub struct KeyStatistics {
 #[derive(Clone)]
 pub struct App {
     /// Sensitive cryptographic data with key versioning
-    pub sensitive_data: SensitiveData,
+    pub sensitive_data: Option<SensitiveData>,
     /// Window management state for multi-window GUI
     pub windows: std::collections::HashMap<WindowType, WindowState>,
+    /// Mnemonic phrase input
+    pub mnemonic_input: String,
+    /// Whether to show mnemonic modal
+    pub show_mnemonic_modal: bool,
+    /// Text input for encryption/decryption
+    pub text_input: String,
+    /// Text output for results
+    pub text_output: String,
+    /// File path for file operations
+    pub file_path: String,
+    /// Folder path for folder operations
+    pub folder_path: String,
+    /// Text to sign
+    pub sign_text: String,
+    /// Generated signature
+    pub sign_signature: String,
+    /// Text to verify
+    pub verify_text: String,
+    /// Signature to verify
+    pub verify_signature: String,
+    /// Last status message
+    pub last_status: String,
+    /// Password generation options
+    pub password_length: usize,
+    pub include_uppercase: bool,
+    pub include_lowercase: bool,
+    pub include_numbers: bool,
+    pub include_symbols: bool,
+    /// Password input for assessment
+    pub password_input: String,
+    /// Show password flag
+    pub show_password: bool,
+    /// Backup settings
+    pub watched_folders: Vec<String>,
+    pub backup_path: String,
+    pub backup_active: bool,
+    /// Cloud storage settings
+    pub s3_bucket: String,
+    pub s3_region: String,
+    pub s3_access_key: String,
+    pub s3_secret_key: String,
+    /// Settings
+    pub dark_mode: bool,
+    pub language: String,
+    pub enable_accessibility: bool,
 }
 
 impl Default for App {
     fn default() -> Self {
         Self {
-            sensitive_data: SensitiveData::new(
-                rand::random(),
-                pqc_kyber::keypair(&mut rand::thread_rng()).unwrap(),
-                pqc_dilithium::Keypair::generate(),
-            ),
+            sensitive_data: None, // Start without keys loaded
             windows: init_windows(),
+            mnemonic_input: String::new(),
+            show_mnemonic_modal: true, // Show mnemonic modal on first launch
+            text_input: String::new(),
+            text_output: String::new(),
+            file_path: String::new(),
+            folder_path: String::new(),
+            sign_text: String::new(),
+            sign_signature: String::new(),
+            verify_text: String::new(),
+            verify_signature: String::new(),
+            last_status: String::new(),
+            password_length: 16,
+            include_uppercase: true,
+            include_lowercase: true,
+            include_numbers: true,
+            include_symbols: true,
+            password_input: String::new(),
+            show_password: false,
+            watched_folders: Vec::new(),
+            backup_path: String::new(),
+            backup_active: false,
+            s3_bucket: String::new(),
+            s3_region: String::new(),
+            s3_access_key: String::new(),
+            s3_secret_key: String::new(),
+            dark_mode: false,
+            language: "en".to_string(),
+            enable_accessibility: false,
         }
     }
 }
@@ -209,12 +278,214 @@ impl App {
     pub fn get_window_title(&self, window_type: WindowType) -> &str {
         self.windows.get(&window_type).map(|w| w.title.as_str()).unwrap_or("Unknown Window")
     }
+
+    /// Validates mnemonic and derives cryptographic keys
+    pub fn validate_and_derive_keys(&mut self) -> bool {
+        use bip39::{Mnemonic, Language};
+        use pbkdf2::pbkdf2_hmac;
+        use sha2::Sha256;
+        use pqc_kyber::keypair;
+        use pqc_dilithium::Keypair;
+
+        // Parse and validate mnemonic
+        let mnemonic = match Mnemonic::parse(&self.mnemonic_input) {
+            Ok(m) => m,
+            Err(_) => return false,
+        };
+
+        // Derive seed from mnemonic
+        let seed = mnemonic.to_seed("");
+
+        // Use first 32 bytes of seed as master key
+        let mut master_key = [0u8; 32];
+        master_key.copy_from_slice(&seed[..32]);
+
+        // Generate PQ keys using seed-derived randomness
+        let mut rng = rand_chacha::ChaCha20Rng::from_seed(seed);
+        use rand::SeedableRng;
+
+        let kyber_keys = match keypair(&mut rng) {
+            Ok(k) => k,
+            Err(_) => return false,
+        };
+
+        let dilithium_keys = Keypair::generate();
+
+        // Create sensitive data
+        self.sensitive_data = Some(SensitiveData::new(master_key, kyber_keys, dilithium_keys));
+
+        true
+    }
+
+    /// Encrypts text using derived keys
+    pub fn encrypt_text(&mut self) {
+        if self.sensitive_data.is_none() {
+            self.last_status = "No keys available".to_string();
+            return;
+        }
+
+        match crate::crypto::encrypt_text_with_key(&self.text_input, &self.sensitive_data.as_ref().unwrap().current().master_key) {
+            Ok(encrypted) => {
+                self.text_output = encrypted;
+                self.last_status = "Text encrypted successfully".to_string();
+            }
+            Err(e) => {
+                self.text_output = String::new();
+                self.last_status = e;
+            }
+        }
+    }
+
+    /// Decrypts text using derived keys
+    pub fn decrypt_text(&mut self) {
+        if self.sensitive_data.is_none() {
+            self.last_status = "No keys available".to_string();
+            return;
+        }
+
+        match crate::crypto::decrypt_text_with_key(&self.text_input, &self.sensitive_data.as_ref().unwrap().current().master_key) {
+            Ok(decrypted) => {
+                self.text_output = decrypted;
+                self.last_status = "Text decrypted successfully".to_string();
+            }
+            Err(e) => {
+                self.text_output = String::new();
+                self.last_status = e;
+            }
+        }
+    }
+
+    /// Signs a message
+    pub fn sign_message(&mut self) {
+        if self.sensitive_data.is_none() {
+            self.last_status = "No keys available".to_string();
+            return;
+        }
+
+        match crate::crypto::sign_message(&self.sign_text, &self.sensitive_data.as_ref().unwrap().current().dilithium_keys) {
+            Ok(signature) => {
+                self.sign_signature = signature;
+                self.last_status = "Message signed successfully".to_string();
+            }
+            Err(e) => {
+                self.sign_signature = String::new();
+                self.last_status = e;
+            }
+        }
+    }
+
+    /// Verifies a signature
+    pub fn verify_message(&mut self) {
+        if self.sensitive_data.is_none() {
+            self.last_status = "No keys available".to_string();
+            return;
+        }
+
+        match crate::crypto::verify_signature(&self.verify_text, &self.verify_signature, &self.sensitive_data.as_ref().unwrap().current().dilithium_keys) {
+            Ok(valid) => {
+                self.text_output = if valid { "Valid signature".to_string() } else { "Invalid signature".to_string() };
+                self.last_status = "Signature verification complete".to_string();
+            }
+            Err(e) => {
+                self.text_output = e;
+                self.last_status = "Signature verification failed".to_string();
+            }
+        }
+    }
+
+    /// Encrypts a file
+    pub fn encrypt_file(&mut self) {
+        if self.sensitive_data.is_none() {
+            self.last_status = "No keys available".to_string();
+            return;
+        }
+
+        match crate::crypto::encrypt_file(&self.file_path, &self.sensitive_data.as_ref().unwrap().current().master_key) {
+            Ok(output_path) => {
+                self.text_output = format!("Encrypted to {}", output_path);
+                self.last_status = "File encrypted successfully".to_string();
+            }
+            Err(e) => {
+                self.text_output = String::new();
+                self.last_status = e;
+            }
+        }
+    }
+
+    /// Decrypts a file
+    pub fn decrypt_file(&mut self) {
+        if self.sensitive_data.is_none() {
+            self.last_status = "No keys available".to_string();
+            return;
+        }
+
+        match crate::crypto::decrypt_file(&self.file_path, &self.sensitive_data.as_ref().unwrap().current().master_key) {
+            Ok(output_path) => {
+                self.text_output = format!("Decrypted to {}", output_path);
+                self.last_status = "File decrypted successfully".to_string();
+            }
+            Err(e) => {
+                self.text_output = String::new();
+                self.last_status = e;
+            }
+        }
+    }
+
+    /// Encrypts a folder
+    pub fn encrypt_folder(&mut self) {
+        if self.sensitive_data.is_none() {
+            self.last_status = "No keys available".to_string();
+            return;
+        }
+
+        match crate::crypto::encrypt_folder(&self.folder_path, &self.sensitive_data.as_ref().unwrap().current().master_key) {
+            Ok(_) => {
+                self.last_status = "Folder encrypted successfully".to_string();
+            }
+            Err(e) => {
+                self.last_status = e;
+            }
+        }
+    }
+
+    /// Generates a secure password
+    pub fn generate_secure_password(&mut self) {
+        match crate::crypto::generate_password(
+            self.password_length,
+            self.include_uppercase,
+            self.include_lowercase,
+            self.include_numbers,
+            self.include_symbols,
+        ) {
+            Ok(password) => {
+                self.text_output = password;
+                self.last_status = format!("Generated {} character password", self.password_length);
+            }
+            Err(e) => {
+                self.text_output = String::new();
+                self.last_status = e;
+            }
+        }
+    }
+
+    /// Assesses password strength
+    pub fn assess_password_strength(&mut self) {
+        let (score, description) = crate::crypto::assess_password_strength(&self.password_input);
+        self.text_output = format!("Password strength: {}/100 ({})", score, description);
+        self.last_status = "Password assessment complete".to_string();
+    }
+
+    /// Checks if keys are loaded
+    pub fn keys_loaded(&self) -> bool {
+        self.sensitive_data.is_some()
+    }
 }
 
 /// Types of windows available in the application
 #[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
 pub enum WindowType {
     MainDashboard,
+    MnemonicManagement,
     TextEncryption,
     FileEncryption,
     DigitalSignatures,
@@ -247,6 +518,12 @@ pub fn init_windows() -> std::collections::HashMap<WindowType, WindowState> {
         is_open: true, // Main dashboard starts open
         title: "Cybou - Main Dashboard".to_string(),
         size: (800, 600),
+    });
+
+    windows.insert(WindowType::MnemonicManagement, WindowState {
+        is_open: false,
+        title: "Cybou - Mnemonic Management".to_string(),
+        size: (700, 500),
     });
 
     windows.insert(WindowType::TextEncryption, WindowState {

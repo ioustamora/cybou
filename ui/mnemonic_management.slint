@@ -1,0 +1,175 @@
+// Mnemonic Management Window
+import { Button, GroupBox, HorizontalBox, ScrollView, TextEdit, VerticalBox } from "std-widgets.slint";
+
+export component MnemonicManagement inherits Window {
+    title: "Cybou - Mnemonic Management";
+    width: 700px;
+    height: 500px;
+
+    in-out property <string> mnemonic-input: "";
+    in-out property <string> status-text: "Enter your 12 or 24-word BIP39 mnemonic phrase";
+    in-out property <bool> is-valid: false;
+    in-out property <bool> keys-loaded: false;
+
+    callback generate-mnemonic();
+    callback validate-mnemonic();
+    callback continue-with-mnemonic();
+    callback copy-mnemonic();
+    callback clear-mnemonic();
+
+    VerticalBox {
+        // Header
+        HorizontalBox {
+            Text {
+                text: "🔑 Mnemonic Management - Secure Key Derivation";
+                font-size: 18px;
+                font-weight: 600;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Main Content
+        ScrollView {
+            VerticalBox {
+                // Mnemonic Input Section
+                GroupBox {
+                    title: "📝 Enter Mnemonic Phrase";
+
+                    VerticalBox {
+                        Text {
+                            text: "Enter your 12 or 24-word BIP39 mnemonic phrase below. This will be used to derive your cryptographic keys.";
+                        }
+
+                        TextEdit {
+                            text: mnemonic-input;
+                            placeholder-text: "e.g., abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about";
+                            wrap: word-wrap;
+                            height: 80px;
+                        }
+
+                        HorizontalBox {
+                            Button {
+                                text: "🎲 Generate New";
+                                clicked => { generate-mnemonic(); }
+                            }
+                            Button {
+                                text: "🗑️ Clear";
+                                clicked => { clear-mnemonic(); }
+                            }
+                            Button {
+                                text: "📋 Copy";
+                                clicked => { copy-mnemonic(); }
+                            }
+                            Button {
+                                text: "✅ Validate";
+                                clicked => { validate-mnemonic(); }
+                            }
+                        }
+                    }
+                }
+
+                // Validation Status
+                GroupBox {
+                    title: "🔍 Validation Status";
+
+                    VerticalBox {
+                        HorizontalBox {
+                            Text { text: "Status:"; }
+                            Text {
+                                text: status-text;
+                                color: is-valid ? #00aa00 : #aa0000;
+                            }
+                        }
+
+                        if (is-valid): HorizontalBox {
+                            Text { text: "Keys Status:"; }
+                            Text {
+                                text: keys-loaded ? "Loaded ✓" : "Not Loaded";
+                                color: keys-loaded ? #00aa00 : #aaaa00;
+                            }
+                        }
+                    }
+                }
+
+                // Security Information
+                GroupBox {
+                    title: "🔐 Security Information";
+
+                    VerticalBox {
+                        Text {
+                            text: "⚠️ Your mnemonic phrase is the master key to all your encrypted data. Keep it secure!";
+                            color: #aa0000;
+                            font-weight: 600;
+                        }
+
+                        Text { text: "• Never share your mnemonic with anyone"; }
+                        Text { text: "• Store it in a secure location (hardware wallet, encrypted file)"; }
+                        Text { text: "• Use a strong passphrase if your wallet supports it"; }
+                        Text { text: "• Make multiple backups in different locations"; }
+                        Text { text: "• Test your backups regularly"; }
+                    }
+                }
+
+                // Key Derivation Info
+                GroupBox {
+                    title: "🔑 How Keys Are Derived";
+
+                    VerticalBox {
+                        Text { text: "Your mnemonic phrase is converted to a binary seed using BIP39 standard."; }
+                        Text { text: "From this seed, we derive:"; }
+                        Text { text: "• Master encryption key (AES-256-GCM)"; }
+                        Text { text: "• Post-quantum encryption keys (Kyber)"; }
+                        Text { text: "• Post-quantum signature keys (Dilithium)"; }
+                        Text { text: "• All keys are versioned for future rotation"; }
+                    }
+                }
+
+                // Continue Button
+                if (is-valid && !keys-loaded): GroupBox {
+                    title: "🚀 Ready to Continue";
+
+                    VerticalBox {
+                        Text {
+                            text: "Your mnemonic is valid and keys can be derived. Click continue to load your cryptographic keys.";
+                        }
+
+                        Button {
+                            text: "Continue with Mnemonic";
+                            clicked => { continue-with-mnemonic(); }
+                            width: 200px;
+                        }
+                    }
+                }
+
+                if (keys-loaded): GroupBox {
+                    title: "✅ Keys Loaded Successfully";
+
+                    VerticalBox {
+                        Text {
+                            text: "Your cryptographic keys have been loaded. You can now use all Cybou features.";
+                        }
+
+                        Text {
+                            text: "You can close this window and access other tools from the main dashboard.";
+                        }
+                    }
+                }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Status Bar
+        HorizontalBox {
+            Text { text: "📊 Status:"; }
+            Text {
+                text: status-text;
+                color: is-valid ? #00aa00 : #666666;
+            }
+        }
+    }
+}
