@@ -1,4 +1,6 @@
 fn main() {
+    println!("cargo:rerun-if-changed=ui/");
+    // Compile all Slint UI files
     slint_build::compile("ui/main_dashboard.slint").unwrap();
     slint_build::compile("ui/text_encryption.slint").unwrap();
     slint_build::compile("ui/file_encryption.slint").unwrap();

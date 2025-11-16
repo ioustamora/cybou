@@ -10,177 +10,227 @@ mod types;
 // mod cloud; // Temporarily disabled - uses eframe
 mod windows;
 
-use tray_icon::{TrayIconBuilder, Icon, menu::Menu, menu::MenuItem, TrayIconEvent};
-use slint::ComponentHandle;
+use std::sync::{Arc, Mutex};
+use tray_icon::{Icon, TrayIconBuilder, TrayIconEvent};
+use tray_icon::menu::{Menu, MenuItem};
 
 // Include the generated Slint UI modules
-slint::include_modules!();
+include!(concat!(env!("OUT_DIR"), "/main_dashboard.rs"));
+include!(concat!(env!("OUT_DIR"), "/text_encryption.rs"));
+include!(concat!(env!("OUT_DIR"), "/file_encryption.rs"));
+include!(concat!(env!("OUT_DIR"), "/digital_signatures.rs"));
+include!(concat!(env!("OUT_DIR"), "/password_tools.rs"));
+include!(concat!(env!("OUT_DIR"), "/backup_management.rs"));
+include!(concat!(env!("OUT_DIR"), "/cloud_storage.rs"));
+include!(concat!(env!("OUT_DIR"), "/key_management.rs"));
+include!(concat!(env!("OUT_DIR"), "/settings.rs"));
+include!(concat!(env!("OUT_DIR"), "/folder_encryption.rs"));
 
-/// Window manager for handling multiple Slint windows
+// Window manager for handling multiple Slint windows
 struct WindowManager {
     app: types::App,
-    main_dashboard: Option<MainDashboard>,
-    text_encryption: Option<TextEncryptionWindow>,
-    file_encryption: Option<FileEncryptionWindow>,
-    digital_signatures: Option<DigitalSignaturesWindow>,
-    password_tools: Option<PasswordToolsWindow>,
-    backup_management: Option<BackupManagementWindow>,
-    cloud_storage: Option<CloudStorageWindow>,
-    key_management: Option<KeyManagementWindow>,
-    settings: Option<SettingsWindow>,
-    folder_encryption: Option<FolderEncryptionWindow>,
 }
 
 impl WindowManager {
     fn new() -> Self {
         Self {
             app: types::App::default(),
-            main_dashboard: None,
-            text_encryption: None,
-            file_encryption: None,
-            digital_signatures: None,
-            password_tools: None,
-            backup_management: None,
-            cloud_storage: None,
-            key_management: None,
-            settings: None,
-            folder_encryption: None,
         }
     }
 
     fn show_main_dashboard(&mut self) {
-        if self.main_dashboard.is_none() {
-            let window = MainDashboard::new().unwrap();
-            self.setup_main_dashboard_callbacks(&window);
-            self.main_dashboard = Some(window);
-        }
-        if let Some(ref window) = self.main_dashboard {
-            window.show().unwrap();
-        }
+        let window = MainDashboard::new().unwrap();
+        self.setup_main_dashboard_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::MainDashboard);
     }
 
     fn show_text_encryption(&mut self) {
-        if self.text_encryption.is_none() {
-            let window = TextEncryptionWindow::new().unwrap();
-            self.setup_text_encryption_callbacks(&window);
-            self.text_encryption = Some(window);
-        }
-        if let Some(ref window) = self.text_encryption {
-            window.show().unwrap();
-        }
+        let window = TextEncryptionWindow::new().unwrap();
+        self.setup_text_encryption_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::TextEncryption);
     }
 
     fn show_file_encryption(&mut self) {
-        if self.file_encryption.is_none() {
-            let window = FileEncryptionWindow::new().unwrap();
-            self.setup_file_encryption_callbacks(&window);
-            self.file_encryption = Some(window);
-        }
-        if let Some(ref window) = self.file_encryption {
-            window.show().unwrap();
-        }
+        let window = FileEncryptionWindow::new().unwrap();
+        self.setup_file_encryption_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::FileEncryption);
     }
 
     fn show_digital_signatures(&mut self) {
-        if self.digital_signatures.is_none() {
-            let window = DigitalSignaturesWindow::new().unwrap();
-            self.setup_digital_signatures_callbacks(&window);
-            self.digital_signatures = Some(window);
-        }
-        if let Some(ref window) = self.digital_signatures {
-            window.show().unwrap();
-        }
+        let window = DigitalSignaturesWindow::new().unwrap();
+        self.setup_digital_signatures_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::DigitalSignatures);
     }
 
     fn show_password_tools(&mut self) {
-        if self.password_tools.is_none() {
-            let window = PasswordToolsWindow::new().unwrap();
-            self.setup_password_tools_callbacks(&window);
-            self.password_tools = Some(window);
-        }
-        if let Some(ref window) = self.password_tools {
-            window.show().unwrap();
-        }
+        let window = PasswordToolsWindow::new().unwrap();
+        self.setup_password_tools_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::PasswordTools);
     }
 
     fn show_backup_management(&mut self) {
-        if self.backup_management.is_none() {
-            let window = BackupManagementWindow::new().unwrap();
-            self.setup_backup_management_callbacks(&window);
-            self.backup_management = Some(window);
-        }
-        if let Some(ref window) = self.backup_management {
-            window.show().unwrap();
-        }
+        let window = BackupManagementWindow::new().unwrap();
+        self.setup_backup_management_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::BackupManagement);
     }
 
     fn show_cloud_storage(&mut self) {
-        if self.cloud_storage.is_none() {
-            let window = CloudStorageWindow::new().unwrap();
-            self.setup_cloud_storage_callbacks(&window);
-            self.cloud_storage = Some(window);
-        }
-        if let Some(ref window) = self.cloud_storage {
-            window.show().unwrap();
-        }
+        let window = CloudStorageWindow::new().unwrap();
+        self.setup_cloud_storage_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::CloudStorage);
     }
 
     fn show_key_management(&mut self) {
-        if self.key_management.is_none() {
-            let window = KeyManagementWindow::new().unwrap();
-            self.setup_key_management_callbacks(&window);
-            self.key_management = Some(window);
-        }
-        if let Some(ref window) = self.key_management {
-            window.show().unwrap();
-        }
+        let window = KeyManagementWindow::new().unwrap();
+        self.setup_key_management_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::KeyManagement);
     }
 
     fn show_settings(&mut self) {
-        if self.settings.is_none() {
-            let window = SettingsWindow::new().unwrap();
-            self.setup_settings_callbacks(&window);
-            self.settings = Some(window);
-        }
-        if let Some(ref window) = self.settings {
-            window.show().unwrap();
-        }
+        let window = SettingsWindow::new().unwrap();
+        self.setup_settings_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::Settings);
     }
 
     fn show_folder_encryption(&mut self) {
-        if self.folder_encryption.is_none() {
-            let window = FolderEncryptionWindow::new().unwrap();
-            self.setup_folder_encryption_callbacks(&window);
-            self.folder_encryption = Some(window);
-        }
-        if let Some(ref window) = self.folder_encryption {
-            window.show().unwrap();
-        }
+        let window = FolderEncryptionWindow::new().unwrap();
+        self.setup_folder_encryption_callbacks(&window);
+        window.show().unwrap();
+        self.app.open_window(types::WindowType::FolderEncryption);
     }
 
     fn setup_main_dashboard_callbacks(&self, window: &MainDashboard) {
-        let window_weak = window.as_weak();
-        window.on_open_text_encryption(move || {
-            if let Some(window) = window_weak.upgrade() {
-                // TODO: Implement window opening logic
-                println!("Opening text encryption window");
-            }
+        let weak_window = window.as_weak();
+        let app_clone = self.app.clone();
+        window.on_open_window(move |window_type: slint::SharedString| {
+            let app = app_clone.clone();
+            let weak = weak_window.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    // Handle window opening from main dashboard
+                    match window_type.as_str() {
+                        "text-encryption" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_text_encryption();
+                        }
+                        "file-encryption" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_file_encryption();
+                        }
+                        "digital-signatures" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_digital_signatures();
+                        }
+                        "folder-encryption" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_folder_encryption();
+                        }
+                        "password-tools" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_password_tools();
+                        }
+                        "backup-management" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_backup_management();
+                        }
+                        "cloud-storage" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_cloud_storage();
+                        }
+                        "key-management" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_key_management();
+                        }
+                        "settings" => {
+                            let mut wm = WindowManager::new();
+                            wm.show_settings();
+                        }
+                        _ => {}
+                    }
+                }
+            }).unwrap();
         });
 
-        let window_weak = window.as_weak();
-        window.on_open_file_encryption(move || {
-            if let Some(window) = window_weak.upgrade() {
-                // TODO: Implement window opening logic
-                println!("Opening file encryption window");
-            }
+        window.on_clear_status(move || {
+            // TODO: Clear status
+            println!("Clear status clicked");
         });
-
-        // Add more callback implementations...
     }
 
     fn setup_text_encryption_callbacks(&self, window: &TextEncryptionWindow) {
-        // TODO: Implement text encryption callbacks
-        println!("Setting up text encryption callbacks");
+        let weak_window = window.as_weak();
+
+        // Encrypt callback
+        let weak_encrypt = weak_window.clone();
+        window.on_encrypt(move || {
+            let weak = weak_encrypt.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    // TODO: Implement text encryption
+                    window.set_status("Encrypting...".into());
+                    println!("Encrypt clicked");
+                }
+            }).unwrap();
+        });
+
+        // Decrypt callback
+        let weak_decrypt = weak_window.clone();
+        window.on_decrypt(move || {
+            let weak = weak_decrypt.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    // TODO: Implement text decryption
+                    window.set_status("Decrypting...".into());
+                    println!("Decrypt clicked");
+                }
+            }).unwrap();
+        });
+
+        // Clear callback
+        let weak_clear = weak_window.clone();
+        window.on_clear(move || {
+            let weak = weak_clear.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    window.set_input_text("".into());
+                    window.set_output_text("".into());
+                    window.set_status("Ready".into());
+                }
+            }).unwrap();
+        });
+
+        // Copy output callback
+        let weak_copy = weak_window.clone();
+        window.on_copy_output(move || {
+            let weak = weak_copy.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    // TODO: Copy to clipboard
+                    println!("Copy output clicked");
+                }
+            }).unwrap();
+        });
+
+        // Save output callback
+        let weak_save = weak_window.clone();
+        window.on_save_output(move || {
+            let weak = weak_save.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    // TODO: Save to file
+                    println!("Save output clicked");
+                }
+            }).unwrap();
+        });
     }
 
     fn setup_file_encryption_callbacks(&self, window: &FileEncryptionWindow) {
@@ -225,53 +275,34 @@ impl WindowManager {
 }
 
 /// Main application entry point
-fn main() -> Result<(), Box<dyn::std::error::Error>> {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Create the window manager
-    let mut window_manager = WindowManager::new();
-
-    // Initialize system tray with window opening callbacks
-    let window_manager_ref = std::rc::Rc::new(std::cell::RefCell::new(window_manager));
-    let window_manager_clone = window_manager_ref.clone();
-
-    std::thread::spawn(move || {
-        while let Ok(event) = TrayIconEvent::receiver().recv() {
-            match event {
-                TrayIconEvent::Click { id, .. } => {
-                    let mut wm = window_manager_clone.borrow_mut();
-                    match id.as_str() {
-                        "Show Dashboard" => wm.show_main_dashboard(),
-                        "Text Encryption" => wm.show_text_encryption(),
-                        "File Encryption" => wm.show_file_encryption(),
-                        "Digital Signatures" => wm.show_digital_signatures(),
-                        "Password Tools" => wm.show_password_tools(),
-                        "Backup Management" => wm.show_backup_management(),
-                        "Cloud Storage" => wm.show_cloud_storage(),
-                        "Key Management" => wm.show_key_management(),
-                        "Settings" => wm.show_settings(),
-                        "Folder Encryption" => wm.show_folder_encryption(),
-                        "Quit" => std::process::exit(0),
-                        _ => {}
-                    }
-                }
-                _ => {}
-            }
-        }
-    });
+    let window_manager = Arc::new(Mutex::new(WindowManager::new()));
 
     // Initialize system tray icon
     let icon = Icon::from_rgba(vec![0, 255, 0, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 255, 0, 255], 2, 2).unwrap();
     let menu = Menu::new();
-    menu.append(&MenuItem::new("Show Dashboard", true, None)).unwrap();
-    menu.append(&MenuItem::new("Text Encryption", true, None)).unwrap();
-    menu.append(&MenuItem::new("File Encryption", true, None)).unwrap();
-    menu.append(&MenuItem::new("Digital Signatures", true, None)).unwrap();
-    menu.append(&MenuItem::new("Password Tools", true, None)).unwrap();
-    menu.append(&MenuItem::new("Backup Management", true, None)).unwrap();
-    menu.append(&MenuItem::new("Cloud Storage", true, None)).unwrap();
-    menu.append(&MenuItem::new("Key Management", true, None)).unwrap();
-    menu.append(&MenuItem::new("Settings", true, None)).unwrap();
-    menu.append(&MenuItem::new("Folder Encryption", true, None)).unwrap();
-    menu.append(&MenuItem::new("Quit", true, None)).unwrap();
+    let show_dashboard_item = MenuItem::new("Show Dashboard", true, None);
+    let text_encryption_item = MenuItem::new("Text Encryption", true, None);
+    let file_encryption_item = MenuItem::new("File Encryption", true, None);
+    let digital_signatures_item = MenuItem::new("Digital Signatures", true, None);
+    let password_tools_item = MenuItem::new("Password Tools", true, None);
+    let backup_management_item = MenuItem::new("Backup Management", true, None);
+    let cloud_storage_item = MenuItem::new("Cloud Storage", true, None);
+    let key_management_item = MenuItem::new("Key Management", true, None);
+    let settings_item = MenuItem::new("Settings", true, None);
+    let quit_item = MenuItem::new("Quit", true, None);
+
+    menu.append(&show_dashboard_item).unwrap();
+    menu.append(&text_encryption_item).unwrap();
+    menu.append(&file_encryption_item).unwrap();
+    menu.append(&digital_signatures_item).unwrap();
+    menu.append(&password_tools_item).unwrap();
+    menu.append(&backup_management_item).unwrap();
+    menu.append(&cloud_storage_item).unwrap();
+    menu.append(&key_management_item).unwrap();
+    menu.append(&settings_item).unwrap();
+    menu.append(&quit_item).unwrap();
 
     let _tray_icon = TrayIconBuilder::new()
         .with_menu(Box::new(menu))
@@ -281,7 +312,58 @@ fn main() -> Result<(), Box<dyn::std::error::Error>> {
         .unwrap();
 
     // Show the main dashboard on startup
-    window_manager_ref.borrow_mut().show_main_dashboard();
+    {
+        let mut wm = window_manager.lock().unwrap();
+        wm.show_main_dashboard();
+    }
+
+    // Create a channel for tray events
+    let (tx, rx) = std::sync::mpsc::channel();
+
+    // Handle tray events in a separate thread
+    std::thread::spawn(move || {
+        TrayIconEvent::receiver().iter().for_each(|event| {
+            match event {
+                TrayIconEvent::Click { id, .. } => {
+                    // Send the menu item ID to the main thread
+                    let _ = tx.send(id);
+                }
+                _ => {}
+            }
+        });
+    });
+
+    // Handle tray menu clicks in the main thread
+    let window_manager_clone = Arc::clone(&window_manager);
+    std::thread::spawn(move || {
+        while let Ok(menu_id) = rx.recv() {
+            let wm = Arc::clone(&window_manager_clone);
+            slint::invoke_from_event_loop(move || {
+                let mut window_manager = wm.lock().unwrap();
+                if menu_id == "Show Dashboard" {
+                    window_manager.show_main_dashboard();
+                } else if menu_id == "Text Encryption" {
+                    window_manager.show_text_encryption();
+                } else if menu_id == "File Encryption" {
+                    window_manager.show_file_encryption();
+                } else if menu_id == "Digital Signatures" {
+                    window_manager.show_digital_signatures();
+                } else if menu_id == "Password Tools" {
+                    window_manager.show_password_tools();
+                } else if menu_id == "Backup Management" {
+                    window_manager.show_backup_management();
+                } else if menu_id == "Cloud Storage" {
+                    window_manager.show_cloud_storage();
+                } else if menu_id == "Key Management" {
+                    window_manager.show_key_management();
+                } else if menu_id == "Settings" {
+                    window_manager.show_settings();
+                } else if menu_id == "Quit" {
+                    std::process::exit(0);
+                }
+            }).unwrap();
+        }
+    });
 
     // Run the Slint event loop
     slint::run_event_loop().unwrap();

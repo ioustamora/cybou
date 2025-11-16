@@ -6,10 +6,12 @@ export component TextEncryptionWindow inherits Window {
     width: 700px;
     height: 600px;
 
-    property <string> input-text: "";
-    property <string> output-text: "";
-    property <string> key-password: "";
-    property <string> status: "Ready";
+    // Properties for Rust-UI communication
+    in-out property <string> input-text: "";
+    in-out property <string> output-text: "";
+    in-out property <string> key-password: "";
+    in-out property <string> status: "Ready";
+
     property <bool> use-hybrid: true;
     property <bool> use-aes: false;
     property <bool> use-chacha: false;
@@ -70,7 +72,7 @@ export component TextEncryptionWindow inherits Window {
                 Text { text: "Enter encryption key or password:"; }
                 LineEdit {
                     placeholder-text: "Enter key/password...";
-                    text <=> key-password;
+                    text <=> root.key-password;
                 }
                 Text {
                     text: "For hybrid encryption, this will be used to derive the symmetric key.";
@@ -85,7 +87,7 @@ export component TextEncryptionWindow inherits Window {
             title: "📝 Input Text";
 
             TextEdit {
-                text <=> input-text;
+                text <=> root.input-text;
                 placeholder-text: "Enter text to encrypt/decrypt...";
                 wrap: word-wrap;
             }
@@ -113,7 +115,7 @@ export component TextEncryptionWindow inherits Window {
 
             VerticalBox {
                 TextEdit {
-                    text <=> output-text;
+                    text: root.output-text;
                     placeholder-text: "Encrypted/decrypted text will appear here...";
                     wrap: word-wrap;
                     read-only: true;
@@ -135,8 +137,8 @@ export component TextEncryptionWindow inherits Window {
         HorizontalBox {
             Text { text: "📊 Status:"; }
             Text {
-                text: status;
-                color: status == "Ready" ? #666666 : #00aa00;
+                text: root.status;
+                color: root.status == "Ready" ? #666666 : #00aa00;
             }
         }
     }
