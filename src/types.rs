@@ -301,7 +301,9 @@ impl App {
         master_key.copy_from_slice(&seed[..32]);
 
         // Generate PQ keys using seed-derived randomness
-        let mut rng = rand_chacha::ChaCha20Rng::from_seed(seed);
+        let mut seed_32 = [0u8; 32];
+        seed_32.copy_from_slice(&seed[..32]);
+        let mut rng = rand_chacha::ChaCha20Rng::from_seed(seed_32);
         use rand::SeedableRng;
 
         let kyber_keys = match keypair(&mut rng) {

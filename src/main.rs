@@ -493,10 +493,10 @@ impl WindowManager {
                 if let Some(window) = weak.upgrade() {
                     // Get password generation options
                     let length = window.get_password_length() as i32;
-                    let include_uppercase = window.get_include_uppercase();
-                    let include_lowercase = window.get_include_lowercase();
-                    let include_numbers = window.get_include_numbers();
-                    let include_symbols = window.get_include_symbols();
+                    let include_uppercase = window.get_use_uppercase();
+                    let include_lowercase = window.get_use_lowercase();
+                    let include_numbers = window.get_use_numbers();
+                    let include_symbols = window.get_use_symbols();
 
                     // Create a temporary WindowManager for password generation
                     let wm = WindowManager::new();
@@ -507,19 +507,23 @@ impl WindowManager {
             }).unwrap();
         });
 
-        // Check password strength callback
+        // Check strength callback - TODO: Add input field to UI
         let weak_check = weak_window.clone();
         window.on_check_strength(move || {
             let weak = weak_check.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
-                    // Get password to check
-                    let password = window.get_password_to_check().to_string();
+                    // For now, check the generated password
+                    let password = window.get_generated_password().to_string();
+                    if password.is_empty() {
+                        window.set_status("No password to check".into());
+                        return;
+                    }
 
                     // Create a temporary WindowManager for password assessment
                     let wm = WindowManager::new();
                     let (assessment, status) = wm.assess_password_strength(password.into());
-                    window.set_password_assessment(assessment);
+                    window.set_password_strength(assessment);
                     window.set_status(status);
                 }
             }).unwrap();
@@ -552,8 +556,7 @@ impl WindowManager {
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
                     window.set_generated_password("".into());
-                    window.set_password_to_check("".into());
-                    window.set_password_assessment("".into());
+                    window.set_password_strength("Weak".into());
                     window.set_status("Ready".into());
                 }
             }).unwrap();
