@@ -2,16 +2,16 @@
 
 This document outlines the planned development roadmap for Cybou, the secure cryptography application.
 
-## 🎯 Current Status (v0.4.0 - Advanced Cryptography)
+## 🎯 Current Status (v0.5.1 - Mnemonic-Based Security)
 
 ### ✅ Completed Features
 
-- **Core Cryptography**: PQ encryption/decryption with Kyber + AES-GCM hybrid scheme
-- **Digital Signatures**: Dilithium-based signing and verification
-- **Mnemonic Integration**: BIP39 key derivation from 12/24-word phrases
-- **GUI Framework**: Cross-platform interface with eframe/egui
-- **File Operations**: Text, file, and folder encryption/decryption
-- **System Tray**: Basic tray icon with menu integration
+- **Core Cryptography**: PQ encryption/decryption with Kyber + AES-GCM/ChaCha20-Poly1305 hybrid scheme
+- **Digital Signatures**: Dilithium-based signing (verification API needs update)
+- **Mnemonic Integration**: BIP39 key derivation from 12/24-word phrases with secure validation
+- **GUI Framework**: Cross-platform interface with Slint
+- **File Operations**: Text, file, and folder encryption/decryption with standardized extensions
+- **System Tray**: Enhanced tray icon with menu integration
 - **Security**: Secure memory management with zeroize
 - **Password Tools**: Secure password generation and strength assessment ✅
 - **Backup System**: Complete automated backup with file watching ✅
@@ -27,57 +27,55 @@ This document outlines the planned development roadmap for Cybou, the secure cry
 - **Advanced Cryptography**: Key rotation and multi-algorithm support ✅
   - Key versioning system with timestamp tracking
   - Automatic key rotation with backward compatibility
-  - Additional PQ algorithms (Falcon, SPHINCS+) integrated
   - Key management UI with version history
   - Key metadata export/import functionality
 - **Modular Architecture**: Refactored codebase with clear separation of concerns ✅
-  - Organized into focused modules (types, crypto, ui, backup, cloud)
-  - Comprehensive unit test coverage (55 tests)
+  - Organized into focused modules (types, crypto, ui, backup, cloud, windows)
+  - Comprehensive unit test coverage
   - Improved maintainability and code organization
 - **User Experience**: Enhanced interface with modern features ✅
-  - Dark Mode: System theme integration with toggle and automatic application
-  - Accessibility: Screen reader and keyboard navigation support framework
-  - Internationalization: Multi-language support with language selection (English, Spanish, French, German, Chinese)
+  - Multi-window architecture with dedicated function windows
+  - Main dashboard with key status and public key display
+  - Public key copy/export functionality
+  - File extension standardization (.cybou for encrypted, _decrypted for decrypted)
+- **Mnemonic Workflow**: Complete mnemonic-based security implementation ✅
+  - Automatic dashboard transition after key loading
+  - Secure key derivation and storage
+  - Public key management and export
 
 ## 🚀 Planned Features
 
-### Phase 1: Backup System Completion (v0.2.0) ✅ COMPLETED
+### Phase 1: UI Completion & Polish (v0.6.0)
 
-- [x] **File Watching**: Implement actual folder monitoring with `notify` crate
-- [x] **Deduplication**: Smart backup deduplication to avoid redundant storage
-- [x] **Backup Scheduling**: Configurable automatic backup intervals (UI ready, scheduling pending)
-- [x] **Backup Verification**: Integrity checking for backed up files
-- [x] **Progress Indicators**: Real-time backup progress in UI
+- [ ] **File Encryption UI**: Complete file encryption/decryption interface
+- [ ] **Digital Signatures Fix**: Update Dilithium verification API compatibility
+- [ ] **Folder Encryption UI**: Folder encryption/decryption interface
+- [ ] **Settings UI**: Application settings and configuration
+- [ ] **Key Management UI**: Enhanced key management interface
+- [ ] **UI Polish**: Consistent styling and user experience improvements
 
-### Phase 2: Cloud Integration (v0.3.0) ✅ COMPLETED
+### Phase 2: Cloud Integration Expansion (v0.7.0)
 
-- [x] **Cloud Storage API**: Abstract interface for cloud providers
-- [x] **AWS S3 Support**: Integration with Amazon S3
-- [x] **Encrypted Uploads**: End-to-end encrypted cloud storage
-- [x] **Multi-provider Framework**: Support structure for GCP/Azure
-- [ ] **Google Cloud Storage**: GCP integration (planned)
-- [ ] **Azure Blob Storage**: Microsoft Azure support (planned)
+- [ ] **Google Cloud Storage**: GCP integration
+- [ ] **Azure Blob Storage**: Microsoft Azure support
 - [ ] **Multi-region Replication**: Geographic redundancy options
+- [ ] **Cloud Sync**: Bidirectional synchronization with local files
 
-### Phase 3: Advanced Cryptography (v0.4.0) ✅ COMPLETED
+### Phase 3: Advanced Security Features (v0.8.0)
 
-- [x] **Additional PQ Algorithms**: Support for Falcon, SPHINCS+ signatures
-- [x] **Key Rotation**: Automatic key rotation with version management
-- [x] **Key Versioning**: Timestamp-based key history and backward compatibility
-- [x] **Key Management UI**: Interface for viewing and managing key versions
 - [ ] **Multi-signature**: Threshold cryptography support
 - [ ] **Hardware Security**: Integration with HSMs/TPM
 - [ ] **FIPS Compliance**: FIPS 140-3 validation preparation
+- [ ] **Key Persistence**: Secure key storage between sessions
 
-### Phase 4: Enhanced UX & Performance (v0.5.0)
+### Phase 4: Enhanced UX & Performance (v0.9.0)
 
 - [ ] **Performance Optimization**: Memory usage and processing speed improvements
 - [ ] **Advanced Accessibility**: Enhanced screen reader and keyboard navigation
 - [ ] **Additional Languages**: Support for Japanese, Korean, Russian, Arabic
-- [ ] **Hardware Security**: TPM/HSM integration for key storage
 - [ ] **Network Operations**: Secure file transfer and remote encryption
 
-### Phase 5: Performance & Scale (v0.6.0)
+### Phase 5: Performance & Scale (v1.0.0)
 
 - [ ] **Parallel Processing**: Multi-threaded encryption/decryption
 - [ ] **GPU Acceleration**: CUDA/OpenCL support for crypto operations
@@ -97,11 +95,9 @@ This document outlines the planned development roadmap for Cybou, the secure cry
 
 ### User Experience
 
-- [x] **Dark Mode**: System theme integration with toggle and automatic application
-- [x] **Accessibility**: Screen reader and keyboard navigation support framework
-- [x] **Internationalization**: Multi-language support with language selection (English, Spanish, French, German, Chinese)
 - [ ] **Mobile App**: iOS/Android companion apps
 - [ ] **Web Interface**: Browser-based access option
+- [ ] **Plugin System**: Extensible architecture for custom operations
 
 ### Platform Support
 
@@ -113,29 +109,34 @@ This document outlines the planned development roadmap for Cybou, the secure cry
 
 ## 📊 Metrics & Milestones
 
-### v0.3.0 (Q2 2026) ✅ COMPLETED
+### v0.5.1 (Current) ✅ COMPLETED
 
-- Cloud storage integration
-- AWS S3 support
-- Multi-provider framework
-- Performance optimizations
+- Mnemonic-based security implementation
+- Slint GUI framework migration
+- Public key display and export functionality
+- File extension standardization
+- Main dashboard with key status
 
-### v0.4.0 (Q3 2026) ✅ COMPLETED
+### v0.6.0 (Q1 2025) - NEXT
 
-- Advanced crypto algorithms (Falcon, SPHINCS+)
-- Key rotation and versioning system
-- Key management UI
-- Enhanced security features
+- Complete UI implementation for all features
+- Digital signatures verification fix
+- Settings and configuration UI
+- Enhanced key management
 
-### v0.5.0 (Q4 2026) - NEXT
+### v0.7.0 (Q2 2025)
 
-- Enhanced user experience features
-- Performance optimizations
-- Advanced accessibility support
+- Expanded cloud storage support
+- Multi-provider cloud integration
+- Cloud synchronization features
+
+### v0.8.0 (Q3 2025)
+
+- Advanced security features
 - Hardware security integration
-- Multi-language expansion
+- Key persistence between sessions
 
-### v1.0.0 (Q1 2027)
+### v1.0.0 (Q4 2025)
 
 - Production-ready release
 - Security audit completed
@@ -147,11 +148,12 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ### Priority Areas for Contributors
 
-1. **Backup System**: File watching and deduplication
-2. **Cloud Integration**: Storage provider APIs
-3. **Testing**: Unit and integration test coverage
-4. **Documentation**: User guides and API docs
-5. **Performance**: Optimization and benchmarking
+1. **UI Completion**: Implementing remaining UI components
+2. **API Updates**: Fixing Dilithium verification and other crypto APIs
+3. **Cloud Integration**: Additional storage provider support
+4. **Testing**: Unit and integration test coverage
+5. **Documentation**: User guides and API docs
+6. **Performance**: Optimization and benchmarking
 
 ## 📝 Notes
 
@@ -166,4 +168,4 @@ For roadmap discussions, feature requests, or contributions:
 
 - GitHub Issues: [Project Issues](https://github.com/username/cybou/issues)
 - Discussions: [Project Discussions](https://github.com/username/cybou/discussions)
-- Security: security@cybou-project.org
+- Security: `security@cybou-project.org`

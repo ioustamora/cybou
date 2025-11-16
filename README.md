@@ -10,17 +10,17 @@ A cross-platform Rust GUI application for secure cryptography using post-quantum
 - **Post-Quantum Cryptography**: Implements NIST-recommended PQ algorithms
   - Kyber (ML-KEM) for key encapsulation and encryption
   - Dilithium (ML-DSA) for digital signatures
-  - Falcon and SPHINCS+ additional signature algorithms
-- **Hybrid Encryption**: Combines PQ key exchange with AES-GCM for data encryption
+- **Hybrid Encryption**: Combines PQ key exchange with AES-GCM and ChaCha20-Poly1305 for data encryption
 - **Key Rotation**: Automatic key rotation with version management and backward compatibility
 - **Secure Memory**: Uses zeroize crate for secure memory wiping
+- **File Extensions**: Encrypted files use `.cybou` extension, decrypted files use `_decrypted` suffix
 
 ### 🖥️ User Interface
 
-- **Multi-Window Architecture**: Separate windows for different functions instead of tabs
-- **Dashboard**: Main window with aggregated statistics and quick actions
+- **Multi-Window Architecture**: Separate windows for different functions
+- **Dashboard**: Main window with key status, public key display, and quick actions
 - **System Tray Integration**: Enhanced tray menu for opening specific windows
-- **Native GUI**: Built with eframe/egui for cross-platform compatibility
+- **Native GUI**: Built with Slint for cross-platform compatibility
 - **File Dialogs**: Native OS file/folder selection dialogs
 
 ### 📁 Cryptographic Operations
@@ -28,9 +28,10 @@ A cross-platform Rust GUI application for secure cryptography using post-quantum
 - **Text Encryption/Decryption**: Encrypt and decrypt text with base64 encoding
 - **File Encryption/Decryption**: Secure file encryption with PQ + AES hybrid scheme
 - **Folder Encryption**: Archive and encrypt entire directories
-- **Digital Signatures**: Sign messages and verify signatures
+- **Digital Signatures**: Sign messages and verify signatures (verification API needs update)
 - **Password Generation**: Generate secure random passwords with customizable complexity
 - **Password Assessment**: Analyze password strength and security
+- **Key Management**: View and export public keys, copy to clipboard
 - **Backup System**: Automated deduplicating backup with real-time file watching ✅
   - File system monitoring with change detection
   - Content-based deduplication using BLAKE3
@@ -41,10 +42,6 @@ A cross-platform Rust GUI application for secure cryptography using post-quantum
   - Secure upload/download to AWS S3 buckets
   - Integrated with existing encryption framework
   - Multi-cloud provider support (AWS, GCP, Azure planned)
-- **Key Management**: Advanced key lifecycle management
-  - Key version tracking and rotation
-  - Key metadata export/import
-  - Key statistics and analytics
 
 ## Installation
 
@@ -69,16 +66,18 @@ cargo run --release
 
 ## Usage
 
-1. **First Launch**: Enter a valid 12 or 24-word BIP39 mnemonic phrase
-2. **Key Derivation**: The app derives PQ keys and master encryption key from your mnemonic
-3. **Operations**:
-   - **Text Tab**: Encrypt/decrypt text messages
-   - **File Tab**: Encrypt/decrypt files
-   - **Sign/Verify Tab**: Create and verify digital signatures
-   - **Folder Tab**: Encrypt entire folders
-   - **Backups Tab**: Configure automated backup system
-   - **Cloud Storage Tab**: Upload/download encrypted files to/from cloud storage
-   - **Key Management Tab**: View key versions, rotate keys, and manage cryptographic security
+1. **First Launch**: The app starts with the Mnemonic Management window for key setup
+2. **Key Derivation**: Enter a valid 12 or 24-word BIP39 mnemonic phrase to derive PQ keys
+3. **Main Dashboard**: After key loading, access all cryptographic functions
+4. **Operations**:
+   - **Text Encryption**: Encrypt/decrypt text messages
+   - **File Encryption**: Encrypt/decrypt files (creates `.cybou` files)
+   - **Digital Signatures**: Create and verify digital signatures
+   - **Folder Encryption**: Encrypt entire folders (creates `.tar.cybou` files)
+   - **Password Tools**: Generate and assess password strength
+   - **Backup Management**: Configure automated backup system
+   - **Cloud Storage**: Upload/download encrypted files to/from cloud storage
+   - **Key Management**: View and export public keys
 
 ## Security Notes
 
@@ -86,19 +85,19 @@ cargo run --release
 - **Key Storage**: Keys are derived on-demand and securely wiped after use
 - **PQ Algorithms**: Uses NIST-standard post-quantum cryptography resistant to quantum attacks
 - **Hybrid Scheme**: Combines PQ security with proven symmetric encryption
+- **File Extensions**: Encrypted files use `.cybou` extension for easy identification
 
 ## Dependencies
 
 ### Runtime Dependencies
 
-- `eframe` / `egui`: GUI framework
+- `slint`: GUI framework
 - `bip39`: BIP39 mnemonic handling
 - `pbkdf2`: Password-based key derivation
 - `pqc_kyber`: Kyber post-quantum encryption
 - `pqc_dilithium`: Dilithium post-quantum signatures
-- `falcon-rust`: Falcon post-quantum signatures
-- `pqcrypto-sphincsplus`: SPHINCS+ post-quantum signatures
 - `aes-gcm`: AES-GCM symmetric encryption
+- `chacha20poly1305`: ChaCha20-Poly1305 symmetric encryption
 - `base64`: Safe encoding
 - `zeroize`: Secure memory wiping
 - `rand`: Cryptographic randomness
@@ -107,7 +106,9 @@ cargo run --release
 - `tray-icon`: System tray integration
 - `notify`: File system monitoring
 - `blake3`: Fast cryptographic hashing
+- `clipboard`: Clipboard operations
 - `aws-config` / `aws-sdk-s3`: AWS S3 cloud storage integration
+- `hex`: Hexadecimal encoding
 
 ## Architecture
 
@@ -115,22 +116,37 @@ The application follows a modular architecture for better maintainability and se
 
 ```text
 src/
-├── main.rs              # Application entry point and system tray integration
+├── main.rs              # Application entry point, window management, system tray
 ├── types.rs             # Core data structures and type definitions
 ├── crypto.rs            # Cryptographic operations and key management
 ├── ui.rs                # User interface components and rendering
 ├── backup.rs            # Automated backup system and file monitoring
-└── cloud.rs             # Cloud storage operations and integrations
+├── cloud.rs             # Cloud storage operations and integrations
+└── windows.rs           # Windows-specific functionality
+
+ui/
+├── main_dashboard.slint    # Main dashboard UI
+├── mnemonic_management.slint # Mnemonic input and validation UI
+├── text_encryption.slint   # Text encryption UI
+├── file_encryption.slint   # File encryption UI
+├── digital_signatures.slint # Digital signatures UI
+├── password_tools.slint    # Password generation UI
+├── backup_management.slint # Backup configuration UI
+├── cloud_storage.slint     # Cloud storage UI
+├── key_management.slint    # Key management UI
+├── settings.slint          # Settings UI
+└── folder_encryption.slint # Folder encryption UI
 ```
 
 ### Module Responsibilities
 
-- **`main.rs`**: Application initialization, system tray management, eframe app implementation
+- **`main.rs`**: Application initialization, window management, system tray, Slint integration
 - **`types.rs`**: Data structures (`App`, `SensitiveData`, `KeyVersion`), key lifecycle management
 - **`crypto.rs`**: Encryption/decryption, digital signatures, password generation and assessment
-- **`ui.rs`**: GUI components, tab management, user interaction handling
+- **`ui.rs`**: GUI components, window coordination, user interaction handling
 - **`backup.rs`**: File watching, deduplication, backup lifecycle management
 - **`cloud.rs`**: Cloud provider integrations, upload/download operations
+- **`windows.rs`**: Windows-specific functionality
 
 ## Contributing
 

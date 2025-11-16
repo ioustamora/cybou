@@ -352,8 +352,8 @@ impl App {
                 self.last_status = "Text decrypted successfully".to_string();
             }
             Err(e) => {
-                self.text_output = String::new();
-                self.last_status = e;
+                self.text_output = e;
+                self.last_status = "Text decryption failed".to_string();
             }
         }
     }
@@ -494,7 +494,7 @@ impl App {
                      Created: {}",
                      current.id,
                      hex::encode(&current.kyber_keys.public),
-                     hex::encode(&current.dilithium_keys.public_key_bytes()),
+                     hex::encode(&current.dilithium_keys.public),
                      current.timestamp.duration_since(std::time::UNIX_EPOCH)
                          .unwrap_or_default().as_secs())
         } else {

@@ -7,7 +7,7 @@ export component MainDashboard inherits Window {
     height: 600px;
 
     property <string> status-text: "Ready";
-    property <string> last-status: "";
+    in-out property <string> last-status: "";
     in-out property <bool> keys-loaded: false;
     property <bool> backup-active: false;
     property <int> backup-file-count: 0;
@@ -15,12 +15,14 @@ export component MainDashboard inherits Window {
     property <int> open-windows: 1;
     property <int> total-windows: 10;
 
-    property <string> public-key-info: "No keys loaded";
-    property <bool> can-copy-public-key: false;
-    property <bool> can-save-public-key: false;
+    in-out property <string> public-key-info: "No keys loaded";
+    in-out property <bool> can-copy-public-key: false;
+    in-out property <bool> can-save-public-key: false;
 
-    callback copy-public-key();
-    callback save-public-key();
+    callback open_window(string);
+    callback clear_status();
+    callback copy_public_key();
+    callback save_public_key();
 
     VerticalBox {
         // Header
@@ -48,46 +50,46 @@ export component MainDashboard inherits Window {
                 Button {
                     text: "📝 Text Encryption (Ctrl+T)";
                     enabled: keys-loaded;
-                    clicked => { open-window("text-encryption"); }
+                    clicked => { open_window("text-encryption"); }
                 }
                 Button {
                     text: "📁 File Encryption (Ctrl+F)";
                     enabled: keys-loaded;
-                    clicked => { open-window("file-encryption"); }
+                    clicked => { open_window("file-encryption"); }
                 }
                 Button {
                     text: "✍️ Digital Signatures (Ctrl+S)";
                     enabled: keys-loaded;
-                    clicked => { open-window("digital-signatures"); }
+                    clicked => { open_window("digital-signatures"); }
                 }
                 Button {
                     text: "📂 Folder Encryption (Ctrl+D)";
                     enabled: keys-loaded;
-                    clicked => { open-window("folder-encryption"); }
+                    clicked => { open_window("folder-encryption"); }
                 }
                 Button {
                     text: "🔧 Password Tools (Ctrl+P)";
                     enabled: keys-loaded;
-                    clicked => { open-window("password-tools"); }
+                    clicked => { open_window("password-tools"); }
                 }
                 Button {
                     text: "💾 Backup Management (Ctrl+B)";
                     enabled: keys-loaded;
-                    clicked => { open-window("backup-management"); }
+                    clicked => { open_window("backup-management"); }
                 }
                 Button {
                     text: "☁️ Cloud Storage (Ctrl+C)";
                     enabled: keys-loaded;
-                    clicked => { open-window("cloud-storage"); }
+                    clicked => { open_window("cloud-storage"); }
                 }
                 Button {
                     text: "🔑 Key Management (Ctrl+K)";
                     enabled: keys-loaded;
-                    clicked => { open-window("key-management"); }
+                    clicked => { open_window("key-management"); }
                 }
                 Button {
                     text: "🔑 Mnemonic Management (Ctrl+M)";
-                    clicked => { open-window("mnemonic-management"); }
+                    clicked => { open_window("mnemonic-management"); }
                 }
             }
         }
@@ -105,23 +107,23 @@ export component MainDashboard inherits Window {
                     HorizontalBox {
                         Button {
                             text: "🔐 Encrypt Text";
-                            clicked => { open-window("text-encryption"); }
+                            clicked => { open_window("text-encryption"); }
                         }
                         Button {
                             text: "📁 Encrypt File";
-                            clicked => { open-window("file-encryption"); }
+                            clicked => { open_window("file-encryption"); }
                         }
                         Button {
                             text: "✍️ Sign Message";
-                            clicked => { open-window("digital-signatures"); }
+                            clicked => { open_window("digital-signatures"); }
                         }
                         Button {
                             text: "🔑 Generate Password";
-                            clicked => { open-window("password-tools"); }
+                            clicked => { open_window("password-tools"); }
                         }
                         Button {
                             text: "💾 Start Backup";
-                            clicked => { open-window("backup-management"); }
+                            clicked => { open_window("backup-management"); }
                         }
                     }
                 }
@@ -154,12 +156,12 @@ export component MainDashboard inherits Window {
                                     Button {
                                         text: "📋 Copy Keys";
                                         enabled: can-copy-public-key;
-                                        clicked => { copy-public-key(); }
+                                        clicked => { copy_public_key(); }
                                     }
                                     Button {
                                         text: "💾 Save .cyboukey File";
                                         enabled: can-save-public-key;
-                                        clicked => { save-public-key(); }
+                                        clicked => { save_public_key(); }
                                     }
                                 }
                             }
@@ -226,7 +228,7 @@ export component MainDashboard inherits Window {
             HorizontalBox { width: 1px; } // Spacer
             Button {
                 text: "🗑️ Clear";
-                clicked => { clear-status(); }
+                clicked => { clear_status(); }
             }
         }
     }

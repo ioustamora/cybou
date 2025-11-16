@@ -215,9 +215,10 @@ impl WindowManager {
     fn setup_main_dashboard_callbacks(&self, window: &MainDashboard) {
         let weak_window = window.as_weak();
         let app_clone = self.app.clone();
+        let weak_for_open = weak_window.clone();
         window.on_open_window(move |window_type: slint::SharedString| {
             let app = app_clone.clone();
-            let weak = weak_window.clone();
+            let weak = weak_for_open.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
                     // Check if keys are loaded
@@ -285,7 +286,7 @@ impl WindowManager {
             let weak = weak_copy.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
-                    let mut app = types::App::default();
+                    let app = types::App::default();
                     let public_key_info = app.get_public_key_info();
                     if public_key_info == "No keys loaded" {
                         window.set_last_status("No keys available to copy".into());
@@ -311,7 +312,7 @@ impl WindowManager {
             let weak = weak_save.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
-                    let mut app = types::App::default();
+                    let app = types::App::default();
                     let public_key_info = app.get_public_key_info();
                     if public_key_info == "No keys loaded" {
                         window.set_last_status("No keys available to save".into());
