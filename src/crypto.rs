@@ -77,8 +77,11 @@ pub fn verify_signature(message: &str, signature_b64: &str, dilithium_keys: &pqc
     let signature = general_purpose::STANDARD.decode(signature_b64)
         .map_err(|_| "Invalid signature base64".to_string())?;
 
-    // TODO: Fix dilithium verify API - signature format issue
-    Err("Signature verification not implemented yet - API compatibility issue".to_string())
+    match pqc_dilithium::verify(&signature, message.as_bytes(), &dilithium_keys.public) {
+        Ok(()) => Ok(true),
+        Err(pqc_dilithium::SignError::Input) => Err("Invalid signature format".to_string()),
+        Err(pqc_dilithium::SignError::Verify) => Ok(false),
+    }
 }
 
 /// Encrypts a file using master key
@@ -353,7 +356,7 @@ mod tests {
         app.verify_text = message.to_string();
         app.verify_signature = app.sign_signature.clone();
         app.verify_message();
-        assert_eq!(app.text_output, "Signature verification not implemented yet - API compatibility issue");
+        assert_eq!(app.text_output, "Valid signature");
     }
 
     #[test]

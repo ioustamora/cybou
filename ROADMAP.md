@@ -7,7 +7,7 @@ This document outlines the planned development roadmap for Cybou, the secure cry
 ### ✅ Completed Features
 
 - **Core Cryptography**: PQ encryption/decryption with Kyber + AES-GCM/ChaCha20-Poly1305 hybrid scheme
-- **Digital Signatures**: Dilithium-based signing (verification API needs update)
+- **Digital Signatures**: Dilithium-based signing and verification with post-quantum security
 - **Mnemonic Integration**: BIP39 key derivation from 12/24-word phrases with secure validation
 - **GUI Framework**: Cross-platform interface with Slint
 - **File Operations**: Text, file, and folder encryption/decryption with standardized extensions
@@ -48,7 +48,6 @@ This document outlines the planned development roadmap for Cybou, the secure cry
 ### Phase 1: UI Completion & Polish (v0.6.0)
 
 - [ ] **File Encryption UI**: Complete file encryption/decryption interface
-- [ ] **Digital Signatures Fix**: Update Dilithium verification API compatibility
 - [ ] **Folder Encryption UI**: Folder encryption/decryption interface
 - [ ] **Settings UI**: Application settings and configuration
 - [ ] **Key Management UI**: Enhanced key management interface
