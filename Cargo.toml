@@ -2,11 +2,10 @@
 name = "cybou"
 version = "0.5.1"
 edition = "2021"
+build = "build.rs"
 
 [dependencies]
 slint = "1.6"
-eframe = "0.25"
-egui = "0.25"
 bip39 = "2.0"
 pbkdf2 = { version = "0.12", features = ["std"] }
 aes-gcm = "0.10"
@@ -34,3 +33,6 @@ aws-types = "1.0"
 image = "0.24"
 tempfile = "3.0"
 chrono = { version = "0.4", features = ["serde"] }
+
+[build-dependencies]
+slint-build = "1.6"

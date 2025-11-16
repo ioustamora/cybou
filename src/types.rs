@@ -155,3 +155,153 @@ pub struct KeyStatistics {
     pub oldest_version: Option<SystemTime>,
     pub newest_version: Option<SystemTime>,
 }
+
+/// Main application state structure
+#[derive(Clone)]
+pub struct App {
+    /// Sensitive cryptographic data with key versioning
+    pub sensitive_data: SensitiveData,
+    /// Window management state for multi-window GUI
+    pub windows: std::collections::HashMap<WindowType, WindowState>,
+}
+
+impl Default for App {
+    fn default() -> Self {
+        Self {
+            sensitive_data: SensitiveData::new(
+                rand::random(),
+                pqc_kyber::keypair(&mut rand::thread_rng()).unwrap(),
+                pqc_dilithium::Keypair::generate(),
+            ),
+            windows: init_windows(),
+        }
+    }
+}
+
+impl App {
+    /// Opens a specific window type
+    pub fn open_window(&mut self, window_type: WindowType) {
+        if let Some(window) = self.windows.get_mut(&window_type) {
+            window.is_open = true;
+        }
+    }
+
+    /// Closes a specific window type
+    pub fn close_window(&mut self, window_type: WindowType) {
+        if let Some(window) = self.windows.get_mut(&window_type) {
+            window.is_open = false;
+        }
+    }
+
+    /// Toggles a window's open/closed state
+    pub fn toggle_window(&mut self, window_type: WindowType) {
+        if let Some(window) = self.windows.get_mut(&window_type) {
+            window.is_open = !window.is_open;
+        }
+    }
+
+    /// Checks if a window is currently open
+    pub fn is_window_open(&self, window_type: WindowType) -> bool {
+        self.windows.get(&window_type).map(|w| w.is_open).unwrap_or(false)
+    }
+
+    /// Gets the title for a window type
+    pub fn get_window_title(&self, window_type: WindowType) -> &str {
+        self.windows.get(&window_type).map(|w| w.title.as_str()).unwrap_or("Unknown Window")
+    }
+}
+
+/// Types of windows available in the application
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum WindowType {
+    MainDashboard,
+    TextEncryption,
+    FileEncryption,
+    DigitalSignatures,
+    PasswordTools,
+    BackupManagement,
+    CloudStorage,
+    KeyManagement,
+    Settings,
+    FolderEncryption,
+}
+
+/// State of an individual window
+#[derive(Clone)]
+pub struct WindowState {
+    /// Whether the window is currently open
+    pub is_open: bool,
+    /// Window title
+    pub title: String,
+    /// Window dimensions (width, height)
+    pub size: (u32, u32),
+}
+
+/// Initializes the default window states
+pub fn init_windows() -> std::collections::HashMap<WindowType, WindowState> {
+    use std::collections::HashMap;
+
+    let mut windows = HashMap::new();
+
+    windows.insert(WindowType::MainDashboard, WindowState {
+        is_open: true, // Main dashboard starts open
+        title: "Cybou - Main Dashboard".to_string(),
+        size: (800, 600),
+    });
+
+    windows.insert(WindowType::TextEncryption, WindowState {
+        is_open: false,
+        title: "Cybou - Text Encryption".to_string(),
+        size: (700, 500),
+    });
+
+    windows.insert(WindowType::FileEncryption, WindowState {
+        is_open: false,
+        title: "Cybou - File Encryption".to_string(),
+        size: (700, 500),
+    });
+
+    windows.insert(WindowType::DigitalSignatures, WindowState {
+        is_open: false,
+        title: "Cybou - Digital Signatures".to_string(),
+        size: (700, 500),
+    });
+
+    windows.insert(WindowType::PasswordTools, WindowState {
+        is_open: false,
+        title: "Cybou - Password Tools".to_string(),
+        size: (600, 400),
+    });
+
+    windows.insert(WindowType::BackupManagement, WindowState {
+        is_open: false,
+        title: "Cybou - Backup Management".to_string(),
+        size: (800, 600),
+    });
+
+    windows.insert(WindowType::CloudStorage, WindowState {
+        is_open: false,
+        title: "Cybou - Cloud Storage".to_string(),
+        size: (800, 600),
+    });
+
+    windows.insert(WindowType::KeyManagement, WindowState {
+        is_open: false,
+        title: "Cybou - Key Management".to_string(),
+        size: (700, 500),
+    });
+
+    windows.insert(WindowType::Settings, WindowState {
+        is_open: false,
+        title: "Cybou - Settings".to_string(),
+        size: (600, 500),
+    });
+
+    windows.insert(WindowType::FolderEncryption, WindowState {
+        is_open: false,
+        title: "Cybou - Folder Encryption".to_string(),
+        size: (700, 500),
+    });
+
+    windows
+}
