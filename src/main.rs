@@ -8,6 +8,7 @@ mod crypto;
 mod ui;
 mod backup;
 mod cloud;
+mod windows;
 
 use eframe::egui::Context;
 use tray_icon::{TrayIconBuilder, Icon, menu::Menu, menu::MenuItem, TrayIconEvent};
@@ -64,7 +65,15 @@ impl eframe::App for types::App {
         if self.tray_icon.is_none() {
             let icon = Icon::from_rgba(vec![0, 255, 0, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 255, 0, 255], 2, 2).unwrap();
             let menu = Menu::new();
-            menu.append(&MenuItem::new("Show Window", true, None)).unwrap();
+            menu.append(&MenuItem::new("Show Dashboard", true, None)).unwrap();
+            menu.append(&MenuItem::new("Text Encryption", true, None)).unwrap();
+            menu.append(&MenuItem::new("File Encryption", true, None)).unwrap();
+            menu.append(&MenuItem::new("Digital Signatures", true, None)).unwrap();
+            menu.append(&MenuItem::new("Password Tools", true, None)).unwrap();
+            menu.append(&MenuItem::new("Backup Management", true, None)).unwrap();
+            menu.append(&MenuItem::new("Cloud Storage", true, None)).unwrap();
+            menu.append(&MenuItem::new("Key Management", true, None)).unwrap();
+            menu.append(&MenuItem::new("Settings", true, None)).unwrap();
             menu.append(&MenuItem::new("Quit", true, None)).unwrap();
             self.tray_icon = Some(TrayIconBuilder::new()
                 .with_menu(Box::new(menu))
@@ -74,11 +83,41 @@ impl eframe::App for types::App {
                 .unwrap());
         }
 
-        // Show mnemonic modal or main UI
+        // Handle tray icon events
+        if let Ok(event) = TrayIconEvent::receiver().try_recv() {
+            match event {
+                TrayIconEvent::Click { id, .. } => {
+                    if id == "Quit" {
+                        std::process::exit(0);
+                    } else if id == "Show Dashboard" {
+                        self.open_window(crate::windows::WindowType::Main);
+                    } else if id == "Text Encryption" {
+                        self.open_window(crate::windows::WindowType::TextEncryption);
+                    } else if id == "File Encryption" {
+                        self.open_window(crate::windows::WindowType::FileEncryption);
+                    } else if id == "Digital Signatures" {
+                        self.open_window(crate::windows::WindowType::DigitalSignatures);
+                    } else if id == "Password Tools" {
+                        self.open_window(crate::windows::WindowType::PasswordTools);
+                    } else if id == "Backup Management" {
+                        self.open_window(crate::windows::WindowType::BackupManagement);
+                    } else if id == "Cloud Storage" {
+                        self.open_window(crate::windows::WindowType::CloudStorage);
+                    } else if id == "Key Management" {
+                        self.open_window(crate::windows::WindowType::KeyManagement);
+                    } else if id == "Settings" {
+                        self.open_window(crate::windows::WindowType::Settings);
+                    }
+                }
+                _ => {}
+            }
+        }
+
+        // Show mnemonic modal or main windows
         if self.show_mnemonic_modal {
             self.show_mnemonic_modal(ctx);
         } else {
-            self.show_main_ui(ctx);
+            self.render_windows(ctx);
         }
     }
 }

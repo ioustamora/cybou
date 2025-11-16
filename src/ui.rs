@@ -3,7 +3,7 @@
 //! This module contains all UI components and rendering logic for the Cybou application.
 
 use crate::types::App;
-use eframe::egui::{CentralPanel, Context, Ui, Window};
+use eframe::egui::{Context, Ui, Window};
 
 impl App {
     /// Shows the mnemonic input modal on first launch
@@ -40,91 +40,8 @@ impl App {
 
     /// Renders the main application UI with tabs
     pub fn show_main_ui(&mut self, ctx: &Context) {
-        // Apply current theme
-        self.apply_theme(ctx);
-
-        CentralPanel::default().show(ctx, |ui| {
-            // Header with title and status
-            ui.vertical(|ui| {
-                ui.horizontal(|ui| {
-                    ui.heading("🔐 Cybou - Secure Cryptography");
-                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                        if ui.button("ℹ️ About").clicked() {
-                            self.show_about_modal = true;
-                        }
-                    });
-                });
-
-                ui.separator();
-
-                // Tab navigation with better styling
-                ui.horizontal_wrapped(|ui| {
-                    let tabs = [
-                        ("📝 Text", 0),
-                        ("📁 Files", 1),
-                        ("✍️ Sign/Verify", 2),
-                        ("📂 Folders", 3),
-                        ("🔧 Password Tools", 4),
-                        ("💾 Backups", 5),
-                        ("☁️ Cloud", 6),
-                        ("🔑 Keys", 7),
-                        ("⚙️ Settings", 8),
-                    ];
-
-                    for (label, tab_id) in tabs {
-                        let selected = self.current_tab == tab_id;
-                        if ui.selectable_label(selected, label).clicked() {
-                            self.current_tab = tab_id;
-                        }
-                    }
-                });
-
-                ui.separator();
-
-                // Main content area
-                egui::ScrollArea::vertical().show(ui, |ui| {
-                    match self.current_tab {
-                        0 => self.show_text_encrypt_decrypt(ui),
-                        1 => self.show_file_encrypt_decrypt(ui),
-                        2 => self.show_sign_verify(ui),
-                        3 => self.show_folder_encrypt(ui),
-                        4 => self.show_password_tools(ui),
-                        5 => self.show_backups(ui),
-                        6 => self.show_cloud_storage(ui),
-                        7 => self.show_key_management(ui),
-                        8 => self.show_settings(ui),
-                        _ => {}
-                    }
-                });
-
-                ui.separator();
-
-                // Status bar with better styling
-                ui.horizontal(|ui| {
-                    ui.label("📊 Status:");
-                    ui.colored_label(
-                        if self.last_status.contains("success") || self.last_status.contains("Success") {
-                            egui::Color32::from_rgb(0, 150, 0)
-                        } else if self.last_status.contains("failed") || self.last_status.contains("Failed") || self.last_status.contains("error") {
-                            egui::Color32::from_rgb(200, 0, 0)
-                        } else {
-                            egui::Color32::from_rgb(100, 100, 100)
-                        },
-                        &self.last_status
-                    );
-                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                        if ui.button("🗑️ Clear").clicked() {
-                            self.last_status.clear();
-                        }
-                    });
-                });
-            });
-        });
-
-        // Show about modal if requested
-        if self.show_about_modal {
-            self.show_about_modal(ctx);
-        }
+        // This function is now deprecated - using window system instead
+        self.render_windows(ctx);
     }
 
     /// Renders the text encryption/decryption tab

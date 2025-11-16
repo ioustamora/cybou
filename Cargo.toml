@@ -4,8 +4,7 @@ version = "0.5.1"
 edition = "2021"
 
 [dependencies]
-eframe = "0.27"
-egui = "0.27"
+slint = "1.6"
 bip39 = "2.0"
 pbkdf2 = { version = "0.12", features = ["std"] }
 aes-gcm = "0.10"

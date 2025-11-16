@@ -218,11 +218,14 @@ pub struct App {
     pub dark_mode: bool,
     pub language: String,
     pub enable_accessibility: bool,
+
+    // Window management
+    pub windows: std::collections::HashMap<crate::windows::WindowType, crate::windows::WindowState>,
 }
 
 impl Default for App {
     fn default() -> Self {
-        Self {
+        let mut app = Self {
             show_mnemonic_modal: true,
             show_about_modal: false,
             mnemonic_input: String::new(),
@@ -264,7 +267,14 @@ impl Default for App {
             dark_mode: false,
             language: "en".to_string(),
             enable_accessibility: false,
-        }
+
+            // Window management - will be initialized later
+            windows: std::collections::HashMap::new(),
+        };
+
+        // Initialize windows
+        app.init_windows();
+        app
     }
 }
 

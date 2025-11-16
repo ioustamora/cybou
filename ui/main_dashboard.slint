@@ -1,0 +1,195 @@
+// Main Dashboard Window
+import { Button, GroupBox, HorizontalBox, ScrollView, VerticalBox } from "std-widgets.slint";
+
+export component MainDashboard inherits Window {
+    title: "Cybou - Secure Cryptography Dashboard";
+    width: 800px;
+    height: 600px;
+
+    property <string> status-text: "Ready";
+    property <string> last-status: "";
+    property <bool> keys-loaded: false;
+    property <bool> backup-active: false;
+    property <int> backup-file-count: 0;
+    property <string> cloud-status: "Not Configured";
+    property <int> open-windows: 1;
+    property <int> total-windows: 10;
+
+    callback open-window(string);
+    callback clear-status();
+
+    VerticalBox {
+        // Header
+        HorizontalBox {
+            Text {
+                text: "🔐 Cybou - Secure Cryptography Dashboard";
+                font-size: 18px;
+                font-weight: 600;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "ℹ️ About";
+                clicked => { /* TODO: Show about dialog */ }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Main Menu
+        GroupBox {
+            title: "📋 Main Menu - Click to open windows, or use keyboard shortcuts:";
+
+            HorizontalBox {
+                Button {
+                    text: "📝 Text Encryption (Ctrl+T)";
+                    clicked => { open-window("text-encryption"); }
+                }
+                Button {
+                    text: "📁 File Encryption (Ctrl+F)";
+                    clicked => { open-window("file-encryption"); }
+                }
+                Button {
+                    text: "✍️ Digital Signatures (Ctrl+S)";
+                    clicked => { open-window("digital-signatures"); }
+                }
+                Button {
+                    text: "📂 Folder Encryption (Ctrl+D)";
+                    clicked => { open-window("folder-encryption"); }
+                }
+                Button {
+                    text: "🔧 Password Tools (Ctrl+P)";
+                    clicked => { open-window("password-tools"); }
+                }
+                Button {
+                    text: "💾 Backup Management (Ctrl+B)";
+                    clicked => { open-window("backup-management"); }
+                }
+                Button {
+                    text: "☁️ Cloud Storage (Ctrl+C)";
+                    clicked => { open-window("cloud-storage"); }
+                }
+                Button {
+                    text: "🔑 Key Management (Ctrl+K)";
+                    clicked => { open-window("key-management"); }
+                }
+                Button {
+                    text: "⚙️ Settings (Ctrl+G)";
+                    clicked => { open-window("settings"); }
+                }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Dashboard Content
+        ScrollView {
+            VerticalBox {
+                // Quick Actions
+                GroupBox {
+                    title: "🚀 Quick Actions";
+
+                    HorizontalBox {
+                        Button {
+                            text: "🔐 Encrypt Text";
+                            clicked => { open-window("text-encryption"); }
+                        }
+                        Button {
+                            text: "📁 Encrypt File";
+                            clicked => { open-window("file-encryption"); }
+                        }
+                        Button {
+                            text: "✍️ Sign Message";
+                            clicked => { open-window("digital-signatures"); }
+                        }
+                        Button {
+                            text: "🔑 Generate Password";
+                            clicked => { open-window("password-tools"); }
+                        }
+                        Button {
+                            text: "💾 Start Backup";
+                            clicked => { open-window("backup-management"); }
+                        }
+                    }
+                }
+
+                // System Status
+                GroupBox {
+                    title: "🔄 System Status";
+
+                    VerticalBox {
+                        HorizontalBox {
+                            Text { text: "🔑 Cryptographic Keys:"; }
+                            Text {
+                                text: keys-loaded ? "Loaded ✓" : "Not Loaded ✗";
+                                color: keys-loaded ? #00aa00 : #aa0000;
+                            }
+                        }
+                        HorizontalBox {
+                            Text { text: "💾 Backup Service:"; }
+                            Text {
+                                text: backup-active ? "Active ✓" : "Inactive";
+                                color: backup-active ? #00aa00 : #666666;
+                            }
+                            if (backup-active): Text {
+                                text: "(" + backup-file-count + " files backed up)";
+                            }
+                        }
+                        HorizontalBox {
+                            Text { text: "☁️ Cloud Storage:"; }
+                            Text {
+                                text: cloud-status;
+                                color: cloud-status == "Not Configured" ? #666666 :
+                                       cloud-status == "Connected ✓" ? #00aa00 : #aaaa00;
+                            }
+                        }
+                        HorizontalBox {
+                            Text { text: "🖼️ Open Windows:"; }
+                            Text { text: open-windows + " of " + total-windows; }
+                        }
+                    }
+                }
+
+                // Recent Activity
+                GroupBox {
+                    title: "📋 Recent Activity";
+
+                    VerticalBox {
+                        Text { text: "Last operation:"; }
+                        Text { text: last-status; }
+                    }
+                }
+
+                // Tips
+                GroupBox {
+                    title: "💡 Quick Tips";
+
+                    VerticalBox {
+                        Text { text: "• Use the menu above to open specific tools"; }
+                        Text { text: "• Check system status for service availability"; }
+                        Text { text: "• Monitor backup activity in the status bar"; }
+                        Text { text: "• Keep your cryptographic keys secure"; }
+                    }
+                }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Status Bar
+        HorizontalBox {
+            Text { text: "📊 Status:"; }
+            Text {
+                text: status-text;
+                color: status-text == "Ready" ? #666666 : #00aa00;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "🗑️ Clear";
+                clicked => { clear-status(); }
+            }
+        }
+    }
+}

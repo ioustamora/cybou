@@ -17,9 +17,10 @@ A cross-platform Rust GUI application for secure cryptography using post-quantum
 
 ### 🖥️ User Interface
 
+- **Multi-Window Architecture**: Separate windows for different functions instead of tabs
+- **Dashboard**: Main window with aggregated statistics and quick actions
+- **System Tray Integration**: Enhanced tray menu for opening specific windows
 - **Native GUI**: Built with eframe/egui for cross-platform compatibility
-- **System Tray**: Minimizable to system tray with popup menu
-- **Tabbed Interface**: Organized tabs for different cryptographic operations
 - **File Dialogs**: Native OS file/folder selection dialogs
 
 ### 📁 Cryptographic Operations
