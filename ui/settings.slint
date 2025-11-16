@@ -1,0 +1,148 @@
+// Settings Window
+import { Button, CheckBox, ComboBox, GroupBox, HorizontalBox, LineEdit, ScrollView, SpinBox, VerticalBox } from "std-widgets.slint";
+
+export component SettingsWindow inherits Window {
+    title: "Cybou - Settings";
+    width: 600px;
+    height: 500px;
+
+    property <string> theme: "System";
+    property <bool> auto-save: true;
+    property <bool> show-notifications: true;
+    property <bool> start-minimized: false;
+    property <int> max-log-entries: 1000;
+    property <string> default-algorithm: "Kyber + AES-GCM (Hybrid)";
+    property <bool> enable-key-rotation: true;
+    property <int> key-rotation-days: 90;
+    property <string> status: "Ready";
+
+    callback save-settings();
+    callback reset-settings();
+    callback export-settings();
+    callback import-settings();
+
+    VerticalBox {
+        // Header
+        HorizontalBox {
+            Text {
+                text: "⚙️ Settings";
+                font-size: 16px;
+                font-weight: 600;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "❌ Close";
+                clicked => { /* TODO: Close window */ }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // General Settings
+        GroupBox {
+            title: "🎨 General";
+
+            VerticalBox {
+                HorizontalBox {
+                    Text { text: "Theme:"; width: 80px; }
+                    ComboBox {
+                        model: ["System", "Light", "Dark"];
+                        current-value: theme;
+                        selected(value) => { theme = value; }
+                    }
+                }
+                CheckBox {
+                    text: "Auto-save settings";
+                    checked <=> auto-save;
+                }
+                CheckBox {
+                    text: "Show notifications";
+                    checked <=> show-notifications;
+                }
+                CheckBox {
+                    text: "Start minimized to tray";
+                    checked <=> start-minimized;
+                }
+                HorizontalBox {
+                    Text { text: "Max log entries:"; width: 120px; }
+                    SpinBox {
+                        value <=> max-log-entries;
+                        minimum: 100;
+                        maximum: 10000;
+                    }
+                }
+            }
+        }
+
+        // Cryptography Settings
+        GroupBox {
+            title: "🔐 Cryptography";
+
+            VerticalBox {
+                HorizontalBox {
+                    Text { text: "Default algorithm:"; width: 130px; }
+                    ComboBox {
+                        model: ["Kyber + AES-GCM (Hybrid)", "Kyber + ChaCha20-Poly1305", "AES-GCM Only"];
+                        current-value: default-algorithm;
+                        selected(value) => { default-algorithm = value; }
+                    }
+                }
+                CheckBox {
+                    text: "Enable automatic key rotation";
+                    checked <=> enable-key-rotation;
+                }
+                HorizontalBox {
+                    Text { text: "Key rotation interval (days):"; width: 170px; }
+                    SpinBox {
+                        value <=> key-rotation-days;
+                        minimum: 30;
+                        maximum: 365;
+                        enabled: enable-key-rotation;
+                    }
+                }
+            }
+        }
+
+        // Security Settings
+        GroupBox {
+            title: "🛡️ Security";
+
+            VerticalBox {
+                Text { text: "Additional security settings will be available here."; }
+                Text { text: "• Memory clearing options"; }
+                Text { text: "• Secure delete settings"; }
+                Text { text: "• Audit logging configuration"; }
+            }
+        }
+
+        // Action Buttons
+        HorizontalBox {
+            Button {
+                text: "💾 Save Settings";
+                clicked => { save-settings(); }
+            }
+            Button {
+                text: "🔄 Reset to Defaults";
+                clicked => { reset-settings(); }
+            }
+            Button {
+                text: "📤 Export Settings";
+                clicked => { export-settings(); }
+            }
+            Button {
+                text: "📥 Import Settings";
+                clicked => { import-settings(); }
+            }
+        }
+
+        // Status
+        HorizontalBox {
+            Text { text: "📊 Status:"; }
+            Text {
+                text: status;
+                color: status == "Ready" ? #666666 : #00aa00;
+            }
+        }
+    }
+}

@@ -4,7 +4,6 @@
 //! application features to be displayed in separate windows.
 
 use crate::types::App;
-use eframe::egui::{Context, Window};
 
 /// Represents different types of windows that can be opened
 #[derive(Clone, PartialEq, Eq, Hash, Debug)]
@@ -26,8 +25,19 @@ pub enum WindowType {
 pub struct WindowState {
     pub window_type: WindowType,
     pub is_open: bool,
-    pub position: Option<egui::Pos2>,
-    pub size: Option<egui::Vec2>,
+    pub position: Option<(f32, f32)>,
+    pub size: Option<(f32, f32)>,
+}
+
+impl Default for WindowState {
+    fn default() -> Self {
+        Self {
+            window_type: WindowType::Main,
+            is_open: false,
+            position: None,
+            size: None,
+        }
+    }
 }
 
 impl WindowState {

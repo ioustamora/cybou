@@ -1,0 +1,170 @@
+// Backup Management Window
+import { Button, CheckBox, GroupBox, HorizontalBox, LineEdit, ScrollView, SpinBox, TextEdit, VerticalBox } from "std-widgets.slint";
+
+export component BackupManagementWindow inherits Window {
+    title: "Cybou - Backup Management";
+    width: 700px;
+    height: 600px;
+
+    property <string> backup-directory: "";
+    property <string> status: "Ready";
+    property <bool> auto-backup: true;
+    property <int> backup-interval: 60; // minutes
+    property <bool> compress-backups: true;
+    property <bool> encrypt-backups: true;
+    property <string> backup-password: "";
+    property <string> last-backup: "Never";
+    property <int> files-backed-up: 0;
+    property <string> backup-log: "";
+
+    callback select-backup-directory();
+    callback start-backup();
+    callback stop-backup();
+    callback view-backups();
+    callback clear-log();
+
+    VerticalBox {
+        // Header
+        HorizontalBox {
+            Text {
+                text: "💾 Backup Management";
+                font-size: 16px;
+                font-weight: 600;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "❌ Close";
+                clicked => { /* TODO: Close window */ }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Backup Configuration
+        GroupBox {
+            title: "⚙️ Backup Configuration";
+
+            VerticalBox {
+                // Directory Selection
+                HorizontalBox {
+                    Text { text: "Backup Directory:"; width: 120px; }
+                    LineEdit {
+                        placeholder-text: "Select backup directory...";
+                        text <=> backup-directory;
+                        read-only: true;
+                    }
+                    Button {
+                        text: "📁 Browse";
+                        clicked => { select-backup-directory(); }
+                    }
+                }
+
+                // Auto Backup
+                CheckBox {
+                    text: "Enable automatic backups";
+                    checked <=> auto-backup;
+                }
+
+                // Backup Interval
+                HorizontalBox {
+                    Text { text: "Backup interval (minutes):"; width: 160px; }
+                    SpinBox {
+                        value <=> backup-interval;
+                        minimum: 5;
+                        maximum: 1440; // 24 hours
+                        enabled: auto-backup;
+                    }
+                }
+
+                // Options
+                CheckBox {
+                    text: "Compress backup files";
+                    checked <=> compress-backups;
+                }
+                CheckBox {
+                    text: "Encrypt backup files";
+                    checked <=> encrypt-backups;
+                }
+
+                // Password for encryption
+                if (encrypt-backups): HorizontalBox {
+                    Text { text: "Encryption password:"; width: 140px; }
+                    LineEdit {
+                        placeholder-text: "Enter password...";
+                        text <=> backup-password;
+                    }
+                }
+            }
+        }
+
+        // Backup Status
+        GroupBox {
+            title: "📊 Backup Status";
+
+            VerticalBox {
+                HorizontalBox {
+                    Text { text: "Last backup:"; }
+                    Text { text: last-backup; }
+                }
+                HorizontalBox {
+                    Text { text: "Files backed up:"; }
+                    Text { text: files-backed-up; }
+                }
+                HorizontalBox {
+                    Text { text: "Auto backup:"; }
+                    Text {
+                        text: auto-backup ? "Enabled" : "Disabled";
+                        color: auto-backup ? #00aa00 : #666666;
+                    }
+                }
+            }
+        }
+
+        // Control Buttons
+        HorizontalBox {
+            Button {
+                text: "▶️ Start Backup";
+                clicked => { start-backup(); }
+            }
+            Button {
+                text: "⏹️ Stop Auto Backup";
+                clicked => { stop-backup(); }
+                enabled: auto-backup;
+            }
+            Button {
+                text: "📁 View Backups";
+                clicked => { view-backups(); }
+            }
+        }
+
+        // Backup Log
+        GroupBox {
+            title: "📋 Backup Log";
+
+            VerticalBox {
+                ScrollView {
+                    TextEdit {
+                        text <=> backup-log;
+                        placeholder-text: "Backup operations will be logged here...";
+                        read-only: true;
+                        wrap: word-wrap;
+                    }
+                }
+                Button {
+                    text: "🗑️ Clear Log";
+                    clicked => { clear-log(); }
+                }
+            }
+        }
+
+        // Status
+        HorizontalBox {
+            Text { text: "📊 Status:"; }
+            Text {
+                text: status;
+                color: status == "Ready" ? #666666 : #00aa00;
+            }
+        }
+    }
+}

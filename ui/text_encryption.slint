@@ -1,0 +1,143 @@
+// Text Encryption Window
+import { Button, CheckBox, ComboBox, GroupBox, HorizontalBox, LineEdit, ScrollView, TextEdit, VerticalBox } from "std-widgets.slint";
+
+export component TextEncryptionWindow inherits Window {
+    title: "Cybou - Text Encryption";
+    width: 700px;
+    height: 600px;
+
+    property <string> input-text: "";
+    property <string> output-text: "";
+    property <string> key-password: "";
+    property <string> status: "Ready";
+    property <bool> use-hybrid: true;
+    property <bool> use-aes: false;
+    property <bool> use-chacha: false;
+    property <string> algorithm: "Kyber + AES-GCM (Hybrid)";
+
+    callback encrypt();
+    callback decrypt();
+    callback clear();
+    callback copy-output();
+    callback save-output();
+
+    VerticalBox {
+        // Header
+        HorizontalBox {
+            Text {
+                text: "📝 Text Encryption";
+                font-size: 16px;
+                font-weight: 600;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "❌ Close";
+                clicked => { /* TODO: Close window */ }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Algorithm Selection
+        GroupBox {
+            title: "🔐 Encryption Algorithm";
+
+            VerticalBox {
+                ComboBox {
+                    model: ["Kyber + AES-GCM (Hybrid)", "Kyber + ChaCha20-Poly1305", "AES-GCM Only", "ChaCha20-Poly1305 Only"];
+                    current-value: algorithm;
+                    selected(value) => {
+                        algorithm = value;
+                        use-hybrid = algorithm == "Kyber + AES-GCM (Hybrid)" || algorithm == "Kyber + ChaCha20-Poly1305";
+                        use-aes = algorithm == "Kyber + AES-GCM (Hybrid)" || algorithm == "AES-GCM Only";
+                        use-chacha = algorithm == "Kyber + ChaCha20-Poly1305" || algorithm == "ChaCha20-Poly1305 Only";
+                    }
+                }
+                Text {
+                    text: "Hybrid encryption combines post-quantum Kyber with symmetric encryption for maximum security.";
+                    font-size: 12px;
+                    color: #666666;
+                }
+            }
+        }
+
+        // Key/Password Input
+        GroupBox {
+            title: "🔑 Key / Password";
+
+            VerticalBox {
+                Text { text: "Enter encryption key or password:"; }
+                LineEdit {
+                    placeholder-text: "Enter key/password...";
+                    text <=> key-password;
+                }
+                Text {
+                    text: "For hybrid encryption, this will be used to derive the symmetric key.";
+                    font-size: 12px;
+                    color: #666666;
+                }
+            }
+        }
+
+        // Input Text
+        GroupBox {
+            title: "📝 Input Text";
+
+            TextEdit {
+                text <=> input-text;
+                placeholder-text: "Enter text to encrypt/decrypt...";
+                wrap: word-wrap;
+            }
+        }
+
+        // Action Buttons
+        HorizontalBox {
+            Button {
+                text: "🔐 Encrypt";
+                clicked => { encrypt(); }
+            }
+            Button {
+                text: "🔓 Decrypt";
+                clicked => { decrypt(); }
+            }
+            Button {
+                text: "🗑️ Clear";
+                clicked => { clear(); }
+            }
+        }
+
+        // Output Text
+        GroupBox {
+            title: "📋 Output";
+
+            VerticalBox {
+                TextEdit {
+                    text <=> output-text;
+                    placeholder-text: "Encrypted/decrypted text will appear here...";
+                    wrap: word-wrap;
+                    read-only: true;
+                }
+                HorizontalBox {
+                    Button {
+                        text: "📋 Copy";
+                        clicked => { copy-output(); }
+                    }
+                    Button {
+                        text: "💾 Save to File";
+                        clicked => { save-output(); }
+                    }
+                }
+            }
+        }
+
+        // Status
+        HorizontalBox {
+            Text { text: "📊 Status:"; }
+            Text {
+                text: status;
+                color: status == "Ready" ? #666666 : #00aa00;
+            }
+        }
+    }
+}

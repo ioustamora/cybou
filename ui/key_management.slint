@@ -1,0 +1,175 @@
+// Key Management Window
+import { Button, ComboBox, GroupBox, HorizontalBox, LineEdit, ScrollView, TextEdit, VerticalBox } from "std-widgets.slint";
+
+export component KeyManagementWindow inherits Window {
+    title: "Cybou - Key Management";
+    width: 700px;
+    height: 600px;
+
+    property <string> algorithm: "Kyber";
+    property <string> public-key: "";
+    property <string> private-key: "";
+    property <string> key-name: "";
+    property <string> status: "Ready";
+    property <bool> keys-loaded: false;
+    property <string> key-info: "";
+    property <string> key-list: "";
+
+    callback generate-keys();
+    callback load-keys();
+    callback save-keys();
+    callback export-public-key();
+    callback rotate-keys();
+    callback delete-keys();
+    callback list-keys();
+
+    VerticalBox {
+        // Header
+        HorizontalBox {
+            Text {
+                text: "🔑 Key Management";
+                font-size: 16px;
+                font-weight: 600;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "❌ Close";
+                clicked => { /* TODO: Close window */ }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Algorithm Selection
+        GroupBox {
+            title: "🔐 Cryptographic Algorithm";
+
+            VerticalBox {
+                ComboBox {
+                    model: ["Kyber (Post-Quantum KEM)", "Dilithium (Post-Quantum Signature)", "AES-256-GCM", "ChaCha20-Poly1305"];
+                    current-value: algorithm;
+                    selected(value) => { algorithm = value; }
+                }
+                Text {
+                    text: "Kyber and Dilithium provide post-quantum security against quantum computer attacks.";
+                    font-size: 12px;
+                    color: #666666;
+                }
+            }
+        }
+
+        // Key Operations
+        GroupBox {
+            title: "🔑 Key Operations";
+
+            VerticalBox {
+                HorizontalBox {
+                    Text { text: "Key Name:"; width: 80px; }
+                    LineEdit {
+                        placeholder-text: "Enter key name...";
+                        text <=> key-name;
+                    }
+                }
+                HorizontalBox {
+                    Button {
+                        text: "🔄 Generate New Keys";
+                        clicked => { generate-keys(); }
+                    }
+                    Button {
+                        text: "📁 Load Keys";
+                        clicked => { load-keys(); }
+                    }
+                    Button {
+                        text: "💾 Save Keys";
+                        clicked => { save-keys(); }
+                    }
+                }
+                HorizontalBox {
+                    Button {
+                        text: "📤 Export Public Key";
+                        clicked => { export-public-key(); }
+                    }
+                    Button {
+                        text: "🔄 Rotate Keys";
+                        clicked => { rotate-keys(); }
+                    }
+                    Button {
+                        text: "🗑️ Delete Keys";
+                        clicked => { delete-keys(); }
+                    }
+                }
+            }
+        }
+
+        // Current Keys
+        GroupBox {
+            title: "📋 Current Keys";
+
+            VerticalBox {
+                Text {
+                    text: "Keys Status: " + (keys-loaded ? "Loaded ✓" : "Not Loaded ✗");
+                    color: keys-loaded ? #00aa00 : #aa0000;
+                    font-weight: 600;
+                }
+                Text { text: "Public Key:"; font-weight: 600; }
+                ScrollView {
+                    TextEdit {
+                        text <=> public-key;
+                        placeholder-text: "Public key will appear here...";
+                        read-only: true;
+                        wrap: word-wrap;
+                        height: 80px;
+                    }
+                }
+                Text { text: "Private Key:"; font-weight: 600; }
+                ScrollView {
+                    TextEdit {
+                        text <=> private-key;
+                        placeholder-text: "Private key will appear here (keep secret)...";
+                        read-only: true;
+                        wrap: word-wrap;
+                        height: 80px;
+                    }
+                }
+                Text { text: "Key Information:"; font-weight: 600; }
+                TextEdit {
+                    text <=> key-info;
+                    placeholder-text: "Key details will appear here...";
+                    read-only: true;
+                    wrap: word-wrap;
+                    height: 60px;
+                }
+            }
+        }
+
+        // Key List
+        GroupBox {
+            title: "📁 Saved Keys";
+
+            VerticalBox {
+                ScrollView {
+                    TextEdit {
+                        text <=> key-list;
+                        placeholder-text: "Saved keys will be listed here...";
+                        read-only: true;
+                        wrap: word-wrap;
+                    }
+                }
+                Button {
+                    text: "🔄 Refresh List";
+                    clicked => { list-keys(); }
+                }
+            }
+        }
+
+        // Status
+        HorizontalBox {
+            Text { text: "📊 Status:"; }
+            Text {
+                text: status;
+                color: status == "Ready" ? #666666 : #00aa00;
+            }
+        }
+    }
+}

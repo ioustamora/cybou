@@ -1,0 +1,200 @@
+// Cloud Storage Window
+import { Button, CheckBox, GroupBox, HorizontalBox, LineEdit, ScrollView, TextEdit, VerticalBox } from "std-widgets.slint";
+
+export component CloudStorageWindow inherits Window {
+    title: "Cybou - Cloud Storage";
+    width: 700px;
+    height: 600px;
+
+    property <string> access-key: "";
+    property <string> secret-key: "";
+    property <string> bucket-name: "";
+    property <string> region: "us-east-1";
+    property <string> status: "Not Connected";
+    property <bool> connected: false;
+    property <string> upload-file: "";
+    property <string> download-file: "";
+    property <string> cloud-path: "";
+    property <string> local-path: "";
+    property <string> sync-log: "";
+
+    callback connect();
+    callback disconnect();
+    callback select-upload-file();
+    callback select-download-location();
+    callback upload();
+    callback download();
+    callback list-files();
+    callback clear-log();
+
+    VerticalBox {
+        // Header
+        HorizontalBox {
+            Text {
+                text: "☁️ Cloud Storage (AWS S3)";
+                font-size: 16px;
+                font-weight: 600;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "❌ Close";
+                clicked => { /* TODO: Close window */ }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // AWS Configuration
+        GroupBox {
+            title: "🔧 AWS Configuration";
+
+            VerticalBox {
+                HorizontalBox {
+                    Text { text: "Access Key:"; width: 100px; }
+                    LineEdit {
+                        placeholder-text: "Enter AWS access key...";
+                        text <=> access-key;
+                    }
+                }
+                HorizontalBox {
+                    Text { text: "Secret Key:"; width: 100px; }
+                    LineEdit {
+                        placeholder-text: "Enter AWS secret key...";
+                        text <=> secret-key;
+                    }
+                }
+                HorizontalBox {
+                    Text { text: "Bucket Name:"; width: 100px; }
+                    LineEdit {
+                        placeholder-text: "Enter S3 bucket name...";
+                        text <=> bucket-name;
+                    }
+                }
+                HorizontalBox {
+                    Text { text: "Region:"; width: 100px; }
+                    LineEdit {
+                        placeholder-text: "us-east-1";
+                        text <=> region;
+                    }
+                }
+                HorizontalBox {
+                    Button {
+                        text: "🔗 Connect";
+                        clicked => { connect(); }
+                        enabled: !connected;
+                    }
+                    Button {
+                        text: "🔌 Disconnect";
+                        clicked => { disconnect(); }
+                        enabled: connected;
+                    }
+                }
+                Text {
+                    text: "Connection Status: " + status;
+                    color: connected ? #00aa00 : #aa0000;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        // File Operations
+        GroupBox {
+            title: "📁 File Operations";
+
+            VerticalBox {
+                // Upload Section
+                Text { text: "Upload File:"; font-weight: 600; }
+                HorizontalBox {
+                    LineEdit {
+                        placeholder-text: "Select file to upload...";
+                        text <=> upload-file;
+                        read-only: true;
+                    }
+                    Button {
+                        text: "📁 Browse";
+                        clicked => { select-upload-file(); }
+                    }
+                }
+                HorizontalBox {
+                    Text { text: "Cloud path:"; width: 80px; }
+                    LineEdit {
+                        placeholder-text: "path/in/cloud/";
+                        text <=> cloud-path;
+                    }
+                    Button {
+                        text: "⬆️ Upload";
+                        clicked => { upload(); }
+                        enabled: connected;
+                    }
+                }
+
+                // Separator
+                Rectangle { height: 1px; background: #cccccc; }
+
+                // Download Section
+                Text { text: "Download File:"; font-weight: 600; }
+                HorizontalBox {
+                    Text { text: "Cloud file:"; width: 80px; }
+                    LineEdit {
+                        placeholder-text: "path/to/file.txt";
+                        text <=> download-file;
+                    }
+                }
+                HorizontalBox {
+                    Text { text: "Local path:"; width: 80px; }
+                    LineEdit {
+                        placeholder-text: "Select download location...";
+                        text <=> local-path;
+                        read-only: true;
+                    }
+                    Button {
+                        text: "📁 Browse";
+                        clicked => { select-download-location(); }
+                    }
+                    Button {
+                        text: "⬇️ Download";
+                        clicked => { download(); }
+                        enabled: connected;
+                    }
+                }
+
+                // List Files
+                Button {
+                    text: "📋 List Cloud Files";
+                    clicked => { list-files(); }
+                    enabled: connected;
+                }
+            }
+        }
+
+        // Activity Log
+        GroupBox {
+            title: "📋 Activity Log";
+
+            VerticalBox {
+                ScrollView {
+                    TextEdit {
+                        text <=> sync-log;
+                        placeholder-text: "Cloud operations will be logged here...";
+                        read-only: true;
+                        wrap: word-wrap;
+                    }
+                }
+                Button {
+                    text: "🗑️ Clear Log";
+                    clicked => { clear-log(); }
+                }
+            }
+        }
+
+        // Status
+        HorizontalBox {
+            Text { text: "📊 Status:"; }
+            Text {
+                text: status;
+                color: connected ? #00aa00 : #666666;
+            }
+        }
+    }
+}

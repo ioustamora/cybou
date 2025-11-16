@@ -1,0 +1,155 @@
+// Folder Encryption Window
+import { Button, CheckBox, ComboBox, GroupBox, HorizontalBox, LineEdit, ScrollView, VerticalBox } from "std-widgets.slint";
+
+export component FolderEncryptionWindow inherits Window {
+    title: "Cybou - Folder Encryption";
+    width: 600px;
+    height: 500px;
+
+    property <string> input-folder: "";
+    property <string> output-folder: "";
+    property <string> key-password: "";
+    property <string> status: "Ready";
+    property <bool> use-hybrid: true;
+    property <bool> use-aes: false;
+    property <bool> use-chacha: false;
+    property <string> algorithm: "Kyber + AES-GCM (Hybrid)";
+    property <bool> compress: true;
+    property <bool> recursive: true;
+    property <bool> preserve-structure: true;
+    property <string> progress: "";
+
+    callback select-input-folder();
+    callback select-output-folder();
+    callback encrypt();
+    callback decrypt();
+    callback clear();
+
+    VerticalBox {
+        // Header
+        HorizontalBox {
+            Text {
+                text: "📂 Folder Encryption";
+                font-size: 16px;
+                font-weight: 600;
+            }
+            HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "❌ Close";
+                clicked => { /* TODO: Close window */ }
+            }
+        }
+
+        // Separator
+        Rectangle { height: 1px; background: #cccccc; }
+
+        // Algorithm Selection
+        GroupBox {
+            title: "🔐 Encryption Algorithm";
+
+            VerticalBox {
+                ComboBox {
+                    model: ["Kyber + AES-GCM (Hybrid)", "Kyber + ChaCha20-Poly1305", "AES-GCM Only", "ChaCha20-Poly1305 Only"];
+                    current-value: algorithm;
+                    selected(value) => {
+                        algorithm = value;
+                        use-hybrid = algorithm == "Kyber + AES-GCM (Hybrid)" || algorithm == "Kyber + ChaCha20-Poly1305";
+                        use-aes = algorithm == "Kyber + AES-GCM (Hybrid)" || algorithm == "AES-GCM Only";
+                        use-chacha = algorithm == "Kyber + ChaCha20-Poly1305" || algorithm == "ChaCha20-Poly1305 Only";
+                    }
+                }
+                CheckBox {
+                    text: "Compress folder before encryption";
+                    checked <=> compress;
+                }
+                CheckBox {
+                    text: "Process subfolders recursively";
+                    checked <=> recursive;
+                }
+                CheckBox {
+                    text: "Preserve folder structure";
+                    checked <=> preserve-structure;
+                }
+            }
+        }
+
+        // Key/Password Input
+        GroupBox {
+            title: "🔑 Key / Password";
+
+            VerticalBox {
+                Text { text: "Enter encryption key or password:"; }
+                LineEdit {
+                    placeholder-text: "Enter key/password...";
+                    text <=> key-password;
+                }
+            }
+        }
+
+        // Folder Selection
+        GroupBox {
+            title: "📁 Folders";
+
+            VerticalBox {
+                HorizontalBox {
+                    Text { text: "Input Folder:"; width: 100px; }
+                    LineEdit {
+                        placeholder-text: "Select input folder...";
+                        text <=> input-folder;
+                        read-only: true;
+                    }
+                    Button {
+                        text: "📁 Browse";
+                        clicked => { select-input-folder(); }
+                    }
+                }
+                HorizontalBox {
+                    Text { text: "Output Folder:"; width: 100px; }
+                    LineEdit {
+                        placeholder-text: "Select output folder...";
+                        text <=> output-folder;
+                        read-only: true;
+                    }
+                    Button {
+                        text: "📁 Browse";
+                        clicked => { select-output-folder(); }
+                    }
+                }
+            }
+        }
+
+        // Action Buttons
+        HorizontalBox {
+            Button {
+                text: "🔐 Encrypt Folder";
+                clicked => { encrypt(); }
+            }
+            Button {
+                text: "🔓 Decrypt Folder";
+                clicked => { decrypt(); }
+            }
+            Button {
+                text: "🗑️ Clear";
+                clicked => { clear(); }
+            }
+        }
+
+        // Progress/Status
+        GroupBox {
+            title: "📊 Progress";
+
+            VerticalBox {
+                Text { text: "Status:"; }
+                Text {
+                    text: status;
+                    color: status == "Ready" ? #666666 : #00aa00;
+                }
+                Text { text: "Progress:"; }
+                Text {
+                    text: progress;
+                    color: #666666;
+                }
+            }
+        }
+    }
+}
