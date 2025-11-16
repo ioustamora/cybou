@@ -16,6 +16,7 @@ export component MnemonicManagement inherits Window {
     callback continue-with-mnemonic();
     callback copy-mnemonic();
     callback clear-mnemonic();
+    callback proceed-to-dashboard();
 
     VerticalBox {
         // Header
@@ -153,7 +154,13 @@ export component MnemonicManagement inherits Window {
                         }
 
                         Text {
-                            text: "You can close this window and access other tools from the main dashboard.";
+                            text: "Click below to proceed to the main dashboard.";
+                        }
+
+                        Button {
+                            text: "Proceed to Dashboard";
+                            clicked => { proceed-to-dashboard(); }
+                            width: 200px;
                         }
                     }
                 }

@@ -101,7 +101,7 @@ pub fn encrypt_file(file_path: &str, master_key: &[u8; 32]) -> Result<String, St
 
     let encrypted = encrypt_text_with_key(&String::from_utf8_lossy(&data), master_key)?;
 
-    let output_path = format!("{}.enc", file_path);
+    let output_path = format!("{}.cybou", file_path);
     fs::write(&output_path, encrypted)
         .map_err(|e| format!("Failed to write encrypted file: {}", e))?;
 
@@ -127,7 +127,7 @@ pub fn decrypt_file(file_path: &str, master_key: &[u8; 32]) -> Result<String, St
 
     let decrypted = decrypt_text_with_key(&encrypted_data, master_key)?;
 
-    let output_path = file_path.trim_end_matches(".enc").to_string();
+    let output_path = file_path.trim_end_matches(".cybou").to_string() + "_decrypted";
     fs::write(&output_path, decrypted)
         .map_err(|e| format!("Failed to write decrypted file: {}", e))?;
 
@@ -431,7 +431,7 @@ mod tests {
         app.file_path = temp_path.clone();
         app.encrypt_file();
         assert!(app.last_status.contains("File encrypted successfully"));
-        assert!(app.text_output.contains(".enc"));
+        assert!(app.text_output.contains(".cybou"));
 
         // Decrypt file
         app.file_path = app.text_output.replace("Encrypted to ", "");

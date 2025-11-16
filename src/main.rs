@@ -123,6 +123,20 @@ impl WindowManager {
         // Set keys loaded status
         let keys_loaded = SENSITIVE_DATA.lock().unwrap().is_some();
         window.set_keys_loaded(keys_loaded);
+        
+        // Set public key information if keys are loaded
+        if keys_loaded {
+            let mut app = types::App::default();
+            let public_key_info = app.get_public_key_info();
+            window.set_public_key_info(public_key_info.into());
+            window.set_can_copy_public_key(true);
+            window.set_can_save_public_key(true);
+        } else {
+            window.set_public_key_info("No keys loaded".into());
+            window.set_can_copy_public_key(false);
+            window.set_can_save_public_key(false);
+        }
+        
         self.setup_main_dashboard_callbacks(&window);
         window.show().unwrap();
         self.app.open_window(types::WindowType::MainDashboard);
@@ -264,6 +278,62 @@ impl WindowManager {
             // TODO: Clear status
             println!("Clear status clicked");
         });
+
+        // Copy public key callback
+        let weak_copy = weak_window.clone();
+        window.on_copy_public_key(move || {
+            let weak = weak_copy.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let mut app = types::App::default();
+                    let public_key_info = app.get_public_key_info();
+                    if public_key_info == "No keys loaded" {
+                        window.set_last_status("No keys available to copy".into());
+                        return;
+                    }
+                    
+                    match clipboard::ClipboardContext::new() {
+                        Ok(mut ctx) => {
+                            match ctx.set_contents(public_key_info) {
+                                Ok(_) => window.set_last_status("Public keys copied to clipboard".into()),
+                                Err(_) => window.set_last_status("Failed to copy keys to clipboard".into()),
+                            }
+                        }
+                        Err(_) => window.set_last_status("Clipboard not available".into()),
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Save public key callback
+        let weak_save = weak_window.clone();
+        window.on_save_public_key(move || {
+            let weak = weak_save.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let mut app = types::App::default();
+                    let public_key_info = app.get_public_key_info();
+                    if public_key_info == "No keys loaded" {
+                        window.set_last_status("No keys available to save".into());
+                        return;
+                    }
+                    
+                    // Use rfd crate for file dialog
+                    if let Some(path) = rfd::FileDialog::new()
+                        .set_title("Save Public Keys")
+                        .set_file_name("cybou_public_keys.cyboukey")
+                        .save_file() 
+                    {
+                        match app.export_public_key(&path.to_string_lossy()) {
+                            Ok(_) => window.set_last_status(format!("Public keys saved to: {}", path.display()).into()),
+                            Err(e) => window.set_last_status(format!("Error saving keys: {}", e).into()),
+                        }
+                    } else {
+                        window.set_last_status("Save cancelled".into());
+                    }
+                }
+            }).unwrap();
+        });
     }
 
     fn setup_mnemonic_management_callbacks(&self, window: &MnemonicManagement) {
@@ -319,6 +389,11 @@ impl WindowManager {
                         *SENSITIVE_DATA.lock().unwrap() = temp_app.sensitive_data;
                         window.set_keys_loaded(true);
                         window.set_status_text("Keys loaded successfully ✓".into());
+                        
+                        // Close mnemonic window and show main dashboard after a short delay
+                        std::thread::sleep(std::time::Duration::from_millis(1000));
+                        // Note: In a real implementation, we'd close this window and show dashboard
+                        // For now, the user can manually navigate
                     } else {
                         window.set_status_text("Failed to derive keys ✗".into());
                     }
@@ -360,6 +435,19 @@ impl WindowManager {
                     window.set_status_text("Mnemonic cleared".into());
                     window.set_is_valid(false);
                     window.set_keys_loaded(false);
+                }
+            }).unwrap();
+        });
+
+        // Proceed to dashboard callback
+        let weak_proceed = weak_window.clone();
+        window.on_proceed_to_dashboard(move || {
+            let weak = weak_proceed.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(_window) = weak.upgrade() {
+                    // Close mnemonic window and show main dashboard
+                    let mut wm = WindowManager::new();
+                    wm.show_main_dashboard();
                 }
             }).unwrap();
         });

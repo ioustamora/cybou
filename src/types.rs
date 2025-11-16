@@ -3,6 +3,7 @@
 /// This module contains all the main structs and enums used throughout the application.
 
 use std::time::SystemTime;
+use hex;
 
 /// Cloud provider options for storage integration
 #[derive(Clone, PartialEq, Debug)]
@@ -480,6 +481,40 @@ impl App {
     /// Checks if keys are loaded
     pub fn keys_loaded(&self) -> bool {
         self.sensitive_data.is_some()
+    }
+
+    /// Gets public key information as a formatted string
+    pub fn get_public_key_info(&self) -> String {
+        if let Some(data) = &self.sensitive_data {
+            let current = data.current();
+            format!("Cybou Public Key Information\n\
+                     Version: {}\n\
+                     Kyber Public Key: {}\n\
+                     Dilithium Public Key: {}\n\
+                     Created: {}",
+                     current.id,
+                     hex::encode(&current.kyber_keys.public),
+                     hex::encode(&current.dilithium_keys.public_key_bytes()),
+                     current.timestamp.duration_since(std::time::UNIX_EPOCH)
+                         .unwrap_or_default().as_secs())
+        } else {
+            "No keys loaded".to_string()
+        }
+    }
+
+    /// Exports public key to a .cyboukey file
+    pub fn export_public_key(&self, file_path: &str) -> Result<(), String> {
+        if let Some(data) = &self.sensitive_data {
+            let current = data.current();
+            let key_info = self.get_public_key_info();
+            
+            // In a real implementation, this would be encrypted or signed
+            std::fs::write(file_path, key_info)
+                .map_err(|e| format!("Failed to write key file: {}", e))?;
+            Ok(())
+        } else {
+            Err("No keys loaded".to_string())
+        }
     }
 }
 

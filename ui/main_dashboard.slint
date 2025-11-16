@@ -15,8 +15,12 @@ export component MainDashboard inherits Window {
     property <int> open-windows: 1;
     property <int> total-windows: 10;
 
-    callback open-window(string);
-    callback clear-status();
+    property <string> public-key-info: "No keys loaded";
+    property <bool> can-copy-public-key: false;
+    property <bool> can-save-public-key: false;
+
+    callback copy-public-key();
+    callback save-public-key();
 
     VerticalBox {
         // Header
@@ -132,6 +136,32 @@ export component MainDashboard inherits Window {
                             Text {
                                 text: keys-loaded ? "Loaded ✓" : "Not Loaded ✗";
                                 color: keys-loaded ? #00aa00 : #aa0000;
+                            }
+                        }
+                        if (keys-loaded): GroupBox {
+                            title: "🔑 Public Key Information";
+                            VerticalBox {
+                                Text { text: "Public Keys:"; font-weight: 600; }
+                                ScrollView {
+                                    Text {
+                                        text: public-key-info;
+                                        font-family: "monospace";
+                                        font-size: 10px;
+                                    }
+                                    min-height: 80px;
+                                }
+                                HorizontalBox {
+                                    Button {
+                                        text: "📋 Copy Keys";
+                                        enabled: can-copy-public-key;
+                                        clicked => { copy-public-key(); }
+                                    }
+                                    Button {
+                                        text: "💾 Save .cyboukey File";
+                                        enabled: can-save-public-key;
+                                        clicked => { save-public-key(); }
+                                    }
+                                }
                             }
                         }
                         HorizontalBox {
