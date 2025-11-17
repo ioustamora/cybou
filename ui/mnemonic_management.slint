@@ -16,6 +16,8 @@ export component MnemonicManagement inherits Window {
     callback validate-mnemonic(string);
     callback continue-with-mnemonic();
     callback copy-mnemonic();
+    callback copy-mnemonic_when_loaded();
+    callback copy-public-keys();
     callback clear-mnemonic();
     callback show-help(string);
 
@@ -95,6 +97,11 @@ export component MnemonicManagement inherits Window {
                                 clicked => { continue-with-mnemonic(); }
                                 width: 120px;
                             }
+                            if (keys-loaded): Button {
+                                text: "📋 Copy Mnemonic";
+                                clicked => { copy-mnemonic_when_loaded(); }
+                                width: 140px;
+                            }
                         }
                     }
                 }
@@ -139,7 +146,7 @@ export component MnemonicManagement inherits Window {
                                 text: "📋 Copy";
                                 width: 60px;
                                 height: 25px;
-                                clicked => { copy-mnemonic(); }
+                                clicked => { copy-public-keys(); }
                             }
                         }
                         Text {

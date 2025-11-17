@@ -453,20 +453,12 @@ impl WindowManager {
                             if let Some(sensitive_data) = temp_app.sensitive_data {
                                 *crate::SENSITIVE_DATA.lock().unwrap() = Some(sensitive_data);
                                 
-                                // Generate compact public key identifier
+                                // Show encoded public keys
                                 let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
                                 let current = sensitive_data_lock.as_ref().unwrap().current();
-                                
-                                // Create a hash of the public keys for identification
-                                use sha2::{Sha256, Digest};
-                                let mut hasher = Sha256::new();
-                                hasher.update(&current.kyber_keys.public);
-                                hasher.update(&current.dilithium_keys.public);
-                                let hash = hasher.finalize();
-                                
-                                // Take first 8 bytes and encode as hex for compact display
-                                let compact_id = hex::encode(&hash[..8]);
-                                let public_key_display = format!("cybou:{}", &compact_id[..16]);
+                                let kyber_hex = hex::encode(&current.kyber_keys.public);
+                                let dilithium_hex = hex::encode(&current.dilithium_keys.public);
+                                let public_key_display = format!("Kyber: {}\nDilithium: {}", kyber_hex, dilithium_hex);
                                 
                                 window.set_public_key_display(public_key_display.into());
                                 window.set_keys_loaded(true);
@@ -518,20 +510,12 @@ impl WindowManager {
                             if let Some(sensitive_data) = temp_app.sensitive_data {
                                 *crate::SENSITIVE_DATA.lock().unwrap() = Some(sensitive_data);
                                 
-                                // Generate compact public key identifier
+                                // Show encoded public keys
                                 let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
                                 let current = sensitive_data_lock.as_ref().unwrap().current();
-                                
-                                // Create a hash of the public keys for identification
-                                use sha2::{Sha256, Digest};
-                                let mut hasher = Sha256::new();
-                                hasher.update(&current.kyber_keys.public);
-                                hasher.update(&current.dilithium_keys.public);
-                                let hash = hasher.finalize();
-                                
-                                // Take first 8 bytes and encode as hex for compact display
-                                let compact_id = hex::encode(&hash[..8]);
-                                let public_key_display = format!("cybou:{}", &compact_id[..16]);
+                                let kyber_hex = hex::encode(&current.kyber_keys.public);
+                                let dilithium_hex = hex::encode(&current.dilithium_keys.public);
+                                let public_key_display = format!("Kyber: {}\nDilithium: {}", kyber_hex, dilithium_hex);
                                 
                                 window.set_public_key_display(public_key_display.into());
                                 window.set_keys_loaded(true);
@@ -616,6 +600,54 @@ impl WindowManager {
                             }
                             Err(_) => window.set_status_text("Clipboard not available".into()),
                         }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Copy mnemonic when loaded callback
+        let weak_copy_loaded = weak_window.clone();
+        window.on_copy_mnemonic_when_loaded(move || {
+            let weak = weak_copy_loaded.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let mnemonic = window.get_mnemonic_input().to_string();
+                    if mnemonic.is_empty() {
+                        window.set_status_text("No mnemonic to copy".into());
+                        return;
+                    }
+                    match clipboard::ClipboardContext::new() {
+                        Ok(mut ctx) => {
+                            match ctx.set_contents(mnemonic) {
+                                Ok(_) => window.set_status_text("Mnemonic copied to clipboard".into()),
+                                Err(_) => window.set_status_text("Failed to copy to clipboard".into()),
+                            }
+                        }
+                        Err(_) => window.set_status_text("Clipboard not available".into()),
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Copy public keys callback
+        let weak_copy_keys = weak_window.clone();
+        window.on_copy_public_keys(move || {
+            let weak = weak_copy_keys.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let public_keys = window.get_public_key_display().to_string();
+                    if public_keys.is_empty() {
+                        window.set_status_text("No public keys to copy".into());
+                        return;
+                    }
+                    match clipboard::ClipboardContext::new() {
+                        Ok(mut ctx) => {
+                            match ctx.set_contents(public_keys) {
+                                Ok(_) => window.set_status_text("Public keys copied to clipboard".into()),
+                                Err(_) => window.set_status_text("Failed to copy to clipboard".into()),
+                            }
+                        }
+                        Err(_) => window.set_status_text("Clipboard not available".into()),
                     }
                 }
             }).unwrap();
