@@ -15,6 +15,23 @@ pub enum CloudProvider {
 }
 
 /// Represents a version of cryptographic keys with timestamp tracking
+///
+/// KeyVersion encapsulates a complete set of cryptographic keys for a specific point in time.
+/// Each version contains all the key material needed for encryption and signing operations,
+/// allowing the application to maintain backward compatibility with previously encrypted data.
+///
+/// # Key Components
+/// - `id`: Monotonically increasing version identifier (starts at 1)
+/// - `timestamp`: Creation time for audit trails and key lifecycle management
+/// - `master_key`: AES-256 symmetric key for data encryption (32 bytes)
+/// - `kyber_keys`: Post-quantum key encapsulation mechanism keypair
+/// - `dilithium_keys`: Post-quantum digital signature keypair
+///
+/// # Security Lifecycle
+/// - Keys are generated once and never modified after creation
+/// - Each version represents a security boundary for forward secrecy
+/// - Older versions remain accessible for decrypting legacy data
+/// - Timestamps enable key rotation policies and compliance auditing
 #[derive(Clone)]
 pub struct KeyVersion {
     /// Unique identifier for this key version
@@ -30,6 +47,24 @@ pub struct KeyVersion {
 }
 
 /// Container for sensitive cryptographic data with version management
+///
+/// SensitiveData manages the application's cryptographic keys with versioning support:
+/// - Stores multiple versions of key sets for backward compatibility
+/// - Provides secure key rotation and history tracking
+/// - Implements thread-safe access through mutex protection
+///
+/// # Key Components
+/// - `key_versions`: Vec of KeyVersion structs with timestamped keys
+/// - `current_version`: Index pointing to the active key version
+/// - Master key: AES-256 key derived from mnemonic (32 bytes)
+/// - Kyber keys: Post-quantum KEM keypair for encryption
+/// - Dilithium keys: Post-quantum signature keypair for signing
+///
+/// # Security Architecture
+/// - Keys are never persisted to disk (memory-only storage)
+/// - Versioning allows decryption of older encrypted data
+/// - Key rotation generates new keys while maintaining access to old ones
+/// - All access through global SENSITIVE_DATA mutex for thread safety
 #[derive(Clone)]
 pub struct SensitiveData {
     /// Index of the currently active key version
@@ -61,6 +96,26 @@ impl SensitiveData {
     }
 
     /// Rotates to a new set of cryptographic keys while preserving old versions
+    ///
+    /// Key rotation provides forward secrecy by generating new cryptographic material:
+    /// 1. Generates new Kyber and Dilithium key pairs
+    /// 2. Derives new master key by XORing current master key with random entropy
+    /// 3. Creates new KeyVersion with incremented ID and current timestamp
+    /// 4. Updates current_version to point to the new key set
+    ///
+    /// # Security Benefits
+    /// - Limits the impact of key compromise to data encrypted after rotation
+    /// - Maintains access to previously encrypted data through versioning
+    /// - Provides cryptographic freshness for ongoing operations
+    ///
+    /// # Backward Compatibility
+    /// - Old encrypted data can still be decrypted using previous key versions
+    /// - Applications can specify which key version to use for decryption
+    /// - Key history is preserved for audit and recovery purposes
+    ///
+    /// # Returns
+    /// - `Ok(())` if key rotation succeeded
+    /// - `Err(String)` if key generation failed
     pub fn rotate_keys(&mut self) -> Result<(), String> {
         use pqc_kyber::keypair;
         use pqc_dilithium::Keypair;
@@ -98,6 +153,28 @@ impl SensitiveData {
     }
 
     /// Exports key metadata to JSON format (without sensitive key material)
+    ///
+    /// Creates a safe export of key information for backup or sharing purposes:
+    /// 1. Iterates through all key versions
+    /// 2. Extracts metadata (ID, timestamp) without actual key material
+    /// 3. Serializes to pretty-printed JSON format
+    ///
+    /// # Exported Data
+    /// - `version_id`: Unique identifier for each key version
+    /// - `timestamp`: Unix timestamp when the key version was created
+    /// - `has_master_key`: Boolean flag (always true, actual key not exported)
+    /// - `has_kyber_keys`: Boolean flag (always true, actual keys not exported)
+    /// - `has_dilithium_keys`: Boolean flag (always true, actual keys not exported)
+    ///
+    /// # Security Notes
+    /// - No actual cryptographic key material is exported
+    /// - Safe to store or share the metadata JSON
+    /// - Can be used to verify key version existence and timestamps
+    /// - Useful for key management auditing and recovery planning
+    ///
+    /// # Returns
+    /// - `Ok(String)` containing pretty-printed JSON metadata
+    /// - `Err(String)` if JSON serialization fails
     pub fn export_key_metadata(&self) -> Result<String, String> {
         use serde_json;
 
@@ -126,6 +203,26 @@ impl SensitiveData {
     }
 
     /// Gets statistics about key versions
+    ///
+    /// Calculates and returns comprehensive statistics about the key versioning state:
+    /// - Total number of key versions (including current and historical)
+    /// - ID of the currently active key version
+    /// - Timestamp of the oldest key version
+    /// - Timestamp of the newest key version
+    ///
+    /// # Use Cases
+    /// - Monitoring key rotation frequency and history
+    /// - Assessing cryptographic key lifecycle
+    /// - Providing user interface information about key management
+    /// - Supporting key management policies and compliance
+    ///
+    /// # Returns
+    /// - `KeyStatistics` struct containing all calculated metrics
+    ///
+    /// # Performance Notes
+    /// - Iterates through all key versions to find min/max timestamps
+    /// - O(n) complexity where n is the number of key versions
+    /// - Suitable for infrequent calls (statistics display, not hot path)
     pub fn get_key_statistics(&self) -> KeyStatistics {
         let total_versions = self.key_versions.len();
         let current_version_id = self.key_versions.get(self.current_version)
@@ -200,7 +297,12 @@ pub struct App {
     pub watched_folders: Vec<String>,
     pub backup_path: String,
     pub backup_active: bool,
+    pub cleanup_days: u64,
+    pub backup_file_count: usize,
+    pub backup_file_count_ref: Option<std::sync::Arc<std::sync::Mutex<usize>>>,
+    pub file_hashes: std::sync::Arc<std::sync::Mutex<std::collections::HashMap<String, String>>>,
     /// Cloud storage settings
+    pub cloud_provider: CloudProvider,
     pub s3_bucket: String,
     pub s3_region: String,
     pub s3_access_key: String,
@@ -209,6 +311,8 @@ pub struct App {
     pub dark_mode: bool,
     pub language: String,
     pub enable_accessibility: bool,
+    /// UI state
+    pub current_tab: usize,
 }
 
 impl Default for App {
@@ -237,6 +341,11 @@ impl Default for App {
             watched_folders: Vec::new(),
             backup_path: String::new(),
             backup_active: false,
+            cleanup_days: 30, // Default to 30 days cleanup
+            backup_file_count: 0,
+            backup_file_count_ref: Some(std::sync::Arc::new(std::sync::Mutex::new(0))),
+            file_hashes: std::sync::Arc::new(std::sync::Mutex::new(std::collections::HashMap::new())),
+            cloud_provider: CloudProvider::None,
             s3_bucket: String::new(),
             s3_region: String::new(),
             s3_access_key: String::new(),
@@ -244,6 +353,7 @@ impl Default for App {
             dark_mode: false,
             language: "en".to_string(),
             enable_accessibility: false,
+            current_tab: 0,
         }
     }
 }
@@ -280,7 +390,22 @@ impl App {
         self.windows.get(&window_type).map(|w| w.title.as_str()).unwrap_or("Unknown Window")
     }
 
-    /// Validates mnemonic and derives cryptographic keys
+    /// Validates mnemonic phrase and derives cryptographic keys from it
+    ///
+    /// This function performs the complete key derivation pipeline:
+    /// 1. Parses and validates the BIP39 mnemonic phrase
+    /// 2. Derives a seed from the mnemonic using PBKDF2
+    /// 3. Generates post-quantum cryptographic key pairs (Kyber + Dilithium)
+    /// 4. Creates a SensitiveData structure with key versioning
+    ///
+    /// # Security Notes
+    /// - Uses PBKDF2 with empty salt for BIP39 compatibility
+    /// - Generates deterministic keys from mnemonic for reproducibility
+    /// - Keys are stored in memory only and never persisted to disk
+    ///
+    /// # Returns
+    /// - `true` if validation and key derivation succeeded
+    /// - `false` if mnemonic is invalid or key generation failed
     pub fn validate_and_derive_keys(&mut self) -> bool {
         use bip39::{Mnemonic, Language};
         use pbkdf2::pbkdf2_hmac;

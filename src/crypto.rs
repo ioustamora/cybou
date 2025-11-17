@@ -13,6 +13,24 @@ use base64::{Engine as _, engine::general_purpose};
 const CIPHERTEXT_SIZE: usize = 1088;
 
 /// Encrypts text using AES-GCM with master key
+///
+/// This function provides authenticated encryption using AES-256-GCM:
+/// 1. Generates a random 96-bit nonce for each encryption operation
+/// 2. Uses AES-256-GCM with the provided master key
+/// 3. Returns base64-encoded nonce and ciphertext in format: "nonce:ciphertext"
+///
+/// # Arguments
+/// * `input` - The plaintext text to encrypt (empty strings are rejected)
+/// * `master_key` - 32-byte master key derived from mnemonic (must be exactly 32 bytes)
+///
+/// # Returns
+/// * `Ok(String)` - Base64-encoded nonce and ciphertext separated by colon
+/// * `Err(String)` - Error message if encryption fails or input is invalid
+///
+/// # Security Notes
+/// - Each encryption uses a unique random nonce to prevent nonce reuse attacks
+/// - AES-GCM provides both confidentiality and authenticity
+/// - The output format is designed to be easily parsed for decryption
 pub fn encrypt_text_with_key(input: &str, master_key: &[u8; 32]) -> Result<String, String> {
     if input.is_empty() {
         return Err("Input text is empty".to_string());
@@ -32,6 +50,26 @@ pub fn encrypt_text_with_key(input: &str, master_key: &[u8; 32]) -> Result<Strin
 }
 
 /// Decrypts text using AES-GCM with master key
+///
+/// This function reverses the encryption process:
+/// 1. Parses the input format "nonce:ciphertext" (base64 encoded)
+/// 2. Decodes the nonce and ciphertext from base64
+/// 3. Uses AES-256-GCM with the provided master key for decryption
+/// 4. Verifies authenticity and returns the original plaintext
+///
+/// # Arguments
+/// * `input` - Base64-encoded nonce and ciphertext in format "nonce:ciphertext"
+/// * `master_key` - 32-byte master key that was used for encryption
+///
+/// # Returns
+/// * `Ok(String)` - The decrypted plaintext as a UTF-8 string
+/// * `Err(String)` - Error message for invalid format, base64 decoding failure,
+///                  or authentication/decryption failure
+///
+/// # Security Notes
+/// - AES-GCM authentication ensures ciphertext integrity
+/// - Wrong key or corrupted data will result in authentication failure
+/// - Invalid UTF-8 in decrypted data is treated as an error
 pub fn decrypt_text_with_key(input: &str, master_key: &[u8; 32]) -> Result<String, String> {
     if input.is_empty() {
         return Err("Input text is empty".to_string());
@@ -59,6 +97,24 @@ pub fn decrypt_text_with_key(input: &str, master_key: &[u8; 32]) -> Result<Strin
 }
 
 /// Signs a message using Dilithium keys
+///
+/// Creates a digital signature using the Dilithium post-quantum signature scheme:
+/// 1. Validates that the message is not empty
+/// 2. Signs the message bytes using the Dilithium private key
+/// 3. Returns the signature as base64-encoded bytes
+///
+/// # Arguments
+/// * `message` - The message to sign (empty messages are rejected)
+/// * `dilithium_keys` - Dilithium keypair containing the private key for signing
+///
+/// # Returns
+/// * `Ok(String)` - Base64-encoded signature bytes
+/// * `Err(String)` - Error message if message is empty
+///
+/// # Security Notes
+/// - Dilithium provides post-quantum security against signature forgery
+/// - Signatures are deterministic for the same message and key
+/// - The signature size is approximately 2KB for security level 2
 pub fn sign_message(message: &str, dilithium_keys: &pqc_dilithium::Keypair) -> Result<String, String> {
     if message.is_empty() {
         return Err("Message is empty".to_string());
@@ -69,6 +125,27 @@ pub fn sign_message(message: &str, dilithium_keys: &pqc_dilithium::Keypair) -> R
 }
 
 /// Verifies a signature using Dilithium keys
+///
+/// Verifies a digital signature against a message using Dilithium:
+/// 1. Validates that the message is not empty
+/// 2. Decodes the signature from base64
+/// 3. Verifies the signature using the Dilithium public key
+/// 4. Returns whether the signature is valid
+///
+/// # Arguments
+/// * `message` - The original message that was signed
+/// * `signature_b64` - Base64-encoded signature to verify
+/// * `dilithium_keys` - Dilithium keypair containing the public key for verification
+///
+/// # Returns
+/// * `Ok(bool)` - `true` if signature is valid, `false` if invalid
+/// * `Err(String)` - Error message for invalid message, base64 decoding failure,
+///                  or signature format errors
+///
+/// # Security Notes
+/// - Verification only requires the public key (private key not needed)
+/// - Provides strong assurance that message was signed by private key holder
+/// - Resistant to quantum computing attacks
 pub fn verify_signature(message: &str, signature_b64: &str, dilithium_keys: &pqc_dilithium::Keypair) -> Result<bool, String> {
     if message.is_empty() {
         return Err("Message is empty".to_string());
@@ -171,6 +248,28 @@ pub fn encrypt_folder(folder_path: &str, master_key: &[u8; 32]) -> Result<(), St
 
     Ok(())
 }/// Generates a secure random password
+///
+/// Creates a cryptographically secure random password with customizable character sets:
+/// 1. Validates that password length is greater than 0
+/// 2. Builds a character set based on the selected options
+/// 3. Generates random characters from the set using thread-local RNG
+/// 4. Returns the password as a String
+///
+/// # Arguments
+/// * `length` - Desired password length (must be > 0)
+/// * `include_uppercase` - Include A-Z characters
+/// * `include_lowercase` - Include a-z characters
+/// * `include_numbers` - Include 0-9 digits
+/// * `include_symbols` - Include special symbols (!@#$%^&*)
+///
+/// # Returns
+/// * `Ok(String)` - The generated password
+/// * `Err(String)` - Error if length is 0 or no character sets selected
+///
+/// # Security Notes
+/// - Uses cryptographically secure random number generation
+/// - Ensures at least one character set is selected to prevent weak passwords
+/// - Each character is independently randomly selected
 pub fn generate_password(length: usize, include_uppercase: bool, include_lowercase: bool, include_numbers: bool, include_symbols: bool) -> Result<String, String> {
     if length == 0 {
         return Err("Password length must be greater than 0".to_string());
@@ -199,6 +298,27 @@ pub fn generate_password(length: usize, include_uppercase: bool, include_lowerca
 }
 
 /// Assesses password strength
+///
+/// Evaluates password security using multiple criteria:
+/// 1. Length scoring (8+ chars = 25pts, 12+ = 35pts, 16+ = 45pts)
+/// 2. Character variety (10pts each for lowercase, uppercase, digits, symbols)
+/// 3. Bonus for using all character types (20pts)
+/// 4. Penalty for common patterns (-15pts each)
+/// 5. Returns score (0-100) and descriptive strength level
+///
+/// # Arguments
+/// * `password` - The password to assess
+///
+/// # Returns
+/// * `(i32, String)` - Tuple of (score, description) where:
+///   - score: 0-100 security score
+///   - description: "Very Weak", "Weak", "Fair", "Good", "Strong", or "Invalid"
+///
+/// # Security Notes
+/// - This is a basic heuristic assessment, not cryptanalysis
+/// - Longer passwords with varied characters score higher
+/// - Common patterns reduce the score significantly
+/// - Empty passwords score 0
 pub fn assess_password_strength(password: &str) -> (i32, String) {
     if password.is_empty() {
         return (0, "Very Weak".to_string());

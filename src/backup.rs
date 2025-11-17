@@ -204,7 +204,6 @@ impl App {
 
     /// Stops the automated backup system
     pub fn stop_backup(&mut self) {
-        self.backup_watcher = None;
         self.backup_active = false;
         self.text_output = format!("Backup stopped - {} files backed up", self.backup_file_count);
         self.last_status = "Backup stopped".to_string();

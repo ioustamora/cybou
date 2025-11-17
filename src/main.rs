@@ -33,15 +33,43 @@ include!(concat!(env!("OUT_DIR"), "/folder_encryption.rs"));
 include!(concat!(env!("OUT_DIR"), "/mnemonic_management.rs"));
 
 // Window manager for handling multiple Slint windows
+///
+/// The WindowManager coordinates the multi-window GUI architecture:
+/// - Manages window lifecycle (creation, display, callbacks)
+/// - Provides cryptographic operations through temporary instances
+/// - Handles clipboard and file operations
+/// - Maintains reference to global SENSITIVE_DATA for key access
+///
+/// # Architecture Notes
+/// - Each window type has dedicated setup methods for callbacks
+/// - Cryptographic operations use temporary WindowManager instances
+/// - Global SENSITIVE_DATA mutex ensures thread-safe key access
+/// - Slint windows are shown modally but don't block other windows
 struct WindowManager {
+    /// Application state (currently minimal, may be expanded)
     app: types::App,
+    /// Temporary storage for text input operations
     text_input: String,
+    /// Temporary storage for text output operations
     text_output: String,
+    /// Temporary storage for password operations
     key_password: String,
+    /// Local copy of sensitive data for cryptographic operations
     sensitive_data: Option<types::SensitiveData>,
 }
 
 impl WindowManager {
+    /// Creates a new WindowManager instance
+    ///
+    /// Initializes the window manager with:
+    /// - Default application state
+    /// - Empty temporary buffers for I/O operations
+    /// - Copy of current sensitive data from global SENSITIVE_DATA mutex
+    ///
+    /// # Thread Safety
+    /// - Safely accesses the global SENSITIVE_DATA mutex
+    /// - Creates a clone of sensitive data for local operations
+    /// - No long-held locks to prevent deadlocks
     fn new() -> Self {
         let sensitive_data = SENSITIVE_DATA.lock().unwrap().clone();
         Self {
@@ -53,6 +81,22 @@ impl WindowManager {
         }
     }
 
+    /// Encrypts text using the current keys from sensitive data
+    ///
+    /// Performs authenticated encryption using AES-GCM:
+    /// 1. Checks if sensitive data (keys) are available
+    /// 2. Calls the crypto module's encrypt_text_with_key function
+    /// 3. Returns formatted output and status message
+    ///
+    /// # Arguments
+    /// * `input_text` - The plaintext to encrypt
+    ///
+    /// # Returns
+    /// * `(SharedString, SharedString)` - Tuple of (encrypted_output, status_message)
+    ///
+    /// # Error Handling
+    /// - Returns error status if no keys are loaded
+    /// - Propagates encryption errors from crypto module
     fn encrypt_text_with_keys(&self, input_text: SharedString) -> (SharedString, SharedString) {
         if let Some(ref sensitive_data) = self.sensitive_data {
             match crate::crypto::encrypt_text_with_key(&input_text, &sensitive_data.current().master_key) {
@@ -64,6 +108,22 @@ impl WindowManager {
         }
     }
 
+    /// Decrypts text using the current keys from sensitive data
+    ///
+    /// Performs authenticated decryption using AES-GCM:
+    /// 1. Checks if sensitive data (keys) are available
+    /// 2. Calls the crypto module's decrypt_text_with_key function
+    /// 3. Returns decrypted output and status message
+    ///
+    /// # Arguments
+    /// * `input_text` - The encrypted text in "nonce:ciphertext" format
+    ///
+    /// # Returns
+    /// * `(SharedString, SharedString)` - Tuple of (decrypted_output, status_message)
+    ///
+    /// # Error Handling
+    /// - Returns error status if no keys are loaded
+    /// - Propagates decryption errors (wrong key, corrupted data, etc.)
     fn decrypt_text_with_keys(&self, input_text: SharedString) -> (SharedString, SharedString) {
         if let Some(ref sensitive_data) = self.sensitive_data {
             match crate::crypto::decrypt_text_with_key(&input_text, &sensitive_data.current().master_key) {
@@ -337,6 +397,26 @@ impl WindowManager {
         });
     }
 
+    /// Sets up all callback handlers for the mnemonic management window
+    ///
+    /// This method establishes the complete event handling pipeline for mnemonic operations:
+    /// - Generate: Creates new random BIP39 mnemonic phrases
+    /// - Validate: Automatically validates and derives keys on text input
+    /// - Continue: Transitions to dashboard after successful key derivation
+    /// - Copy: Copies mnemonic or public key identifier to clipboard
+    /// - Clear: Resets the window state
+    /// - Help: Shows contextual help information
+    ///
+    /// # Architecture Notes
+    /// - Uses weak references to prevent memory leaks in callback closures
+    /// - All callbacks run in Slint's event loop for thread safety
+    /// - Key derivation happens automatically on valid mnemonic input
+    /// - Public key identifiers are compact hashes for easy sharing
+    ///
+    /// # Security Considerations
+    /// - Mnemonic phrases are handled in memory only
+    /// - Keys are derived and stored in global SENSITIVE_DATA immediately
+    /// - Public key identifiers use SHA256 for collision resistance
     fn setup_mnemonic_management_callbacks(&self, window: &MnemonicManagement) {
         let weak_window = window.as_weak();
 
@@ -800,6 +880,33 @@ impl WindowManager {
 }
 
 /// Main application entry point
+///
+/// Initializes and runs the Cybou cryptographic application with the following steps:
+/// 1. Creates a thread-safe WindowManager instance using Arc<Mutex<>>
+/// 2. Sets up system tray icon with menu for window access
+/// 3. Shows mnemonic management window if no keys are loaded, otherwise main dashboard
+/// 4. Starts background thread for handling tray menu events
+/// 5. Runs the Slint event loop for GUI interaction
+///
+/// # System Tray Integration
+/// - Provides persistent access to application windows
+/// - Allows opening windows without main application focus
+/// - Includes quit option for clean application shutdown
+///
+/// # Window Management
+/// - Multi-window architecture using Slint for GUI rendering
+/// - Windows are shown modally but don't block other operations
+/// - Global SENSITIVE_DATA mutex ensures thread-safe key access
+///
+/// # Security Architecture
+/// - Keys are loaded into memory only (never persisted to disk)
+/// - All cryptographic operations require valid keys to be loaded
+/// - Application starts in secure state (no keys loaded by default)
+///
+/// # Error Handling
+/// - Application initialization failures are propagated as errors
+/// - Individual window operations handle errors gracefully
+/// - System tray failures don't prevent basic application operation
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Create the window manager
     let window_manager = Arc::new(Mutex::new(WindowManager::new()));
