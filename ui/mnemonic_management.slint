@@ -3,30 +3,37 @@ import { Button, GroupBox, HorizontalBox, ScrollView, TextEdit, VerticalBox } fr
 
 export component MnemonicManagement inherits Window {
     title: "Cybou - Mnemonic Management";
-    width: 700px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
 
     in-out property <string> mnemonic-input: "";
     in-out property <string> status-text: "Enter your 12 or 24-word BIP39 mnemonic phrase";
     in-out property <bool> is-valid: false;
     in-out property <bool> keys-loaded: false;
+    in-out property <string> public-key-display: "";
 
-    callback generate-mnemonic();
-    callback validate-mnemonic();
+    callback generate-mnemonic(int);
+    callback validate-mnemonic(string);
     callback continue-with-mnemonic();
     callback copy-mnemonic();
     callback clear-mnemonic();
-    callback proceed-to-dashboard();
+    callback show-help(string);
 
     VerticalBox {
-        // Header
+        // Header with help button
         HorizontalBox {
             Text {
-                text: "🔑 Mnemonic Management - Secure Key Derivation";
+                text: "🔑 Mnemonic Management";
                 font-size: 18px;
                 font-weight: 600;
             }
             HorizontalBox { width: 1px; } // Spacer
+            Button {
+                text: "?";
+                width: 30px;
+                height: 30px;
+                clicked => { show-help("mnemonic-management"); }
+            }
         }
 
         // Separator
@@ -40,8 +47,17 @@ export component MnemonicManagement inherits Window {
                     title: "📝 Enter Mnemonic Phrase";
 
                     VerticalBox {
-                        Text {
-                            text: "Enter your 12 or 24-word BIP39 mnemonic phrase below. This will be used to derive your cryptographic keys.";
+                        HorizontalBox {
+                            Text {
+                                text: "Enter your 12 or 24-word BIP39 mnemonic phrase below.";
+                            }
+                            HorizontalBox { width: 1px; } // Spacer
+                            Button {
+                                text: "?";
+                                width: 20px;
+                                height: 20px;
+                                clicked => { show-help("mnemonic-input"); }
+                            }
                         }
 
                         TextEdit {
@@ -49,12 +65,18 @@ export component MnemonicManagement inherits Window {
                             placeholder-text: "e.g., abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about";
                             wrap: word-wrap;
                             height: 80px;
+                            edited(text) => { validate-mnemonic(text); }
                         }
 
-                        HorizontalBox {
+                        // Action buttons - only show when mnemonic is not valid
+                        if (!is-valid): HorizontalBox {
                             Button {
-                                text: "🎲 Generate New";
-                                clicked => { generate-mnemonic(); }
+                                text: "🎲 12 Words";
+                                clicked => { generate-mnemonic(12); }
+                            }
+                            Button {
+                                text: "🎲 24 Words";
+                                clicked => { generate-mnemonic(24); }
                             }
                             Button {
                                 text: "🗑️ Clear";
@@ -64,9 +86,14 @@ export component MnemonicManagement inherits Window {
                                 text: "📋 Copy";
                                 clicked => { copy-mnemonic(); }
                             }
+                        }
+
+                        // Continue button - show when mnemonic is valid
+                        if (is-valid): HorizontalBox {
                             Button {
-                                text: "✅ Validate";
-                                clicked => { validate-mnemonic(); }
+                                text: "🚀 Continue";
+                                clicked => { continue-with-mnemonic(); }
+                                width: 120px;
                             }
                         }
                     }
@@ -74,93 +101,51 @@ export component MnemonicManagement inherits Window {
 
                 // Validation Status
                 GroupBox {
-                    title: "🔍 Validation Status";
-
-                    VerticalBox {
-                        HorizontalBox {
-                            Text { text: "Status:"; }
-                            Text {
-                                text: status-text;
-                                color: is-valid ? #00aa00 : #aa0000;
-                            }
-                        }
-
-                        if (is-valid): HorizontalBox {
-                            Text { text: "Keys Status:"; }
-                            Text {
-                                text: keys-loaded ? "Loaded ✓" : "Not Loaded";
-                                color: keys-loaded ? #00aa00 : #aaaa00;
-                            }
-                        }
-                    }
-                }
-
-                // Security Information
-                GroupBox {
-                    title: "🔐 Security Information";
+                    title: "🔍 Status";
 
                     VerticalBox {
                         Text {
-                            text: "⚠️ Your mnemonic phrase is the master key to all your encrypted data. Keep it secure!";
-                            color: #aa0000;
+                            text: status-text;
+                            color: is-valid ? #00aa00 : #aa0000;
+                            font-weight: is-valid ? 600 : 400;
+                        }
+
+                        if (keys-loaded): Text {
+                            text: "✅ Keys loaded successfully!";
+                            color: #00aa00;
                             font-weight: 600;
                         }
-
-                        Text { text: "• Never share your mnemonic with anyone"; }
-                        Text { text: "• Store it in a secure location (hardware wallet, encrypted file)"; }
-                        Text { text: "• Use a strong passphrase if your wallet supports it"; }
-                        Text { text: "• Make multiple backups in different locations"; }
-                        Text { text: "• Test your backups regularly"; }
                     }
                 }
 
-                // Key Derivation Info
-                GroupBox {
-                    title: "🔑 How Keys Are Derived";
-
-                    VerticalBox {
-                        Text { text: "Your mnemonic phrase is converted to a binary seed using BIP39 standard."; }
-                        Text { text: "From this seed, we derive:"; }
-                        Text { text: "• Master encryption key (AES-256-GCM)"; }
-                        Text { text: "• Post-quantum encryption keys (Kyber)"; }
-                        Text { text: "• Post-quantum signature keys (Dilithium)"; }
-                        Text { text: "• All keys are versioned for future rotation"; }
-                    }
-                }
-
-                // Continue Button
-                if (is-valid && !keys-loaded): GroupBox {
-                    title: "🚀 Ready to Continue";
-
-                    VerticalBox {
-                        Text {
-                            text: "Your mnemonic is valid and keys can be derived. Click continue to load your cryptographic keys.";
-                        }
-
-                        Button {
-                            text: "Continue with Mnemonic";
-                            clicked => { continue-with-mnemonic(); }
-                            width: 200px;
-                        }
-                    }
-                }
-
+                // Public Key Display
                 if (keys-loaded): GroupBox {
-                    title: "✅ Keys Loaded Successfully";
+                    title: "🔐 Public Key";
 
                     VerticalBox {
                         Text {
-                            text: "Your cryptographic keys have been loaded. You can now use all Cybou features.";
+                            text: "Your public key identifier:";
+                            font-weight: 600;
                         }
-
+                        HorizontalBox {
+                            Text {
+                                text: public-key-display;
+                                font-family: "monospace";
+                                font-size: 12px;
+                                color: #0066cc;
+                            }
+                            HorizontalBox { width: 1px; } // Spacer
+                            Button {
+                                text: "📋 Copy";
+                                width: 60px;
+                                height: 25px;
+                                clicked => { copy-mnemonic(); }
+                            }
+                        }
                         Text {
-                            text: "Click below to proceed to the main dashboard.";
-                        }
-
-                        Button {
-                            text: "Proceed to Dashboard";
-                            clicked => { proceed-to-dashboard(); }
-                            width: 200px;
+                            text: "This compact identifier helps you verify which keys are loaded.";
+                            font-size: 11px;
+                            color: #666666;
                         }
                     }
                 }

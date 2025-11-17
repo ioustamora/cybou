@@ -342,34 +342,134 @@ impl WindowManager {
 
         // Generate mnemonic callback
         let weak_generate = weak_window.clone();
-        window.on_generate_mnemonic(move || {
+        window.on_generate_mnemonic(move |word_count: i32| {
             let weak = weak_generate.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
                     use bip39::{Mnemonic, Language};
-                    let entropy: [u8; 16] = rand::random();
+                    
+                    // Generate entropy based on word count
+                    // 12 words = 128 bits = 16 bytes
+                    // 24 words = 256 bits = 32 bytes
+                    let entropy_size = if word_count == 24 { 32 } else { 16 };
+                    let mut entropy = vec![0u8; entropy_size];
+                    rand::Rng::fill(&mut rand::thread_rng(), &mut entropy[..]);
+                    
                     let mnemonic = Mnemonic::from_entropy(&entropy).unwrap();
                     let mnemonic_str = mnemonic.to_string();
-                    window.set_mnemonic_input(mnemonic_str.into());
-                    window.set_status_text("New mnemonic generated".into());
-                    window.set_is_valid(false);
+                    window.set_mnemonic_input(mnemonic_str.clone().into());
+                    
+                    // Manually trigger validation since setting text programmatically doesn't fire the edited callback
+                    let is_valid = bip39::Mnemonic::parse(&mnemonic_str).is_ok();
+                    window.set_is_valid(is_valid);
+                    
+                    if is_valid {
+                        // Automatically derive keys when mnemonic is valid
+                        let mut temp_app = types::App::default();
+                        temp_app.mnemonic_input = mnemonic_str.clone();
+                        
+                        if temp_app.validate_and_derive_keys() {
+                            // Store the keys in the global SENSITIVE_DATA
+                            if let Some(sensitive_data) = temp_app.sensitive_data {
+                                *crate::SENSITIVE_DATA.lock().unwrap() = Some(sensitive_data);
+                                
+                                // Generate compact public key identifier
+                                let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                                let current = sensitive_data_lock.as_ref().unwrap().current();
+                                
+                                // Create a hash of the public keys for identification
+                                use sha2::{Sha256, Digest};
+                                let mut hasher = Sha256::new();
+                                hasher.update(&current.kyber_keys.public);
+                                hasher.update(&current.dilithium_keys.public);
+                                let hash = hasher.finalize();
+                                
+                                // Take first 8 bytes and encode as hex for compact display
+                                let compact_id = hex::encode(&hash[..8]);
+                                let public_key_display = format!("cybou:{}", &compact_id[..16]);
+                                
+                                window.set_public_key_display(public_key_display.into());
+                                window.set_keys_loaded(true);
+                                window.set_status_text("Keys derived and loaded ✓".into());
+                            } else {
+                                window.set_status_text("Failed to create sensitive data".into());
+                                window.set_keys_loaded(false);
+                                window.set_public_key_display("".into());
+                            }
+                        } else {
+                            window.set_status_text("Failed to derive keys from valid mnemonic".into());
+                            window.set_keys_loaded(false);
+                            window.set_public_key_display("".into());
+                        }
+                    } else {
+                        window.set_status_text("Invalid mnemonic phrase ✗".into());
+                        window.set_keys_loaded(false);
+                        window.set_public_key_display("".into());
+                    }
                 }
             }).unwrap();
         });
 
-        // Validate mnemonic callback
+        // Validate mnemonic callback (now called automatically on text change)
         let weak_validate = weak_window.clone();
-        window.on_validate_mnemonic(move || {
+        window.on_validate_mnemonic(move |mnemonic_text: slint::SharedString| {
             let weak = weak_validate.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
-                    let mnemonic_input = window.get_mnemonic_input().to_string();
+                    let mnemonic_input = mnemonic_text.to_string();
+                    if mnemonic_input.is_empty() {
+                        window.set_status_text("Enter your 12 or 24-word BIP39 mnemonic phrase".into());
+                        window.set_is_valid(false);
+                        window.set_keys_loaded(false);
+                        window.set_public_key_display("".into());
+                        return;
+                    }
+                    
                     let is_valid = bip39::Mnemonic::parse(&mnemonic_input).is_ok();
                     window.set_is_valid(is_valid);
+                    
                     if is_valid {
-                        window.set_status_text("Valid BIP39 mnemonic phrase ✓".into());
+                        // Automatically derive keys when mnemonic is valid
+                        let mut temp_app = types::App::default();
+                        temp_app.mnemonic_input = mnemonic_input.clone();
+                        
+                        if temp_app.validate_and_derive_keys() {
+                            // Store the keys in the global SENSITIVE_DATA
+                            if let Some(sensitive_data) = temp_app.sensitive_data {
+                                *crate::SENSITIVE_DATA.lock().unwrap() = Some(sensitive_data);
+                                
+                                // Generate compact public key identifier
+                                let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                                let current = sensitive_data_lock.as_ref().unwrap().current();
+                                
+                                // Create a hash of the public keys for identification
+                                use sha2::{Sha256, Digest};
+                                let mut hasher = Sha256::new();
+                                hasher.update(&current.kyber_keys.public);
+                                hasher.update(&current.dilithium_keys.public);
+                                let hash = hasher.finalize();
+                                
+                                // Take first 8 bytes and encode as hex for compact display
+                                let compact_id = hex::encode(&hash[..8]);
+                                let public_key_display = format!("cybou:{}", &compact_id[..16]);
+                                
+                                window.set_public_key_display(public_key_display.into());
+                                window.set_keys_loaded(true);
+                                window.set_status_text("Keys derived and loaded ✓".into());
+                            } else {
+                                window.set_status_text("Failed to create sensitive data".into());
+                                window.set_keys_loaded(false);
+                                window.set_public_key_display("".into());
+                            }
+                        } else {
+                            window.set_status_text("Failed to derive keys from valid mnemonic".into());
+                            window.set_keys_loaded(false);
+                            window.set_public_key_display("".into());
+                        }
                     } else {
                         window.set_status_text("Invalid mnemonic phrase ✗".into());
+                        window.set_keys_loaded(false);
+                        window.set_public_key_display("".into());
                     }
                 }
             }).unwrap();
@@ -381,23 +481,18 @@ impl WindowManager {
             let weak = weak_continue.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
-                    let mnemonic_input = window.get_mnemonic_input().to_string();
-                    // Create a temporary app instance to validate and derive keys
-                    let mut temp_app = types::App::default();
-                    temp_app.mnemonic_input = mnemonic_input;
-                    if temp_app.validate_and_derive_keys() {
-                        // Set the global sensitive data
-                        *SENSITIVE_DATA.lock().unwrap() = temp_app.sensitive_data;
-                        window.set_keys_loaded(true);
-                        window.set_status_text("Keys loaded successfully ✓".into());
-                        
-                        // Close mnemonic window and show main dashboard after a short delay
-                        std::thread::sleep(std::time::Duration::from_millis(1000));
-                        // Note: In a real implementation, we'd close this window and show dashboard
-                        // For now, the user can manually navigate
-                    } else {
-                        window.set_status_text("Failed to derive keys ✗".into());
-                    }
+                    // Keys are already derived and loaded when mnemonic became valid
+                    // Just set the global state and transition to dashboard
+                    
+                    // The keys are already in the SENSITIVE_DATA from the validation callback
+                    // Just make sure dashboard opens immediately
+                    
+                    // Close mnemonic window and show main dashboard immediately
+                    let mut wm = WindowManager::new();
+                    wm.show_main_dashboard();
+                    
+                    // Note: In Slint, we can't directly close windows from callbacks
+                    // The dashboard will open and the mnemonic window will remain but be behind
                 }
             }).unwrap();
         });
@@ -408,19 +503,39 @@ impl WindowManager {
             let weak = weak_copy.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
-                    let mnemonic = window.get_mnemonic_input().to_string();
-                    if mnemonic.is_empty() {
-                        window.set_status_text("No mnemonic to copy".into());
-                        return;
-                    }
-                    match clipboard::ClipboardContext::new() {
-                        Ok(mut ctx) => {
-                            match ctx.set_contents(mnemonic) {
-                                Ok(_) => window.set_status_text("Mnemonic copied to clipboard".into()),
-                                Err(_) => window.set_status_text("Failed to copy to clipboard".into()),
-                            }
+                    let keys_loaded = window.get_keys_loaded();
+                    if keys_loaded {
+                        // Copy public key identifier when keys are loaded
+                        let public_key = window.get_public_key_display().to_string();
+                        if public_key.is_empty() {
+                            window.set_status_text("No public key to copy".into());
+                            return;
                         }
-                        Err(_) => window.set_status_text("Clipboard not available".into()),
+                        match clipboard::ClipboardContext::new() {
+                            Ok(mut ctx) => {
+                                match ctx.set_contents(public_key) {
+                                    Ok(_) => window.set_status_text("Public key identifier copied to clipboard".into()),
+                                    Err(_) => window.set_status_text("Failed to copy to clipboard".into()),
+                                }
+                            }
+                            Err(_) => window.set_status_text("Clipboard not available".into()),
+                        }
+                    } else {
+                        // Copy mnemonic when keys are not loaded
+                        let mnemonic = window.get_mnemonic_input().to_string();
+                        if mnemonic.is_empty() {
+                            window.set_status_text("No mnemonic to copy".into());
+                            return;
+                        }
+                        match clipboard::ClipboardContext::new() {
+                            Ok(mut ctx) => {
+                                match ctx.set_contents(mnemonic) {
+                                    Ok(_) => window.set_status_text("Mnemonic copied to clipboard".into()),
+                                    Err(_) => window.set_status_text("Failed to copy to clipboard".into()),
+                                }
+                            }
+                            Err(_) => window.set_status_text("Clipboard not available".into()),
+                        }
                     }
                 }
             }).unwrap();
@@ -433,22 +548,28 @@ impl WindowManager {
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
                     window.set_mnemonic_input("".into());
-                    window.set_status_text("Mnemonic cleared".into());
+                    window.set_status_text("Enter your 12 or 24-word BIP39 mnemonic phrase".into());
                     window.set_is_valid(false);
                     window.set_keys_loaded(false);
+                    window.set_public_key_display("".into());
                 }
             }).unwrap();
         });
 
-        // Proceed to dashboard callback
-        let weak_proceed = weak_window.clone();
-        window.on_proceed_to_dashboard(move || {
-            let weak = weak_proceed.clone();
+        // Show help callback
+        let weak_help = weak_window.clone();
+        window.on_show_help(move |help_topic: slint::SharedString| {
+            let weak = weak_help.clone();
             slint::invoke_from_event_loop(move || {
-                if let Some(_window) = weak.upgrade() {
-                    // Close mnemonic window and show main dashboard
-                    let mut wm = WindowManager::new();
-                    wm.show_main_dashboard();
+                if let Some(window) = weak.upgrade() {
+                    let help_message = match help_topic.as_str() {
+                        "mnemonic-management" => "🔑 Mnemonic Management\n\nThis window allows you to enter or generate a BIP39 mnemonic phrase to derive your cryptographic keys.\n\n• Enter your existing mnemonic or generate a new one\n• The system automatically validates your input\n• Once valid, click Continue to load your keys",
+                        "mnemonic-input" => "📝 Mnemonic Input\n\nEnter your 12 or 24-word BIP39 mnemonic phrase. This phrase is used to securely derive all your cryptographic keys.\n\n• Words must be from the BIP39 word list\n• Use spaces between words\n• The phrase is case-insensitive\n• Keep this phrase secure and private",
+                        _ => "Help topic not found"
+                    };
+                    
+                    // For now, just show in status. In a real app, this would open a modal/popup
+                    window.set_status_text(help_message.into());
                 }
             }).unwrap();
         });
