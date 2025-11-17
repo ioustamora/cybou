@@ -17,11 +17,13 @@ A cross-platform Rust GUI application for secure cryptography using post-quantum
 
 ### 🖥️ User Interface
 
-- **Multi-Window Architecture**: Separate windows for different functions
+- **Multi-Window Architecture**: Separate windows for different functions with centralized window management
+- **Window Coordinator**: Advanced window lifecycle management and coordination system
 - **Dashboard**: Main window with key status, public key display, and quick actions
 - **System Tray Integration**: Enhanced tray menu for opening specific windows
 - **Native GUI**: Built with Slint for cross-platform compatibility
 - **File Dialogs**: Native OS file/folder selection dialogs
+- **Callback System**: Event-driven UI with proper memory management and thread safety
 
 ### 📁 Cryptographic Operations
 
@@ -122,7 +124,7 @@ src/
 ├── ui.rs                # User interface components and rendering
 ├── backup.rs            # Automated backup system and file monitoring
 ├── cloud.rs             # Cloud storage operations and integrations
-└── windows.rs           # Windows-specific functionality
+└── windows.rs           # Window coordination and lifecycle management
 
 ui/
 ├── main_dashboard.slint    # Main dashboard UI
@@ -146,7 +148,28 @@ ui/
 - **`ui.rs`**: GUI components, window coordination, user interaction handling
 - **`backup.rs`**: File watching, deduplication, backup lifecycle management
 - **`cloud.rs`**: Cloud provider integrations, upload/download operations
-- **`windows.rs`**: Windows-specific functionality
+- **`windows.rs`**: Window coordination system, lifecycle management, callback setup
+
+### Window Management Architecture
+
+The application implements a sophisticated window management system:
+
+```text
+WindowCoordinator
+├── Window Lifecycle Management
+│   ├── open_window() / close_window()
+│   ├── toggle_window() / is_window_open()
+│   └── close_all_windows()
+├── Callback Setup System
+│   ├── setup_main_dashboard_window()
+│   ├── setup_mnemonic_management_window()
+│   ├── setup_text_encryption_window()
+│   └── setup_password_tools_window()
+└── State Management
+    ├── Window state tracking
+    ├── App state synchronization
+    └── Thread-safe operations
+```
 
 ## Contributing
 
