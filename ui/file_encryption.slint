@@ -7,7 +7,6 @@ export component FileEncryptionWindow inherits Window {
     height: 500px;
 
     in-out property <string> input-file: "";
-    in-out property <string> output-file: "";
     in-out property <string> status: "Ready";
     property <bool> use-hybrid: true;
     property <bool> use-aes: false;
@@ -17,7 +16,6 @@ export component FileEncryptionWindow inherits Window {
     property <bool> overwrite: false;
 
     callback select-input-file();
-    callback select-output-file();
     callback encrypt();
     callback decrypt();
     callback clear();
@@ -88,14 +86,6 @@ export component FileEncryptionWindow inherits Window {
                     Button {
                         text: "📁 Browse";
                         clicked => { select-input-file(); }
-                    }
-                }
-                HorizontalBox {
-                    Text { text: "Output File:"; width: 80px; }
-                    Text { text: output-file; }
-                    Button {
-                        text: "📁 Browse";
-                        clicked => { select-output-file(); }
                     }
                 }
             }

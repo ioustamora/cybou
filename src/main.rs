@@ -808,27 +808,13 @@ impl WindowManager {
             let weak = weak_select_input.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
-                    if let Some(path) = rfd::FileDialog::new().pick_file() {
+                    if let Some(path) = rfd::FileDialog::new()
+                        .set_directory(".")
+                        .pick_file() {
                         window.set_input_file(path.display().to_string().into());
                         window.set_status("Input file selected".into());
                     } else {
                         window.set_status("No file selected".into());
-                    }
-                }
-            }).unwrap();
-        });
-
-        // Select output file callback
-        let weak_select_output = weak_window.clone();
-        window.on_select_output_file(move || {
-            let weak = weak_select_output.clone();
-            slint::invoke_from_event_loop(move || {
-                if let Some(window) = weak.upgrade() {
-                    if let Some(path) = rfd::FileDialog::new().save_file() {
-                        window.set_output_file(path.display().to_string().into());
-                        window.set_status("Output file selected".into());
-                    } else {
-                        window.set_status("No output file selected".into());
                     }
                 }
             }).unwrap();
@@ -855,8 +841,7 @@ impl WindowManager {
                     let master_key = sensitive_data_lock.as_ref().unwrap().current().master_key;
                     match crate::crypto::encrypt_file(&input_file, &master_key) {
                         Ok(output_path) => {
-                            window.set_status("File encrypted successfully".into());
-                            window.set_output_file(output_path.into());
+                            window.set_status(format!("File encrypted successfully to: {}", output_path).into());
                         }
                         Err(e) => {
                             window.set_status(e.into());
@@ -887,8 +872,7 @@ impl WindowManager {
                     let master_key = sensitive_data_lock.as_ref().unwrap().current().master_key;
                     match crate::crypto::decrypt_file(&input_file, &master_key) {
                         Ok(output_path) => {
-                            window.set_status("File decrypted successfully".into());
-                            window.set_output_file(output_path.into());
+                            window.set_status(format!("File decrypted successfully to: {}", output_path).into());
                         }
                         Err(e) => {
                             window.set_status(e.into());
@@ -905,7 +889,6 @@ impl WindowManager {
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
                     window.set_input_file("".into());
-                    window.set_output_file("".into());
                     window.set_status("Ready".into());
                 }
             }).unwrap();
@@ -913,8 +896,198 @@ impl WindowManager {
     }
 
     fn setup_digital_signatures_callbacks(&self, window: &DigitalSignaturesWindow) {
-        // TODO: Implement digital signatures callbacks
-        println!("Setting up digital signatures callbacks");
+        let weak_window = window.as_weak();
+
+        // Select file callback
+        let weak_select = weak_window.clone();
+        window.on_select_file(move || {
+            let weak = weak_select.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    if let Some(path) = rfd::FileDialog::new()
+                        .set_directory(".")
+                        .pick_file() {
+                        window.set_file_path(path.display().to_string().into());
+                        window.set_status("File selected".into());
+                    } else {
+                        window.set_status("No file selected".into());
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Sign text callback
+        let weak_sign_text = weak_window.clone();
+        window.on_sign_text(move || {
+            let weak = weak_sign_text.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let message = window.get_message().to_string();
+                    if message.is_empty() {
+                        window.set_status("No message to sign".into());
+                        return;
+                    }
+
+                    let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                    if sensitive_data_lock.is_none() {
+                        window.set_status("No keys available. Please validate mnemonic first.".into());
+                        return;
+                    }
+
+                    let dilithium_keys = &sensitive_data_lock.as_ref().unwrap().current().dilithium_keys;
+                    match crate::crypto::sign_message(&message, dilithium_keys) {
+                        Ok(signature) => {
+                            window.set_signature(signature.into());
+                            window.set_status("Text signed successfully".into());
+                        }
+                        Err(e) => {
+                            window.set_status(format!("Signing failed: {}", e).into());
+                        }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Sign file callback
+        let weak_sign_file = weak_window.clone();
+        window.on_sign_file(move || {
+            let weak = weak_sign_file.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let file_path = window.get_file_path().to_string();
+                    if file_path.is_empty() {
+                        window.set_status("No file selected".into());
+                        return;
+                    }
+
+                    let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                    if sensitive_data_lock.is_none() {
+                        window.set_status("No keys available. Please validate mnemonic first.".into());
+                        return;
+                    }
+
+                    let dilithium_keys = &sensitive_data_lock.as_ref().unwrap().current().dilithium_keys;
+                    match crate::crypto::sign_file(&file_path, dilithium_keys) {
+                        Ok(signature) => {
+                            window.set_signature(signature.into());
+                            window.set_status("File signed successfully".into());
+                        }
+                        Err(e) => {
+                            window.set_status(format!("Signing failed: {}", e).into());
+                        }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Verify text callback
+        let weak_verify_text = weak_window.clone();
+        window.on_verify_text(move || {
+            let weak = weak_verify_text.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let message = window.get_message().to_string();
+                    let signature = window.get_signature().to_string();
+                    if message.is_empty() || signature.is_empty() {
+                        window.set_status("Message and signature required".into());
+                        return;
+                    }
+
+                    let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                    if sensitive_data_lock.is_none() {
+                        window.set_status("No keys available. Please validate mnemonic first.".into());
+                        return;
+                    }
+
+                    let dilithium_keys = &sensitive_data_lock.as_ref().unwrap().current().dilithium_keys;
+                    match crate::crypto::verify_signature(&message, &signature, dilithium_keys) {
+                        Ok(true) => {
+                            window.set_status("Signature verified successfully".into());
+                        }
+                        Ok(false) => {
+                            window.set_status("Signature verification failed".into());
+                        }
+                        Err(e) => {
+                            window.set_status(format!("Verification error: {}", e).into());
+                        }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Verify file callback
+        let weak_verify_file = weak_window.clone();
+        window.on_verify_file(move || {
+            let weak = weak_verify_file.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let file_path = window.get_file_path().to_string();
+                    let signature = window.get_signature().to_string();
+                    if file_path.is_empty() || signature.is_empty() {
+                        window.set_status("File and signature required".into());
+                        return;
+                    }
+
+                    let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                    if sensitive_data_lock.is_none() {
+                        window.set_status("No keys available. Please validate mnemonic first.".into());
+                        return;
+                    }
+
+                    let dilithium_keys = &sensitive_data_lock.as_ref().unwrap().current().dilithium_keys;
+                    match crate::crypto::verify_file_signature(&file_path, &signature, dilithium_keys) {
+                        Ok(true) => {
+                            window.set_status("File signature verified successfully".into());
+                        }
+                        Ok(false) => {
+                            window.set_status("File signature verification failed".into());
+                        }
+                        Err(e) => {
+                            window.set_status(format!("Verification error: {}", e).into());
+                        }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Copy signature callback
+        let weak_copy = weak_window.clone();
+        window.on_copy_signature(move || {
+            let weak = weak_copy.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let signature = window.get_signature().to_string();
+                    if signature.is_empty() {
+                        window.set_status("No signature to copy".into());
+                        return;
+                    }
+
+                    match clipboard::ClipboardContext::new() {
+                        Ok(mut ctx) => {
+                            match ctx.set_contents(signature) {
+                                Ok(_) => window.set_status("Signature copied to clipboard".into()),
+                                Err(_) => window.set_status("Failed to copy to clipboard".into()),
+                            }
+                        }
+                        Err(_) => window.set_status("Clipboard not available".into()),
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Clear callback
+        let weak_clear = weak_window.clone();
+        window.on_clear(move || {
+            let weak = weak_clear.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    window.set_message("".into());
+                    window.set_signature("".into());
+                    window.set_file_path("".into());
+                    window.set_status("Ready".into());
+                }
+            }).unwrap();
+        });
     }
 
     fn setup_password_tools_callbacks(&self, window: &PasswordToolsWindow) {

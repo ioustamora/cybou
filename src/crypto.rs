@@ -124,37 +124,120 @@ pub fn sign_message(message: &str, dilithium_keys: &pqc_dilithium::Keypair) -> R
     Ok(general_purpose::STANDARD.encode(&signature))
 }
 
-/// Verifies a signature using Dilithium keys
+/// Verifies a signature for a message using Dilithium keys
 ///
-/// Verifies a digital signature against a message using Dilithium:
-/// 1. Validates that the message is not empty
-/// 2. Decodes the signature from base64
-/// 3. Verifies the signature using the Dilithium public key
-/// 4. Returns whether the signature is valid
+/// Verifies that the provided signature was created by the private key
+/// corresponding to the given public key for the exact message content.
 ///
 /// # Arguments
 /// * `message` - The original message that was signed
-/// * `signature_b64` - Base64-encoded signature to verify
-/// * `dilithium_keys` - Dilithium keypair containing the public key for verification
+/// * `signature_b64` - Base64 encoded signature to verify
+/// * `dilithium_keys` - The Dilithium keypair containing the public key
 ///
 /// # Returns
 /// * `Ok(bool)` - `true` if signature is valid, `false` if invalid
-/// * `Err(String)` - Error message for invalid message, base64 decoding failure,
+/// * `Err(String)` - Error message for empty message, base64 decoding failure,
 ///                  or signature format errors
 ///
 /// # Security Notes
-/// - Verification only requires the public key (private key not needed)
-/// - Provides strong assurance that message was signed by private key holder
-/// - Resistant to quantum computing attacks
+/// - Verifies the exact message content against the signature
+/// - Any modification to the message will cause verification to fail
+/// - Only requires the public key (private key not needed)
 pub fn verify_signature(message: &str, signature_b64: &str, dilithium_keys: &pqc_dilithium::Keypair) -> Result<bool, String> {
     if message.is_empty() {
         return Err("Message is empty".to_string());
     }
 
+    let message_bytes = message.as_bytes();
     let signature = general_purpose::STANDARD.decode(signature_b64)
         .map_err(|_| "Invalid signature base64".to_string())?;
 
-    match pqc_dilithium::verify(&signature, message.as_bytes(), &dilithium_keys.public) {
+    match pqc_dilithium::verify(&signature, message_bytes, &dilithium_keys.public) {
+        Ok(()) => Ok(true),
+        Err(pqc_dilithium::SignError::Input) => Err("Invalid signature format".to_string()),
+        Err(pqc_dilithium::SignError::Verify) => Ok(false),
+    }
+}
+
+/// Signs a file using Dilithium keys
+///
+/// Creates a digital signature for a file's contents:
+/// 1. Validates that the file exists and is readable
+/// 2. Reads the file contents
+/// 3. Signs the file bytes using the Dilithium private key
+/// 4. Returns the signature as base64-encoded bytes
+///
+/// # Arguments
+/// * `file_path` - Path to the file to sign
+/// * `dilithium_keys` - Dilithium keypair containing the private key for signing
+///
+/// # Returns
+/// * `Ok(String)` - Base64-encoded signature bytes
+/// * `Err(String)` - Error message if file doesn't exist, can't be read, or is empty
+///
+/// # Security Notes
+/// - Signs the raw file bytes, preserving exact content
+/// - File size is not limited but large files may impact performance
+/// - Provides strong assurance that file was signed by private key holder
+pub fn sign_file(file_path: &str, dilithium_keys: &pqc_dilithium::Keypair) -> Result<String, String> {
+    use std::fs;
+
+    if file_path.is_empty() {
+        return Err("File path is empty".to_string());
+    }
+
+    let data = fs::read(file_path)
+        .map_err(|e| format!("Failed to read file: {}", e))?;
+
+    if data.is_empty() {
+        return Err("File is empty".to_string());
+    }
+
+    let signature = dilithium_keys.sign(&data);
+    Ok(general_purpose::STANDARD.encode(&signature))
+}
+
+/// Verifies a file signature using Dilithium keys
+///
+/// Verifies a digital signature against a file's contents:
+/// 1. Validates that the file exists and is readable
+/// 2. Reads the file contents
+/// 3. Decodes the signature from base64
+/// 4. Verifies the signature using the Dilithium public key
+/// 5. Returns whether the signature is valid
+///
+/// # Arguments
+/// * `file_path` - Path to the file whose signature to verify
+/// * `signature_b64` - Base64-encoded signature to verify
+/// * `dilithium_keys` - Dilithium keypair containing the public key for verification
+///
+/// # Returns
+/// * `Ok(bool)` - `true` if signature is valid, `false` if invalid
+/// * `Err(String)` - Error message for file access issues, base64 decoding failure,
+///                  or signature format errors
+///
+/// # Security Notes
+/// - Verifies the exact file contents against the signature
+/// - Any modification to the file will cause verification to fail
+/// - Only requires the public key (private key not needed)
+pub fn verify_file_signature(file_path: &str, signature_b64: &str, dilithium_keys: &pqc_dilithium::Keypair) -> Result<bool, String> {
+    use std::fs;
+
+    if file_path.is_empty() {
+        return Err("File path is empty".to_string());
+    }
+
+    let data = fs::read(file_path)
+        .map_err(|e| format!("Failed to read file: {}", e))?;
+
+    if data.is_empty() {
+        return Err("File is empty".to_string());
+    }
+
+    let signature = general_purpose::STANDARD.decode(signature_b64)
+        .map_err(|_| "Invalid signature base64".to_string())?;
+
+    match pqc_dilithium::verify(&signature, &data, &dilithium_keys.public) {
         Ok(()) => Ok(true),
         Err(pqc_dilithium::SignError::Input) => Err("Invalid signature format".to_string()),
         Err(pqc_dilithium::SignError::Verify) => Ok(false),
@@ -206,7 +289,17 @@ pub fn decrypt_file(file_path: &str, master_key: &[u8; 32]) -> Result<String, St
 
     let decrypted = decrypt_text_with_key(&encrypted_data, master_key)?;
 
-    let output_path = file_path.trim_end_matches(".cybou").to_string() + "_decrypted";
+    // Generate output path by inserting "decrypted" before the extension
+    // For "file.txt.cybou" -> "file.decrypted.txt"
+    let path_without_cybou = file_path.trim_end_matches(".cybou");
+    let output_path = if let Some(dot_pos) = path_without_cybou.rfind('.') {
+        format!("{}.decrypted{}", 
+            &path_without_cybou[..dot_pos], 
+            &path_without_cybou[dot_pos..])
+    } else {
+        format!("{}.decrypted", path_without_cybou)
+    };
+
     fs::write(&output_path, decrypted)
         .map_err(|e| format!("Failed to write decrypted file: {}", e))?;
 
