@@ -885,7 +885,7 @@ impl WindowManager {
                                         {
                                             use std::process::Command;
                                             let _ = Command::new("powershell")
-                                                .args(&["-Command", &format!("New-BurntToastNotification -Text 'File Encrypted', 'Successfully encrypted: {}'", output_path)])
+                                                .args(&["-Command", &format!("Write-Host 'File Encrypted Successfully: {}'", output_path)])
                                                 .spawn();
                                         }
                                     }
@@ -965,7 +965,7 @@ impl WindowManager {
                                         {
                                             use std::process::Command;
                                             let _ = Command::new("powershell")
-                                                .args(&["-Command", &format!("New-BurntToastNotification -Text 'File Decrypted', 'Successfully decrypted: {}'", output_path)])
+                                                .args(&["-Command", &format!("Write-Host 'File Decrypted Successfully: {}'", output_path)])
                                                 .spawn();
                                         }
                                     }
