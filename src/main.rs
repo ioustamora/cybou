@@ -3,6 +3,9 @@
 //! A cross-platform GUI application for post-quantum cryptography operations
 //! including encryption, digital signatures, key management, and cloud storage.
 
+#[allow(private_interfaces)]
+#[allow(private_methods)]
+
 mod types;
 mod crypto;
 // mod ui; // Temporarily disabled during Slint migration
@@ -426,7 +429,7 @@ impl WindowManager {
             let weak = weak_generate.clone();
             slint::invoke_from_event_loop(move || {
                 if let Some(window) = weak.upgrade() {
-                    use bip39::{Mnemonic, Language};
+                    use bip39::Mnemonic;
                     
                     // Generate entropy based on word count
                     // 12 words = 128 bits = 16 bytes
@@ -794,9 +797,119 @@ impl WindowManager {
         });
     }
 
+    #[allow(private_interfaces)]
+    #[allow(private_interfaces)]
     fn setup_file_encryption_callbacks(&self, window: &FileEncryptionWindow) {
-        // TODO: Implement file encryption callbacks
-        println!("Setting up file encryption callbacks");
+        let weak_window = window.as_weak();
+
+        // Select input file callback
+        let weak_select_input = weak_window.clone();
+        window.on_select_input_file(move || {
+            let weak = weak_select_input.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    if let Some(path) = rfd::FileDialog::new().pick_file() {
+                        window.set_input_file(path.display().to_string().into());
+                        window.set_status("Input file selected".into());
+                    } else {
+                        window.set_status("No file selected".into());
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Select output file callback
+        let weak_select_output = weak_window.clone();
+        window.on_select_output_file(move || {
+            let weak = weak_select_output.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    if let Some(path) = rfd::FileDialog::new().save_file() {
+                        window.set_output_file(path.display().to_string().into());
+                        window.set_status("Output file selected".into());
+                    } else {
+                        window.set_status("No output file selected".into());
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Encrypt callback
+        let weak_encrypt = weak_window.clone();
+        window.on_encrypt(move || {
+            let weak = weak_encrypt.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let input_file = window.get_input_file().to_string();
+                    if input_file.is_empty() {
+                        window.set_status("No input file selected".into());
+                        return;
+                    }
+
+                    let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                    if sensitive_data_lock.is_none() {
+                        window.set_status("No keys available. Please validate mnemonic first.".into());
+                        return;
+                    }
+
+                    let master_key = sensitive_data_lock.as_ref().unwrap().current().master_key;
+                    match crate::crypto::encrypt_file(&input_file, &master_key) {
+                        Ok(output_path) => {
+                            window.set_status("File encrypted successfully".into());
+                            window.set_output_file(output_path.into());
+                        }
+                        Err(e) => {
+                            window.set_status(e.into());
+                        }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Decrypt callback
+        let weak_decrypt = weak_window.clone();
+        window.on_decrypt(move || {
+            let weak = weak_decrypt.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let input_file = window.get_input_file().to_string();
+                    if input_file.is_empty() {
+                        window.set_status("No input file selected".into());
+                        return;
+                    }
+
+                    let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                    if sensitive_data_lock.is_none() {
+                        window.set_status("No keys available. Please validate mnemonic first.".into());
+                        return;
+                    }
+
+                    let master_key = sensitive_data_lock.as_ref().unwrap().current().master_key;
+                    match crate::crypto::decrypt_file(&input_file, &master_key) {
+                        Ok(output_path) => {
+                            window.set_status("File decrypted successfully".into());
+                            window.set_output_file(output_path.into());
+                        }
+                        Err(e) => {
+                            window.set_status(e.into());
+                        }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Clear callback
+        let weak_clear = weak_window.clone();
+        window.on_clear(move || {
+            let weak = weak_clear.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    window.set_input_file("".into());
+                    window.set_output_file("".into());
+                    window.set_status("Ready".into());
+                }
+            }).unwrap();
+        });
     }
 
     fn setup_digital_signatures_callbacks(&self, window: &DigitalSignaturesWindow) {
@@ -906,8 +1019,115 @@ impl WindowManager {
     }
 
     fn setup_folder_encryption_callbacks(&self, window: &FolderEncryptionWindow) {
-        // TODO: Implement folder encryption callbacks
-        println!("Setting up folder encryption callbacks");
+        let weak_window = window.as_weak();
+
+        // Select input folder callback
+        let weak_select_input = weak_window.clone();
+        window.on_select_input_folder(move || {
+            let weak = weak_select_input.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    if let Some(path) = rfd::FileDialog::new().pick_folder() {
+                        window.set_input_folder(path.display().to_string().into());
+                        window.set_status("Input folder selected".into());
+                    } else {
+                        window.set_status("No folder selected".into());
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Select output folder callback
+        let weak_select_output = weak_window.clone();
+        window.on_select_output_folder(move || {
+            let weak = weak_select_output.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    if let Some(path) = rfd::FileDialog::new().pick_folder() {
+                        window.set_output_folder(path.display().to_string().into());
+                        window.set_status("Output folder selected".into());
+                    } else {
+                        window.set_status("No output folder selected".into());
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Encrypt callback
+        let weak_encrypt = weak_window.clone();
+        window.on_encrypt(move || {
+            let weak = weak_encrypt.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let input_folder = window.get_input_folder().to_string();
+                    if input_folder.is_empty() {
+                        window.set_status("No input folder selected".into());
+                        return;
+                    }
+
+                    let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                    if sensitive_data_lock.is_none() {
+                        window.set_status("No keys available. Please validate mnemonic first.".into());
+                        return;
+                    }
+
+                    let master_key = sensitive_data_lock.as_ref().unwrap().current().master_key;
+                    match crate::crypto::encrypt_folder(&input_folder, &master_key) {
+                        Ok(_) => {
+                            window.set_status("Folder encrypted successfully".into());
+                        }
+                        Err(e) => {
+                            window.set_status(e.into());
+                        }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Decrypt callback
+        let weak_decrypt = weak_window.clone();
+        window.on_decrypt(move || {
+            let weak = weak_decrypt.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    let input_folder = window.get_input_folder().to_string();
+                    if input_folder.is_empty() {
+                        window.set_status("No input folder selected".into());
+                        return;
+                    }
+
+                    let sensitive_data_lock = crate::SENSITIVE_DATA.lock().unwrap();
+                    if sensitive_data_lock.is_none() {
+                        window.set_status("No keys available. Please validate mnemonic first.".into());
+                        return;
+                    }
+
+                    let master_key = sensitive_data_lock.as_ref().unwrap().current().master_key;
+                    match crate::crypto::decrypt_folder(&input_folder, &master_key) {
+                        Ok(output_path) => {
+                            window.set_status("Folder decrypted successfully".into());
+                        }
+                        Err(e) => {
+                            window.set_status(e.into());
+                        }
+                    }
+                }
+            }).unwrap();
+        });
+
+        // Clear callback
+        let weak_clear = weak_window.clone();
+        window.on_clear(move || {
+            let weak = weak_clear.clone();
+            slint::invoke_from_event_loop(move || {
+                if let Some(window) = weak.upgrade() {
+                    window.set_input_folder("".into());
+                    window.set_output_folder("".into());
+                    window.set_status("Ready".into());
+                    window.set_progress("".into());
+                }
+            }).unwrap();
+        });
     }
 }
 

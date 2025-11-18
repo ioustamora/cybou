@@ -576,6 +576,25 @@ impl App {
         }
     }
 
+    /// Decrypts a folder
+    pub fn decrypt_folder(&mut self) {
+        if self.sensitive_data.is_none() {
+            self.last_status = "No keys available".to_string();
+            return;
+        }
+
+        match crate::crypto::decrypt_folder(&self.folder_path, &self.sensitive_data.as_ref().unwrap().current().master_key) {
+            Ok(output_path) => {
+                self.text_output = format!("Decrypted to {}", output_path);
+                self.last_status = "Folder decrypted successfully".to_string();
+            }
+            Err(e) => {
+                self.text_output = String::new();
+                self.last_status = e;
+            }
+        }
+    }
+
     /// Generates a secure password
     pub fn generate_secure_password(&mut self) {
         match crate::crypto::generate_password(

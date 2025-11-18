@@ -247,7 +247,71 @@ pub fn encrypt_folder(folder_path: &str, master_key: &[u8; 32]) -> Result<(), St
         .map_err(|e| format!("Failed to remove temporary tar file: {}", e))?;
 
     Ok(())
-}/// Generates a secure random password
+}
+
+/// Decrypts a folder using master key
+pub fn decrypt_folder(folder_path: &str, master_key: &[u8; 32]) -> Result<String, String> {
+    use std::fs;
+    use std::path::Path;
+
+    if folder_path.is_empty() {
+        return Err("Folder path is empty".to_string());
+    }
+
+    let path = Path::new(folder_path);
+    if !path.exists() {
+        return Err("Encrypted folder file does not exist".to_string());
+    }
+
+    // Decrypt the .cybou file to get the tar
+    let tar_path = folder_path.trim_end_matches(".cybou").to_string() + "_temp.tar";
+    let decrypted_tar = decrypt_file(folder_path, master_key)?;
+
+    // The decrypt_file returns the path to the decrypted tar, but wait, decrypt_file writes to output_path which is folder_path without .cybou + "_decrypted"
+    // Wait, in decrypt_file, it reads encrypted_data from path, decrypts, writes to output_path = path.trim_end_matches(".cybou") + "_decrypted"
+
+    // So for folder, the encrypted is folder.tar.cybou, decrypt to folder.tar_decrypted, but we want to untar it.
+
+    // Actually, encrypt_folder creates tar_path = folder_path + ".tar", encrypts to tar_path + ".cybou", removes tar.
+
+    // So decrypt should: decrypt tar_path.cybou to tar_path, then untar to folder_path + "_decrypted"
+
+    let tar_path = folder_path.trim_end_matches(".cybou").to_string() + ".tar";
+    let decrypted_tar_path = decrypt_file(folder_path, master_key)?; // This will be tar_path + "_decrypted" ? Wait no.
+
+    // decrypt_file: output_path = file_path.trim_end_matches(".cybou").to_string() + "_decrypted";
+
+    // So for "folder.tar.cybou", output_path = "folder.tar_decrypted"
+
+    // But we need "folder.tar"
+
+    // So, after decrypt_file, rename "folder.tar_decrypted" to "folder.tar"
+
+    let temp_tar_path = decrypted_tar_path; // "folder.tar_decrypted"
+
+    let actual_tar_path = temp_tar_path.trim_end_matches("_decrypted").to_string();
+
+    fs::rename(&temp_tar_path, &actual_tar_path)
+        .map_err(|e| format!("Failed to rename decrypted tar: {}", e))?;
+
+    // Now untar
+    let output_folder = actual_tar_path.trim_end_matches(".tar").to_string() + "_decrypted";
+    fs::create_dir_all(&output_folder)
+        .map_err(|e| format!("Failed to create output folder: {}", e))?;
+
+    let tar_file = fs::File::open(&actual_tar_path)
+        .map_err(|e| format!("Failed to open tar file: {}", e))?;
+    let mut archive = tar::Archive::new(tar_file);
+
+    archive.unpack(&output_folder)
+        .map_err(|e| format!("Failed to unpack tar archive: {}", e))?;
+
+    // Remove the tar file
+    fs::remove_file(&actual_tar_path)
+        .map_err(|e| format!("Failed to remove temporary tar file: {}", e))?;
+
+    Ok(output_folder)
+}
 ///
 /// Creates a cryptographically secure random password with customizable character sets:
 /// 1. Validates that password length is greater than 0

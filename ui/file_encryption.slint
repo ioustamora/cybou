@@ -6,10 +6,9 @@ export component FileEncryptionWindow inherits Window {
     width: 600px;
     height: 500px;
 
-    property <string> input-file: "";
-    property <string> output-file: "";
-    property <string> key-password: "";
-    property <string> status: "Ready";
+    in-out property <string> input-file: "";
+    in-out property <string> output-file: "";
+    in-out property <string> status: "Ready";
     property <bool> use-hybrid: true;
     property <bool> use-aes: false;
     property <bool> use-chacha: false;
@@ -72,11 +71,7 @@ export component FileEncryptionWindow inherits Window {
             title: "🔑 Key / Password";
 
             VerticalBox {
-                Text { text: "Enter encryption key or password:"; }
-                LineEdit {
-                    placeholder-text: "Enter key/password...";
-                    text <=> key-password;
-                }
+                Text { text: "Keys are derived from mnemonic. Ensure mnemonic is validated."; }
             }
         }
 
@@ -87,10 +82,8 @@ export component FileEncryptionWindow inherits Window {
             VerticalBox {
                 HorizontalBox {
                     Text { text: "Input File:"; width: 80px; }
-                    LineEdit {
-                        placeholder-text: "Select input file...";
-                        text <=> input-file;
-                        read-only: true;
+                    Text { 
+                        text: input-file; 
                     }
                     Button {
                         text: "📁 Browse";
@@ -99,11 +92,7 @@ export component FileEncryptionWindow inherits Window {
                 }
                 HorizontalBox {
                     Text { text: "Output File:"; width: 80px; }
-                    LineEdit {
-                        placeholder-text: "Select output file...";
-                        text <=> output-file;
-                        read-only: true;
-                    }
+                    Text { text: output-file; }
                     Button {
                         text: "📁 Browse";
                         clicked => { select-output-file(); }
