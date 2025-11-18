@@ -49,6 +49,44 @@ pub fn encrypt_text_with_key(input: &str, master_key: &[u8; 32]) -> Result<Strin
     ))
 }
 
+/// Encrypts binary data using AES-GCM with master key
+///
+/// This function encrypts raw binary data:
+/// 1. Validates that the input data is not empty
+/// 2. Generates a random 12-byte nonce
+/// 3. Uses AES-256-GCM with the provided master key for encryption
+/// 4. Returns the nonce and ciphertext as base64-encoded strings
+///
+/// # Arguments
+/// * `input` - Binary data to encrypt
+/// * `master_key` - 32-byte master key for encryption
+///
+/// # Returns
+/// * `Ok(String)` - Base64-encoded nonce and ciphertext in format "nonce:ciphertext"
+/// * `Err(String)` - Error message for empty input or encryption failure
+///
+/// # Security Notes
+/// - Each encryption uses a unique random nonce to prevent nonce reuse attacks
+/// - AES-GCM provides both confidentiality and authenticity
+/// - The output format is designed to be easily parsed for decryption
+pub fn encrypt_data_with_key(input: &[u8], master_key: &[u8; 32]) -> Result<String, String> {
+    if input.is_empty() {
+        return Err("Input data is empty".to_string());
+    }
+
+    let cipher = Aes256Gcm::new(master_key.into());
+    let nonce_bytes: [u8; 12] = rand::random();
+    let nonce = aes_gcm::Nonce::from_slice(&nonce_bytes);
+
+    let ciphertext = cipher.encrypt(nonce, input)
+        .map_err(|e| format!("Encryption failed: {:?}", e))?;
+
+    Ok(format!("{}:{}",
+        general_purpose::STANDARD.encode(nonce_bytes),
+        general_purpose::STANDARD.encode(&ciphertext)
+    ))
+}
+
 /// Decrypts text using AES-GCM with master key
 ///
 /// This function reverses the encryption process:
@@ -94,6 +132,49 @@ pub fn decrypt_text_with_key(input: &str, master_key: &[u8; 32]) -> Result<Strin
 
     String::from_utf8(plaintext)
         .map_err(|_| "Invalid UTF-8 in decrypted data".to_string())
+}
+///
+/// This function reverses the encryption process:
+/// 1. Parses the input format "nonce:ciphertext" (base64 encoded)
+/// 2. Decodes the nonce and ciphertext from base64
+/// 3. Uses AES-256-GCM with the provided master key for decryption
+/// 4. Verifies authenticity and returns the original binary data
+///
+/// # Arguments
+/// * `input` - Base64-encoded nonce and ciphertext in format "nonce:ciphertext"
+/// * `master_key` - 32-byte master key that was used for encryption
+///
+/// # Returns
+/// * `Ok(Vec<u8>)` - The decrypted binary data
+/// * `Err(String)` - Error message for invalid format, base64 decoding failure,
+///                  or authentication/decryption failure
+///
+/// # Security Notes
+/// - AES-GCM authentication ensures ciphertext integrity
+/// - Wrong key or corrupted data will result in authentication failure
+pub fn decrypt_data_with_key(input: &str, master_key: &[u8; 32]) -> Result<Vec<u8>, String> {
+    if input.is_empty() {
+        return Err("Input data is empty".to_string());
+    }
+
+    let parts: Vec<&str> = input.split(':').collect();
+    if parts.len() != 2 {
+        return Err("Invalid format".to_string());
+    }
+
+    let cipher = Aes256Gcm::new(master_key.into());
+
+    let nonce_bytes = general_purpose::STANDARD.decode(parts[0])
+        .map_err(|_| "Invalid base64".to_string())?;
+    let ciphertext = general_purpose::STANDARD.decode(parts[1])
+        .map_err(|_| "Invalid base64".to_string())?;
+
+    let nonce = aes_gcm::Nonce::from_slice(&nonce_bytes);
+
+    let plaintext = cipher.decrypt(nonce, ciphertext.as_slice())
+        .map_err(|_| "Decryption failed - wrong key or corrupted data".to_string())?;
+
+    Ok(plaintext)
 }
 
 /// Signs a message using Dilithium keys
@@ -261,7 +342,11 @@ pub fn encrypt_file(file_path: &str, master_key: &[u8; 32]) -> Result<String, St
     let data = fs::read(path)
         .map_err(|e| format!("Failed to read file: {}", e))?;
 
-    let encrypted = encrypt_text_with_key(&String::from_utf8_lossy(&data), master_key)?;
+    if data.is_empty() {
+        return Err("File is empty".to_string());
+    }
+
+    let encrypted = encrypt_data_with_key(&data, master_key)?;
 
     let output_path = format!("{}.cybou", file_path);
     fs::write(&output_path, encrypted)
@@ -287,14 +372,14 @@ pub fn decrypt_file(file_path: &str, master_key: &[u8; 32]) -> Result<String, St
     let encrypted_data = fs::read_to_string(path)
         .map_err(|e| format!("Failed to read encrypted file: {}", e))?;
 
-    let decrypted = decrypt_text_with_key(&encrypted_data, master_key)?;
+    let decrypted = decrypt_data_with_key(&encrypted_data, master_key)?;
 
     // Generate output path by inserting "decrypted" before the extension
     // For "file.txt.cybou" -> "file.decrypted.txt"
     let path_without_cybou = file_path.trim_end_matches(".cybou");
     let output_path = if let Some(dot_pos) = path_without_cybou.rfind('.') {
-        format!("{}.decrypted{}", 
-            &path_without_cybou[..dot_pos], 
+        format!("{}.decrypted{}",
+            &path_without_cybou[..dot_pos],
             &path_without_cybou[dot_pos..])
     } else {
         format!("{}.decrypted", path_without_cybou)

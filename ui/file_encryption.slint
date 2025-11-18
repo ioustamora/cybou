@@ -8,6 +8,8 @@ export component FileEncryptionWindow inherits Window {
 
     in-out property <string> input-file: "";
     in-out property <string> status: "Ready";
+    in-out property <float> progress: 0.0;
+    in-out property <bool> is-processing: false;
     property <bool> use-hybrid: true;
     property <bool> use-aes: false;
     property <bool> use-chacha: false;
@@ -115,7 +117,29 @@ export component FileEncryptionWindow inherits Window {
                 Text { text: "Status:"; }
                 Text {
                     text: status;
-                    color: status == "Ready" ? #666666 : #00aa00;
+                    color: #000000;
+                }
+                if is-processing: Rectangle {
+                    height: 20px;
+                    background: #f0f0f0;
+                    border-radius: 10px;
+                    border-width: 1px;
+                    border-color: #cccccc;
+                    
+                    Rectangle {
+                        height: 100%;
+                        width: progress * 1px;
+                        background: #007acc;
+                        border-radius: 9px;
+                    }
+                    
+                    Text {
+                        text: Math.round(progress) + "%";
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                        color: white;
+                        font-size: 12px;
+                    }
                 }
             }
         }

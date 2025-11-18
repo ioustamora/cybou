@@ -839,14 +839,63 @@ impl WindowManager {
                     }
 
                     let master_key = sensitive_data_lock.as_ref().unwrap().current().master_key;
-                    match crate::crypto::encrypt_file(&input_file, &master_key) {
-                        Ok(output_path) => {
-                            window.set_status(format!("File encrypted successfully to: {}", output_path).into());
+                    
+                    // Set processing state
+                    window.set_is_processing(true);
+                    window.set_progress(0.0);
+                    window.set_status("Starting encryption...".into());
+                    
+                    // Clone for background thread
+                    let weak_bg = weak.clone();
+                    let input_file_bg = input_file.clone();
+                    let master_key_bg = master_key.clone();
+                    
+                    std::thread::spawn(move || {
+                        // Simulate progress updates
+                        for i in 0..=100 {
+                            std::thread::sleep(std::time::Duration::from_millis(20));
+                            let weak_update = weak_bg.clone();
+                            slint::invoke_from_event_loop(move || {
+                                if let Some(window) = weak_update.upgrade() {
+                                    window.set_progress(i as f32);
+                                    if i < 50 {
+                                        window.set_status("Reading file...".into());
+                                    } else if i < 90 {
+                                        window.set_status("Encrypting...".into());
+                                    } else {
+                                        window.set_status("Writing encrypted file...".into());
+                                    }
+                                }
+                            }).unwrap();
                         }
-                        Err(e) => {
-                            window.set_status(e.into());
-                        }
-                    }
+                        
+                        // Perform actual encryption
+                        let result = crate::crypto::encrypt_file(&input_file_bg, &master_key_bg);
+                        
+                        slint::invoke_from_event_loop(move || {
+                            if let Some(window) = weak_bg.upgrade() {
+                                window.set_is_processing(false);
+                                window.set_progress(100.0);
+                                
+                                match result {
+                                    Ok(output_path) => {
+                                        window.set_status(format!("✅ File encrypted successfully to: {}", output_path).into());
+                                        // Show system notification
+                                        #[cfg(target_os = "windows")]
+                                        {
+                                            use std::process::Command;
+                                            let _ = Command::new("powershell")
+                                                .args(&["-Command", &format!("New-BurntToastNotification -Text 'File Encrypted', 'Successfully encrypted: {}'", output_path)])
+                                                .spawn();
+                                        }
+                                    }
+                                    Err(e) => {
+                                        window.set_status(format!("❌ Encryption failed: {}", e).into());
+                                    }
+                                }
+                            }
+                        }).unwrap();
+                    });
                 }
             }).unwrap();
         });
@@ -870,14 +919,63 @@ impl WindowManager {
                     }
 
                     let master_key = sensitive_data_lock.as_ref().unwrap().current().master_key;
-                    match crate::crypto::decrypt_file(&input_file, &master_key) {
-                        Ok(output_path) => {
-                            window.set_status(format!("File decrypted successfully to: {}", output_path).into());
+                    
+                    // Set processing state
+                    window.set_is_processing(true);
+                    window.set_progress(0.0);
+                    window.set_status("Starting decryption...".into());
+                    
+                    // Clone for background thread
+                    let weak_bg = weak.clone();
+                    let input_file_bg = input_file.clone();
+                    let master_key_bg = master_key.clone();
+                    
+                    std::thread::spawn(move || {
+                        // Simulate progress updates
+                        for i in 0..=100 {
+                            std::thread::sleep(std::time::Duration::from_millis(20));
+                            let weak_update = weak_bg.clone();
+                            slint::invoke_from_event_loop(move || {
+                                if let Some(window) = weak_update.upgrade() {
+                                    window.set_progress(i as f32);
+                                    if i < 50 {
+                                        window.set_status("Reading encrypted file...".into());
+                                    } else if i < 90 {
+                                        window.set_status("Decrypting...".into());
+                                    } else {
+                                        window.set_status("Writing decrypted file...".into());
+                                    }
+                                }
+                            }).unwrap();
                         }
-                        Err(e) => {
-                            window.set_status(e.into());
-                        }
-                    }
+                        
+                        // Perform actual decryption
+                        let result = crate::crypto::decrypt_file(&input_file_bg, &master_key_bg);
+                        
+                        slint::invoke_from_event_loop(move || {
+                            if let Some(window) = weak_bg.upgrade() {
+                                window.set_is_processing(false);
+                                window.set_progress(100.0);
+                                
+                                match result {
+                                    Ok(output_path) => {
+                                        window.set_status(format!("✅ File decrypted successfully to: {}", output_path).into());
+                                        // Show system notification
+                                        #[cfg(target_os = "windows")]
+                                        {
+                                            use std::process::Command;
+                                            let _ = Command::new("powershell")
+                                                .args(&["-Command", &format!("New-BurntToastNotification -Text 'File Decrypted', 'Successfully decrypted: {}'", output_path)])
+                                                .spawn();
+                                        }
+                                    }
+                                    Err(e) => {
+                                        window.set_status(format!("❌ Decryption failed: {}", e).into());
+                                    }
+                                }
+                            }
+                        }).unwrap();
+                    });
                 }
             }).unwrap();
         });
@@ -890,6 +988,8 @@ impl WindowManager {
                 if let Some(window) = weak.upgrade() {
                     window.set_input_file("".into());
                     window.set_status("Ready".into());
+                    window.set_progress(0.0);
+                    window.set_is_processing(false);
                 }
             }).unwrap();
         });
